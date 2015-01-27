@@ -72,5 +72,5 @@
 
 - (void)updateFrameWidht;
 
-+ (UIScrollView *)giveMeAGraph:(NSArray *)yValues xValues:(NSArray *)xValues frame:(CGRect)frame delegate:(id<PNChartDelegate>)delegate;
++ (UIScrollView *)giveMeAGraphForType:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues frame:(CGRect)frame delegate:(id<PNChartDelegate>)delegate;
 @end
