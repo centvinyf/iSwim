@@ -790,8 +790,21 @@
     }
 }
 
-+ (UIScrollView *)giveMeAGraph:(NSArray *)yValues xValues:(NSArray *)xValues frame:(CGRect)frame delegate:(id<PNChartDelegate>)delegate
++ (UIScrollView *)giveMeAGraphForType:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues frame:(CGRect)frame delegate:(id<PNChartDelegate>)delegate
 {
+    UIColor *color = [UIColor colorWithRed:0x20/0xff green:0x7d/0xff blue:0xb7/0xff alpha:1];
+    if ([type isEqualToString:@"总距离"])
+    {
+        color = [UIColor colorWithRed:0x00/0xff green:0x71/0xff blue:0x31/0xff alpha:1];
+    }
+    else if ([type isEqualToString:@"总时长"])
+    {
+        color = [UIColor colorWithRed:0xff/0xff green:0xa0/0xff blue:0x22/0xff alpha:1];
+    }
+    else if ([type isEqualToString:@"总消耗"])
+    {
+        color = [UIColor colorWithRed:0xd1/0xff green:0x31/0xff blue:0x01/0xff alpha:1];
+    }
     MBLineChart *lineChart = [[MBLineChart alloc] initWithFrame:frame];
     lineChart.yLabelFormat = @"%1.1f";
     lineChart.backgroundColor = [UIColor clearColor];
@@ -805,8 +818,7 @@
     // Line Chart #1
     NSArray * data01Array = yValues;
     PNLineChartData *data01 = [PNLineChartData new];
-    data01.color = PNFreshGreen;
-    data01.alpha = 1;
+    data01.color = color;
     data01.itemCount = data01Array.count;
     data01.inflexionPointStyle = PNLineChartPointStyleCircle;
     data01.getData = ^(NSUInteger index) {
