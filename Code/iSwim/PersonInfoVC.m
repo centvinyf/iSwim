@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view.
     _titleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"]];
     [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    _table.scrollEnabled=NO;
+    //_table.scrollEnabled=NO;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -56,7 +56,7 @@
     if (indexPath.section==0&&indexPath.row==0) {
         return 100;
     }
-    return 33;
+    return 44;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

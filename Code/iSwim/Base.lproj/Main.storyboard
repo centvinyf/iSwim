@@ -744,7 +744,7 @@
                             <constraint firstItem="duP-Jg-NJb" firstAttribute="top" secondItem="Zbb-3H-i0r" secondAttribute="topMargin" id="h6D-HF-tbZ"/>
                             <constraint firstItem="duP-Jg-NJb" firstAttribute="top" secondItem="Zbb-3H-i0r" secondAttribute="topMargin" constant="63" id="lbo-nQ-3O2"/>
                             <constraint firstItem="3kb-ae-zVh" firstAttribute="top" secondItem="duP-Jg-NJb" secondAttribute="bottom" constant="157" id="mlb-La-9el">
-                                <variation key="heightClass=regular-widthClass=compact" constant="172"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="100"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="duP-Jg-NJb" secondAttribute="trailing" constant="-16" id="zzU-06-LRe"/>
                         </constraints>
