@@ -39,17 +39,21 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier: identifiller];
     }
+    NSArray * Title = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"计划训练距离",@"计划训练时长",@"计划热量消耗",@"计划单边数",@"训练场馆", nil];
+    NSArray * button= [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"训练场馆", nil];
+    [cell.mButton setImage:[UIImage imageNamed:button[indexPath.row]] forState:nil];
+    cell.mTitle.text = Title[indexPath.row];
     return cell;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

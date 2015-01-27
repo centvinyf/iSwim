@@ -1,19 +1,61 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "fill",
+          "width" : 1,
+          "height" : 1
+        },
+        "capInsets" : {
+          "bottom" : 284,
+          "top" : 283,
+          "right" : 160,
+          "left" : 159
+        }
+      },
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "蓝底.png"
+      "filename" : "蓝底.png",
+      "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "fill",
+          "width" : 1,
+          "height" : 1
+        },
+        "capInsets" : {
+          "bottom" : 568,
+          "top" : 567,
+          "right" : 320,
+          "left" : 319
+        }
+      },
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "蓝底@2x.png"
+      "filename" : "蓝底@2x.png",
+      "scale" : "2x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "fill",
+          "width" : 1,
+          "height" : 1
+        },
+        "capInsets" : {
+          "bottom" : 852,
+          "top" : 851,
+          "right" : 480,
+          "left" : 479
+        }
+      },
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "蓝底@3x.png"
+      "filename" : "蓝底@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

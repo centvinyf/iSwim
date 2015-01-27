@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C28E67A1A776CC6006A2EE8 /* HeightAndWeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */; };
+		0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */; };
 		4D2D26005B7E6134011AAE39 /* libPods-iSwim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB6D6BDC0E11EBBE26CA79E /* libPods-iSwim.a */; };
 		7C320A661A775C890023DD06 /* LoginAndRegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */; };
 		7C320A671A775C890023DD06 /* NameAndEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A611A775C890023DD06 /* NameAndEmailVC.m */; };
@@ -49,6 +51,10 @@
 
 /* Begin PBXFileReference section */
 		0A0530D33D4464C20001A680 /* Pods-iSwim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iSwim/Pods-iSwim.debug.xcconfig"; sourceTree = "<group>"; };
+		0C28E6781A776CC6006A2EE8 /* HeightAndWeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightAndWeightVC.h; sourceTree = "<group>"; };
+		0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightAndWeightVC.m; sourceTree = "<group>"; };
+		0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthdayDateVC.h; sourceTree = "<group>"; };
+		0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthdayDateVC.m; sourceTree = "<group>"; };
 		57F385774C6FB16BA7C656F1 /* Pods-iSwim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwim.release.xcconfig"; path = "Pods/Target Support Files/Pods-iSwim/Pods-iSwim.release.xcconfig"; sourceTree = "<group>"; };
 		7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegistVC.h; sourceTree = "<group>"; };
 		7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegistVC.m; sourceTree = "<group>"; };
@@ -187,6 +193,10 @@
 				7C320A631A775C890023DD06 /* PasswordVC.m */,
 				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
 				7C320A651A775C890023DD06 /* PersonInfoVC.m */,
+				0C28E6781A776CC6006A2EE8 /* HeightAndWeightVC.h */,
+				0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */,
+				0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */,
+				0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */,
 				7CC677791A763E4800FD3287 /* Graph.storyboard */,
 				7C320A6A1A7794AC0023DD06 /* CropImageViewController.h */,
 				7C320A6B1A7794AC0023DD06 /* CropImageViewController.m */,
@@ -402,6 +412,7 @@
 				7C320A731A7795610023DD06 /* UIImage+KIAdditions.m in Sources */,
 				7C320A681A775C890023DD06 /* PasswordVC.m in Sources */,
 				7CAB6B481A75DF46000C6F99 /* AppDelegate.m in Sources */,
+				0C28E67A1A776CC6006A2EE8 /* HeightAndWeightVC.m in Sources */,
 				7C320A661A775C890023DD06 /* LoginAndRegistVC.m in Sources */,
 				7CC677981A77515B00FD3287 /* ThisBestDetailTableViewCell.m in Sources */,
 				7C320A721A7795610023DD06 /* KICropImageView.m in Sources */,
@@ -412,6 +423,7 @@
 				7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */,
 				7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */,
 				7CAB6B451A75DF46000C6F99 /* main.m in Sources */,
+				0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */,
 				7CC6779A1A77515B00FD3287 /* ThisBestRecordViewController.m in Sources */,
 				7CC677951A77515B00FD3287 /* BasicInfoViewCell.m in Sources */,
 			);
