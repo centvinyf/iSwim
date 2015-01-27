@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ThisBestDetailTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *mName;
+@property (weak, nonatomic) IBOutlet UILabel *mScore;
+@property (weak, nonatomic) IBOutlet UILabel *mBegin;
+@property (weak, nonatomic) IBOutlet UILabel *mEnd;
 
 @end
