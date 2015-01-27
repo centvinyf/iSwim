@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4D2D26005B7E6134011AAE39 /* libPods-iSwim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB6D6BDC0E11EBBE26CA79E /* libPods-iSwim.a */; };
+		7C320A661A775C890023DD06 /* LoginAndRegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */; };
+		7C320A671A775C890023DD06 /* NameAndEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A611A775C890023DD06 /* NameAndEmailVC.m */; };
+		7C320A681A775C890023DD06 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A631A775C890023DD06 /* PasswordVC.m */; };
+		7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A651A775C890023DD06 /* PersonInfoVC.m */; };
 		7CAB6B451A75DF46000C6F99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB6B441A75DF46000C6F99 /* main.m */; };
 		7CAB6B481A75DF46000C6F99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB6B471A75DF46000C6F99 /* AppDelegate.m */; };
 		7CAB6B4E1A75DF46000C6F99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */; };
@@ -28,10 +32,6 @@
 		7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6778F1A77515B00FD3287 /* TrainingDetailViewController.m */; };
 		7CC6779C1A77515B00FD3287 /* TrainingPlanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */; };
 		7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */; };
-		7CC677A61A7751E700FD3287 /* LoginAndRegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6779F1A7751E700FD3287 /* LoginAndRegistVC.m */; };
-		7CC677A71A7751E700FD3287 /* NameAndEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677A11A7751E700FD3287 /* NameAndEmailVC.m */; };
-		7CC677A81A7751E700FD3287 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677A31A7751E700FD3287 /* PasswordVC.m */; };
-		7CC677A91A7751E700FD3287 /* PersonInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677A51A7751E700FD3287 /* PersonInfoVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,14 @@
 /* Begin PBXFileReference section */
 		0A0530D33D4464C20001A680 /* Pods-iSwim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iSwim/Pods-iSwim.debug.xcconfig"; sourceTree = "<group>"; };
 		57F385774C6FB16BA7C656F1 /* Pods-iSwim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwim.release.xcconfig"; path = "Pods/Target Support Files/Pods-iSwim/Pods-iSwim.release.xcconfig"; sourceTree = "<group>"; };
+		7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegistVC.h; sourceTree = "<group>"; };
+		7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegistVC.m; sourceTree = "<group>"; };
+		7C320A601A775C890023DD06 /* NameAndEmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameAndEmailVC.h; sourceTree = "<group>"; };
+		7C320A611A775C890023DD06 /* NameAndEmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameAndEmailVC.m; sourceTree = "<group>"; };
+		7C320A621A775C890023DD06 /* PasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordVC.h; sourceTree = "<group>"; };
+		7C320A631A775C890023DD06 /* PasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordVC.m; sourceTree = "<group>"; };
+		7C320A641A775C890023DD06 /* PersonInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoVC.h; sourceTree = "<group>"; };
+		7C320A651A775C890023DD06 /* PersonInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoVC.m; sourceTree = "<group>"; };
 		7CAB6B3F1A75DF46000C6F99 /* iSwim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSwim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAB6B431A75DF46000C6F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CAB6B441A75DF46000C6F99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,14 +92,6 @@
 		7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingPlanTableViewCell.m; sourceTree = "<group>"; };
 		7CC677921A77515B00FD3287 /* TrainingPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingPlanViewController.h; sourceTree = "<group>"; };
 		7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingPlanViewController.m; sourceTree = "<group>"; };
-		7CC6779E1A7751E700FD3287 /* LoginAndRegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginAndRegistVC.h; path = ../../../../Downloads/iSwim/iSwim/LoginAndRegistVC.h; sourceTree = "<group>"; };
-		7CC6779F1A7751E700FD3287 /* LoginAndRegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginAndRegistVC.m; path = ../../../../Downloads/iSwim/iSwim/LoginAndRegistVC.m; sourceTree = "<group>"; };
-		7CC677A01A7751E700FD3287 /* NameAndEmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NameAndEmailVC.h; path = ../../../../Downloads/iSwim/iSwim/NameAndEmailVC.h; sourceTree = "<group>"; };
-		7CC677A11A7751E700FD3287 /* NameAndEmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NameAndEmailVC.m; path = ../../../../Downloads/iSwim/iSwim/NameAndEmailVC.m; sourceTree = "<group>"; };
-		7CC677A21A7751E700FD3287 /* PasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordVC.h; path = ../../../../Downloads/iSwim/iSwim/PasswordVC.h; sourceTree = "<group>"; };
-		7CC677A31A7751E700FD3287 /* PasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordVC.m; path = ../../../../Downloads/iSwim/iSwim/PasswordVC.m; sourceTree = "<group>"; };
-		7CC677A41A7751E700FD3287 /* PersonInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonInfoVC.h; path = ../../../../Downloads/iSwim/iSwim/PersonInfoVC.h; sourceTree = "<group>"; };
-		7CC677A51A7751E700FD3287 /* PersonInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonInfoVC.m; path = ../../../../Downloads/iSwim/iSwim/PersonInfoVC.m; sourceTree = "<group>"; };
 		BDB6D6BDC0E11EBBE26CA79E /* libPods-iSwim.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iSwim.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,14 +158,14 @@
 				7CAB6B461A75DF46000C6F99 /* AppDelegate.h */,
 				7CAB6B471A75DF46000C6F99 /* AppDelegate.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
-				7CC6779E1A7751E700FD3287 /* LoginAndRegistVC.h */,
-				7CC6779F1A7751E700FD3287 /* LoginAndRegistVC.m */,
-				7CC677A01A7751E700FD3287 /* NameAndEmailVC.h */,
-				7CC677A11A7751E700FD3287 /* NameAndEmailVC.m */,
-				7CC677A21A7751E700FD3287 /* PasswordVC.h */,
-				7CC677A31A7751E700FD3287 /* PasswordVC.m */,
-				7CC677A41A7751E700FD3287 /* PersonInfoVC.h */,
-				7CC677A51A7751E700FD3287 /* PersonInfoVC.m */,
+				7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */,
+				7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */,
+				7C320A601A775C890023DD06 /* NameAndEmailVC.h */,
+				7C320A611A775C890023DD06 /* NameAndEmailVC.m */,
+				7C320A621A775C890023DD06 /* PasswordVC.h */,
+				7C320A631A775C890023DD06 /* PasswordVC.m */,
+				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
+				7C320A651A775C890023DD06 /* PersonInfoVC.m */,
 				7CC677791A763E4800FD3287 /* Graph.storyboard */,
 				7CC6777B1A763E6400FD3287 /* GraphViewController.h */,
 				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
@@ -369,20 +369,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CC677A71A7751E700FD3287 /* NameAndEmailVC.m in Sources */,
+				7C320A671A775C890023DD06 /* NameAndEmailVC.m in Sources */,
 				7CC677781A763DE600FD3287 /* MBLineChart.m in Sources */,
 				7CC6779C1A77515B00FD3287 /* TrainingPlanTableViewCell.m in Sources */,
 				7CC677991A77515B00FD3287 /* ThisBestHeadTableViewCell.m in Sources */,
 				7CC6777D1A763E6400FD3287 /* GraphViewController.m in Sources */,
-				7CC677A81A7751E700FD3287 /* PasswordVC.m in Sources */,
+				7C320A681A775C890023DD06 /* PasswordVC.m in Sources */,
 				7CAB6B481A75DF46000C6F99 /* AppDelegate.m in Sources */,
-				7CC677A61A7751E700FD3287 /* LoginAndRegistVC.m in Sources */,
+				7C320A661A775C890023DD06 /* LoginAndRegistVC.m in Sources */,
 				7CC677981A77515B00FD3287 /* ThisBestDetailTableViewCell.m in Sources */,
 				7CC677961A77515B00FD3287 /* PersonalRecordViewController.m in Sources */,
 				7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */,
 				7CC677971A77515B00FD3287 /* ScoreDetailViewController.m in Sources */,
 				7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */,
-				7CC677A91A7751E700FD3287 /* PersonInfoVC.m in Sources */,
+				7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */,
 				7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */,
 				7CAB6B451A75DF46000C6F99 /* main.m in Sources */,
 				7CC6779A1A77515B00FD3287 /* ThisBestRecordViewController.m in Sources */,
