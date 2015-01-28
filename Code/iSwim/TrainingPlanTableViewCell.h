@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TrainingPlanTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *mButton;
 @property (weak, nonatomic) IBOutlet UILabel *mTitle;
-
+@property (weak, nonatomic) IBOutlet UIImageView *mImage;
 @property (weak, nonatomic) IBOutlet UILabel *mData;
 
 @end

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BasicInfoViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *mButton;
+
 @property (weak, nonatomic) IBOutlet UILabel *mTitle;
 @property (weak, nonatomic) IBOutlet UILabel *mData;
+@property (weak, nonatomic) IBOutlet UIImageView *mImage;
 
 @end

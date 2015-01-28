@@ -49,7 +49,7 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier: identifiller];
     }
-    [cell.mButton setImage:[UIImage imageNamed:PicName1[indexPath.row]] forState:nil];
+    [cell.mImage setImage:[UIImage imageNamed:PicName1[indexPath.row]] ];
     
     cell.mTitle.text = PicName[indexPath.row];
     return cell;
