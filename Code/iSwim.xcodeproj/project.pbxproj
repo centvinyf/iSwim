@@ -13,6 +13,12 @@
 		2C55F0821A77AC1C0077189D /* JifenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */; };
 		2C55F0851A77ADAC0077189D /* TrainingEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */; };
 		2C55F0881A77B1530077189D /* TrainingEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0871A77B1530077189D /* TrainingEventsTableViewCell.m */; };
+		2CAC1F3A1A78AFEA00DA4292 /* TwoLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F391A78AFEA00DA4292 /* TwoLabelTableViewCell.m */; };
+		2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F3E1A78C0D200DA4292 /* PaimingTableViewCell.m */; };
+		2CAC1F421A78C15400DA4292 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F411A78C15400DA4292 /* RankingViewController.m */; };
+		2CAC1F451A78C6F100DA4292 /* ThreeLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F441A78C6F100DA4292 /* ThreeLabelTableViewCell.m */; };
+		2CAC1F4E1A78E1DA00DA4292 /* ChangePlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F4D1A78E1DA00DA4292 /* ChangePlanViewController.m */; };
+		2CAC1F521A78E41F00DA4292 /* MBPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F511A78E41F00DA4292 /* MBPickerView.m */; };
 		4D2D26005B7E6134011AAE39 /* libPods-iSwim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB6D6BDC0E11EBBE26CA79E /* libPods-iSwim.a */; };
 		7C320A661A775C890023DD06 /* LoginAndRegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */; };
 		7C320A671A775C890023DD06 /* NameAndEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A611A775C890023DD06 /* NameAndEmailVC.m */; };
@@ -67,6 +73,18 @@
 		2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingEventsViewController.m; sourceTree = "<group>"; };
 		2C55F0861A77B1530077189D /* TrainingEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingEventsTableViewCell.h; sourceTree = "<group>"; };
 		2C55F0871A77B1530077189D /* TrainingEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingEventsTableViewCell.m; sourceTree = "<group>"; };
+		2CAC1F381A78AFEA00DA4292 /* TwoLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoLabelTableViewCell.h; sourceTree = "<group>"; };
+		2CAC1F391A78AFEA00DA4292 /* TwoLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoLabelTableViewCell.m; sourceTree = "<group>"; };
+		2CAC1F3D1A78C0D200DA4292 /* PaimingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaimingTableViewCell.h; sourceTree = "<group>"; };
+		2CAC1F3E1A78C0D200DA4292 /* PaimingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaimingTableViewCell.m; sourceTree = "<group>"; };
+		2CAC1F401A78C15400DA4292 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
+		2CAC1F411A78C15400DA4292 /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
+		2CAC1F431A78C6F100DA4292 /* ThreeLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeLabelTableViewCell.h; sourceTree = "<group>"; };
+		2CAC1F441A78C6F100DA4292 /* ThreeLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeLabelTableViewCell.m; sourceTree = "<group>"; };
+		2CAC1F4C1A78E1DA00DA4292 /* ChangePlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePlanViewController.h; sourceTree = "<group>"; };
+		2CAC1F4D1A78E1DA00DA4292 /* ChangePlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePlanViewController.m; sourceTree = "<group>"; };
+		2CAC1F501A78E41F00DA4292 /* MBPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBPickerView.h; path = iSwim/Tools/MBPicker/MBPickerView.h; sourceTree = "<group>"; };
+		2CAC1F511A78E41F00DA4292 /* MBPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBPickerView.m; path = iSwim/Tools/MBPicker/MBPickerView.m; sourceTree = "<group>"; };
 		57F385774C6FB16BA7C656F1 /* Pods-iSwim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwim.release.xcconfig"; path = "Pods/Target Support Files/Pods-iSwim/Pods-iSwim.release.xcconfig"; sourceTree = "<group>"; };
 		7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegistVC.h; sourceTree = "<group>"; };
 		7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegistVC.m; sourceTree = "<group>"; };
@@ -141,6 +159,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CAC1F3B1A78B92800DA4292 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CAC1F381A78AFEA00DA4292 /* TwoLabelTableViewCell.h */,
+				2CAC1F391A78AFEA00DA4292 /* TwoLabelTableViewCell.m */,
+				2CAC1F3D1A78C0D200DA4292 /* PaimingTableViewCell.h */,
+				2CAC1F3E1A78C0D200DA4292 /* PaimingTableViewCell.m */,
+				2C55F0861A77B1530077189D /* TrainingEventsTableViewCell.h */,
+				2C55F0871A77B1530077189D /* TrainingEventsTableViewCell.m */,
+				7CC677821A77515B00FD3287 /* BasicInfoViewCell.h */,
+				7CC677831A77515B00FD3287 /* BasicInfoViewCell.m */,
+				2C55F0801A77AC1C0077189D /* JifenTableViewCell.h */,
+				2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */,
+				7CC677881A77515B00FD3287 /* ThisBestDetailTableViewCell.h */,
+				7CC677891A77515B00FD3287 /* ThisBestDetailTableViewCell.m */,
+				7CC6778A1A77515B00FD3287 /* ThisBestHeadTableViewCell.h */,
+				7CC6778B1A77515B00FD3287 /* ThisBestHeadTableViewCell.m */,
+				7CC677901A77515B00FD3287 /* TrainingPlanTableViewCell.h */,
+				7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */,
+				2CAC1F431A78C6F100DA4292 /* ThreeLabelTableViewCell.h */,
+				2CAC1F441A78C6F100DA4292 /* ThreeLabelTableViewCell.m */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+		2CAC1F3C1A78B97400DA4292 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C55F0831A77ADAC0077189D /* TrainingEventsViewController.h */,
+				2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */,
+				2CAC1F4C1A78E1DA00DA4292 /* ChangePlanViewController.h */,
+				2CAC1F4D1A78E1DA00DA4292 /* ChangePlanViewController.m */,
+				7CC677801A77515B00FD3287 /* BasicInfomationViewController.h */,
+				7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */,
+				7CC677841A77515B00FD3287 /* PersonalRecordViewController.h */,
+				7CC677851A77515B00FD3287 /* PersonalRecordViewController.m */,
+				7CC677861A77515B00FD3287 /* ScoreDetailViewController.h */,
+				7CC677871A77515B00FD3287 /* ScoreDetailViewController.m */,
+				2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */,
+				2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */,
+				7CC6778C1A77515B00FD3287 /* ThisBestRecordViewController.h */,
+				7CC6778D1A77515B00FD3287 /* ThisBestRecordViewController.m */,
+				7CC6778E1A77515B00FD3287 /* TrainingDetailViewController.h */,
+				7CC6778F1A77515B00FD3287 /* TrainingDetailViewController.m */,
+				7CC677921A77515B00FD3287 /* TrainingPlanViewController.h */,
+				7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */,
+				2CAC1F401A78C15400DA4292 /* RankingViewController.h */,
+				2CAC1F411A78C15400DA4292 /* RankingViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2CAC1F4F1A78E3FB00DA4292 /* MBPicker */ = {
+			isa = PBXGroup;
+			children = (
+				2CAC1F501A78E41F00DA4292 /* MBPickerView.h */,
+				2CAC1F511A78E41F00DA4292 /* MBPickerView.m */,
+			);
+			name = MBPicker;
+			sourceTree = "<group>";
+		};
 		3BD184C2E94CED7772834A98 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,34 +294,8 @@
 				7CC6777B1A763E6400FD3287 /* GraphViewController.h */,
 				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
 				7CAB6B681A75DF5E000C6F99 /* Records.storyboard */,
-				2C55F0831A77ADAC0077189D /* TrainingEventsViewController.h */,
-				2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */,
-				2C55F0861A77B1530077189D /* TrainingEventsTableViewCell.h */,
-				2C55F0871A77B1530077189D /* TrainingEventsTableViewCell.m */,
-				7CC677801A77515B00FD3287 /* BasicInfomationViewController.h */,
-				7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */,
-				7CC677821A77515B00FD3287 /* BasicInfoViewCell.h */,
-				7CC677831A77515B00FD3287 /* BasicInfoViewCell.m */,
-				7CC677841A77515B00FD3287 /* PersonalRecordViewController.h */,
-				7CC677851A77515B00FD3287 /* PersonalRecordViewController.m */,
-				7CC677861A77515B00FD3287 /* ScoreDetailViewController.h */,
-				7CC677871A77515B00FD3287 /* ScoreDetailViewController.m */,
-				2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */,
-				2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */,
-				2C55F0801A77AC1C0077189D /* JifenTableViewCell.h */,
-				2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */,
-				7CC677881A77515B00FD3287 /* ThisBestDetailTableViewCell.h */,
-				7CC677891A77515B00FD3287 /* ThisBestDetailTableViewCell.m */,
-				7CC6778A1A77515B00FD3287 /* ThisBestHeadTableViewCell.h */,
-				7CC6778B1A77515B00FD3287 /* ThisBestHeadTableViewCell.m */,
-				7CC6778C1A77515B00FD3287 /* ThisBestRecordViewController.h */,
-				7CC6778D1A77515B00FD3287 /* ThisBestRecordViewController.m */,
-				7CC6778E1A77515B00FD3287 /* TrainingDetailViewController.h */,
-				7CC6778F1A77515B00FD3287 /* TrainingDetailViewController.m */,
-				7CC677901A77515B00FD3287 /* TrainingPlanTableViewCell.h */,
-				7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */,
-				7CC677921A77515B00FD3287 /* TrainingPlanViewController.h */,
-				7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */,
+				2CAC1F3B1A78B92800DA4292 /* cells */,
+				2CAC1F3C1A78B97400DA4292 /* ViewControllers */,
 				7CAB6B4F1A75DF46000C6F99 /* Images.xcassets */,
 				7CAB6B511A75DF46000C6F99 /* LaunchScreen.xib */,
 				7CAB6B421A75DF46000C6F99 /* Supporting Files */,
@@ -279,6 +332,7 @@
 		7CC677751A763D9100FD3287 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2CAC1F4F1A78E3FB00DA4292 /* MBPicker */,
 				7C320A6D1A7795610023DD06 /* CropImageView */,
 				7CC677761A763DE600FD3287 /* MBLineChart.h */,
 				7CC677771A763DE600FD3287 /* MBLineChart.m */,
@@ -428,6 +482,7 @@
 				7C320A6C1A7794AC0023DD06 /* CropImageViewController.m in Sources */,
 				7CC677781A763DE600FD3287 /* MBLineChart.m in Sources */,
 				7CC6779C1A77515B00FD3287 /* TrainingPlanTableViewCell.m in Sources */,
+				2CAC1F4E1A78E1DA00DA4292 /* ChangePlanViewController.m in Sources */,
 				7CC677991A77515B00FD3287 /* ThisBestHeadTableViewCell.m in Sources */,
 				7CC6777D1A763E6400FD3287 /* GraphViewController.m in Sources */,
 				7C320A731A7795610023DD06 /* UIImage+KIAdditions.m in Sources */,
@@ -438,18 +493,23 @@
 				7CC677981A77515B00FD3287 /* ThisBestDetailTableViewCell.m in Sources */,
 				2C55F0851A77ADAC0077189D /* TrainingEventsViewController.m in Sources */,
 				2C55F07F1A77A9BB0077189D /* JifenDetailViewController.m in Sources */,
+				2CAC1F521A78E41F00DA4292 /* MBPickerView.m in Sources */,
 				7C320A721A7795610023DD06 /* KICropImageView.m in Sources */,
 				2C55F0881A77B1530077189D /* TrainingEventsTableViewCell.m in Sources */,
 				7CC677961A77515B00FD3287 /* PersonalRecordViewController.m in Sources */,
 				7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */,
+				2CAC1F3A1A78AFEA00DA4292 /* TwoLabelTableViewCell.m in Sources */,
+				2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */,
 				7CC677971A77515B00FD3287 /* ScoreDetailViewController.m in Sources */,
 				7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */,
 				7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */,
+				2CAC1F451A78C6F100DA4292 /* ThreeLabelTableViewCell.m in Sources */,
 				7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */,
 				7CAB6B451A75DF46000C6F99 /* main.m in Sources */,
 				0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */,
 				7CC6779A1A77515B00FD3287 /* ThisBestRecordViewController.m in Sources */,
 				7CC677951A77515B00FD3287 /* BasicInfoViewCell.m in Sources */,
+				2CAC1F421A78C15400DA4292 /* RankingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

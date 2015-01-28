@@ -891,7 +891,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zH-f5-orv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438.5" y="2793"/>
+            <point key="canvasLocation" x="1114.5" y="2758.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eIc-JC-Ph4">
@@ -1885,7 +1885,7 @@
         <image name="蓝底" width="320" height="568"/>
         <image name="蓝底方框" width="320" height="290"/>
         <image name="训练成绩" width="29" height="30"/>
-        <image name="训练距离" width="8" height="18"/>
+        <image name="训练距离" width="15" height="17"/>
         <image name="身高气泡" width="47" height="29"/>
     </resources>
 </document>
