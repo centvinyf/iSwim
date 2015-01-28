@@ -17,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
+    returnButtonItem.title = @" ";//改改改
+    self.navigationItem.backBarButtonItem = returnButtonItem;
     self.NumberOfDetail = 9;
     // Do any additional setup after loading the view.
 }

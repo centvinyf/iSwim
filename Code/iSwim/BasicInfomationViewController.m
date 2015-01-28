@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
+    returnButtonItem.title = @" ";//改改改
+    self.navigationItem.backBarButtonItem = returnButtonItem;
     [self initStructure];
     // Do any additional setup after loading the view.
 }
@@ -49,7 +52,7 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier: identifiller];
     }
-    [cell.mButton setImage:[UIImage imageNamed:PicName1[indexPath.row]] forState:nil];
+    [cell.mImage setImage:[UIImage imageNamed:PicName1[indexPath.row]] ];
     
     cell.mTitle.text = PicName[indexPath.row];
     return cell;
