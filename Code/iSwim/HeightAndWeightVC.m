@@ -25,9 +25,15 @@
     [super viewDidLoad];
     [_heightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
     [_weightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
-    [_heightSlider setThumbImage:[UIImage imageNamed:@"身高体重圆钮"] forState:UIControlStateNormal];
-    [_weightSlider setThumbImage:[UIImage imageNamed:@"身高体重圆钮"] forState:UIControlStateNormal];
 
+    [_heightSlider setThumbImage:[UIImage imageNamed:@"身高体重圆钮"] forState:UIControlStateNormal];
+    [_heightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
+    [_heightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
+
+    [_weightSlider setThumbImage:[UIImage imageNamed:@"身高体重圆钮"] forState:UIControlStateNormal];
+    [_weightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
+    [_weightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
+    
 }
 -(void)valueChange:(UISlider*)slider
 {
