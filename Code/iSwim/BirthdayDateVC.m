@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *yearLab;
 @property (weak, nonatomic) IBOutlet UILabel *monthLab;
 @property (weak, nonatomic) IBOutlet UILabel *dayLab;
+@property (weak, nonatomic) IBOutlet UIView *venueView;
 
 @end
 
@@ -20,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _venueView.layer.masksToBounds=YES;
+    _venueView.layer.cornerRadius=5;
 }
 - (IBAction)btnClick:(UIButton *)sender {
     switch (sender.tag) {
@@ -75,7 +78,10 @@
             break;
     }
 }
-
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

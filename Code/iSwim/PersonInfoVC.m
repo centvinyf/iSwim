@@ -14,6 +14,8 @@
     __weak IBOutlet UITableView *_table;
     NSArray*_titleArray;
 }
+@property (weak, nonatomic) IBOutlet UIButton *sureBtn;
+
 @end
 
 @implementation PersonInfoVC
@@ -21,9 +23,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _titleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"]];
+    _sureBtn.layer.masksToBounds=YES;
+    _sureBtn.layer.cornerRadius=10;
+    _sureBtn.layer.borderWidth=2;
+    _sureBtn.layer.borderColor=[[UIColor orangeColor]CGColor];
+    _titleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"],@[@"修改密码"]];
     [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"headerCell"];
     //_table.scrollEnabled=NO;
+//    _table.scrollIndicatorInsets=UIEdgeInsetsMake(0, 0, 0, 0);
+    UIView*view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
+    view.backgroundColor=[UIColor clearColor];
+    _table.tableHeaderView=view;
+    
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -48,7 +60,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 5;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,9 +73,15 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell*cell=[_table dequeueReusableCellWithIdentifier:@"cell"];
+    UITableViewCell*cell;
+    if (indexPath.section==0&&indexPath.row==0) {
+        cell=[_table dequeueReusableCellWithIdentifier:@"headerCell"];
+    }
+    else{
+        cell=[_table dequeueReusableCellWithIdentifier:@"cell"];
+    }
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    if (indexPath.section==0||indexPath.section==2||(indexPath.section==1&&indexPath.row==1)) {
+    if (indexPath.section==0||indexPath.section==2||(indexPath.section==1&&indexPath.row==1)||(indexPath.section==4&&indexPath.row==0)) {
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
     
@@ -82,6 +100,19 @@
     
     cell.textLabel.text=[[_titleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (0==indexPath.section&&0==indexPath.row) {
+        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CropImageViewController"] animated:YES];
+    }
+    else if (0==indexPath.section&&1==indexPath.row){
+        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"changeNameVC"] animated:YES];
+    }else if (1==indexPath.section){
+        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"changeInfoVC"] animated:YES];
+    }else if (4==indexPath.section){
+        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"changePasswordVC"] animated:YES];
+    }
 }
 #pragma mark image
 

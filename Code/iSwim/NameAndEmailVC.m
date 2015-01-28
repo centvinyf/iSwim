@@ -9,9 +9,11 @@
 #import "NameAndEmailVC.h"
 
 @interface NameAndEmailVC ()
+{
+    BOOL _sex;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *nameView;
 @property (weak, nonatomic) IBOutlet UIImageView *emailView;
-@property (weak, nonatomic) IBOutlet UIView *sexBgView;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 
@@ -37,6 +39,14 @@
 //    _sexBgView.layer.borderWidth=1;
     [_nameTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [_emailTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+}
+- (IBAction)btnClick:(UIButton *)sender {
+    if (_sex) {
+        [sender setBackgroundImage:[UIImage imageNamed:@"男"] forState:UIControlStateNormal];
+    }else{
+        [sender setBackgroundImage:[UIImage imageNamed:@"女"] forState:UIControlStateNormal];
+    }
+    _sex=!_sex;
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
