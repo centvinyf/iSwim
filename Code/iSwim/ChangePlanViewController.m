@@ -1,18 +1,18 @@
 //
-//  PersonalRecordViewController.m
+//  ChangePlanViewController.m
 //  iSwim
 //
-//  Created by Sylar-MagicBeans on 15/1/26.
+//  Created by Sylar-MagicBeans on 15/1/28.
 //  Copyright (c) 2015年 Magic Beans. All rights reserved.
 //
 
-#import "PersonalRecordViewController.h"
+#import "ChangePlanViewController.h"
 
-@interface PersonalRecordViewController ()
+@interface ChangePlanViewController ()
 
 @end
 
-@implementation PersonalRecordViewController
+@implementation ChangePlanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
