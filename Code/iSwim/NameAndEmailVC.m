@@ -33,18 +33,14 @@
     //_emailView.layer.borderColor=[[UIColor grayColor]CGColor];
     //_emailView.layer.borderWidth=1;
     
-//    _sexBgView.layer.masksToBounds=YES;
-//    _sexBgView.layer.cornerRadius=15;
-//    _sexBgView.layer.borderColor=[[UIColor cyanColor]CGColor];
-//    _sexBgView.layer.borderWidth=1;
     [_nameTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [_emailTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
 }
 - (IBAction)btnClick:(UIButton *)sender {
-    if (_sex) {
-        [sender setBackgroundImage:[UIImage imageNamed:@"男"] forState:UIControlStateNormal];
-    }else{
+    if (!_sex) {
         [sender setBackgroundImage:[UIImage imageNamed:@"女"] forState:UIControlStateNormal];
+    }else{
+        [sender setBackgroundImage:[UIImage imageNamed:@"男"] forState:UIControlStateNormal];
     }
     _sex=!_sex;
 }
@@ -58,14 +54,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // save name,sex,email
+    if ([segue.identifier isEqualToString:@"HeightAndWeightVC"]) {
+        NSMutableDictionary*personInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
+        if (!personInfoDic) {
+            personInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
+        }
+        [personInfoDic setObject:_nameTextField.text forKey:@"name"];
+        [personInfoDic setObject:_emailTextField.text forKey:@"email"];
+        [personInfoDic setObject:[NSNumber numberWithBool:_sex] forKey:@"sex"];
+        [[NSUserDefaults standardUserDefaults]setObject:personInfoDic forKey:@"personInfoDic"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
 }
-*/
+
 
 @end

@@ -52,14 +52,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // save weight,height
+    if ([segue.identifier isEqualToString:@"BirthdayDateVC"]) {
+        NSMutableDictionary*personInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
+        if (!personInfoDic) {
+            personInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
+        }
+        [personInfoDic setObject:_heightLab.text forKey:@"height"];
+        [personInfoDic setObject:_weightLab.text forKey:@"weight"];
+        [[NSUserDefaults standardUserDefaults]setObject:personInfoDic forKey:@"personInfoDic"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
 }
-*/
 
 @end

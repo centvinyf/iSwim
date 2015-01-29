@@ -159,6 +159,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1E1E001A79B87200CDAA4F /* Regist */ = {
+			isa = PBXGroup;
+			children = (
+				7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */,
+				7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */,
+				7C320A621A775C890023DD06 /* PasswordVC.h */,
+				7C320A631A775C890023DD06 /* PasswordVC.m */,
+				7C320A601A775C890023DD06 /* NameAndEmailVC.h */,
+				7C320A611A775C890023DD06 /* NameAndEmailVC.m */,
+				0C28E6781A776CC6006A2EE8 /* HeightAndWeightVC.h */,
+				0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */,
+				0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */,
+				0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */,
+			);
+			name = Regist;
+			sourceTree = "<group>";
+		};
 		2CAC1F3B1A78B92800DA4292 /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,18 +293,9 @@
 				7CAB6B461A75DF46000C6F99 /* AppDelegate.h */,
 				7CAB6B471A75DF46000C6F99 /* AppDelegate.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
-				7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */,
-				7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */,
-				7C320A601A775C890023DD06 /* NameAndEmailVC.h */,
-				7C320A611A775C890023DD06 /* NameAndEmailVC.m */,
-				7C320A621A775C890023DD06 /* PasswordVC.h */,
-				7C320A631A775C890023DD06 /* PasswordVC.m */,
+				0C1E1E001A79B87200CDAA4F /* Regist */,
 				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
 				7C320A651A775C890023DD06 /* PersonInfoVC.m */,
-				0C28E6781A776CC6006A2EE8 /* HeightAndWeightVC.h */,
-				0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */,
-				0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */,
-				0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */,
 				7CC677791A763E4800FD3287 /* Graph.storyboard */,
 				7C320A6A1A7794AC0023DD06 /* CropImageViewController.h */,
 				7C320A6B1A7794AC0023DD06 /* CropImageViewController.m */,
@@ -568,7 +576,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shawn Han (ESSVC6V43D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shawn Han (ESSVC6V43D)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -588,6 +597,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "084b32c5-d72a-4185-a7d6-908771681a78";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -609,7 +619,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shawn Han (ESSVC6V43D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shawn Han (ESSVC6V43D)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -622,6 +633,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "084b32c5-d72a-4185-a7d6-908771681a78";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

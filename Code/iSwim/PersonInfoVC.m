@@ -28,10 +28,7 @@
     _sureBtn.layer.borderWidth=2;
     _sureBtn.layer.borderColor=[[UIColor orangeColor]CGColor];
     _titleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"],@[@"修改密码"]];
-    [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"headerCell"];
-    //_table.scrollEnabled=NO;
-//    _table.scrollIndicatorInsets=UIEdgeInsetsMake(0, 0, 0, 0);
+
     UIView*view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
     view.backgroundColor=[UIColor clearColor];
     _table.tableHeaderView=view;
@@ -76,21 +73,27 @@
     UITableViewCell*cell;
     if (indexPath.section==0&&indexPath.row==0) {
         cell=[_table dequeueReusableCellWithIdentifier:@"headerCell"];
+        if (!cell) {
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"headerCell"];
+        }
     }
     else{
         cell=[_table dequeueReusableCellWithIdentifier:@"cell"];
+        if (!cell) {
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+        }
     }
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     if (indexPath.section==0||indexPath.section==2||(indexPath.section==1&&indexPath.row==1)||(indexPath.section==4&&indexPath.row==0)) {
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
-    
-    else if(indexPath.section==3){
+
+    if(indexPath.section==3){
         UISwitch*swt=[[UISwitch alloc]init];
         cell.accessoryView=swt;
     }
     
-    if (indexPath.section==0&&indexPath.row==0) {
+    else if (indexPath.section==0&&indexPath.row==0) {
         UIImageView*imgv=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
         imgv.backgroundColor=[UIColor cyanColor];
         imgv.layer.masksToBounds=YES;
@@ -98,7 +101,26 @@
         cell.accessoryView=imgv;
     }
     
+    if (indexPath.section==1){
+        
+    }
     cell.textLabel.text=[[_titleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    NSMutableDictionary*dic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults]objectForKey:@"personInfoDic"]];
+    
+    if (indexPath.section==0&&indexPath.row==1) {
+        cell.detailTextLabel.text=[dic objectForKey:@"name"];
+    }else if (indexPath.section==1&&indexPath.row==0){
+        cell.detailTextLabel.text=[[dic objectForKey:@"sex"]boolValue]?@"男":@"女";
+    }else if (indexPath.section==1&&indexPath.row==1){
+        cell.detailTextLabel.text=[dic objectForKey:@"height"];
+    }else if (indexPath.section==1&&indexPath.row==2){
+        cell.detailTextLabel.text=[dic objectForKey:@"weight"];
+    }else if (indexPath.section==2&&indexPath.row==0){
+        cell.detailTextLabel.text=[dic objectForKey:@"email"];
+    }else if (indexPath.section==2&&indexPath.row==1){
+        cell.detailTextLabel.text=[dic objectForKey:@"venue"];
+    }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
