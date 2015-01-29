@@ -33,7 +33,6 @@
 		7CAB6B4E1A75DF46000C6F99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */; };
 		7CAB6B501A75DF46000C6F99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B4F1A75DF46000C6F99 /* Images.xcassets */; };
 		7CAB6B531A75DF46000C6F99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B511A75DF46000C6F99 /* LaunchScreen.xib */; };
-		7CAB6B5F1A75DF46000C6F99 /* iSwimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB6B5E1A75DF46000C6F99 /* iSwimTests.m */; };
 		7CAB6B691A75DF5E000C6F99 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B681A75DF5E000C6F99 /* Records.storyboard */; };
 		7CC677781A763DE600FD3287 /* MBLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677771A763DE600FD3287 /* MBLineChart.m */; };
 		7CC6777A1A763E4800FD3287 /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC677791A763E4800FD3287 /* Graph.storyboard */; };
@@ -49,16 +48,6 @@
 		7CC6779C1A77515B00FD3287 /* TrainingPlanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */; };
 		7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7CAB6B591A75DF46000C6F99 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7CAB6B371A75DF46000C6F99 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7CAB6B3E1A75DF46000C6F99;
-			remoteInfo = iSwim;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0A0530D33D4464C20001A680 /* Pods-iSwim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iSwim/Pods-iSwim.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,9 +100,6 @@
 		7CAB6B4D1A75DF46000C6F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CAB6B4F1A75DF46000C6F99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7CAB6B521A75DF46000C6F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		7CAB6B581A75DF46000C6F99 /* iSwimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSwimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CAB6B5D1A75DF46000C6F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CAB6B5E1A75DF46000C6F99 /* iSwimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSwimTests.m; sourceTree = "<group>"; };
 		7CAB6B681A75DF5E000C6F99 /* Records.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = "<group>"; };
 		7CC677761A763DE600FD3287 /* MBLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBLineChart.h; path = iSwim/Tools/MBLineChart.h; sourceTree = "<group>"; };
 		7CC677771A763DE600FD3287 /* MBLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLineChart.m; path = iSwim/Tools/MBLineChart.m; sourceTree = "<group>"; };
@@ -152,16 +138,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CAB6B551A75DF46000C6F99 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1E1E001A79B87200CDAA4F /* Login&Regist */ = {
+			isa = PBXGroup;
+			children = (
+				7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */,
+				7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */,
+				7C320A621A775C890023DD06 /* PasswordVC.h */,
+				7C320A631A775C890023DD06 /* PasswordVC.m */,
+				7C320A601A775C890023DD06 /* NameAndEmailVC.h */,
+				7C320A611A775C890023DD06 /* NameAndEmailVC.m */,
+				0C28E6781A776CC6006A2EE8 /* HeightAndWeightVC.h */,
+				0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */,
+				0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */,
+				0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */,
+			);
+			name = "Login&Regist";
+			sourceTree = "<group>";
+		};
 		2CAC1F3B1A78B92800DA4292 /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +255,6 @@
 			children = (
 				7CC677751A763D9100FD3287 /* Tools */,
 				7CAB6B411A75DF46000C6F99 /* iSwim */,
-				7CAB6B5B1A75DF46000C6F99 /* iSwimTests */,
 				7CAB6B401A75DF46000C6F99 /* Products */,
 				3BD184C2E94CED7772834A98 /* Pods */,
 				5DEB0ED9765748E48E5B1CD7 /* Frameworks */,
@@ -270,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				7CAB6B3F1A75DF46000C6F99 /* iSwim.app */,
-				7CAB6B581A75DF46000C6F99 /* iSwimTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,18 +275,8 @@
 				7CAB6B461A75DF46000C6F99 /* AppDelegate.h */,
 				7CAB6B471A75DF46000C6F99 /* AppDelegate.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
-				7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */,
-				7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */,
-				7C320A601A775C890023DD06 /* NameAndEmailVC.h */,
-				7C320A611A775C890023DD06 /* NameAndEmailVC.m */,
-				7C320A621A775C890023DD06 /* PasswordVC.h */,
-				7C320A631A775C890023DD06 /* PasswordVC.m */,
-				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
-				7C320A651A775C890023DD06 /* PersonInfoVC.m */,
-				0C28E6781A776CC6006A2EE8 /* HeightAndWeightVC.h */,
-				0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */,
-				0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */,
-				0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */,
+				0C1E1E001A79B87200CDAA4F /* Login&Regist */,
+				7CF65C121A7A142C0060FDED /* UserCenter */,
 				7CC677791A763E4800FD3287 /* Graph.storyboard */,
 				7C320A6A1A7794AC0023DD06 /* CropImageViewController.h */,
 				7C320A6B1A7794AC0023DD06 /* CropImageViewController.m */,
@@ -317,23 +301,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7CAB6B5B1A75DF46000C6F99 /* iSwimTests */ = {
-			isa = PBXGroup;
-			children = (
-				7CAB6B5E1A75DF46000C6F99 /* iSwimTests.m */,
-				7CAB6B5C1A75DF46000C6F99 /* Supporting Files */,
-			);
-			path = iSwimTests;
-			sourceTree = "<group>";
-		};
-		7CAB6B5C1A75DF46000C6F99 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7CAB6B5D1A75DF46000C6F99 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		7CC677751A763D9100FD3287 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +310,15 @@
 				7CC677771A763DE600FD3287 /* MBLineChart.m */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		7CF65C121A7A142C0060FDED /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
+				7C320A651A775C890023DD06 /* PersonInfoVC.m */,
+			);
+			name = UserCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,24 +343,6 @@
 			productReference = 7CAB6B3F1A75DF46000C6F99 /* iSwim.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7CAB6B571A75DF46000C6F99 /* iSwimTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7CAB6B651A75DF46000C6F99 /* Build configuration list for PBXNativeTarget "iSwimTests" */;
-			buildPhases = (
-				7CAB6B541A75DF46000C6F99 /* Sources */,
-				7CAB6B551A75DF46000C6F99 /* Frameworks */,
-				7CAB6B561A75DF46000C6F99 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7CAB6B5A1A75DF46000C6F99 /* PBXTargetDependency */,
-			);
-			name = iSwimTests;
-			productName = iSwimTests;
-			productReference = 7CAB6B581A75DF46000C6F99 /* iSwimTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -396,10 +354,6 @@
 				TargetAttributes = {
 					7CAB6B3E1A75DF46000C6F99 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					7CAB6B571A75DF46000C6F99 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 7CAB6B3E1A75DF46000C6F99;
 					};
 				};
 			};
@@ -417,7 +371,6 @@
 			projectRoot = "";
 			targets = (
 				7CAB6B3E1A75DF46000C6F99 /* iSwim */,
-				7CAB6B571A75DF46000C6F99 /* iSwimTests */,
 			);
 		};
 /* End PBXProject section */
@@ -432,13 +385,6 @@
 				7CC6777A1A763E4800FD3287 /* Graph.storyboard in Resources */,
 				7CAB6B501A75DF46000C6F99 /* Images.xcassets in Resources */,
 				7CAB6B691A75DF5E000C6F99 /* Records.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7CAB6B561A75DF46000C6F99 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,23 +465,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CAB6B541A75DF46000C6F99 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7CAB6B5F1A75DF46000C6F99 /* iSwimTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7CAB6B5A1A75DF46000C6F99 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7CAB6B3E1A75DF46000C6F99 /* iSwim */;
-			targetProxy = 7CAB6B591A75DF46000C6F99 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */ = {
@@ -574,7 +504,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shawn Han (ESSVC6V43D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shawn Han (ESSVC6V43D)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -594,6 +525,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "084b32c5-d72a-4185-a7d6-908771681a78";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -615,7 +547,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shawn Han (ESSVC6V43D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shawn Han (ESSVC6V43D)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -628,6 +561,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "084b32c5-d72a-4185-a7d6-908771681a78";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -655,40 +589,6 @@
 			};
 			name = Release;
 		};
-		7CAB6B661A75DF46000C6F99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = iSwimTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSwim.app/iSwim";
-			};
-			name = Debug;
-		};
-		7CAB6B671A75DF46000C6F99 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = iSwimTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSwim.app/iSwim";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -706,15 +606,6 @@
 			buildConfigurations = (
 				7CAB6B631A75DF46000C6F99 /* Debug */,
 				7CAB6B641A75DF46000C6F99 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7CAB6B651A75DF46000C6F99 /* Build configuration list for PBXNativeTarget "iSwimTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7CAB6B661A75DF46000C6F99 /* Debug */,
-				7CAB6B671A75DF46000C6F99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,6 +14,8 @@
     __weak IBOutlet UITableView *_table;
     NSArray*_titleArray;
 }
+@property (weak, nonatomic) IBOutlet UIButton *sureBtn;
+
 @end
 
 @implementation PersonInfoVC
@@ -21,9 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _titleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"]];
-    [_table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    //_table.scrollEnabled=NO;
+    _sureBtn.layer.masksToBounds=YES;
+    _sureBtn.layer.cornerRadius=10;
+    _sureBtn.layer.borderWidth=2;
+    _sureBtn.layer.borderColor=[[UIColor orangeColor]CGColor];
+    _titleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"],@[@"修改密码"]];
+
+    UIView*view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
+    view.backgroundColor=[UIColor clearColor];
+    _table.tableHeaderView=view;
+    
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -48,7 +57,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 5;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,18 +70,30 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell*cell=[_table dequeueReusableCellWithIdentifier:@"cell"];
+    UITableViewCell*cell;
+    if (indexPath.section==0&&indexPath.row==0) {
+        cell=[_table dequeueReusableCellWithIdentifier:@"headerCell"];
+        if (!cell) {
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"headerCell"];
+        }
+    }
+    else{
+        cell=[_table dequeueReusableCellWithIdentifier:@"cell"];
+        if (!cell) {
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+        }
+    }
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    if (indexPath.section==0||indexPath.section==2||(indexPath.section==1&&indexPath.row==1)) {
+    if (indexPath.section==0||indexPath.section==2||(indexPath.section==1&&indexPath.row==1)||(indexPath.section==4&&indexPath.row==0)) {
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
-    
-    else if(indexPath.section==3){
+
+    if(indexPath.section==3){
         UISwitch*swt=[[UISwitch alloc]init];
         cell.accessoryView=swt;
     }
     
-    if (indexPath.section==0&&indexPath.row==0) {
+    else if (indexPath.section==0&&indexPath.row==0) {
         UIImageView*imgv=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
         imgv.backgroundColor=[UIColor cyanColor];
         imgv.layer.masksToBounds=YES;
@@ -80,8 +101,44 @@
         cell.accessoryView=imgv;
     }
     
+    if (indexPath.section==1){
+        
+    }
     cell.textLabel.text=[[_titleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    NSMutableDictionary*dic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults]objectForKey:@"personInfoDic"]];
+    
+    if (indexPath.section==0&&indexPath.row==1) {
+        cell.detailTextLabel.text=[dic objectForKey:@"name"];
+    }else if (indexPath.section==1&&indexPath.row==0){
+        cell.detailTextLabel.text=[[dic objectForKey:@"sex"]boolValue]?@"男":@"女";
+    }else if (indexPath.section==1&&indexPath.row==1){
+        cell.detailTextLabel.text=[dic objectForKey:@"height"];
+    }else if (indexPath.section==1&&indexPath.row==2){
+        cell.detailTextLabel.text=[dic objectForKey:@"weight"];
+    }else if (indexPath.section==2&&indexPath.row==0){
+        cell.detailTextLabel.text=[dic objectForKey:@"email"];
+    }else if (indexPath.section==2&&indexPath.row==1){
+        cell.detailTextLabel.text=[dic objectForKey:@"venue"];
+    }
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (0==indexPath.section&&0==indexPath.row) {
+        [self performSegueWithIdentifier:@"CropImageViewController" sender:nil];
+    }
+    else if (0==indexPath.section&&1==indexPath.row){
+        [self performSegueWithIdentifier:@"changeNameVC" sender:nil];
+    }else if (1==indexPath.section){
+        [self performSegueWithIdentifier:@"changeInfoVC" sender:nil];
+    }else if (2==indexPath.section&&0==indexPath.row){
+        [self performSegueWithIdentifier:@"changeEmailVC" sender:nil];
+    }else if (2==indexPath.section&&1==indexPath.row){
+        [self performSegueWithIdentifier:@"changeVenueVC" sender:nil];
+    }else if (4==indexPath.section){
+        [self performSegueWithIdentifier:@"changePasswordVC" sender:nil];
+    }
 }
 #pragma mark image
 

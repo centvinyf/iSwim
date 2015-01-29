@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *yearLab;
 @property (weak, nonatomic) IBOutlet UILabel *monthLab;
 @property (weak, nonatomic) IBOutlet UILabel *dayLab;
+@property (weak, nonatomic) IBOutlet UIView *venueView;
+@property (weak, nonatomic) IBOutlet UITextField *venueLab;
 
 @end
 
@@ -20,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _venueView.layer.masksToBounds=YES;
+    _venueView.layer.cornerRadius=5;
 }
 - (IBAction)btnClick:(UIButton *)sender {
     switch (sender.tag) {
@@ -75,21 +79,32 @@
             break;
     }
 }
-
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // save birthday,venue
+    NSLog(@"%s",__FUNCTION__);
+
+    if ([segue.identifier isEqualToString:@"MainNav"]) {
+        NSMutableDictionary*personInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
+        if (!personInfoDic) {
+            personInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
+        }
+        NSDictionary*birthdayDic=@{@"year":_yearLab.text,@"month":_monthLab.text,@"day":_dayLab.text};
+        [personInfoDic setObject:birthdayDic forKey:@"birthday"];
+        [personInfoDic setObject:_venueLab.text forKey:@"venue"];
+        [[NSUserDefaults standardUserDefaults]setObject:personInfoDic forKey:@"personInfoDic"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
 }
-*/
 
 @end
