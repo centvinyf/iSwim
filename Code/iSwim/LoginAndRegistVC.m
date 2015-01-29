@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *coverView;
 @property (weak, nonatomic) IBOutlet UIButton *coverSureBtn;
 @property (weak, nonatomic) IBOutlet UIButton *coverCancelBtn;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -30,6 +32,7 @@
     _coverCancelBtn.layer.borderColor=[[UIColor colorWithRed:0x99/255.0 green:0x99/255.0 blue:0x99/255.0 alpha:1] CGColor];
     _coverSureBtn.layer.borderWidth=1;
     _coverSureBtn.layer.borderColor=[[UIColor colorWithRed:0x1a/255.0 green:0x65/255.0 blue:0x94/255.0 alpha:1] CGColor];
+    [_passwordTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
 }
 -(void)viewWillAppear:(BOOL)animated
 {

@@ -762,6 +762,8 @@
                         <outlet property="coverSureBtn" destination="L2L-ZR-Ryz" id="sN1-HY-r3T"/>
                         <outlet property="coverView" destination="TND-Tr-72a" id="nPy-Qq-xfh"/>
                         <outlet property="loginBtn" destination="9eC-ck-5e8" id="Xai-Ed-hBZ"/>
+                        <outlet property="passwordTextField" destination="OML-42-Xzj" id="YuR-hZ-PtV"/>
+                        <outlet property="phoneNumberTextField" destination="fKu-IW-xup" id="yov-Jd-Ju1"/>
                         <segue destination="bvh-qU-C29" kind="show" identifier="PasswordVC" id="Zg3-u8-GTl"/>
                     </connections>
                 </viewController>
@@ -1903,7 +1905,7 @@
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Ybv-b1-Fv7"/>
@@ -2321,7 +2323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvw-as-ZcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3139.5" y="406.5"/>
+            <point key="canvasLocation" x="3139.5" y="420"/>
         </scene>
         <!--注册2-->
         <scene sceneID="m1F-hp-XaW">

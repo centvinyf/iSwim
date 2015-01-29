@@ -55,6 +55,8 @@
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // save weight,height
+    NSLog(@"%s",__FUNCTION__);
+
     if ([segue.identifier isEqualToString:@"BirthdayDateVC"]) {
         NSMutableDictionary*personInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
         if (!personInfoDic) {

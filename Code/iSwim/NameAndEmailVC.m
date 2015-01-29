@@ -35,6 +35,8 @@
     
     [_nameTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [_emailTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    _emailTextField.autocorrectionType=UITextAutocorrectionTypeNo;
 }
 - (IBAction)btnClick:(UIButton *)sender {
     if (!_sex) {
@@ -58,6 +60,7 @@
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // save name,sex,email
+    NSLog(@"%s\n%@",__FUNCTION__,segue.identifier);
     if ([segue.identifier isEqualToString:@"HeightAndWeightVC"]) {
         NSMutableDictionary*personInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
         if (!personInfoDic) {
