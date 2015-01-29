@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C28E67A1A776CC6006A2EE8 /* HeightAndWeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */; };
 		0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */; };
+		2C2D8B4E1A7A207300A93D57 /* TimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2D8B4D1A7A207300A93D57 /* TimePickerView.m */; };
 		2C55F07F1A77A9BB0077189D /* JifenDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */; };
 		2C55F0821A77AC1C0077189D /* JifenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */; };
 		2C55F0851A77ADAC0077189D /* TrainingEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */; };
@@ -54,6 +55,8 @@
 		0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightAndWeightVC.m; sourceTree = "<group>"; };
 		0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthdayDateVC.h; sourceTree = "<group>"; };
 		0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthdayDateVC.m; sourceTree = "<group>"; };
+		2C2D8B4C1A7A207300A93D57 /* TimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerView.h; sourceTree = "<group>"; };
+		2C2D8B4D1A7A207300A93D57 /* TimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerView.m; sourceTree = "<group>"; };
 		2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JifenDetailViewController.h; sourceTree = "<group>"; };
 		2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JifenDetailViewController.m; sourceTree = "<group>"; };
 		2C55F0801A77AC1C0077189D /* JifenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JifenTableViewCell.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 			children = (
 				2CAC1F501A78E41F00DA4292 /* MBPickerView.h */,
 				2CAC1F511A78E41F00DA4292 /* MBPickerView.m */,
+				2C2D8B4C1A7A207300A93D57 /* TimePickerView.h */,
+				2C2D8B4D1A7A207300A93D57 /* TimePickerView.m */,
 			);
 			name = MBPicker;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				7C320A731A7795610023DD06 /* UIImage+KIAdditions.m in Sources */,
 				7C320A681A775C890023DD06 /* PasswordVC.m in Sources */,
 				7CAB6B481A75DF46000C6F99 /* AppDelegate.m in Sources */,
+				2C2D8B4E1A7A207300A93D57 /* TimePickerView.m in Sources */,
 				0C28E67A1A776CC6006A2EE8 /* HeightAndWeightVC.m in Sources */,
 				7C320A661A775C890023DD06 /* LoginAndRegistVC.m in Sources */,
 				7CC677981A77515B00FD3287 /* ThisBestDetailTableViewCell.m in Sources */,
