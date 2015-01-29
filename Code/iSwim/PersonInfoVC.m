@@ -126,14 +126,14 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (0==indexPath.section&&0==indexPath.row) {
-        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CropImageViewController"] animated:YES];
+        [self performSegueWithIdentifier:@"CropImageViewController" sender:nil];
     }
     else if (0==indexPath.section&&1==indexPath.row){
-        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"changeNameVC"] animated:YES];
+        [self performSegueWithIdentifier:@"changeNameVC" sender:nil];
     }else if (1==indexPath.section){
-        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"changeInfoVC"] animated:YES];
+        [self performSegueWithIdentifier:@"changeInfoVC" sender:nil];
     }else if (4==indexPath.section){
-        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"changePasswordVC"] animated:YES];
+        [self performSegueWithIdentifier:@"changePasswordVC" sender:nil];
     }
 }
 #pragma mark image

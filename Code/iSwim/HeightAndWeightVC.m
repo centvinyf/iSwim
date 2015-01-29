@@ -27,12 +27,12 @@
     [_weightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
 
     [_heightSlider setThumbImage:[UIImage imageNamed:@"身高"] forState:UIControlStateNormal];
-    //[_heightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
-    //[_heightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
+    [_heightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
+    [_heightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
 
     [_weightSlider setThumbImage:[UIImage imageNamed:@"体重"] forState:UIControlStateNormal];
-    //[_weightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
-    //[_weightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
+    [_weightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
+    [_weightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
     
 }
 -(void)valueChange:(UISlider*)slider
