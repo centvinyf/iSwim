@@ -138,7 +138,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C1E1E001A79B87200CDAA4F /* Regist */ = {
+		0C1E1E001A79B87200CDAA4F /* Login&Regist */ = {
 			isa = PBXGroup;
 			children = (
 				7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */,
@@ -152,7 +152,7 @@
 				0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */,
 				0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */,
 			);
-			name = Regist;
+			name = "Login&Regist";
 			sourceTree = "<group>";
 		};
 		2CAC1F3B1A78B92800DA4292 /* cells */ = {
@@ -270,9 +270,8 @@
 				7CAB6B461A75DF46000C6F99 /* AppDelegate.h */,
 				7CAB6B471A75DF46000C6F99 /* AppDelegate.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
-				0C1E1E001A79B87200CDAA4F /* Regist */,
-				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
-				7C320A651A775C890023DD06 /* PersonInfoVC.m */,
+				0C1E1E001A79B87200CDAA4F /* Login&Regist */,
+				7CF65C121A7A142C0060FDED /* UserCenter */,
 				7CC677791A763E4800FD3287 /* Graph.storyboard */,
 				7C320A6A1A7794AC0023DD06 /* CropImageViewController.h */,
 				7C320A6B1A7794AC0023DD06 /* CropImageViewController.m */,
@@ -306,6 +305,15 @@
 				7CC677771A763DE600FD3287 /* MBLineChart.m */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		7CF65C121A7A142C0060FDED /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
+				7C320A651A775C890023DD06 /* PersonInfoVC.m */,
+			);
+			name = UserCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
