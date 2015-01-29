@@ -132,6 +132,10 @@
         [self performSegueWithIdentifier:@"changeNameVC" sender:nil];
     }else if (1==indexPath.section){
         [self performSegueWithIdentifier:@"changeInfoVC" sender:nil];
+    }else if (2==indexPath.section&&0==indexPath.row){
+        [self performSegueWithIdentifier:@"changeEmailVC" sender:nil];
+    }else if (2==indexPath.section&&1==indexPath.row){
+        [self performSegueWithIdentifier:@"changeVenueVC" sender:nil];
     }else if (4==indexPath.section){
         [self performSegueWithIdentifier:@"changePasswordVC" sender:nil];
     }
