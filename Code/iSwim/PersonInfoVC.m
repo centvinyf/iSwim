@@ -29,9 +29,9 @@
     _sureBtn.layer.borderColor=[[UIColor orangeColor]CGColor];
     _titleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"],@[@"修改密码"]];
 
-    UIView*view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
-    view.backgroundColor=[UIColor clearColor];
-    _table.tableHeaderView=view;
+//    UIView*view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
+//    view.backgroundColor=[UIColor clearColor];
+//    _table.tableHeaderView=view;
     
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -100,7 +100,7 @@
         imgv.layer.cornerRadius=50;
         cell.accessoryView=imgv;
     }
-    
+#warning line
     if (indexPath.section==1){
         
     }

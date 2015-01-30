@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIApplication*app=[UIApplication sharedApplication];
+    NSLog(@"1--- %d",app.statusBarStyle);
+    app.statusBarStyle=1;
+    NSLog(@"2--- %d",app.statusBarStyle);
+
     return YES;
 }
 
