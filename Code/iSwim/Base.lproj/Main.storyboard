@@ -2051,7 +2051,7 @@
                                 <color key="textColor" red="0.20784313725490197" green="0.18823529411764706" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16A-Tx-VOL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="宋炜力" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16A-Tx-VOL">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zSY-xu-1gn">
@@ -2069,27 +2069,6 @@
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="zSY-xu-1gn"/>
-                                    </mask>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="840-WT-VQX">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ybv-b1-Fv7">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="25"/>
-                                    </constraint>
-                                </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Ybv-b1-Fv7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Ybv-b1-Fv7"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2226,6 +2205,27 @@
                                     <action selector="btnClick:" destination="n1i-lW-mx9" eventType="touchUpInside" id="NKx-VP-cBS"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="william.song@magic-benas.cn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="840-WT-VQX">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ybv-b1-Fv7">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ybv-b1-Fv7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ybv-b1-Fv7"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2248,7 +2248,7 @@
                             <constraint firstItem="V60-eb-x4h" firstAttribute="leading" secondItem="w04-kR-m7y" secondAttribute="leading" id="M4M-oq-rNO"/>
                             <constraint firstItem="p61-XB-vuG" firstAttribute="width" secondItem="Kfo-Nz-nGv" secondAttribute="width" id="MXQ-my-KCl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="840-WT-VQX" secondAttribute="trailing" constant="20" id="Oow-3d-Lrq">
-                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="VAB-Nn-8by" secondAttribute="trailing" constant="283" id="P3b-1C-Uko"/>
                             <constraint firstItem="16A-Tx-VOL" firstAttribute="top" secondItem="yxj-e6-Xse" secondAttribute="bottom" constant="28" id="PH8-dw-hsv"/>
@@ -2263,7 +2263,7 @@
                             <constraint firstItem="Kfo-Nz-nGv" firstAttribute="leading" secondItem="hEX-Jw-kvx" secondAttribute="trailing" id="Uez-k7-Vdq"/>
                             <constraint firstItem="Kfo-Nz-nGv" firstAttribute="top" secondItem="wIP-NV-Pb5" secondAttribute="bottom" constant="2" id="VME-Xc-qFu"/>
                             <constraint firstItem="16A-Tx-VOL" firstAttribute="leading" secondItem="VAB-Nn-8by" secondAttribute="trailing" constant="8" id="XJ8-wU-kQn">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="VAB-Nn-8by" firstAttribute="top" secondItem="yxj-e6-Xse" secondAttribute="bottom" constant="33" id="XWQ-hP-hTv">
                                 <variation key="heightClass=regular-widthClass=compact" constant="28"/>
@@ -2287,7 +2287,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VAB-Nn-8by" secondAttribute="trailing" constant="283" id="gK6-Bi-O8C">
                                 <variation key="heightClass=regular-widthClass=compact" constant="283"/>
                             </constraint>
-                            <constraint firstItem="840-WT-VQX" firstAttribute="leading" secondItem="hXD-5q-zBJ" secondAttribute="trailing" constant="-8" id="gQr-vs-uRb"/>
+                            <constraint firstItem="840-WT-VQX" firstAttribute="leading" secondItem="hXD-5q-zBJ" secondAttribute="trailing" constant="-8" id="gQr-vs-uRb">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="p61-XB-vuG" firstAttribute="leading" secondItem="V60-eb-x4h" secondAttribute="trailing" id="hG4-CE-Yec"/>
                             <constraint firstAttribute="bottom" secondItem="3SU-g4-2BE" secondAttribute="bottom" id="hRB-MN-pnR"/>
                             <constraint firstItem="ATy-60-bT1" firstAttribute="top" secondItem="7qn-rR-yPl" secondAttribute="bottom" constant="8" id="idV-TU-8F0"/>
@@ -2319,13 +2321,13 @@
                                 <exclude reference="hXD-5q-zBJ"/>
                                 <exclude reference="VAB-Nn-8by"/>
                                 <exclude reference="16A-Tx-VOL"/>
-                                <exclude reference="840-WT-VQX"/>
                                 <exclude reference="wIP-NV-Pb5"/>
                                 <exclude reference="Kfo-Nz-nGv"/>
                                 <exclude reference="hEX-Jw-kvx"/>
                                 <exclude reference="V60-eb-x4h"/>
                                 <exclude reference="p61-XB-vuG"/>
                                 <exclude reference="oF6-2a-cM4"/>
+                                <exclude reference="840-WT-VQX"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ILZ-wv-yue"/>
@@ -2403,13 +2405,13 @@
                                 <include reference="hXD-5q-zBJ"/>
                                 <include reference="VAB-Nn-8by"/>
                                 <include reference="16A-Tx-VOL"/>
-                                <include reference="840-WT-VQX"/>
                                 <include reference="wIP-NV-Pb5"/>
                                 <include reference="Kfo-Nz-nGv"/>
                                 <include reference="hEX-Jw-kvx"/>
                                 <include reference="V60-eb-x4h"/>
                                 <include reference="p61-XB-vuG"/>
                                 <include reference="oF6-2a-cM4"/>
+                                <include reference="840-WT-VQX"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ILZ-wv-yue"/>
@@ -3479,7 +3481,7 @@
                             <constraint firstAttribute="centerX" secondItem="gF4-2C-MuV" secondAttribute="centerX" id="v7z-EZ-3AZ"/>
                             <constraint firstItem="oqU-aR-WdC" firstAttribute="leading" secondItem="aNs-T0-fcO" secondAttribute="leading" constant="16" id="vHe-mD-QeH"/>
                             <constraint firstItem="KmA-Vv-v6L" firstAttribute="top" secondItem="Hn6-Fv-HHC" secondAttribute="bottom" constant="42" id="vdY-Su-1DK">
-                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="F2x-Rz-2pw" firstAttribute="leading" secondItem="aNs-T0-fcO" secondAttribute="leading" id="wEb-fM-WQF"/>
                             <constraint firstItem="eh3-gG-c4s" firstAttribute="leading" secondItem="aNs-T0-fcO" secondAttribute="leading" id="wKh-WK-GPg"/>
@@ -3697,7 +3699,7 @@
                     <connections>
                         <outlet property="dayLab" destination="dkG-1o-XII" id="GOX-OX-br7"/>
                         <outlet property="monthLab" destination="t4R-7A-Yk5" id="jNq-xD-HqX"/>
-                        <outlet property="venueLab" destination="Uki-nr-rh2" id="bFv-U0-4Ri"/>
+                        <outlet property="venueTextField" destination="Uki-nr-rh2" id="bCu-cX-CPc"/>
                         <outlet property="venueView" destination="gF4-2C-MuV" id="fei-6E-EIJ"/>
                         <outlet property="yearLab" destination="oqU-aR-WdC" id="xI0-NY-KAH"/>
                     </connections>

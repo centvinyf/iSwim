@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *monthLab;
 @property (weak, nonatomic) IBOutlet UILabel *dayLab;
 @property (weak, nonatomic) IBOutlet UIView *venueView;
-@property (weak, nonatomic) IBOutlet UITextField *venueLab;
+@property (weak, nonatomic) IBOutlet UITextField *venueTextField;
 
 @end
 
@@ -24,6 +24,8 @@
     // Do any additional setup after loading the view.
     _venueView.layer.masksToBounds=YES;
     _venueView.layer.cornerRadius=5;
+    [_venueTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+
 }
 - (IBAction)btnClick:(UIButton *)sender {
     switch (sender.tag) {
@@ -101,7 +103,7 @@
         }
         NSDictionary*birthdayDic=@{@"year":_yearLab.text,@"month":_monthLab.text,@"day":_dayLab.text};
         [personInfoDic setObject:birthdayDic forKey:@"birthday"];
-        [personInfoDic setObject:_venueLab.text forKey:@"venue"];
+        [personInfoDic setObject:_venueTextField.text forKey:@"venue"];
         [[NSUserDefaults standardUserDefaults]setObject:personInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
