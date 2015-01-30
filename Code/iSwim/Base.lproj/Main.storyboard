@@ -776,7 +776,7 @@
         <!--登陆-->
         <scene sceneID="Xnn-Ib-ri8">
             <objects>
-                <viewController title="游泳控" id="fn8-he-Gl7" userLabel="登陆" sceneMemberID="viewController">
+                <viewController title="游泳控" id="fn8-he-Gl7" userLabel="登陆" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iic-jU-g4k"/>
                         <viewControllerLayoutGuide type="bottom" id="5Ls-ca-agp"/>
@@ -3506,10 +3506,6 @@
                                 <exclude reference="FHY-YX-Wqf"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6rP-k4-cQ1"/>
-                                <exclude reference="LF9-7S-028"/>
-                                <exclude reference="wKh-WK-GPg"/>
-                                <exclude reference="ypQ-8J-Pc6"/>
                                 <exclude reference="DhV-ch-bPS"/>
                                 <exclude reference="Vq5-t1-kB7"/>
                                 <exclude reference="X0M-Q3-9v8"/>
@@ -3576,6 +3572,8 @@
                                 <exclude reference="6vY-48-ngP"/>
                                 <exclude reference="Qt5-Zt-JJg"/>
                                 <exclude reference="lxF-mg-0Fs"/>
+                                <exclude reference="Wpg-uw-4UF"/>
+                                <exclude reference="khB-Vk-6dw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -3606,10 +3604,6 @@
                                 <include reference="FHY-YX-Wqf"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6rP-k4-cQ1"/>
-                                <include reference="LF9-7S-028"/>
-                                <include reference="wKh-WK-GPg"/>
-                                <include reference="ypQ-8J-Pc6"/>
                                 <include reference="DhV-ch-bPS"/>
                                 <include reference="Vq5-t1-kB7"/>
                                 <include reference="X0M-Q3-9v8"/>
@@ -3676,6 +3670,8 @@
                                 <include reference="6vY-48-ngP"/>
                                 <include reference="Qt5-Zt-JJg"/>
                                 <include reference="lxF-mg-0Fs"/>
+                                <include reference="Wpg-uw-4UF"/>
+                                <include reference="khB-Vk-6dw"/>
                             </mask>
                         </variation>
                     </view>
