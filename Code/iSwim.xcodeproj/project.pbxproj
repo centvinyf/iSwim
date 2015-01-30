@@ -48,6 +48,9 @@
 		7CC6779C1A77515B00FD3287 /* TrainingPlanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */; };
 		7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */; };
 		7CDEF59B1A7B0DBB006FF48D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF59A1A7B0DBB006FF48D /* MainViewController.m */; };
+		7CDEF59E1A7B2743006FF48D /* MyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF59D1A7B2743006FF48D /* MyRecordViewController.m */; };
+		7CDEF5A11A7B28AA006FF48D /* PointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF5A01A7B28AA006FF48D /* PointsViewController.m */; };
+		7CDEF5A71A7B2A79006FF48D /* TrainingRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF5A61A7B2A79006FF48D /* TrainingRecordsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +132,12 @@
 		7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingPlanViewController.m; sourceTree = "<group>"; };
 		7CDEF5991A7B0DBB006FF48D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7CDEF59A1A7B0DBB006FF48D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7CDEF59C1A7B2743006FF48D /* MyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewController.h; sourceTree = "<group>"; };
+		7CDEF59D1A7B2743006FF48D /* MyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewController.m; sourceTree = "<group>"; };
+		7CDEF59F1A7B28AA006FF48D /* PointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsViewController.h; sourceTree = "<group>"; };
+		7CDEF5A01A7B28AA006FF48D /* PointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsViewController.m; sourceTree = "<group>"; };
+		7CDEF5A51A7B2A79006FF48D /* TrainingRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingRecordsViewController.h; sourceTree = "<group>"; };
+		7CDEF5A61A7B2A79006FF48D /* TrainingRecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingRecordsViewController.m; sourceTree = "<group>"; };
 		BDB6D6BDC0E11EBBE26CA79E /* libPods-iSwim.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iSwim.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +218,12 @@
 				7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */,
 				2CAC1F401A78C15400DA4292 /* RankingViewController.h */,
 				2CAC1F411A78C15400DA4292 /* RankingViewController.m */,
+				7CDEF59C1A7B2743006FF48D /* MyRecordViewController.h */,
+				7CDEF59D1A7B2743006FF48D /* MyRecordViewController.m */,
+				7CDEF59F1A7B28AA006FF48D /* PointsViewController.h */,
+				7CDEF5A01A7B28AA006FF48D /* PointsViewController.m */,
+				7CDEF5A51A7B2A79006FF48D /* TrainingRecordsViewController.h */,
+				7CDEF5A61A7B2A79006FF48D /* TrainingRecordsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -435,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C55F0821A77AC1C0077189D /* JifenTableViewCell.m in Sources */,
+				7CDEF5A71A7B2A79006FF48D /* TrainingRecordsViewController.m in Sources */,
 				7C320A671A775C890023DD06 /* NameAndEmailVC.m in Sources */,
 				7C320A6C1A7794AC0023DD06 /* CropImageViewController.m in Sources */,
 				7CC677781A763DE600FD3287 /* MBLineChart.m in Sources */,
@@ -461,6 +477,8 @@
 				2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */,
 				7CC677971A77515B00FD3287 /* ScoreDetailViewController.m in Sources */,
 				7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */,
+				7CDEF5A11A7B28AA006FF48D /* PointsViewController.m in Sources */,
+				7CDEF59E1A7B2743006FF48D /* MyRecordViewController.m in Sources */,
 				7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */,
 				2CAC1F451A78C6F100DA4292 /* ThreeLabelTableViewCell.m in Sources */,
 				7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */,
