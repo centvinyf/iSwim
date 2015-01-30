@@ -878,6 +878,9 @@
                                         <include reference="ibB-EJ-6uX"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="showMyRecord:" destination="fn8-he-Gl7" eventType="touchUpInside" id="fEq-2H-qrg"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-3" translatesAutoresizingMaskIntoConstraints="NO" id="msS-Dy-3Ps">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -912,6 +915,9 @@
                                         <include reference="pIj-FG-NKJ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="showTrainingRecords:" destination="fn8-he-Gl7" eventType="touchUpInside" id="4AI-g9-3AN"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2-1" translatesAutoresizingMaskIntoConstraints="NO" id="8iB-RB-Z6Y">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -946,6 +952,9 @@
                                         <include reference="qZ2-jq-nJ7"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="showPointsDetail:" destination="fn8-he-Gl7" eventType="touchUpInside" id="Zpi-8a-BXH"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2-2" translatesAutoresizingMaskIntoConstraints="NO" id="oKe-UB-Juq">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -980,6 +989,9 @@
                                         <include reference="f10-7G-Pj2"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="showTrainingEvents:" destination="fn8-he-Gl7" eventType="touchUpInside" id="KRO-D9-thb"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2-3" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-le-R1t">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1014,6 +1026,9 @@
                                         <include reference="Rdk-XL-ZuU"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="showTrainingDetail:" destination="fn8-he-Gl7" eventType="touchUpInside" id="wSr-PM-jSb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

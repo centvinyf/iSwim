@@ -34,4 +34,34 @@
 }
 */
 
+- (IBAction)showMyRecord:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
+    UIViewController *myRecordViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MyRecordViewController"];
+    [self.navigationController pushViewController:myRecordViewController animated:YES];
+}
+
+- (IBAction)showTrainingRecords:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
+    UIViewController *myRecordViewController = [storyBoard instantiateViewControllerWithIdentifier:@"TrainingRecordsViewController"];
+    [self.navigationController pushViewController:myRecordViewController animated:YES];
+
+}
+
+- (IBAction)showPointsDetail:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
+    UIViewController *pointsViewController = [storyBoard instantiateViewControllerWithIdentifier:@"PointsViewController"];
+    [self.navigationController pushViewController:pointsViewController animated:YES];
+}
+
+- (IBAction)showTrainingEvents:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
+    UIViewController *pointsViewController = [storyBoard instantiateViewControllerWithIdentifier:@"TrainingEventsViewController"];
+    [self.navigationController pushViewController:pointsViewController animated:YES];
+}
+
+- (IBAction)showTrainingDetail:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
+    UIViewController *myRecordViewController = [storyBoard instantiateViewControllerWithIdentifier:@"TrainingDetailViewController"];
+    [self.navigationController pushViewController:myRecordViewController animated:YES];
+}
 @end
