@@ -9,6 +9,11 @@
 #import "BasicInfomationViewController.h"
 #import "BasicInfoViewCell.h"
 @interface BasicInfomationViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property (weak,nonatomic) NSArray * PicName;
+@property (weak, nonatomic) NSArray *TitleName;
+@property (weak,nonatomic) NSMutableArray * Data;
+
 
 @end
 

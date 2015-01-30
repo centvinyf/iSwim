@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ScoreDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *mTableView;
-@property (assign,nonatomic) NSInteger NumberOfDetail;
+
 @end

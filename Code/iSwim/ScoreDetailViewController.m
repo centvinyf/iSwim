@@ -10,7 +10,8 @@
 #import "ThisBestHeadTableViewCell.h"
 #import "ThisBestDetailTableViewCell.h"
 @interface ScoreDetailViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property (assign,nonatomic) NSInteger NumberOfDetail;
 @end
 
 @implementation ScoreDetailViewController

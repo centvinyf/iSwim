@@ -10,7 +10,7 @@
 #import "TrainingPlanTableViewCell.h"
 #import "TwoLabelTableViewCell.h"
 @interface TrainingPlanViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *mTabelView;
 @end
 
 @implementation TrainingPlanViewController

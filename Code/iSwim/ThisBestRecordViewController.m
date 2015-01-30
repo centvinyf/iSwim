@@ -10,6 +10,11 @@
 #import "ThisBestDetailTableViewCell.h"
 #import "ThisBestHeadTableViewCell.h"
 @interface ThisBestRecordViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property(weak,nonatomic) NSArray * mName;
+@property(weak,nonatomic) NSArray * Score;
+@property (weak,nonatomic) NSArray * Begin;
+@property (weak,nonatomic) NSArray * End;
 
 @end
 
@@ -56,8 +61,8 @@
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: identifiller2];
         }
-        NSArray * name =[[NSArray alloc]initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
-        cell.mName.text = name[indexPath.row-1];
+        NSArray * mName =[[NSArray alloc]initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
+        cell.mName.text = mName[indexPath.row-1];
         
         return cell;
     }
