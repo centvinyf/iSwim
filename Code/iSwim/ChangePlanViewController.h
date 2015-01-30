@@ -17,6 +17,7 @@
     NSString *minute;
     NSString *second;
 }
+@property (weak, nonatomic) IBOutlet UIButton *mBigConfirmButton;
 @property (weak, nonatomic) IBOutlet UIButton *mTrainingDate;
 @property (weak, nonatomic) IBOutlet UIButton *mTrainingTime;
 @property (weak, nonatomic) IBOutlet UITextField *mTrainingChangci;
