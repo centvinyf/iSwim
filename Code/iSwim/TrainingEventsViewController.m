@@ -33,16 +33,44 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifiller = @"TrainingEventsTableViewCell";
-    TrainingEventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-    if (!cell) {
-        cell = [[TrainingEventsTableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier: identifiller];
+    static NSString *identifiller = @"TrainingEventTitle";
+    if (indexPath.row == 0) {
+        TrainingEventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
+        if (!cell) {
+            cell = [[TrainingEventsTableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier: identifiller];
+        }
+        
+        return cell;
+    }
+    else{
+       static NSString *identifiller2 = @"TrainingEventDetail";
+    
+        TrainingEventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller2];
+        if (!cell) {
+            cell = [[TrainingEventsTableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier: identifiller2];
+        }
+        
+        return cell;
+
+   
+}
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 44;
+    }
+    else
+    {
+        return 200;
     }
     
-    return cell;
 }
+
 
 /*
 #pragma mark - Navigation
