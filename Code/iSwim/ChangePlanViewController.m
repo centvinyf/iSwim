@@ -96,6 +96,7 @@
     
     [(UIButton *)self.mTimePicker.sender setTitle:CurrentTime forState:UIControlStateNormal];
     self.mTimeSetView.hidden = YES;
+    self.mBigConfirmButton.hidden = NO;
 }
 - (IBAction)mHideButtonPressed:(id)sender {
     self.mHideView.hidden = YES;
@@ -106,6 +107,7 @@
 }
 - (IBAction)mDateButtonPressed:(id)sender {
     self.mDateSetView.hidden = NO;
+    self.mBigConfirmButton.hidden = YES;
     self.mDatePicker.sender = sender;
     
 }
@@ -115,12 +117,14 @@
     NSString * Date = [DataFomatter stringFromDate:self.mDatePicker.date];
     [self.mTrainingDate setTitle:Date forState:UIControlStateNormal ];
     self.mDateSetView.hidden = YES;
+    self.mBigConfirmButton.hidden = NO;
 }
 - (IBAction)mEditDidBegin:(id)sender {
     self.mHideView.hidden = NO;
 }
 - (IBAction)mTimeChangeButtonPressed:(id)sender {
     self.mTimeSetView.hidden = NO;
+    self.mBigConfirmButton.hidden = YES;
     self.mTimePicker.sender = sender;
 }
 
