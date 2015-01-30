@@ -10,12 +10,12 @@
 
 @interface NameAndEmailVC ()
 {
-    BOOL _sex;
+    BOOL _mSex;
 }
-@property (weak, nonatomic) IBOutlet UIImageView *nameView;
-@property (weak, nonatomic) IBOutlet UIImageView *emailView;
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *mNameView;
+@property (weak, nonatomic) IBOutlet UIImageView *mEmailView;
+@property (weak, nonatomic) IBOutlet UITextField *mNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *mEmailTextField;
 
 @end
 
@@ -23,28 +23,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _nameView.layer.masksToBounds=YES;
-    _nameView.layer.cornerRadius=5;
+    _mNameView.layer.masksToBounds=YES;
+    _mNameView.layer.cornerRadius=5;
 //    _nameView.layer.borderColor=[[UIColor grayColor]CGColor];
 //    _nameView.layer.borderWidth=1;
     
-    _emailView.layer.masksToBounds=YES;
-    _emailView.layer.cornerRadius=5;
+    _mEmailView.layer.masksToBounds=YES;
+    _mEmailView.layer.cornerRadius=5;
     //_emailView.layer.borderColor=[[UIColor grayColor]CGColor];
     //_emailView.layer.borderWidth=1;
     
-    [_nameTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    [_emailTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [_mNameTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [_mEmailTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
     
-    _emailTextField.autocorrectionType=UITextAutocorrectionTypeNo;
+    _mEmailTextField.autocorrectionType=UITextAutocorrectionTypeNo;
 }
 - (IBAction)btnClick:(UIButton *)sender {
-    if (!_sex) {
+    if (!_mSex) {
         [sender setBackgroundImage:[UIImage imageNamed:@"女"] forState:UIControlStateNormal];
     }else{
         [sender setBackgroundImage:[UIImage imageNamed:@"男"] forState:UIControlStateNormal];
     }
-    _sex=!_sex;
+    _mSex=!_mSex;
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -62,14 +62,14 @@
     // save name,sex,email
     NSLog(@"%s\n%@",__FUNCTION__,segue.identifier);
     if ([segue.identifier isEqualToString:@"HeightAndWeightVC"]) {
-        NSMutableDictionary*personInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
-        if (!personInfoDic) {
-            personInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
+        NSMutableDictionary*vPersonInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
+        if (!vPersonInfoDic) {
+            vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
-        [personInfoDic setObject:_nameTextField.text forKey:@"name"];
-        [personInfoDic setObject:_emailTextField.text forKey:@"email"];
-        [personInfoDic setObject:[NSNumber numberWithBool:_sex] forKey:@"sex"];
-        [[NSUserDefaults standardUserDefaults]setObject:personInfoDic forKey:@"personInfoDic"];
+        [vPersonInfoDic setObject:_mNameTextField.text forKey:@"name"];
+        [vPersonInfoDic setObject:_mEmailTextField.text forKey:@"email"];
+        [vPersonInfoDic setObject:[NSNumber numberWithBool:_mSex] forKey:@"sex"];
+        [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
 }

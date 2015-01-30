@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 Magic Beans. All rights reserved.
 //
 
-#define SLIDERWEIGHT _heightSlider.bounds.size.width
+#define kSLIDERWEIGHT _mHeightSlider.bounds.size.width
 #import "HeightAndWeightVC.h"
 
 @interface HeightAndWeightVC ()
-@property (weak, nonatomic) IBOutlet UISlider               *heightSlider;
-@property (weak, nonatomic) IBOutlet UISlider               *weightSlider;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint     *heightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint     *weightConstraint;
-@property (weak, nonatomic) IBOutlet UILabel                *heightLab;
-@property (weak, nonatomic) IBOutlet UILabel                *weightLab;
+@property (weak, nonatomic) IBOutlet UISlider               *mHeightSlider;
+@property (weak, nonatomic) IBOutlet UISlider               *mWeightSlider;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint     *mHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint     *mWeightConstraint;
+@property (weak, nonatomic) IBOutlet UILabel                *mHeightLab;
+@property (weak, nonatomic) IBOutlet UILabel                *mWeightLab;
 
 @end
 
@@ -23,27 +23,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_heightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
-    [_weightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
+    [_mHeightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
+    [_mWeightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
 
-    [_heightSlider setThumbImage:[UIImage imageNamed:@"身高"] forState:UIControlStateNormal];
-    [_heightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
-    [_heightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
+    [_mHeightSlider setThumbImage:[UIImage imageNamed:@"身高"] forState:UIControlStateNormal];
+    [_mHeightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
+    [_mHeightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
 
-    [_weightSlider setThumbImage:[UIImage imageNamed:@"体重"] forState:UIControlStateNormal];
-    [_weightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
-    [_weightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
+    [_mWeightSlider setThumbImage:[UIImage imageNamed:@"体重"] forState:UIControlStateNormal];
+    [_mWeightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
+    [_mWeightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
     
 }
 -(void)valueChange:(UISlider*)slider
 {
-    if (slider==_heightSlider) {
-        _heightLab.text=[NSString stringWithFormat:@"%dcm",120+(int)(slider.value*100)];
-        _heightConstraint.constant=slider.value*(SLIDERWEIGHT - 36.0 )-9.0;
+    if (slider==_mHeightSlider) {
+        _mHeightLab.text=[NSString stringWithFormat:@"%dcm",120+(int)(slider.value*100)];
+        _mHeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 )-9.0;
     }
     else{
-        _weightLab.text=[NSString stringWithFormat:@"%dkg",50+(int)(slider.value*100)];
-        _weightConstraint.constant=slider.value*(SLIDERWEIGHT - 36.0 )-9.0;
+        _mWeightLab.text=[NSString stringWithFormat:@"%dkg",50+(int)(slider.value*100)];
+        _mWeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 )-9.0;
     }
 }
 
@@ -58,13 +58,13 @@
     NSLog(@"%s",__FUNCTION__);
 
     if ([segue.identifier isEqualToString:@"BirthdayDateVC"]) {
-        NSMutableDictionary*personInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
-        if (!personInfoDic) {
-            personInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
+        NSMutableDictionary*vPersonInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
+        if (!vPersonInfoDic) {
+            vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
-        [personInfoDic setObject:_heightLab.text forKey:@"height"];
-        [personInfoDic setObject:_weightLab.text forKey:@"weight"];
-        [[NSUserDefaults standardUserDefaults]setObject:personInfoDic forKey:@"personInfoDic"];
+        [vPersonInfoDic setObject:_mHeightLab.text forKey:@"height"];
+        [vPersonInfoDic setObject:_mWeightLab.text forKey:@"weight"];
+        [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
 }

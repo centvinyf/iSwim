@@ -8,14 +8,14 @@
 
 #import "PersonInfoVC.h"
 
-@interface PersonInfoVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface PersonInfoVC ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     
     __weak IBOutlet UITableView *_table;
     NSArray*_titleArray;
 }
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
-
+@property (strong,nonatomic)UIImageView*headerImageView;
 @end
 
 @implementation PersonInfoVC
@@ -94,11 +94,11 @@
     }
     
     else if (indexPath.section==0&&indexPath.row==0) {
-        UIImageView*imgv=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-        imgv.backgroundColor=[UIColor cyanColor];
-        imgv.layer.masksToBounds=YES;
-        imgv.layer.cornerRadius=50;
-        cell.accessoryView=imgv;
+        _headerImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 10, 80, 80)];
+        _headerImageView.backgroundColor=[UIColor cyanColor];
+        _headerImageView.layer.masksToBounds=YES;
+        _headerImageView.layer.cornerRadius=40;
+        cell.accessoryView=_headerImageView;
     }
 #warning line
     if (indexPath.section==1){
@@ -111,7 +111,7 @@
     if (indexPath.section==0&&indexPath.row==1) {
         cell.detailTextLabel.text=[dic objectForKey:@"name"];
     }else if (indexPath.section==1&&indexPath.row==0){
-        cell.detailTextLabel.text=[[dic objectForKey:@"sex"]boolValue]?@"男":@"女";
+        cell.detailTextLabel.text=[[dic objectForKey:@"sex"]boolValue]?@"女":@"男";
     }else if (indexPath.section==1&&indexPath.row==1){
         cell.detailTextLabel.text=[dic objectForKey:@"height"];
     }else if (indexPath.section==1&&indexPath.row==2){
@@ -126,9 +126,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (0==indexPath.section&&0==indexPath.row) {
-        [self performSegueWithIdentifier:@"CropImageViewController" sender:nil];
-    }
-    else if (0==indexPath.section&&1==indexPath.row){
+       [self performSegueWithIdentifier:@"CropImageViewController" sender:nil];
+//        [self changeHeadImage];
+    }else if (0==indexPath.section&&1==indexPath.row){
         [self performSegueWithIdentifier:@"changeNameVC" sender:nil];
     }else if (1==indexPath.section){
         [self performSegueWithIdentifier:@"changeInfoVC" sender:nil];
@@ -142,67 +142,26 @@
 }
 #pragma mark image
 
-
-
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    
-//    
-//    _nameLabel.text = _user.name;
-//    _nickNameField.text = _user.nickName;
-//    _emailField.text = _user.email;
-//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",SERVER_ADDRESS,PIC_ADDRESS,_user.headURL]];
-//    [_headImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"head.png"]];
-//    
-//    if (_isSelf) {
-//        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"上传头像" style:UIBarButtonItemStylePlain target:self action:@selector(changeHeadImage)];
-//        self.navigationItem.rightBarButtonItem = item;
-//        [item release];
-//    }else{
-//        confirmButton.hidden = YES;
-//        _nickNameField.enabled = NO;
-//        _emailField.enabled = NO;
-//    }
-//}
-//
-//
-//- (void)changeHeadImage{
-//    
-//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//        picker.allowsEditing = YES;
-//        picker.delegate = self;
-//        [self presentViewController:picker animated:YES completion:nil];
-//        [picker release];
-//    });
-//    
-//}
-//
-//
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
-//    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        _headImageView.image = image;
-//        
-//        [NetworkTool uploadHeadImage:image completionBlock:^(NSDictionary *dic) {
-//            [self dismissViewControllerAnimated:YES completion:nil];
-//        }];
-//        
-//    });
-//}
-//
-//
-//- (IBAction)confirmButtonClick:(UIButton *)sender {
-//    
-//    [NetworkTool updatePersonalInfoWithNickName:_nickNameField.text email:_emailField.text withCompletionBlock:^(NSDictionary *dic) {
-//        SHOW_ALERT([dic objectForKey:@"info"]);
-//    }];
-//    
-//}
-
-
-
+- (void)changeHeadImage{
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+        picker.delegate = self;
+        [self presentViewController:picker animated:YES completion:nil];
+        
+        //[[UIApplication sharedApplication] setStatusBarStyle:0];
+    });
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _headerImageView.image = image;
+        [self dismissViewControllerAnimated:YES completion:nil];
+        //[[UIApplication sharedApplication] setStatusBarStyle:1];
+    });
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
