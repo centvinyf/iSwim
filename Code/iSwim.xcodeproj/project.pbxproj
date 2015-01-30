@@ -47,6 +47,7 @@
 		7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6778F1A77515B00FD3287 /* TrainingDetailViewController.m */; };
 		7CC6779C1A77515B00FD3287 /* TrainingPlanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */; };
 		7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */; };
+		7CDEF59B1A7B0DBB006FF48D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF59A1A7B0DBB006FF48D /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,8 @@
 		7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingPlanTableViewCell.m; sourceTree = "<group>"; };
 		7CC677921A77515B00FD3287 /* TrainingPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingPlanViewController.h; sourceTree = "<group>"; };
 		7CC677931A77515B00FD3287 /* TrainingPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingPlanViewController.m; sourceTree = "<group>"; };
+		7CDEF5991A7B0DBB006FF48D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7CDEF59A1A7B0DBB006FF48D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		BDB6D6BDC0E11EBBE26CA79E /* libPods-iSwim.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iSwim.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -275,11 +278,11 @@
 				7CAB6B461A75DF46000C6F99 /* AppDelegate.h */,
 				7CAB6B471A75DF46000C6F99 /* AppDelegate.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
+				7CDEF5991A7B0DBB006FF48D /* MainViewController.h */,
+				7CDEF59A1A7B0DBB006FF48D /* MainViewController.m */,
 				0C1E1E001A79B87200CDAA4F /* Login&Regist */,
 				7CF65C121A7A142C0060FDED /* UserCenter */,
 				7CC677791A763E4800FD3287 /* Graph.storyboard */,
-				7C320A6A1A7794AC0023DD06 /* CropImageViewController.h */,
-				7C320A6B1A7794AC0023DD06 /* CropImageViewController.m */,
 				7CC6777B1A763E6400FD3287 /* GraphViewController.h */,
 				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
 				7CAB6B681A75DF5E000C6F99 /* Records.storyboard */,
@@ -315,6 +318,8 @@
 		7CF65C121A7A142C0060FDED /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
+				7C320A6A1A7794AC0023DD06 /* CropImageViewController.h */,
+				7C320A6B1A7794AC0023DD06 /* CropImageViewController.m */,
 				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
 				7C320A651A775C890023DD06 /* PersonInfoVC.m */,
 			);
@@ -446,6 +451,7 @@
 				2C55F0851A77ADAC0077189D /* TrainingEventsViewController.m in Sources */,
 				2C55F07F1A77A9BB0077189D /* JifenDetailViewController.m in Sources */,
 				2CAC1F521A78E41F00DA4292 /* MBPickerView.m in Sources */,
+				7CDEF59B1A7B0DBB006FF48D /* MainViewController.m in Sources */,
 				7C320A721A7795610023DD06 /* KICropImageView.m in Sources */,
 				2C55F0881A77B1530077189D /* TrainingEventsTableViewCell.m in Sources */,
 				7CC677961A77515B00FD3287 /* PersonalRecordViewController.m in Sources */,
