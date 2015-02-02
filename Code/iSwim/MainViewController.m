@@ -34,32 +34,37 @@
 }
 */
 
-- (IBAction)showMyRecord:(id)sender {
+- (IBAction)showMyRecord:(id)sender
+{
     UIStoryboard *vStoryBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
     UIViewController *vMyRecordViewController = [vStoryBoard instantiateViewControllerWithIdentifier:@"MyRecordViewController"];
     [self.navigationController pushViewController:vMyRecordViewController animated:YES];
 }
 
-- (IBAction)showTrainingRecords:(id)sender {
+- (IBAction)showTrainingRecords:(id)sender
+{
     UIStoryboard *vStoryBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
     UIViewController *vMyRecordViewController = [vStoryBoard instantiateViewControllerWithIdentifier:@"TrainingRecordsViewController"];
     [self.navigationController pushViewController:vMyRecordViewController animated:YES];
 
 }
 
-- (IBAction)showPointsDetail:(id)sender {
+- (IBAction)showPointsDetail:(id)sender
+{
     UIStoryboard *vStoryBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
     UIViewController *vPointsViewController = [vStoryBoard instantiateViewControllerWithIdentifier:@"PointsViewController"];
     [self.navigationController pushViewController:vPointsViewController animated:YES];
 }
 
-- (IBAction)showTrainingEvents:(id)sender {
+- (IBAction)showTrainingEvents:(id)sender
+{
     UIStoryboard *vStoryBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
     UIViewController *vPointsViewController = [vStoryBoard instantiateViewControllerWithIdentifier:@"TrainingEventsViewController"];
     [self.navigationController pushViewController:vPointsViewController animated:YES];
 }
 
-- (IBAction)showTrainingDetail:(id)sender {
+- (IBAction)showTrainingDetail:(id)sender
+{
     UIStoryboard *vStoryBoard = [UIStoryboard storyboardWithName:@"Records" bundle:nil];
     UIViewController *vMyRecordViewController = [vStoryBoard instantiateViewControllerWithIdentifier:@"TrainingDetailViewController"];
     [self.navigationController pushViewController:vMyRecordViewController animated:YES];

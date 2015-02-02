@@ -37,11 +37,13 @@
 }
 -(void)valueChange:(UISlider*)slider
 {
-    if (slider==_mHeightSlider) {
+    if (slider==_mHeightSlider)
+    {
         _mHeightLab.text=[NSString stringWithFormat:@"%dcm",120+(int)(slider.value*100)];
         _mHeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 )-9.0;
     }
-    else{
+    else
+    {
         _mWeightLab.text=[NSString stringWithFormat:@"%dkg",50+(int)(slider.value*100)];
         _mWeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 )-9.0;
     }
@@ -53,13 +55,14 @@
 }
 
 #pragma mark - Navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // save weight,height
-    NSLog(@"%s",__FUNCTION__);
-
-    if ([segue.identifier isEqualToString:@"BirthdayDateVC"]) {
+    if ([segue.identifier isEqualToString:@"BirthdayDateVC"])
+    {
         NSMutableDictionary*vPersonInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
-        if (!vPersonInfoDic) {
+        if (!vPersonInfoDic)
+        {
             vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
         [vPersonInfoDic setObject:_mHeightLab.text forKey:@"height"];

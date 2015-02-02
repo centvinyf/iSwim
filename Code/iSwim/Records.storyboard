@@ -7290,7 +7290,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxo-qf-Oi3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="蓝底" translatesAutoresizingMaskIntoConstraints="NO" id="R8B-R9-Iyd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBg-1" translatesAutoresizingMaskIntoConstraints="NO" id="R8B-R9-Iyd">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     </imageView>
                                 </subviews>
@@ -8540,7 +8540,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="蓝底方框" translatesAutoresizingMaskIntoConstraints="NO" id="Bw9-6E-Yut">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBg-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bw9-6E-Yut">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="tD5-rK-zxy">
@@ -9571,6 +9571,7 @@
         <image name="Items" width="26" height="53"/>
         <image name="Training_changci" width="15" height="17"/>
         <image name="basic_info_detail" width="30" height="20"/>
+        <image name="blueBg-1" width="320" height="290"/>
         <image name="bottom_px_gray_bar" width="320" height="10"/>
         <image name="date" width="28" height="42"/>
         <image name="energy" width="15" height="17"/>
@@ -9593,8 +9594,6 @@
         <image name="training_distance" width="15" height="17"/>
         <image name="training_time" width="15" height="17"/>
         <image name="white_score" width="30" height="54"/>
-        <image name="蓝底" width="320" height="568"/>
-        <image name="蓝底方框" width="320" height="290"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ky8-ar-wLg"/>

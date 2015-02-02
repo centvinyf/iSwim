@@ -39,19 +39,25 @@
 }
 -(void)valueChange:(UISlider*)slider
 {
-    if (slider==_mHeightSlider) {
+    if (slider==_mHeightSlider)
+    {
         _mHeightLab.text=[NSString stringWithFormat:@"%dcm",120+(int)(slider.value*100)];
         _mHeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 )-9.0;
     }
-    else{
+    else
+    {
         _mWeightLab.text=[NSString stringWithFormat:@"%dkg",50+(int)(slider.value*100)];
         _mWeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 )-9.0;
     }
 }
-- (IBAction)btnClick:(UIButton *)sender {
-    if (!_mSex) {
+- (IBAction)btnClick:(UIButton *)sender
+{
+    if (!_mSex)
+    {
         [sender setBackgroundImage:[UIImage imageNamed:@"woman"] forState:UIControlStateNormal];
-    }else{
+    }
+    else
+    {
         [sender setBackgroundImage:[UIImage imageNamed:@"man"] forState:UIControlStateNormal];
     }
     _mSex=!_mSex;

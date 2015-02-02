@@ -47,22 +47,28 @@
 {
     [self.view endEditing:YES];
 }
-- (IBAction)btnClick:(UIButton *)sender {
-    if (LOGINED) {
+- (IBAction)btnClick:(UIButton *)sender
+{
+    if (LOGINED)
+    {
         [self performSegueWithIdentifier:@"PasswordVC" sender:nil];
-    }else
+    }
+    else
     {
         UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
         vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainVC"];
     }
 }
-- (IBAction)forgetPasswordBtn:(id)sender{
+- (IBAction)forgetPasswordBtn:(id)sender
+{
     _mCoverView.hidden=NO;
 }
-- (IBAction)coverSureBtnClick:(id)sender {
+- (IBAction)coverSureBtnClick:(id)sender
+{
     _mCoverView.hidden=YES;
 }
-- (IBAction)coverCancelBtnClick:(id)sender {
+- (IBAction)coverCancelBtnClick:(id)sender
+{
     _mCoverView.hidden=YES;
 }
 

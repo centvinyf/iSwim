@@ -17,9 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIView         *mCoverView;
 @property (weak, nonatomic) IBOutlet UIButton       *mSureBtn;
 @property (strong,nonatomic)UIImageView             *mHeaderImageView;
-@property (weak, nonatomic) IBOutlet UIButton *mPhotographBtn;
-@property (weak, nonatomic) IBOutlet UIButton *mPhotoAlbumBtn;
-@property (weak, nonatomic) IBOutlet UIButton *mPhotoCancelBtn;
+@property (weak, nonatomic) IBOutlet UIButton       *mPhotographBtn;
+@property (weak, nonatomic) IBOutlet UIButton       *mPhotoAlbumBtn;
+@property (weak, nonatomic) IBOutlet UIButton       *mPhotoCancelBtn;
 
 @end
 
@@ -52,33 +52,48 @@
     UITapGestureRecognizer *vTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
     [_mCoverView addGestureRecognizer:vTapGestureRecognizer];
     _mTitleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"],@[@"修改密码"]];
+    
+    _mHeaderImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 10, 80, 80)];
+    _mHeaderImageView.backgroundColor=[UIColor cyanColor];
+    _mHeaderImageView.layer.masksToBounds=YES;
+    _mHeaderImageView.layer.cornerRadius=40;
 }
 -(void)handlePan:(UIPanGestureRecognizer*)pan
 {
     _mCoverView.hidden=YES;
 }
-- (IBAction)coverBtnClick:(UIButton *)sender {
-    if (sender.tag==1) {
+- (IBAction)coverBtnClick:(UIButton *)sender
+{
+    if (sender.tag==1)
+    {
         //[self performSegueWithIdentifier:@"CropImageViewController" sender:nil];
         [self changeHeadImage:1];
-    }else if (sender.tag==2){
+    }
+    else if (sender.tag==2)
+    {
         [self changeHeadImage:2];
-    }else if (sender.tag==3){
+    }
+    else if (sender.tag==3)
+    {
         _mCoverView.hidden=YES;
     }
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section==0) {
+    if (section==0)
+    {
         return 2;
     }
-    else if (section==1){
+    else if (section==1)
+    {
         return 3;
     }
-    else if (section==2){
+    else if (section==2)
+    {
         return 2;
     }
-    else{
+    else
+    {
         return 1;
     }
 }
@@ -95,7 +110,8 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section==0&&indexPath.row==0) {
+    if (indexPath.section==0&&indexPath.row==0)
+    {
         return 100;
     }
     return 44;
@@ -104,80 +120,107 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell*cell;
-    if (indexPath.section==0&&indexPath.row==0) {
+    if (indexPath.section==0&&indexPath.row==0)
+    {
         cell=[tableView dequeueReusableCellWithIdentifier:@"headerCell"];
-        if (!cell) {
+        if (!cell)
+        {
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"headerCell"];
         }
     }
     else{
         cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
-        if (!cell) {
+        if (!cell)
+        {
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
         }
     }
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    if (indexPath.section==0||indexPath.section==2||(indexPath.section==1&&indexPath.row==1)||(indexPath.section==4&&indexPath.row==0)) {
+    if (indexPath.section==0||indexPath.section==2||(indexPath.section==1&&indexPath.row==1)||(indexPath.section==4&&indexPath.row==0))
+    {
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
 
-    if(indexPath.section==3){
+    if(indexPath.section==3)
+    {
         UISwitch*swt=[[UISwitch alloc]init];
         cell.accessoryView=swt;
     }
     
-    else if (indexPath.section==0&&indexPath.row==0) {
-        _mHeaderImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 10, 80, 80)];
-        _mHeaderImageView.backgroundColor=[UIColor cyanColor];
-        _mHeaderImageView.layer.masksToBounds=YES;
-        _mHeaderImageView.layer.cornerRadius=40;
+    else if (indexPath.section==0&&indexPath.row==0)
+    {
         cell.accessoryView=_mHeaderImageView;
     }
 #warning line
-    if (indexPath.section==1){
+    if (indexPath.section==1)
+    {
         
     }
     cell.textLabel.text=[[_mTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     NSMutableDictionary*dic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults]objectForKey:@"personInfoDic"]];
     
-    if (indexPath.section==0&&indexPath.row==1) {
+    if (indexPath.section==0&&indexPath.row==1)
+    {
         cell.detailTextLabel.text=[dic objectForKey:@"name"];
-    }else if (indexPath.section==1&&indexPath.row==0){
+    }
+    else if (indexPath.section==1&&indexPath.row==0)
+    {
         cell.detailTextLabel.text=[[dic objectForKey:@"sex"]boolValue]?@"女":@"男";
-    }else if (indexPath.section==1&&indexPath.row==1){
+    }
+    else if (indexPath.section==1&&indexPath.row==1)
+    {
         cell.detailTextLabel.text=[dic objectForKey:@"height"];
-    }else if (indexPath.section==1&&indexPath.row==2){
+    }
+    else if (indexPath.section==1&&indexPath.row==2)
+    {
         cell.detailTextLabel.text=[dic objectForKey:@"weight"];
-    }else if (indexPath.section==2&&indexPath.row==0){
+    }
+    else if (indexPath.section==2&&indexPath.row==0)
+    {
         cell.detailTextLabel.text=[dic objectForKey:@"email"];
-    }else if (indexPath.section==2&&indexPath.row==1){
+    }
+    else if (indexPath.section==2&&indexPath.row==1)
+    {
         cell.detailTextLabel.text=[dic objectForKey:@"venue"];
     }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (0==indexPath.section&&0==indexPath.row) {
+    if (0==indexPath.section&&0==indexPath.row)
+    {
         _mCoverView.hidden=NO;
-    }else if (0==indexPath.section&&1==indexPath.row){
+    }
+    else if (0==indexPath.section&&1==indexPath.row)
+    {
         [self performSegueWithIdentifier:@"changeNameVC" sender:nil];
-    }else if (1==indexPath.section){
+    }
+    else if (1==indexPath.section)
+    {
         [self performSegueWithIdentifier:@"changeInfoVC" sender:nil];
-    }else if (2==indexPath.section&&0==indexPath.row){
+    }
+    else if (2==indexPath.section&&0==indexPath.row)
+    {
         [self performSegueWithIdentifier:@"changeEmailVC" sender:nil];
-    }else if (2==indexPath.section&&1==indexPath.row){
+    }
+    else if (2==indexPath.section&&1==indexPath.row)
+    {
         [self performSegueWithIdentifier:@"changeVenueVC" sender:nil];
-    }else if (4==indexPath.section){
+    }
+    else if (4==indexPath.section)
+    {
         [self performSegueWithIdentifier:@"changePasswordVC" sender:nil];
     }
 }
 #pragma mark image
 
-- (void)changeHeadImage:(int)index{
+- (void)changeHeadImage:(int)index
+{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         UIImagePickerController *vPicker = [[UIImagePickerController alloc] init];
-        if (index==1) {
+        if (index==1)
+        {
             vPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         }
         else if (index==2)
