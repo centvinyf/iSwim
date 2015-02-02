@@ -10,6 +10,7 @@
 #import "LoginAndRegistVC.h"
 
 @interface LoginAndRegistVC ()
+
 @property (weak, nonatomic) IBOutlet UIButton           *mLoginBtn;
 @property (weak, nonatomic) IBOutlet UIView             *mCoverView;
 @property (weak, nonatomic) IBOutlet UIButton           *mCoverSureBtn;

@@ -31,17 +31,17 @@
     switch (sender.tag) {
         case 1:
         {
-            _mYearLab.text=[NSString stringWithFormat:@"%d",[_mYearLab.text integerValue]+1];
+            _mYearLab.text=[NSString stringWithFormat:@"%ld",[_mYearLab.text integerValue]+1];
         }
             break;
         case 4:
         {
-            _mYearLab.text=[NSString stringWithFormat:@"%d",[_mYearLab.text integerValue]-1];
+            _mYearLab.text=[NSString stringWithFormat:@"%ld",[_mYearLab.text integerValue]-1];
         }
             break;
         case 2:
         {
-            _mMonthLab.text=[NSString stringWithFormat:@"%d",[_mMonthLab.text integerValue]%12+1];
+            _mMonthLab.text=[NSString stringWithFormat:@"%ld",[_mMonthLab.text integerValue]%12+1];
             if (_mMonthLab.text.intValue<10) {
                 _mMonthLab.text=[NSString stringWithFormat:@"0%d",_mMonthLab.text.intValue];
             }
@@ -49,7 +49,7 @@
             break;
         case 5:
         {
-            _mMonthLab.text=[NSString stringWithFormat:@"%d",([_mMonthLab.text integerValue]-1)];
+            _mMonthLab.text=[NSString stringWithFormat:@"%ld",([_mMonthLab.text integerValue]-1)];
             if (_mMonthLab.text.intValue==0) {
                 _mMonthLab.text=@"12";
             }
@@ -60,7 +60,7 @@
             break;
         case 3:
         {
-            _mDayLab.text=[NSString stringWithFormat:@"%d",[_mDayLab.text integerValue]%31+1];
+            _mDayLab.text=[NSString stringWithFormat:@"%ld",[_mDayLab.text integerValue]%31+1];
             if (_mDayLab.text.intValue<10) {
                 _mDayLab.text=[NSString stringWithFormat:@"0%d",_mDayLab.text.intValue];
             }
@@ -68,7 +68,7 @@
             break;
         case 6:
         {
-            _mDayLab.text=[NSString stringWithFormat:@"%d",([_mDayLab.text integerValue]-1)];
+            _mDayLab.text=[NSString stringWithFormat:@"%ld",([_mDayLab.text integerValue]-1)];
             if (_mDayLab.text.intValue==0) {
                 _mDayLab.text=@"31";
             }

@@ -40,9 +40,9 @@
 }
 - (IBAction)btnClick:(UIButton *)sender {
     if (!_mSex) {
-        [sender setBackgroundImage:[UIImage imageNamed:@"女"] forState:UIControlStateNormal];
+        [sender setBackgroundImage:[UIImage imageNamed:@"woman"] forState:UIControlStateNormal];
     }else{
-        [sender setBackgroundImage:[UIImage imageNamed:@"男"] forState:UIControlStateNormal];
+        [sender setBackgroundImage:[UIImage imageNamed:@"man"] forState:UIControlStateNormal];
     }
     _mSex=!_mSex;
 }
