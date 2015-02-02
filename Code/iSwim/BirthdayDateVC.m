@@ -27,8 +27,10 @@
     [_mVenueTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
 
 }
-- (IBAction)btnClick:(UIButton *)sender {
-    switch (sender.tag) {
+- (IBAction)btnClick:(UIButton *)sender
+{
+    switch (sender.tag)
+    {
         case 1:
         {
             _mYearLab.text=[NSString stringWithFormat:@"%ld",[_mYearLab.text integerValue]+1];
@@ -42,7 +44,8 @@
         case 2:
         {
             _mMonthLab.text=[NSString stringWithFormat:@"%ld",[_mMonthLab.text integerValue]%12+1];
-            if (_mMonthLab.text.intValue<10) {
+            if (_mMonthLab.text.intValue<10)
+            {
                 _mMonthLab.text=[NSString stringWithFormat:@"0%d",_mMonthLab.text.intValue];
             }
         }
@@ -50,10 +53,12 @@
         case 5:
         {
             _mMonthLab.text=[NSString stringWithFormat:@"%ld",([_mMonthLab.text integerValue]-1)];
-            if (_mMonthLab.text.intValue==0) {
+            if (_mMonthLab.text.intValue==0)
+            {
                 _mMonthLab.text=@"12";
             }
-            if (_mMonthLab.text.intValue<10) {
+            if (_mMonthLab.text.intValue<10)
+            {
                 _mMonthLab.text=[NSString stringWithFormat:@"0%d",_mMonthLab.text.intValue];
             }
         }
@@ -61,7 +66,8 @@
         case 3:
         {
             _mDayLab.text=[NSString stringWithFormat:@"%ld",[_mDayLab.text integerValue]%31+1];
-            if (_mDayLab.text.intValue<10) {
+            if (_mDayLab.text.intValue<10)
+            {
                 _mDayLab.text=[NSString stringWithFormat:@"0%d",_mDayLab.text.intValue];
             }
         }
@@ -69,10 +75,12 @@
         case 6:
         {
             _mDayLab.text=[NSString stringWithFormat:@"%ld",([_mDayLab.text integerValue]-1)];
-            if (_mDayLab.text.intValue==0) {
+            if (_mDayLab.text.intValue==0)
+            {
                 _mDayLab.text=@"31";
             }
-            if (_mDayLab.text.intValue<10) {
+            if (_mDayLab.text.intValue<10)
+            {
                 _mDayLab.text=[NSString stringWithFormat:@"0%d",_mDayLab.text.intValue];
             }
         }
@@ -92,13 +100,14 @@
 }
 
 #pragma mark - Navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // save birthday,venue
-    NSLog(@"%s",__FUNCTION__);
-
-    if ([segue.identifier isEqualToString:@"MainNav"]) {
+    if ([segue.identifier isEqualToString:@"MainNav"])
+    {
         NSMutableDictionary*vPersonInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
-        if (!vPersonInfoDic) {
+        if (!vPersonInfoDic)
+        {
             vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
         NSDictionary*vBirthdayDic=@{@"year":_mYearLab.text,@"month":_mMonthLab.text,@"day":_mDayLab.text};

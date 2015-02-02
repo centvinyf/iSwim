@@ -38,10 +38,14 @@
     
     _mEmailTextField.autocorrectionType=UITextAutocorrectionTypeNo;
 }
-- (IBAction)btnClick:(UIButton *)sender {
-    if (!_mSex) {
+- (IBAction)btnClick:(UIButton *)sender
+{
+    if (!_mSex)
+    {
         [sender setBackgroundImage:[UIImage imageNamed:@"woman"] forState:UIControlStateNormal];
-    }else{
+    }
+    else
+    {
         [sender setBackgroundImage:[UIImage imageNamed:@"man"] forState:UIControlStateNormal];
     }
     _mSex=!_mSex;
@@ -58,12 +62,14 @@
 
 
 #pragma mark - Navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // save name,sex,email
-    NSLog(@"%s\n%@",__FUNCTION__,segue.identifier);
-    if ([segue.identifier isEqualToString:@"HeightAndWeightVC"]) {
+    if ([segue.identifier isEqualToString:@"HeightAndWeightVC"])
+    {
         NSMutableDictionary*vPersonInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
-        if (!vPersonInfoDic) {
+        if (!vPersonInfoDic)
+        {
             vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
         [vPersonInfoDic setObject:_mNameTextField.text forKey:@"name"];
