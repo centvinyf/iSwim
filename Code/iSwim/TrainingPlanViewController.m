@@ -10,16 +10,16 @@
 #import "TrainingPlanTableViewCell.h"
 #import "TwoLabelTableViewCell.h"
 @interface TrainingPlanViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *mTabelView;
 @end
 
 @implementation TrainingPlanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
     // Do any additional setup after loading the view.
 }
 
@@ -51,46 +51,46 @@
 {
     if(indexPath.row>=1&&indexPath.row<=7)
     {
-        static NSString *identifiller = @"TrainingPlan";
-        TrainingPlanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-        if (!cell) {
-            cell = [[TrainingPlanTableViewCell alloc]
+        static NSString *vIdentifiller = @"TrainingPlan";
+        TrainingPlanTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if (!vCell) {
+            vCell = [[TrainingPlanTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller];
+                    reuseIdentifier: vIdentifiller];
         }
-        NSArray * Title = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"计划训练距离",@"计划训练时长",@"计划热量消耗",@"计划单边数",@"训练场馆", nil];
-        NSArray * button= [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"训练场馆", nil];
-        [cell.mImage setImage:[UIImage imageNamed:button[indexPath.row-1]]];
-        cell.mTitle.text = Title[indexPath.row-1];
-        return cell;
+        NSArray * vTitle = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"计划训练距离",@"计划训练时长",@"计划energy",@"计划单边数",@"训练场馆", nil];
+        NSArray * vButton= [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"place", nil];
+        [vCell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
+        vCell.mTitle.text = vTitle[indexPath.row-1];
+        return vCell;
 
     
     }
     else if(indexPath.row == 8||indexPath.row == 0)
     {
-         static NSString * identifiller = @"gray";
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-        if(!cell){
-            cell = [[UITableViewCell alloc]
+         static NSString * vIdentifiller = @"gray";
+        UITableViewCell * vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if(!vCell){
+            vCell = [[UITableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller];
+                    reuseIdentifier: vIdentifiller];
         }
-        return  cell;
+        return  vCell;
 
     }
     else
     {
-        static NSString *identifiller = @"TwoLabel";
-        TwoLabelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-        if (!cell) {
-            cell = [[TwoLabelTableViewCell alloc]
+        static NSString *vIdentifiller = @"TwoLabel";
+        TwoLabelTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if (!vCell) {
+            vCell = [[TwoLabelTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller];
+                    reuseIdentifier: vIdentifiller];
         }
-        NSArray * Title = [[NSArray alloc] initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
+        NSArray * vTitle = [[NSArray alloc] initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
         
-        cell.mTitle.text = Title[indexPath.row-9];
-        return cell;
+        vCell.mTitle.text = vTitle[indexPath.row-9];
+        return vCell;
         
     }
 }

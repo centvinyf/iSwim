@@ -9,6 +9,11 @@
 #import "BasicInfomationViewController.h"
 #import "BasicInfoViewCell.h"
 @interface BasicInfomationViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property (weak,nonatomic) NSArray * mPicName;
+@property (weak, nonatomic) NSArray *mTitleName;
+@property (weak,nonatomic) NSMutableArray * mData;
+
 
 @end
 
@@ -16,9 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
     [self initStructure];
     // Do any additional setup after loading the view.
 }
@@ -28,9 +33,10 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)initStructure{
-    NSArray *PicName = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
-    self.PicName = PicName;
-    self.TitleName=PicName;
+    NSArray *vPicName = [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"in",@"out",@"in",@"out",@"place", nil];
+    NSArray *vTitleName = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
+    self.mPicName = vPicName;
+    self.mTitleName=vTitleName;
     
     
 }
@@ -43,19 +49,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *PicName = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
-    NSArray *PicName1 = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"in",@"out",@"in",@"out",@"训练场馆", nil];
-    static NSString *identifiller = @"BasicInfoViewCell";
-    BasicInfoViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-    if (!cell) {
-        cell = [[BasicInfoViewCell alloc]
+    NSArray *vPicName = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
+    NSArray *vPicName1 = [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"in",@"out",@"in",@"out",@"place", nil];
+    static NSString *vIdentifiller = @"BasicInfoViewCell";
+    BasicInfoViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+    if (!vCell) {
+        vCell = [[BasicInfoViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier: identifiller];
+                reuseIdentifier: vIdentifiller];
     }
-    [cell.mImage setImage:[UIImage imageNamed:PicName1[indexPath.row]] ];
+    [vCell.mImage setImage:[UIImage imageNamed:vPicName1[indexPath.row]] ];
     
-    cell.mTitle.text = PicName[indexPath.row];
-    return cell;
+    vCell.mTitle.text = vPicName[indexPath.row];
+    return vCell;
 }
 
 /*

@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
     // Do any additional setup after loading the view.
 }
 
@@ -33,28 +33,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifiller = @"TrainingEventTitle";
+    static NSString *vIdentifiller = @"TrainingEventTitle";
     if (indexPath.row == 0) {
-        TrainingEventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-        if (!cell) {
-            cell = [[TrainingEventsTableViewCell alloc]
+        TrainingEventsTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if (!vCell) {
+            vCell = [[TrainingEventsTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller];
+                    reuseIdentifier: vIdentifiller];
         }
         
-        return cell;
+        return vCell;
     }
     else{
-       static NSString *identifiller2 = @"TrainingEventDetail";
+       static NSString *vIdentifiller2 = @"TrainingEventDetail";
     
-        TrainingEventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller2];
-        if (!cell) {
-            cell = [[TrainingEventsTableViewCell alloc]
+        TrainingEventsTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller2];
+        if (!vCell) {
+            vCell = [[TrainingEventsTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller2];
+                    reuseIdentifier: vIdentifiller2];
         }
         
-        return cell;
+        return vCell;
 
    
 }

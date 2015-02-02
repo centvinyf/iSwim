@@ -10,12 +10,13 @@
 #import "LoginAndRegistVC.h"
 
 @interface LoginAndRegistVC ()
-@property (weak, nonatomic) IBOutlet UIButton           *loginBtn;
-@property (weak, nonatomic) IBOutlet UIView             *coverView;
-@property (weak, nonatomic) IBOutlet UIButton           *coverSureBtn;
-@property (weak, nonatomic) IBOutlet UIButton           *coverCancelBtn;
-@property (weak, nonatomic) IBOutlet UITextField        *phoneNumberTextField;
-@property (weak, nonatomic) IBOutlet UITextField        *passwordTextField;
+
+@property (weak, nonatomic) IBOutlet UIButton           *mLoginBtn;
+@property (weak, nonatomic) IBOutlet UIView             *mCoverView;
+@property (weak, nonatomic) IBOutlet UIButton           *mCoverSureBtn;
+@property (weak, nonatomic) IBOutlet UIButton           *mCoverCancelBtn;
+@property (weak, nonatomic) IBOutlet UITextField        *mPhoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField        *mPasswordTextField;
 
 @end
 
@@ -24,19 +25,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _loginBtn.backgroundColor=[UIColor colorWithRed:0xff/255.0 green:0xa0/255.0 blue:0x22/255.0 alpha:1];
-    _loginBtn.layer.masksToBounds=YES;
-    _loginBtn.layer.cornerRadius=10;
-    _loginBtn.layer.borderWidth=2;
-    _loginBtn.layer.borderColor=[[UIColor orangeColor]CGColor];
+    _mLoginBtn.backgroundColor=[UIColor colorWithRed:0xff/255.0 green:0xa0/255.0 blue:0x22/255.0 alpha:1];
+    _mLoginBtn.layer.masksToBounds=YES;
+    _mLoginBtn.layer.cornerRadius=10;
+    _mLoginBtn.layer.borderWidth=2;
+    _mLoginBtn.layer.borderColor=[[UIColor orangeColor]CGColor];
     
-    _coverCancelBtn.layer.borderWidth=1;
-    _coverCancelBtn.layer.borderColor=[[UIColor colorWithRed:0x99/255.0 green:0x99/255.0 blue:0x99/255.0 alpha:1] CGColor];
+    _mCoverCancelBtn.layer.borderWidth=1;
+    _mCoverCancelBtn.layer.borderColor=[[UIColor colorWithRed:0x99/255.0 green:0x99/255.0 blue:0x99/255.0 alpha:1] CGColor];
     
-    _coverSureBtn.layer.borderWidth=1;
-    _coverSureBtn.layer.borderColor=[[UIColor colorWithRed:0x1a/255.0 green:0x65/255.0 blue:0x94/255.0 alpha:1] CGColor];
+    _mCoverSureBtn.layer.borderWidth=1;
+    _mCoverSureBtn.layer.borderColor=[[UIColor colorWithRed:0x1a/255.0 green:0x65/255.0 blue:0x94/255.0 alpha:1] CGColor];
     
-    [_passwordTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [_mPasswordTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -51,18 +52,18 @@
         [self performSegueWithIdentifier:@"PasswordVC" sender:nil];
     }else
     {
-        UIWindow*win=[[[UIApplication sharedApplication]delegate] window];
-        win.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainVC"];
+        UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
+        vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainVC"];
     }
 }
 - (IBAction)forgetPasswordBtn:(id)sender{
-    _coverView.hidden=NO;
+    _mCoverView.hidden=NO;
 }
 - (IBAction)coverSureBtnClick:(id)sender {
-    _coverView.hidden=YES;
+    _mCoverView.hidden=YES;
 }
 - (IBAction)coverCancelBtnClick:(id)sender {
-    _coverView.hidden=YES;
+    _mCoverView.hidden=YES;
 }
 
 - (void)didReceiveMemoryWarning {

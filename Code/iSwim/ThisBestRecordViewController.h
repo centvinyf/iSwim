@@ -9,9 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface ThisBestRecordViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *mTableView;
-@property(weak,nonatomic) NSArray * Name;
-@property(weak,nonatomic) NSArray * Score;
-@property (weak,nonatomic) NSArray * Begin;
-@property (weak,nonatomic) NSArray * End;
 @end

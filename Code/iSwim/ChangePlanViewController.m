@@ -9,25 +9,60 @@
 #import "ChangePlanViewController.h"
 #import "TimePickerView.h"
 @interface ChangePlanViewController ()
+{
+    NSMutableArray * mNumber;
+    NSString *mCurrentTime;
+    NSString *mHour ;
+    NSString *mMinute;
+    NSString *mSecond;
+}
+@property (weak, nonatomic) IBOutlet UIButton *mBigConfirmButton;
+@property (weak, nonatomic) IBOutlet UIButton *mTrainingDate;
+@property (weak, nonatomic) IBOutlet UIButton *mTrainingTime;
+@property (weak, nonatomic) IBOutlet UITextField *mTrainingChangci;
+@property (weak, nonatomic) IBOutlet UITextField *mTrainingDistance;
+@property (weak, nonatomic) IBOutlet UITextField *mSingle;
+@property (weak, nonatomic) IBOutlet UITextField *mHot;
+@property (weak, nonatomic) IBOutlet UIButton *mPlaceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *m25mTime;
+@property (weak, nonatomic) IBOutlet UIButton *m50mTime;
+@property (weak, nonatomic) IBOutlet UIButton *m100mTime;
+@property (weak, nonatomic) IBOutlet UIButton *m200mTime;
+@property (weak, nonatomic) IBOutlet UIButton *m400mTime;
+@property (weak, nonatomic) IBOutlet UIButton *m800mTime;
+@property (weak, nonatomic) IBOutlet UIButton *m1000mTime;
+@property (weak, nonatomic) IBOutlet UIButton *m1500mTime;
+@property (weak, nonatomic) IBOutlet UIView *mDateSetView;
+
+@property (weak, nonatomic) IBOutlet UIView *mTimeSetView;
+
+@property (weak, nonatomic) IBOutlet UIButton *mDateConfirm;
+@property (weak, nonatomic) IBOutlet UILabel *mTimeTitle;
+@property (weak, nonatomic) IBOutlet UIButton *mTimeConfirm;
+@property (weak, nonatomic) IBOutlet MBPickerView *mDatePicker;
+@property (weak, nonatomic) IBOutlet TimePickerView *mTimePicker;
+@property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
+@property (weak, nonatomic) IBOutlet UIView *mHideView;
+
 @end
 
 @implementation ChangePlanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
-    
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";//改改改
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
+   
     self.mTimePicker.delegate = self;
     self.mTimePicker.dataSource =self;
-    hour = @"0";
-    minute = @"0";
-    second = @"0";
+    mHour = @"0";
+    mMinute = @"0";
+    mSecond = @"0";
     // Do any additional setup after loading the view.
-    Number=[[NSMutableArray alloc]init];
+    mNumber=[[NSMutableArray alloc]init];
     for (int i = 0; i < 60; i++) {
-        [Number addObject:[NSString stringWithFormat:@"%d",i]];
+        [mNumber addObject:[NSString stringWithFormat:@"%d",i]];
     }
 
 }
@@ -79,22 +114,22 @@
 {
     if (component == 0) {
         
-        hour = Number[row];
+        mHour = mNumber[row];
     }
     if (component == 2) {
         
-        minute =Number[row];
+        mMinute =mNumber[row];
     }
     if (component == 4) {
         
-        second =Number[row];
+        mSecond =mNumber[row];
     }
     else ;
-    CurrentTime = [NSString stringWithFormat:@"%@h%@m%@s",hour,minute,second];;
+    mCurrentTime = [NSString stringWithFormat:@"%@h%@m%@s",mHour,mMinute,mSecond];;
 };
 - (IBAction)TimeSetConfirmButtonPressed:(id)sender {
     
-    [(UIButton *)self.mTimePicker.sender setTitle:CurrentTime forState:UIControlStateNormal];
+    [(UIButton *)self.mTimePicker.sender setTitle:mCurrentTime forState:UIControlStateNormal];
     self.mTimeSetView.hidden = YES;
     self.mBigConfirmButton.hidden = NO;
 }
@@ -112,10 +147,10 @@
     
 }
 - (IBAction)DateConfirmButtonPressed:(id)sender {
-    NSDateFormatter * DataFomatter = [[NSDateFormatter alloc]init];
-    [DataFomatter setDateFormat:@"yyyy-MM-dd"];
-    NSString * Date = [DataFomatter stringFromDate:self.mDatePicker.date];
-    [self.mTrainingDate setTitle:Date forState:UIControlStateNormal ];
+    NSDateFormatter * vDataFomatter = [[NSDateFormatter alloc]init];
+    [vDataFomatter setDateFormat:@"yyyy-MM-dd"];
+    NSString * vDate = [vDataFomatter stringFromDate:self.mDatePicker.date];
+    [self.mTrainingDate setTitle:vDate forState:UIControlStateNormal ];
     self.mDateSetView.hidden = YES;
     self.mBigConfirmButton.hidden = NO;
 }

@@ -9,8 +9,8 @@
 #import "PasswordVC.h"
 
 @interface PasswordVC ()
-@property (weak, nonatomic) IBOutlet UITextField *password1;
-@property (weak, nonatomic) IBOutlet UITextField *password2;
+@property (weak, nonatomic) IBOutlet UITextField *mPassword1;
+@property (weak, nonatomic) IBOutlet UITextField *mPassword2;
 
 @end
 
@@ -20,8 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden=NO;
-    [_password1 addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    [_password2 addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [_mPassword1 addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [_mPassword2 addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
 }
 -(void)viewWillAppear:(BOOL)animated
 {

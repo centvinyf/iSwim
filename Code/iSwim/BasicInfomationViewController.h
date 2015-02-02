@@ -9,9 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface BasicInfomationViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *mTableView;
-@property (weak,nonatomic) NSArray * PicName;
-@property (weak, nonatomic) NSArray *TitleName;
-@property (weak,nonatomic) NSMutableArray * Data;
-
 @end
