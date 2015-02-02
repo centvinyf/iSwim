@@ -298,6 +298,8 @@
 				7CED554F1A7F751900C7E01F /* Controllers */,
 				7CAB6B461A75DF46000C6F99 /* AppDelegate.h */,
 				7CAB6B471A75DF46000C6F99 /* AppDelegate.m */,
+				7CC6777B1A763E6400FD3287 /* GraphViewController.h */,
+				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
 				7CAB6B681A75DF5E000C6F99 /* Records.storyboard */,
 				7CC677791A763E4800FD3287 /* Graph.storyboard */,
@@ -336,8 +338,6 @@
 				0C1E1E001A79B87200CDAA4F /* Login&Regist */,
 				7CF65C121A7A142C0060FDED /* UserCenter */,
 				2CAC1F3C1A78B97400DA4292 /* ViewControllers */,
-				7CC6777B1A763E6400FD3287 /* GraphViewController.h */,
-				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
