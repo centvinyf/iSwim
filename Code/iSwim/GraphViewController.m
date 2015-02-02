@@ -7,10 +7,7 @@
 //
 
 #import "GraphViewController.h"
-#import "PNLineChartData.h"
-#import "PNColor.h"
-#import "PNLineChartDataItem.h"
-
+#import "MBLineChart.h"
 @interface GraphViewController ()
 
 @end

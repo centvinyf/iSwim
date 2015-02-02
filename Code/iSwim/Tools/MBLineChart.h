@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "PNChartDelegate.h"
+#import "PNLineChartData.h"
+#import "PNColor.h"
+#import "PNLineChartDataItem.h"
 
 @interface MBLineChart : UIView
 
