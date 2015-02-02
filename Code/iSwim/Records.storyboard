@@ -39,7 +39,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHF-EF-SE5">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="20px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="oRB-4K-ITK">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="bottom_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="oRB-4K-ITK">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                         </imageView>
                                                     </subviews>
@@ -81,7 +81,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9w-8y-5aY">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="owa-2Y-2rO">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="owa-2Y-2rO">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="rRg-YR-7Zp"/>
@@ -211,7 +211,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-jC-PTA">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="kai-N2-5IQ">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="kai-N2-5IQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="QWG-Zg-9R8"/>
@@ -339,7 +339,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8S-wf-FEB">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="6aj-UA-6Nk">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="6aj-UA-6Nk">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="IVw-zW-NA2"/>
@@ -461,7 +461,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4J-kd-rKd">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="NVf-Nu-wSo">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="NVf-Nu-wSo">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="fln-DC-ucw"/>
@@ -586,7 +586,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-Gq-2It">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="nct-6Q-TFd">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="nct-6Q-TFd">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="UJG-uA-dBh"/>
@@ -1353,19 +1353,22 @@
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1r-I9-Jqa">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="成绩">
+                                                    <state key="normal" image="white_score">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="147" y="25" width="106" height="42"/>
+                                                    </variation>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4V-Xj-7gL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="日期">
+                                                    <state key="normal" image="date">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOT-qW-DLr">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="项目">
+                                                    <state key="normal" image="items_round">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -1492,7 +1495,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EB3-qd-6ah">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="5it-rg-3kw">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="5it-rg-3kw">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="5GK-Fc-imK"/>
@@ -1680,7 +1683,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlb-Ry-HMM">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="Onx-ij-YOk">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="Onx-ij-YOk">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="UqN-7U-XX0"/>
@@ -1879,7 +1882,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-jR-O3c">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="0t9-QB-FA6">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="0t9-QB-FA6">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="jzQ-RP-XFQ"/>
@@ -2069,7 +2072,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7be-Km-JKm">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="gni-q6-yj5">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="gni-q6-yj5">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="Glo-4Z-jSm"/>
@@ -2259,7 +2262,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOa-rm-6kK">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="ete-H3-6wc">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="ete-H3-6wc">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="qCt-0Z-OaU"/>
@@ -2449,7 +2452,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xs1-nl-k10">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="ECC-2L-KPT">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="ECC-2L-KPT">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="44R-KC-CO3"/>
@@ -2639,7 +2642,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fD7-rP-er8">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="rA3-Vp-iwe">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="rA3-Vp-iwe">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="KTy-mx-c0W"/>
@@ -2887,7 +2890,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j60-Yo-cDZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-dK-qCp">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-dK-qCp">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                         </imageView>
                                                     </subviews>
@@ -3205,13 +3208,13 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6P-db-BZY">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="单边数-1">
+                                                    <state key="normal" image="single_1">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiX-Mj-TPO">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="成绩-1">
+                                                    <state key="normal" image="white_score">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -3220,7 +3223,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUD-DS-lcf">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="开始时间-1">
+                                                    <state key="normal" image="start_time">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -3229,7 +3232,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gs-uc-f7Y">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="结束时间-1">
+                                                    <state key="normal" image="finish_time">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -3539,6 +3542,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="268" y="11" width="42" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="Tkx-wD-v4h">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -3597,7 +3603,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B4m-39-Yqs" id="7S3-c2-Dv8">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="c9i-Wv-R02">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="c9i-Wv-R02">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 </imageView>
                                             </subviews>
@@ -3648,6 +3654,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="268" y="11" width="42" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -3726,7 +3735,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="训练计划" id="AYI-GD-von">
-                        <barButtonItem key="rightBarButtonItem" image="齿轮" id="2Tc-7z-BG0">
+                        <barButtonItem key="rightBarButtonItem" image="gear" id="2Tc-7z-BG0">
                             <connections>
                                 <segue destination="blL-bg-kmV" kind="show" id="dSs-Pj-4yz"/>
                             </connections>
@@ -3893,7 +3902,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jb-cQ-YdO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="20" image="20px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="6lK-zH-smx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="20" image="bottom_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="6lK-zH-smx">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="h0d-Nf-mZr"/>
@@ -3912,7 +3921,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4E-Cz-GAf">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="训练日期" translatesAutoresizingMaskIntoConstraints="NO" id="tph-5B-Dlu">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training_date" translatesAutoresizingMaskIntoConstraints="NO" id="tph-5B-Dlu">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="训练日期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAz-8c-kto">
@@ -3932,7 +3941,7 @@
                                                     <action selector="mDateButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="Fe0-y7-duj"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="5O6-pB-36T">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="5O6-pB-36T">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="hm3-1j-5ff"/>
@@ -4011,7 +4020,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxB-9t-iWZ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="训练场次" translatesAutoresizingMaskIntoConstraints="NO" id="Vu4-Dw-kwW">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Training_changci" translatesAutoresizingMaskIntoConstraints="NO" id="Vu4-Dw-kwW">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="训练场次" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejV-EY-miz">
@@ -4020,7 +4029,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="x96-Sb-p6e">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="x96-Sb-p6e">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="NrF-hk-nrz"/>
@@ -4104,7 +4113,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mx-lR-Mt4">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="训练距离" translatesAutoresizingMaskIntoConstraints="NO" id="h1B-Fz-y2I">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training_distance" translatesAutoresizingMaskIntoConstraints="NO" id="h1B-Fz-y2I">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计划训练距离" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWr-yK-SND">
@@ -4113,7 +4122,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="OHT-n5-RmT">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="OHT-n5-RmT">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Xg4-3N-NQs"/>
@@ -4214,7 +4223,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jim-7f-lUE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="训练时长" translatesAutoresizingMaskIntoConstraints="NO" id="uSQ-im-bJn">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training_time" translatesAutoresizingMaskIntoConstraints="NO" id="uSQ-im-bJn">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计划训练时长" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-Du-wHP">
@@ -4234,7 +4243,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="qwc-C6-6In"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="nRE-dc-3fr">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="nRE-dc-3fr">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="KlC-L4-UhV"/>
@@ -4316,7 +4325,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cW-SS-RBm">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="热量消耗" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-QI-ej8">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="energy" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-QI-ej8">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计划热量消耗" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owE-Kl-wEB">
@@ -4325,7 +4334,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="Htf-iw-YgF">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="Htf-iw-YgF">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="PQ7-HE-G0Z"/>
@@ -4438,7 +4447,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-Kf-YJt">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="单边数" translatesAutoresizingMaskIntoConstraints="NO" id="mzl-PF-7mY">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="single" translatesAutoresizingMaskIntoConstraints="NO" id="mzl-PF-7mY">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计划单边数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itg-Rd-O1g">
@@ -4447,7 +4456,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="oTG-Os-MKH">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="oTG-Os-MKH">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="EE3-ej-Rxn"/>
@@ -4540,7 +4549,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szz-SH-clu">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="训练场馆" translatesAutoresizingMaskIntoConstraints="NO" id="AiF-Sn-gzz">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place" translatesAutoresizingMaskIntoConstraints="NO" id="AiF-Sn-gzz">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="训练场馆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ6-Op-iuZ">
@@ -4607,7 +4616,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="20" image="20px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="ShI-NB-OSb">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="20" image="bottom_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="ShI-NB-OSb">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="erD-gx-9Oq"/>
@@ -4646,7 +4655,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="mqz-hZ-Nyl"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="WWV-Nh-ZE9">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="WWV-Nh-ZE9">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="4IK-RW-4l9"/>
@@ -4742,7 +4751,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="0To-gl-eMb"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="sfH-oC-R0f">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="sfH-oC-R0f">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="05V-qE-74E"/>
@@ -4841,7 +4850,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="SCk-68-7D3"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="xCQ-1J-O2a">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="xCQ-1J-O2a">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="cRg-lC-OwJ"/>
@@ -4943,7 +4952,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="ncV-WI-19B"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-0A-rq5">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-0A-rq5">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="SI2-y0-cH9"/>
@@ -5048,7 +5057,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="oRe-dS-8ue"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="0wQ-mL-Sh5">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="0wQ-mL-Sh5">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="gdv-5z-QLx"/>
@@ -5156,7 +5165,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="6e5-gE-ol1"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-Ve-Mnl">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-Ve-Mnl">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Bxb-wZ-poC"/>
@@ -5267,7 +5276,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="lrZ-PB-EDH"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-cJ-xJE">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-cJ-xJE">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="2sk-lg-wSz"/>
@@ -5381,7 +5390,7 @@
                                                     <action selector="mTimeChangeButtonPressed:" destination="blL-bg-kmV" eventType="touchUpInside" id="ctU-Mu-Nqj"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="q14-7q-bA4">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="q14-7q-bA4">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="9Hz-ok-VvE"/>
@@ -5934,13 +5943,13 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sb-PT-1CQ">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="项目-1">
+                                                    <state key="normal" image="Items">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLV-Ju-Y1R">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="成绩-1">
+                                                    <state key="normal" image="white_score">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -5949,7 +5958,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l65-Ta-2qQ">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="结束号">
+                                                    <state key="normal" image="finish_number">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -5982,7 +5991,7 @@
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIo-9e-FrJ">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="开始号">
+                                                    <state key="normal" image="start_number">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -6422,7 +6431,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VLk-y0-b5K" id="gnp-tf-DqP">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="A9c-c3-I65">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="A9c-c3-I65">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="19"/>
@@ -6746,7 +6755,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5f-hD-rUO" id="lMX-F4-gsM">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="dkK-mj-qyd">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="dkK-mj-qyd">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="T4q-zq-XCh"/>
@@ -6842,6 +6851,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="230" y="15" width="80" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="训练距离" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7E-qd-eRf">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -6854,6 +6866,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.44313725490196076" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="274" y="41" width="36" height="17"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="训练时长" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2US-ad-BOl">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -6866,6 +6881,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="0.62745098039215685" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="294" y="63" width="16" height="17"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="训练消耗" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NM-XW-3M0">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -6878,6 +6896,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.81960784313725488" green="0.19215686274509805" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="259" y="85" width="51" height="17"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="单边数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTW-6V-Qg8">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -6890,6 +6911,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="240" y="107" width="70" height="17"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="训练场馆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCz-Fg-yoC">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -6902,6 +6926,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="240" y="132" width="70" height="17"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -6950,6 +6977,19 @@
                                                     <exclude reference="IkL-6i-r7B"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="GYX-yY-YNR"/>
+                                                    <exclude reference="PH3-Jw-g32"/>
+                                                    <exclude reference="SLd-rg-XSW"/>
+                                                    <exclude reference="1MB-mk-MCl"/>
+                                                    <exclude reference="Flr-gG-k61"/>
+                                                    <exclude reference="j7n-M9-dhw"/>
+                                                    <exclude reference="KGK-Jo-OEW"/>
+                                                    <exclude reference="U7V-sz-0vf"/>
+                                                    <exclude reference="WRU-FH-xM9"/>
+                                                    <exclude reference="DiY-lA-IXM"/>
+                                                    <exclude reference="GOZ-FT-YVG"/>
+                                                    <exclude reference="RPP-FF-jol"/>
+                                                    <exclude reference="wdf-mU-HNQ"/>
                                                     <exclude reference="aSv-eK-FUL"/>
                                                     <exclude reference="g02-Zf-UNl"/>
                                                     <exclude reference="la0-d0-1H1"/>
@@ -6957,27 +6997,14 @@
                                                     <exclude reference="oe7-3u-Pi5"/>
                                                     <exclude reference="s9M-ZC-Osy"/>
                                                     <exclude reference="tph-ii-dft"/>
-                                                    <exclude reference="OJv-r9-RmS"/>
-                                                    <exclude reference="Qtk-0u-whW"/>
-                                                    <exclude reference="fVS-UG-uaA"/>
-                                                    <exclude reference="1MB-mk-MCl"/>
-                                                    <exclude reference="Flr-gG-k61"/>
-                                                    <exclude reference="j7n-M9-dhw"/>
-                                                    <exclude reference="GYX-yY-YNR"/>
-                                                    <exclude reference="PH3-Jw-g32"/>
-                                                    <exclude reference="SLd-rg-XSW"/>
-                                                    <exclude reference="wdf-mU-HNQ"/>
-                                                    <exclude reference="U7V-sz-0vf"/>
-                                                    <exclude reference="WRU-FH-xM9"/>
                                                     <exclude reference="0JX-ae-CmX"/>
                                                     <exclude reference="JJT-Gb-D0b"/>
                                                     <exclude reference="Q4o-sc-UsW"/>
                                                     <exclude reference="ta1-Cj-zT0"/>
                                                     <exclude reference="wtK-rR-tgf"/>
-                                                    <exclude reference="KGK-Jo-OEW"/>
-                                                    <exclude reference="DiY-lA-IXM"/>
-                                                    <exclude reference="GOZ-FT-YVG"/>
-                                                    <exclude reference="RPP-FF-jol"/>
+                                                    <exclude reference="OJv-r9-RmS"/>
+                                                    <exclude reference="Qtk-0u-whW"/>
+                                                    <exclude reference="fVS-UG-uaA"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -6996,6 +7023,19 @@
                                                     <include reference="IkL-6i-r7B"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="GYX-yY-YNR"/>
+                                                    <include reference="PH3-Jw-g32"/>
+                                                    <include reference="SLd-rg-XSW"/>
+                                                    <include reference="1MB-mk-MCl"/>
+                                                    <include reference="Flr-gG-k61"/>
+                                                    <include reference="j7n-M9-dhw"/>
+                                                    <include reference="KGK-Jo-OEW"/>
+                                                    <include reference="U7V-sz-0vf"/>
+                                                    <include reference="WRU-FH-xM9"/>
+                                                    <include reference="DiY-lA-IXM"/>
+                                                    <include reference="GOZ-FT-YVG"/>
+                                                    <include reference="RPP-FF-jol"/>
+                                                    <include reference="wdf-mU-HNQ"/>
                                                     <include reference="aSv-eK-FUL"/>
                                                     <include reference="g02-Zf-UNl"/>
                                                     <include reference="la0-d0-1H1"/>
@@ -7003,27 +7043,14 @@
                                                     <include reference="oe7-3u-Pi5"/>
                                                     <include reference="s9M-ZC-Osy"/>
                                                     <include reference="tph-ii-dft"/>
-                                                    <include reference="OJv-r9-RmS"/>
-                                                    <include reference="Qtk-0u-whW"/>
-                                                    <include reference="fVS-UG-uaA"/>
-                                                    <include reference="1MB-mk-MCl"/>
-                                                    <include reference="Flr-gG-k61"/>
-                                                    <include reference="j7n-M9-dhw"/>
-                                                    <include reference="GYX-yY-YNR"/>
-                                                    <include reference="PH3-Jw-g32"/>
-                                                    <include reference="SLd-rg-XSW"/>
-                                                    <include reference="wdf-mU-HNQ"/>
-                                                    <include reference="U7V-sz-0vf"/>
-                                                    <include reference="WRU-FH-xM9"/>
                                                     <include reference="0JX-ae-CmX"/>
                                                     <include reference="JJT-Gb-D0b"/>
                                                     <include reference="Q4o-sc-UsW"/>
                                                     <include reference="ta1-Cj-zT0"/>
                                                     <include reference="wtK-rR-tgf"/>
-                                                    <include reference="KGK-Jo-OEW"/>
-                                                    <include reference="DiY-lA-IXM"/>
-                                                    <include reference="GOZ-FT-YVG"/>
-                                                    <include reference="RPP-FF-jol"/>
+                                                    <include reference="OJv-r9-RmS"/>
+                                                    <include reference="Qtk-0u-whW"/>
+                                                    <include reference="fVS-UG-uaA"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -7157,7 +7184,7 @@
                                     <outlet property="delegate" destination="aID-9Y-HbI" id="qje-wD-cbK"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20px灰条" translatesAutoresizingMaskIntoConstraints="NO" id="SdI-zY-Ky3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_px_gray_bar" translatesAutoresizingMaskIntoConstraints="NO" id="SdI-zY-Ky3">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="MQx-ME-cW2"/>
@@ -7298,7 +7325,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXi-5w-E3c" userLabel="基本详情View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="基本信息详情" translatesAutoresizingMaskIntoConstraints="NO" id="DFz-aw-0XI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_info_detail" translatesAutoresizingMaskIntoConstraints="NO" id="DFz-aw-0XI">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="5FU-AG-V5l"/>
@@ -7327,9 +7354,12 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4by-E2-QkK">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" image="右箭">
+                                        <state key="normal" image="right">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="382" y="15" width="8" height="22"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="dh7-DA-A1h" kind="show" id="6VE-7G-mp5"/>
                                         </connections>
@@ -7398,7 +7428,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxD-n7-QVh" userLabel="最好成绩View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="本场最好成绩" translatesAutoresizingMaskIntoConstraints="NO" id="MI0-am-p1j">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="this_best_score" translatesAutoresizingMaskIntoConstraints="NO" id="MI0-am-p1j">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="5Bw-p2-lhz">
@@ -7429,9 +7459,12 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3L-eV-RFC">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" image="右箭">
+                                        <state key="normal" image="right">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="382" y="19" width="8" height="22"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="JfO-Ms-kAT" kind="show" id="eMC-WW-s6M"/>
                                         </connections>
@@ -7504,7 +7537,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6T-Nn-FY3" userLabel="分段成绩View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="分段成绩详情" translatesAutoresizingMaskIntoConstraints="NO" id="J7l-t5-ieH">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score_detail_by_row" translatesAutoresizingMaskIntoConstraints="NO" id="J7l-t5-ieH">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="Hde-kw-qLT">
@@ -7535,9 +7568,12 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mH-cW-lWY">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" image="右箭">
+                                        <state key="normal" image="right">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="382" y="19" width="8" height="22"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="lPd-8a-9fc" kind="show" id="kle-9R-Srg"/>
                                         </connections>
@@ -7607,7 +7643,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NS1-aD-9mI" userLabel="本场训练View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="排名详情" translatesAutoresizingMaskIntoConstraints="NO" id="jc0-ac-uBg">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rank_detail" translatesAutoresizingMaskIntoConstraints="NO" id="jc0-ac-uBg">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="hiz-rh-Q6p">
@@ -7638,9 +7674,12 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2c-lA-dTv">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" image="右箭">
+                                        <state key="normal" image="right">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="382" y="19" width="8" height="22"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="tbu-ag-tQl" kind="show" id="Hef-Fo-fjA"/>
                                         </connections>
@@ -7710,7 +7749,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uE-Rd-7Ks" userLabel="本场训练View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="本场训练计划" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-5E-yzN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="this_training_plan" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-5E-yzN">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="blT-6f-Uyb">
@@ -7741,9 +7780,12 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-pG-sPk">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" image="右箭">
+                                        <state key="normal" image="right">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="382" y="19" width="8" height="22"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="UZX-tc-M1J" kind="show" id="dUL-8o-ia3"/>
                                         </connections>
@@ -8079,7 +8121,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwn-d9-keC">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="本场最好成绩" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-7a-MLb">
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="this_best_score" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-7a-MLb">
                                                             <rect key="frame" x="0.0" y="-29" width="24" height="29"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最好成绩" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8I-mR-Tgy">
@@ -8537,7 +8579,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aa1-DQ-P94" id="24C-bW-Pjb">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="训练距离" translatesAutoresizingMaskIntoConstraints="NO" id="gXZ-YH-tMJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training_distance" translatesAutoresizingMaskIntoConstraints="NO" id="gXZ-YH-tMJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-01-27" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-a4-ZXE">
@@ -9107,7 +9149,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOI-Hr-5ps">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
-                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="本场最好成绩" translatesAutoresizingMaskIntoConstraints="NO" id="g7J-VT-GtB">
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="this_best_score" translatesAutoresizingMaskIntoConstraints="NO" id="g7J-VT-GtB">
                                                             <rect key="frame" x="0.0" y="-29" width="24" height="29"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最好成绩" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfd-7f-VFk">
@@ -9528,34 +9570,33 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1px灰条" width="306" height="1"/>
-        <image name="20px灰条" width="320" height="10"/>
-        <image name="分段成绩详情" width="22" height="31"/>
-        <image name="单边数" width="15" height="17"/>
-        <image name="单边数-1" width="42" height="53"/>
-        <image name="右箭" width="8" height="14"/>
-        <image name="基本信息详情" width="30" height="20"/>
-        <image name="开始号" width="42" height="54"/>
-        <image name="开始时间-1" width="55" height="54"/>
-        <image name="成绩" width="28" height="42"/>
-        <image name="成绩-1" width="30" height="54"/>
-        <image name="排名详情" width="23" height="26"/>
-        <image name="日期" width="28" height="42"/>
-        <image name="本场最好成绩" width="24" height="29"/>
-        <image name="本场训练计划" width="22" height="31"/>
-        <image name="热量消耗" width="15" height="17"/>
-        <image name="结束号" width="42" height="53"/>
-        <image name="结束时间-1" width="55" height="54"/>
+        <image name="Items" width="26" height="53"/>
+        <image name="Training_changci" width="15" height="17"/>
+        <image name="basic_info_detail" width="30" height="20"/>
+        <image name="bottom_px_gray_bar" width="320" height="10"/>
+        <image name="date" width="28" height="42"/>
+        <image name="energy" width="15" height="17"/>
+        <image name="finish_number" width="42" height="53"/>
+        <image name="finish_time" width="55" height="54"/>
+        <image name="gear" width="20" height="24"/>
+        <image name="items_round" width="28" height="42"/>
+        <image name="one_px_gray_bar" width="306" height="1"/>
+        <image name="place" width="15" height="13"/>
+        <image name="rank_detail" width="23" height="26"/>
+        <image name="right" width="320" height="568"/>
+        <image name="score_detail_by_row" width="22" height="31"/>
+        <image name="single" width="15" height="17"/>
+        <image name="single_1" width="42" height="53"/>
+        <image name="start_number" width="42" height="54"/>
+        <image name="start_time" width="55" height="54"/>
+        <image name="this_best_score" width="24" height="29"/>
+        <image name="this_training_plan" width="22" height="31"/>
+        <image name="training_date" width="15" height="17"/>
+        <image name="training_distance" width="15" height="17"/>
+        <image name="training_time" width="15" height="17"/>
+        <image name="white_score" width="30" height="54"/>
         <image name="蓝底" width="320" height="568"/>
         <image name="蓝底方框" width="320" height="290"/>
-        <image name="训练场次" width="15" height="17"/>
-        <image name="训练场馆" width="15" height="13"/>
-        <image name="训练日期" width="15" height="17"/>
-        <image name="训练时长" width="15" height="17"/>
-        <image name="训练距离" width="15" height="17"/>
-        <image name="项目" width="28" height="42"/>
-        <image name="项目-1" width="26" height="53"/>
-        <image name="齿轮" width="20" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ky8-ar-wLg"/>

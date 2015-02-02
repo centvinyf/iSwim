@@ -19,9 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";//改改改
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
     // Do any additional setup after loading the view.
 }
 
@@ -51,66 +51,66 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray * Title = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"本场距离排名",@"本场时长排名",@"本场消耗排名",@"训练场馆", nil];
-    NSArray * button= [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"训练场馆", nil];
+    NSArray * vTitle = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"本场距离排名",@"本场时长排名",@"本场消耗排名",@"训练场馆", nil];
+    NSArray * vButton= [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"place", nil];
     
     if(indexPath.row==1||indexPath.row ==2||indexPath.row == 6)//直接显示
     {
-        static NSString *identifiller = @"TrainingPlan";
-        TrainingPlanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
+        static NSString *vIdentifiller = @"TrainingPlan";
+        TrainingPlanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
         if (!cell) {
             cell = [[TrainingPlanTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller];
+                    reuseIdentifier: vIdentifiller];
         }
         
-        [cell.mImage setImage:[UIImage imageNamed:button[indexPath.row-1]]];
-        cell.mTitle.text = Title[indexPath.row-1];
+        [cell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
+        cell.mTitle.text = vTitle[indexPath.row-1];
         return cell;
         
         
     }
     else if(indexPath.row>=3&&indexPath.row<=5)//有排名
     {
-        static NSString *identifiller = @"TrainingPlan";
-        PaimingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-        if (!cell) {
-            cell = [[PaimingTableViewCell alloc]
+        static NSString *vIdentifiller = @"TrainingPlan";
+        PaimingTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if (!vCell) {
+            vCell = [[PaimingTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller];
+                    reuseIdentifier: vIdentifiller];
         }
         
-        [cell.mImage setImage:[UIImage imageNamed:button[indexPath.row-1]]];
-        cell.mTitle.text = Title[indexPath.row-1];
-        return cell;
+        [vCell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
+        vCell.mTitle.text = vTitle[indexPath.row-1];
+        return vCell;
 
     
     }
     else if(indexPath.row == 7||indexPath.row == 0)//灰条
     {
-        static NSString * identifiller = @"gray";
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-        if(!cell){
-            cell = [[UITableViewCell alloc]
+        static NSString * vIdentifiller = @"gray";
+        UITableViewCell * vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if(!vCell){
+            vCell = [[UITableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller];
+                    reuseIdentifier: vIdentifiller];
         }
-        return  cell;
+        return  vCell;
         
     }
     else//分项排名
     {
-        static NSString *identifiller = @"ThreeLabel";
-        ThreeLabelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-        if (!cell) {
-            cell = [[ThreeLabelTableViewCell alloc]
+        static NSString *vIdentifiller = @"ThreeLabel";
+        ThreeLabelTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if (!vCell) {
+            vCell = [[ThreeLabelTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller];
+                    reuseIdentifier: vIdentifiller];
         }
-        NSArray * Title = [[NSArray alloc] initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
+        NSArray * vTitle = [[NSArray alloc] initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
         
-        cell.mTitle.text = Title[indexPath.row-8];
-        return cell;
+        vCell.mTitle.text = vTitle[indexPath.row-8];
+        return vCell;
         
     }
 }

@@ -10,11 +10,11 @@
 #import "TimePickerView.h"
 @interface ChangePlanViewController ()
 {
-    NSMutableArray * Number;
-    NSString *CurrentTime;
-    NSString *hour ;
-    NSString *minute;
-    NSString *second;
+    NSMutableArray * mNumber;
+    NSString *mCurrentTime;
+    NSString *mHour ;
+    NSString *mMinute;
+    NSString *mSecond;
 }
 @property (weak, nonatomic) IBOutlet UIButton *mBigConfirmButton;
 @property (weak, nonatomic) IBOutlet UIButton *mTrainingDate;
@@ -50,19 +50,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";//改改改
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
    
     self.mTimePicker.delegate = self;
     self.mTimePicker.dataSource =self;
-    hour = @"0";
-    minute = @"0";
-    second = @"0";
+    mHour = @"0";
+    mMinute = @"0";
+    mSecond = @"0";
     // Do any additional setup after loading the view.
-    Number=[[NSMutableArray alloc]init];
+    mNumber=[[NSMutableArray alloc]init];
     for (int i = 0; i < 60; i++) {
-        [Number addObject:[NSString stringWithFormat:@"%d",i]];
+        [mNumber addObject:[NSString stringWithFormat:@"%d",i]];
     }
 
 }
@@ -114,22 +114,22 @@
 {
     if (component == 0) {
         
-        hour = Number[row];
+        mHour = mNumber[row];
     }
     if (component == 2) {
         
-        minute =Number[row];
+        mMinute =mNumber[row];
     }
     if (component == 4) {
         
-        second =Number[row];
+        mSecond =mNumber[row];
     }
     else ;
-    CurrentTime = [NSString stringWithFormat:@"%@h%@m%@s",hour,minute,second];;
+    mCurrentTime = [NSString stringWithFormat:@"%@h%@m%@s",mHour,mMinute,mSecond];;
 };
 - (IBAction)TimeSetConfirmButtonPressed:(id)sender {
     
-    [(UIButton *)self.mTimePicker.sender setTitle:CurrentTime forState:UIControlStateNormal];
+    [(UIButton *)self.mTimePicker.sender setTitle:mCurrentTime forState:UIControlStateNormal];
     self.mTimeSetView.hidden = YES;
     self.mBigConfirmButton.hidden = NO;
 }
@@ -147,10 +147,10 @@
     
 }
 - (IBAction)DateConfirmButtonPressed:(id)sender {
-    NSDateFormatter * DataFomatter = [[NSDateFormatter alloc]init];
-    [DataFomatter setDateFormat:@"yyyy-MM-dd"];
-    NSString * Date = [DataFomatter stringFromDate:self.mDatePicker.date];
-    [self.mTrainingDate setTitle:Date forState:UIControlStateNormal ];
+    NSDateFormatter * vDataFomatter = [[NSDateFormatter alloc]init];
+    [vDataFomatter setDateFormat:@"yyyy-MM-dd"];
+    NSString * vDate = [vDataFomatter stringFromDate:self.mDatePicker.date];
+    [self.mTrainingDate setTitle:vDate forState:UIControlStateNormal ];
     self.mDateSetView.hidden = YES;
     self.mBigConfirmButton.hidden = NO;
 }

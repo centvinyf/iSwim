@@ -12,9 +12,9 @@
 @interface ThisBestRecordViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property(weak,nonatomic) NSArray * mName;
-@property(weak,nonatomic) NSArray * Score;
-@property (weak,nonatomic) NSArray * Begin;
-@property (weak,nonatomic) NSArray * End;
+@property(weak,nonatomic) NSArray * mScore;
+@property (weak,nonatomic) NSArray * mBegin;
+@property (weak,nonatomic) NSArray * mEnd;
 
 @end
 
@@ -22,9 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
     // Do any additional setup after loading the view.
 }
 
@@ -43,28 +43,28 @@
 {
     if (indexPath.row == 0) {
         
-        static NSString *identifiller1 = @"HeadCell";
-        ThisBestHeadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller1];
-        if (!cell) {
-            cell = [[ThisBestHeadTableViewCell alloc]
+        static NSString *vIdentifiller1 = @"HeadCell";
+        ThisBestHeadTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller1];
+        if (!vCell) {
+            vCell = [[ThisBestHeadTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller1];
+                    reuseIdentifier: vIdentifiller1];
         }
-        return cell;
+        return vCell;
         
     }
     else{
-        static NSString * identifiller2 = @"DetailCell";
-        ThisBestDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller2];
-        if (!cell) {
-            cell = [[ThisBestDetailTableViewCell alloc]
+        static NSString * vIdentifiller1 = @"DetailCell";
+        ThisBestDetailTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller1];
+        if (!vCell) {
+            vCell = [[ThisBestDetailTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier: identifiller2];
+                    reuseIdentifier: vIdentifiller1];
         }
-        NSArray * mName =[[NSArray alloc]initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
-        cell.mName.text = mName[indexPath.row-1];
+        NSArray * vName =[[NSArray alloc]initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
+        vCell.mName.text = vName[indexPath.row-1];
         
-        return cell;
+        return vCell;
     }
     
 }
