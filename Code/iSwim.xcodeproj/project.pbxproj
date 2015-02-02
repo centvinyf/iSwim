@@ -173,16 +173,7 @@
 			name = "Login&Regist";
 			sourceTree = "<group>";
 		};
-		0C9021451A7B54C900740536 /* EditPersonInfo */ = {
-			isa = PBXGroup;
-			children = (
-				0C9021461A7B550400740536 /* ChangeWeightAndHeightVC.h */,
-				0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */,
-			);
-			name = EditPersonInfo;
-			sourceTree = "<group>";
-		};
-		2CAC1F3B1A78B92800DA4292 /* cells */ = {
+		2CAC1F3B1A78B92800DA4292 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2CAC1F381A78AFEA00DA4292 /* TwoLabelTableViewCell.h */,
@@ -204,7 +195,7 @@
 				2CAC1F431A78C6F100DA4292 /* ThreeLabelTableViewCell.h */,
 				2CAC1F441A78C6F100DA4292 /* ThreeLabelTableViewCell.m */,
 			);
-			name = cells;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		2CAC1F3C1A78B97400DA4292 /* ViewControllers */ = {
@@ -302,22 +293,16 @@
 		7CAB6B411A75DF46000C6F99 /* iSwim */ = {
 			isa = PBXGroup;
 			children = (
+				7CED55501A7F753D00C7E01F /* Models */,
+				2CAC1F3B1A78B92800DA4292 /* Views */,
+				7CED554F1A7F751900C7E01F /* Controllers */,
 				7CAB6B461A75DF46000C6F99 /* AppDelegate.h */,
 				7CAB6B471A75DF46000C6F99 /* AppDelegate.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
-				7CDEF5991A7B0DBB006FF48D /* MainViewController.h */,
-				7CDEF59A1A7B0DBB006FF48D /* MainViewController.m */,
-				0C1E1E001A79B87200CDAA4F /* Login&Regist */,
-				0C9021451A7B54C900740536 /* EditPersonInfo */,
-				7CF65C121A7A142C0060FDED /* UserCenter */,
-				7CC677791A763E4800FD3287 /* Graph.storyboard */,
-				7CC6777B1A763E6400FD3287 /* GraphViewController.h */,
-				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
 				7CAB6B681A75DF5E000C6F99 /* Records.storyboard */,
-				2CAC1F3B1A78B92800DA4292 /* cells */,
-				2CAC1F3C1A78B97400DA4292 /* ViewControllers */,
-				7CAB6B4F1A75DF46000C6F99 /* Images.xcassets */,
+				7CC677791A763E4800FD3287 /* Graph.storyboard */,
 				7CAB6B511A75DF46000C6F99 /* LaunchScreen.xib */,
+				7CAB6B4F1A75DF46000C6F99 /* Images.xcassets */,
 				7CAB6B421A75DF46000C6F99 /* Supporting Files */,
 			);
 			path = iSwim;
@@ -343,9 +328,32 @@
 			name = Tools;
 			sourceTree = "<group>";
 		};
+		7CED554F1A7F751900C7E01F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7CDEF5991A7B0DBB006FF48D /* MainViewController.h */,
+				7CDEF59A1A7B0DBB006FF48D /* MainViewController.m */,
+				0C1E1E001A79B87200CDAA4F /* Login&Regist */,
+				7CF65C121A7A142C0060FDED /* UserCenter */,
+				2CAC1F3C1A78B97400DA4292 /* ViewControllers */,
+				7CC6777B1A763E6400FD3287 /* GraphViewController.h */,
+				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7CED55501A7F753D00C7E01F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		7CF65C121A7A142C0060FDED /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
+				0C9021461A7B550400740536 /* ChangeWeightAndHeightVC.h */,
+				0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */,
 				7C320A6A1A7794AC0023DD06 /* CropImageViewController.h */,
 				7C320A6B1A7794AC0023DD06 /* CropImageViewController.m */,
 				7C320A641A775C890023DD06 /* PersonInfoVC.h */,
