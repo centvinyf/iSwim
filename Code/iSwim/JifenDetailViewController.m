@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
     // Do any additional setup after loading the view.
 }
 
@@ -33,15 +33,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifiller = @"JifenTableViewCell";
-    JifenTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-    if (!cell) {
-        cell = [[JifenTableViewCell alloc]
+    static NSString *vIdentifiller = @"JifenTableViewCell";
+    JifenTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+    if (!vCell) {
+        vCell = [[JifenTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier: identifiller];
+                reuseIdentifier: vIdentifiller];
     }
     
-    return cell;
+    return vCell;
 }
 
 /*

@@ -64,7 +64,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6s-78-JLr" id="VCP-lG-fuw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="训练距离" translatesAutoresizingMaskIntoConstraints="NO" id="p08-0u-ItP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training_distance" translatesAutoresizingMaskIntoConstraints="NO" id="p08-0u-ItP">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-01-27" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty2-Ce-oTm">
@@ -649,7 +649,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykU-LH-pp2">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <subviews>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="训练成绩" translatesAutoresizingMaskIntoConstraints="NO" id="clf-j7-CPx">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="training_score" translatesAutoresizingMaskIntoConstraints="NO" id="clf-j7-CPx">
                                                                     <rect key="frame" x="0.0" y="-30" width="29" height="30"/>
                                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="26" y="8" width="29" height="30"/>
@@ -712,7 +712,7 @@
                                                                         <rect key="frame" x="25" y="38" width="31" height="15"/>
                                                                     </variation>
                                                                 </label>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="训练成绩" translatesAutoresizingMaskIntoConstraints="NO" id="t0U-iY-Jui">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="training_score" translatesAutoresizingMaskIntoConstraints="NO" id="t0U-iY-Jui">
                                                                     <rect key="frame" x="0.0" y="-30" width="29" height="30"/>
                                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="26" y="8" width="29" height="30"/>
@@ -757,7 +757,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbq-b1-xGy">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <subviews>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="训练成绩" translatesAutoresizingMaskIntoConstraints="NO" id="js5-TM-12i">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="training_score" translatesAutoresizingMaskIntoConstraints="NO" id="js5-TM-12i">
                                                                     <rect key="frame" x="0.0" y="-30" width="29" height="30"/>
                                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="26" y="8" width="29" height="30"/>
@@ -811,7 +811,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEj-Mu-Ac3">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <subviews>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="训练成绩" translatesAutoresizingMaskIntoConstraints="NO" id="1pO-Hb-Qqm">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="training_score" translatesAutoresizingMaskIntoConstraints="NO" id="1pO-Hb-Qqm">
                                                                     <rect key="frame" x="0.0" y="-30" width="29" height="30"/>
                                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                                         <rect key="frame" x="26" y="8" width="29" height="30"/>
@@ -1579,10 +1579,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="training_distance" width="15" height="17"/>
+        <image name="training_score" width="29" height="30"/>
         <image name="蓝底" width="320" height="568"/>
         <image name="蓝底方框" width="320" height="290"/>
-        <image name="训练成绩" width="29" height="30"/>
-        <image name="训练距离" width="15" height="17"/>
         <image name="身高气泡" width="47" height="29"/>
     </resources>
 </document>

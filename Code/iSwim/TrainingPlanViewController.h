@@ -10,5 +10,5 @@
 
 @interface TrainingPlanViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *mTabelView;
+
 @end

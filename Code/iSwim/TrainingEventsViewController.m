@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
-    returnButtonItem.title = @" ";//改改改
-    self.navigationItem.backBarButtonItem = returnButtonItem;
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
     // Do any additional setup after loading the view.
 }
 
@@ -33,16 +33,44 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifiller = @"TrainingEventsTableViewCell";
-    TrainingEventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiller];
-    if (!cell) {
-        cell = [[TrainingEventsTableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier: identifiller];
+    static NSString *vIdentifiller = @"TrainingEventTitle";
+    if (indexPath.row == 0) {
+        TrainingEventsTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if (!vCell) {
+            vCell = [[TrainingEventsTableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier: vIdentifiller];
+        }
+        
+        return vCell;
+    }
+    else{
+       static NSString *vIdentifiller2 = @"TrainingEventDetail";
+    
+        TrainingEventsTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller2];
+        if (!vCell) {
+            vCell = [[TrainingEventsTableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier: vIdentifiller2];
+        }
+        
+        return vCell;
+
+   
+}
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 44;
+    }
+    else
+    {
+        return 200;
     }
     
-    return cell;
 }
+
 
 /*
 #pragma mark - Navigation
