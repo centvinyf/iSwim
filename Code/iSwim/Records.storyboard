@@ -10,7 +10,7 @@
         <!--个人记录-->
         <scene sceneID="PmM-OG-xBw">
             <objects>
-                <tableViewController storyboardIdentifier="MyRecordViewController" id="Vnw-gd-m9P" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyRecordViewController" id="Vnw-gd-m9P" customClass="PersonalRecordTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6rZ-g8-7h3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1178,12 +1178,6 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成都游泳馆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-WD-4T4">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创造记录的场馆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uob-1J-BMA">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <constraints>
@@ -1237,6 +1231,12 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成都游泳馆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-WD-4T4">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Gum-jr-a2F" secondAttribute="trailing" constant="25" id="1td-L4-mrE"/>
@@ -1262,11 +1262,11 @@
                                                 <mask key="subviews">
                                                     <exclude reference="t8c-ik-dbv"/>
                                                     <exclude reference="fvI-fk-Yrg"/>
-                                                    <exclude reference="qRC-WD-4T4"/>
                                                     <exclude reference="uob-1J-BMA"/>
                                                     <exclude reference="sPQ-SZ-fjo"/>
                                                     <exclude reference="Gum-jr-a2F"/>
                                                     <exclude reference="K3D-qw-hzq"/>
+                                                    <exclude reference="qRC-WD-4T4"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="1td-L4-mrE"/>
@@ -1293,11 +1293,11 @@
                                                 <mask key="subviews">
                                                     <include reference="t8c-ik-dbv"/>
                                                     <include reference="fvI-fk-Yrg"/>
-                                                    <include reference="qRC-WD-4T4"/>
                                                     <include reference="uob-1J-BMA"/>
                                                     <include reference="sPQ-SZ-fjo"/>
                                                     <include reference="Gum-jr-a2F"/>
                                                     <include reference="K3D-qw-hzq"/>
+                                                    <include reference="qRC-WD-4T4"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="1td-L4-mrE"/>
@@ -1353,9 +1353,12 @@
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1r-I9-Jqa">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" image="white_score">
+                                                    <state key="normal" image="score_blue">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="147" y="25" width="106" height="54"/>
+                                                    </variation>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4V-Xj-7gL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -3003,6 +3006,36 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="个人记录" id="v8R-0j-M1E"/>
+                    <connections>
+                        <outlet property="m1000BestTime" destination="Vj9-Rb-8hL" id="IKV-Nz-dgU"/>
+                        <outlet property="m1000Date" destination="yf7-VN-jjN" id="3ft-Zf-1EV"/>
+                        <outlet property="m100BestTime" destination="9eB-yq-ARd" id="yYl-F1-q0z"/>
+                        <outlet property="m100Date" destination="2lm-th-Dyj" id="Mo4-Jc-SjB"/>
+                        <outlet property="m1500BestTime" destination="tjW-Rz-cmA" id="g13-5Y-fDK"/>
+                        <outlet property="m1500Date" destination="ZgH-8J-KEV" id="Dr2-3E-7w6"/>
+                        <outlet property="m200BestTime" destination="UPO-VI-we5" id="DYN-xg-sbA"/>
+                        <outlet property="m200Date" destination="Qui-Vy-2PX" id="xcB-Q3-S53"/>
+                        <outlet property="m25BestTime" destination="5Ns-ZC-fxW" id="m8B-by-a0m"/>
+                        <outlet property="m25Date" destination="KjO-3A-yW2" id="I5o-m7-ac1"/>
+                        <outlet property="m400BestTime" destination="grv-Ys-ieH" id="dep-y5-fWq"/>
+                        <outlet property="m400Date" destination="JTC-AE-mVH" id="zJ5-r6-Uhh"/>
+                        <outlet property="m50BestTime" destination="Lvy-Dq-CMj" id="6lT-SK-a5p"/>
+                        <outlet property="m50Date" destination="KNc-Bl-piB" id="rf8-yu-UNy"/>
+                        <outlet property="m800BestTime" destination="gO6-Bn-0If" id="R3a-Cv-FJ2"/>
+                        <outlet property="m800Date" destination="RJB-Tu-ica" id="M8A-rW-ZcN"/>
+                        <outlet property="mBigestCalCal" destination="Gum-jr-a2F" id="yFb-lP-bhg"/>
+                        <outlet property="mBigestCalDate" destination="K3D-qw-hzq" id="Jne-hl-wlg"/>
+                        <outlet property="mBigestCalPlace" destination="qRC-WD-4T4" id="aWr-fi-l6H"/>
+                        <outlet property="mLongestEventDate" destination="pHt-60-Z3n" id="xF4-qx-cJ3"/>
+                        <outlet property="mLongestEventDis" destination="6TY-fy-OsN" id="m8E-eM-piP"/>
+                        <outlet property="mLongestEventPlace" destination="hkS-Ct-qcW" id="eOS-dY-UfL"/>
+                        <outlet property="mLongestTimeDate" destination="Pgl-9I-vZL" id="W0w-aa-jDb"/>
+                        <outlet property="mLongestTimePlace" destination="c7X-Bd-seG" id="lzr-YL-sKf"/>
+                        <outlet property="mLongestTimeTimt" destination="dbq-gU-YI8" id="FcA-h9-g21"/>
+                        <outlet property="mTotalCaluli" destination="rbz-G0-bGw" id="iNn-nG-4Mz"/>
+                        <outlet property="mTotalDistance" destination="V0J-WT-PzB" id="DJX-tK-Riu"/>
+                        <outlet property="mTotalSwimmingTime" destination="oIl-ir-Uc7" id="uSu-Io-XcY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ua-Ur-huS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6784,7 +6817,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="147" y="14" width="163" height="21"/>
+                                                        <rect key="frame" x="249" y="14" width="61" height="21"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -9583,6 +9616,7 @@
         <image name="place" width="15" height="13"/>
         <image name="rank_detail" width="23" height="26"/>
         <image name="right" width="8" height="14"/>
+        <image name="score_blue" width="28" height="42"/>
         <image name="score_detail_by_row" width="22" height="31"/>
         <image name="single" width="15" height="17"/>
         <image name="single_1" width="42" height="53"/>

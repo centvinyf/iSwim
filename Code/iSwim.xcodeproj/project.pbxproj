@@ -21,6 +21,7 @@
 		2CAC1F451A78C6F100DA4292 /* ThreeLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F441A78C6F100DA4292 /* ThreeLabelTableViewCell.m */; };
 		2CAC1F4E1A78E1DA00DA4292 /* ChangePlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F4D1A78E1DA00DA4292 /* ChangePlanViewController.m */; };
 		2CAC1F521A78E41F00DA4292 /* MBPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F511A78E41F00DA4292 /* MBPickerView.m */; };
+		2CE5DE6F1A806B72003AB0EB /* PersonalRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5DE6E1A806B72003AB0EB /* PersonalRecordTableViewController.m */; };
 		4D2D26005B7E6134011AAE39 /* libPods-iSwim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB6D6BDC0E11EBBE26CA79E /* libPods-iSwim.a */; };
 		7C320A661A775C890023DD06 /* LoginAndRegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */; };
 		7C320A671A775C890023DD06 /* NameAndEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C320A611A775C890023DD06 /* NameAndEmailVC.m */; };
@@ -40,7 +41,6 @@
 		7CC6777D1A763E6400FD3287 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6777C1A763E6400FD3287 /* GraphViewController.m */; };
 		7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */; };
 		7CC677951A77515B00FD3287 /* BasicInfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677831A77515B00FD3287 /* BasicInfoViewCell.m */; };
-		7CC677961A77515B00FD3287 /* PersonalRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677851A77515B00FD3287 /* PersonalRecordViewController.m */; };
 		7CC677971A77515B00FD3287 /* ScoreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677871A77515B00FD3287 /* ScoreDetailViewController.m */; };
 		7CC677981A77515B00FD3287 /* ThisBestDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677891A77515B00FD3287 /* ThisBestDetailTableViewCell.m */; };
 		7CC677991A77515B00FD3287 /* ThisBestHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6778B1A77515B00FD3287 /* ThisBestHeadTableViewCell.m */; };
@@ -86,6 +86,8 @@
 		2CAC1F4D1A78E1DA00DA4292 /* ChangePlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePlanViewController.m; sourceTree = "<group>"; };
 		2CAC1F501A78E41F00DA4292 /* MBPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBPickerView.h; path = iSwim/Tools/MBPicker/MBPickerView.h; sourceTree = "<group>"; };
 		2CAC1F511A78E41F00DA4292 /* MBPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBPickerView.m; path = iSwim/Tools/MBPicker/MBPickerView.m; sourceTree = "<group>"; };
+		2CE5DE6D1A806B72003AB0EB /* PersonalRecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalRecordTableViewController.h; sourceTree = "<group>"; };
+		2CE5DE6E1A806B72003AB0EB /* PersonalRecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalRecordTableViewController.m; sourceTree = "<group>"; };
 		57F385774C6FB16BA7C656F1 /* Pods-iSwim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwim.release.xcconfig"; path = "Pods/Target Support Files/Pods-iSwim/Pods-iSwim.release.xcconfig"; sourceTree = "<group>"; };
 		7C320A5E1A775C890023DD06 /* LoginAndRegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegistVC.h; sourceTree = "<group>"; };
 		7C320A5F1A775C890023DD06 /* LoginAndRegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegistVC.m; sourceTree = "<group>"; };
@@ -119,8 +121,6 @@
 		7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInfomationViewController.m; sourceTree = "<group>"; };
 		7CC677821A77515B00FD3287 /* BasicInfoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfoViewCell.h; sourceTree = "<group>"; };
 		7CC677831A77515B00FD3287 /* BasicInfoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInfoViewCell.m; sourceTree = "<group>"; };
-		7CC677841A77515B00FD3287 /* PersonalRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalRecordViewController.h; sourceTree = "<group>"; };
-		7CC677851A77515B00FD3287 /* PersonalRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalRecordViewController.m; sourceTree = "<group>"; };
 		7CC677861A77515B00FD3287 /* ScoreDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreDetailViewController.h; sourceTree = "<group>"; };
 		7CC677871A77515B00FD3287 /* ScoreDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreDetailViewController.m; sourceTree = "<group>"; };
 		7CC677881A77515B00FD3287 /* ThisBestDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThisBestDetailTableViewCell.h; sourceTree = "<group>"; };
@@ -209,12 +209,12 @@
 			children = (
 				2C55F0831A77ADAC0077189D /* TrainingEventsViewController.h */,
 				2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */,
+				2CE5DE6D1A806B72003AB0EB /* PersonalRecordTableViewController.h */,
+				2CE5DE6E1A806B72003AB0EB /* PersonalRecordTableViewController.m */,
 				2CAC1F4C1A78E1DA00DA4292 /* ChangePlanViewController.h */,
 				2CAC1F4D1A78E1DA00DA4292 /* ChangePlanViewController.m */,
 				7CC677801A77515B00FD3287 /* BasicInfomationViewController.h */,
 				7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */,
-				7CC677841A77515B00FD3287 /* PersonalRecordViewController.h */,
-				7CC677851A77515B00FD3287 /* PersonalRecordViewController.m */,
 				7CC677861A77515B00FD3287 /* ScoreDetailViewController.h */,
 				7CC677871A77515B00FD3287 /* ScoreDetailViewController.m */,
 				2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */,
@@ -509,6 +509,7 @@
 				7CC6777D1A763E6400FD3287 /* GraphViewController.m in Sources */,
 				7C320A731A7795610023DD06 /* UIImage+KIAdditions.m in Sources */,
 				7C320A681A775C890023DD06 /* PasswordVC.m in Sources */,
+				2CE5DE6F1A806B72003AB0EB /* PersonalRecordTableViewController.m in Sources */,
 				7CAB6B481A75DF46000C6F99 /* AppDelegate.m in Sources */,
 				2C2D8B4E1A7A207300A93D57 /* TimePickerView.m in Sources */,
 				0C28E67A1A776CC6006A2EE8 /* HeightAndWeightVC.m in Sources */,
@@ -521,7 +522,6 @@
 				0C9021481A7B550400740536 /* ChangeWeightAndHeightVC.m in Sources */,
 				7C320A721A7795610023DD06 /* KICropImageView.m in Sources */,
 				2C55F0881A77B1530077189D /* TrainingEventsTableViewCell.m in Sources */,
-				7CC677961A77515B00FD3287 /* PersonalRecordViewController.m in Sources */,
 				7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */,
 				2CAC1F3A1A78AFEA00DA4292 /* TwoLabelTableViewCell.m in Sources */,
 				2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */,

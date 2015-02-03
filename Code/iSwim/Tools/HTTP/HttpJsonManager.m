@@ -124,7 +124,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     AFHTTPRequestOperation *operation = [manager GET:url parameters:vParams sender:viewController success:^(AFHTTPRequestOperation *operation, id responseObject){
         [manager hideWaitView:viewController];
         //判断是否成功
-        BOOL sucess = [responseObject[@"rs"] integerValue] == 1 ? YES : NO;
+        BOOL sucess = YES;//[responseObject[@"rs"] integerValue] == 1 ? YES : NO;
         
         //根据成功与否，返回相应值
         if (sucess)
