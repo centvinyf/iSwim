@@ -8,6 +8,7 @@
 
 #import "GraphViewController.h"
 #import "MBLineChart.h"
+#import "HttpJsonManager.h"
 @interface GraphViewController ()
 
 @end
@@ -26,6 +27,18 @@
 
 }
 
+- (void)loadData:(NSString *)url
+{
+    NSDictionary *parameters = @{};
+    [HttpJsonManager postWithParameters:parameters
+                                 sender:self url:url
+                      completionHandler:^(BOOL sucess, id content)
+    {
+        if (sucess) {
+            NSLog(@"%@",content);
+        }
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

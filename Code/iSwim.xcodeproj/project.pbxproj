@@ -52,6 +52,8 @@
 		7CDEF59E1A7B2743006FF48D /* MyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF59D1A7B2743006FF48D /* MyRecordViewController.m */; };
 		7CDEF5A11A7B28AA006FF48D /* PointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF5A01A7B28AA006FF48D /* PointsViewController.m */; };
 		7CDEF5A71A7B2A79006FF48D /* TrainingRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF5A61A7B2A79006FF48D /* TrainingRecordsViewController.m */; };
+		7CEB269A1A805B88003221E0 /* HttpJsonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEB26991A805B88003221E0 /* HttpJsonManager.m */; };
+		7CEB269E1A805BBB003221E0 /* XMProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEB269D1A805BBB003221E0 /* XMProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +143,10 @@
 		7CDEF5A01A7B28AA006FF48D /* PointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsViewController.m; sourceTree = "<group>"; };
 		7CDEF5A51A7B2A79006FF48D /* TrainingRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingRecordsViewController.h; sourceTree = "<group>"; };
 		7CDEF5A61A7B2A79006FF48D /* TrainingRecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingRecordsViewController.m; sourceTree = "<group>"; };
+		7CEB26981A805B88003221E0 /* HttpJsonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpJsonManager.h; sourceTree = "<group>"; };
+		7CEB26991A805B88003221E0 /* HttpJsonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpJsonManager.m; sourceTree = "<group>"; };
+		7CEB269C1A805BBB003221E0 /* XMProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMProgressHUD.h; sourceTree = "<group>"; };
+		7CEB269D1A805BBB003221E0 /* XMProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMProgressHUD.m; sourceTree = "<group>"; };
 		BDB6D6BDC0E11EBBE26CA79E /* libPods-iSwim.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iSwim.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -322,12 +328,34 @@
 		7CC677751A763D9100FD3287 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7CEB269B1A805BBB003221E0 /* MBProgressHUD+Extension */,
+				7CEB26971A805B88003221E0 /* HTTP */,
 				2CAC1F4F1A78E3FB00DA4292 /* MBPicker */,
 				7C320A6D1A7795610023DD06 /* CropImageView */,
 				7CC677761A763DE600FD3287 /* MBLineChart.h */,
 				7CC677771A763DE600FD3287 /* MBLineChart.m */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		7CEB26971A805B88003221E0 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				7CEB26981A805B88003221E0 /* HttpJsonManager.h */,
+				7CEB26991A805B88003221E0 /* HttpJsonManager.m */,
+			);
+			name = HTTP;
+			path = iSwim/Tools/HTTP;
+			sourceTree = "<group>";
+		};
+		7CEB269B1A805BBB003221E0 /* MBProgressHUD+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7CEB269C1A805BBB003221E0 /* XMProgressHUD.h */,
+				7CEB269D1A805BBB003221E0 /* XMProgressHUD.m */,
+			);
+			name = "MBProgressHUD+Extension";
+			path = "iSwim/Tools/MBProgressHUD+Extension";
 			sourceTree = "<group>";
 		};
 		7CED554F1A7F751900C7E01F /* Controllers */ = {
@@ -501,8 +529,10 @@
 				7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */,
 				7CDEF5A11A7B28AA006FF48D /* PointsViewController.m in Sources */,
 				7CDEF59E1A7B2743006FF48D /* MyRecordViewController.m in Sources */,
+				7CEB269E1A805BBB003221E0 /* XMProgressHUD.m in Sources */,
 				7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */,
 				2CAC1F451A78C6F100DA4292 /* ThreeLabelTableViewCell.m in Sources */,
+				7CEB269A1A805B88003221E0 /* HttpJsonManager.m in Sources */,
 				7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */,
 				7CAB6B451A75DF46000C6F99 /* main.m in Sources */,
 				0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */,
