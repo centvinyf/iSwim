@@ -21,6 +21,8 @@
  *  @param completion 网络请求完成后执行的block
  */
 
++ (void)setToken:(NSString *)token;
+
 +(void)postWithParameters:(NSDictionary *)params
                      sender:(UIViewController *)viewController
                       url:(NSString *)url

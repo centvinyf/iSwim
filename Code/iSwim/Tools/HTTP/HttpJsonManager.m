@@ -127,7 +127,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
         BOOL sucess = [responseObject[@"rs"] integerValue] == 1 ? YES : NO;
         
         //根据成功与否，返回相应值
-        if (sucess)
+        if (YES)
         {
             completion(sucess, responseObject);
         }
@@ -232,7 +232,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     hud = nil;
 }
 
-- (void)setToken:(NSString *)token
++ (void)setToken:(NSString *)token
 {
     sharedInstance.mToken = token;
 }

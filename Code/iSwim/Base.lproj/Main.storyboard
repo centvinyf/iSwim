@@ -3926,7 +3926,7 @@
         <!--游泳控-->
         <scene sceneID="5VP-F1-k9s">
             <objects>
-                <navigationController title="游泳控" automaticallyAdjustsScrollViewInsets="NO" id="RyQ-Z8-Sk7" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNav" title="游泳控" automaticallyAdjustsScrollViewInsets="NO" id="RyQ-Z8-Sk7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNv-yD-AM2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
