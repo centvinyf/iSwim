@@ -7,7 +7,7 @@
 //
 
 #import "BirthdayDateVC.h"
-
+#import "Header.h"
 @interface BirthdayDateVC ()
 @property (weak, nonatomic) IBOutlet UILabel        *mYearLab;
 @property (weak, nonatomic) IBOutlet UILabel        *mMonthLab;
@@ -110,11 +110,19 @@
         {
             vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
-        NSDictionary*vBirthdayDic=@{@"year":_mYearLab.text,@"month":_mMonthLab.text,@"day":_mDayLab.text};
-        [vPersonInfoDic setObject:vBirthdayDic forKey:@"birthday"];
+        NSDateFormatter*formatter=[[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        NSString*str=[NSString stringWithFormat:@"%@-%@-%@",_mYearLab.text,_mMonthLab.text,_mDayLab.text];
+        NSDate*date=[formatter dateFromString:str];
+        double interval=[date timeIntervalSince1970];
+        [vPersonInfoDic setObject:[NSNumber numberWithDouble:interval] forKey:@"birthday"];
         [vPersonInfoDic setObject:_mVenueTextField.text forKey:@"venue"];
         [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
+        
+        [HttpJsonManager postWithParameters:vPersonInfoDic sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+            NSLog(@"%s---%@",__FUNCTION__,content);
+        }];
     }
 }
 

@@ -8736,6 +8736,9 @@
                                                 <state key="normal" title="2015-01-08">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="VWK-Cn-np6" eventType="touchUpInside" id="jdB-rw-OJT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-Ml-jcO">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -8743,6 +8746,9 @@
                                                 <state key="normal" title="2015-01-08">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="VWK-Cn-np6" eventType="touchUpInside" id="XvP-7T-Cgt"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="至" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkQ-91-4Pa">
                                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -8778,6 +8784,9 @@
                                                         <include reference="j2s-h7-8Rv"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="coverViewCancelBtnClick:" destination="VWK-Cn-np6" eventType="touchUpInside" id="aJD-c7-9bq"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC3-Bn-kls">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -8806,6 +8815,9 @@
                                                         <include reference="mdb-Z4-zzk"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="coverViewSureBtnClick:" destination="VWK-Cn-np6" eventType="touchUpInside" id="f0M-oV-CLB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -8899,6 +8911,10 @@
                                         <date key="date" timeIntervalSinceReferenceDate="444129638.50129598">
                                             <!--2015-01-28 09:20:38 +0000-->
                                         </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                            <!--1970-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="zh-Hans"/>
                                     </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -9027,8 +9043,16 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="积分详情" id="Jft-pZ-mwX"/>
+                    <navigationItem key="navigationItem" title="积分详情" id="Jft-pZ-mwX">
+                        <barButtonItem key="rightBarButtonItem" image="magnifier" id="uzx-Ae-Z3c"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mCoverView" destination="FZn-a1-4WL" id="yJN-gh-omM"/>
+                        <outlet property="mDatePicker" destination="UHx-Du-H6z" id="UH1-8n-s0p"/>
+                        <outlet property="mEndBtn" destination="Tqf-Ml-jcO" id="zmC-R7-zwv"/>
+                        <outlet property="mStartBtn" destination="GHs-Bn-lIq" id="KmD-hT-DnH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQm-Kl-Va1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -9622,6 +9646,7 @@
         <image name="finish_time" width="55" height="54"/>
         <image name="gear" width="20" height="24"/>
         <image name="items_round" width="28" height="42"/>
+        <image name="magnifier" width="21" height="22"/>
         <image name="one_px_gray_bar" width="306" height="1"/>
         <image name="place" width="15" height="13"/>
         <image name="rank_detail" width="23" height="26"/>

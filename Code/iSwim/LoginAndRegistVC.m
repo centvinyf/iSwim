@@ -48,21 +48,42 @@
 {
     [self.view endEditing:YES];
 }
-- (IBAction)btnClick:(UIButton *)sender
+-(void)loadData:(NSObject*)obj
 {
     [HttpJsonManager getWithParameters:@{@"phoneNumber":_mPhoneNumberTextField.text,@"password":_mPasswordTextField.text} sender:self url:[NSString stringWithFormat:@"%@/api/client/authenticate",SERVERADDRESS]completionHandler:^(BOOL sucess, id content) {
         NSLog(@"%@",content);
         if ([[content objectForKey:@"code"]integerValue]==5001)
         {
-            [self performSegueWithIdentifier:@"PasswordVC" sender:nil];
+            UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"请输入正确的账号和密码" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+            [alert show];
         }
         else
         {
             [HttpJsonManager setToken:[content objectForKey:@"authToken"]];
-            UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
-            vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainNav"];
+            NSMutableDictionary*vPersonInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
+            if (!vPersonInfoDic)
+            {
+                vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
+            }
+            [vPersonInfoDic setObject:_mPhoneNumberTextField.text forKey:@"mobilePhone"];
+            [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            
+            if ([[_mPhoneNumberTextField.text substringFromIndex:5] isEqualToString:_mPasswordTextField.text])
+            {
+                [self performSegueWithIdentifier:@"PasswordVC" sender:nil];
+            }
+            else
+            {
+                UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
+                vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainNav"];
+            }
         }
     }];
+}
+- (IBAction)btnClick:(UIButton *)sender
+{   if(_mPhoneNumberTextField)
+    [self loadData:nil];
 }
 - (IBAction)forgetPasswordBtn:(id)sender
 {

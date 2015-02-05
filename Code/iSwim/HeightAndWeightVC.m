@@ -65,8 +65,8 @@
         {
             vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
-        [vPersonInfoDic setObject:_mHeightLab.text forKey:@"height"];
-        [vPersonInfoDic setObject:_mWeightLab.text forKey:@"weight"];
+        [vPersonInfoDic setObject:[NSNumber numberWithDouble:[_mHeightLab.text doubleValue]] forKey:@"height"];
+        [vPersonInfoDic setObject:[NSNumber numberWithDouble:[_mWeightLab.text doubleValue]] forKey:@"weight"];
         [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }

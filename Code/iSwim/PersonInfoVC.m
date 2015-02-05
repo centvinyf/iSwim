@@ -7,15 +7,19 @@
 //
 
 #import "PersonInfoVC.h"
-
+#import "Header.h"
+#import "ChangeWeightAndHeightVC.h"
+#import "ChangeNameVC.h"
+#import "ChangeEmailVC.h"
+#import "PersonInfoBaseClass.h"
 @interface PersonInfoVC ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     
     __weak IBOutlet UITableView                     *_mTable;
     NSArray                                         *_mTitleArray;
+    PersonInfoBaseClass                             *_mPersonInfo;
 }
 @property (weak, nonatomic) IBOutlet UIView         *mCoverView;
-@property (weak, nonatomic) IBOutlet UIButton       *mSureBtn;
 @property (strong,nonatomic)UIImageView             *mHeaderImageView;
 @property (weak, nonatomic) IBOutlet UIButton       *mPhotographBtn;
 @property (weak, nonatomic) IBOutlet UIButton       *mPhotoAlbumBtn;
@@ -28,11 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _mSureBtn.layer.masksToBounds=YES;
-    _mSureBtn.layer.cornerRadius=10;
-    _mSureBtn.layer.borderWidth=2;
-    _mSureBtn.layer.borderColor=[[UIColor orangeColor]CGColor];
-    
     _mPhotographBtn.layer.masksToBounds=YES;
     _mPhotographBtn.layer.cornerRadius=10;
     _mPhotographBtn.layer.borderWidth=1;
@@ -49,16 +48,21 @@
     _mPhotoCancelBtn.layer.borderColor=[[UIColor colorWithRed:0xb9/255.0 green:0x74/255.0 blue:0x19/255.0 alpha:1] CGColor];
 
     
-    UITapGestureRecognizer *vTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
+    UITapGestureRecognizer *vTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
     [_mCoverView addGestureRecognizer:vTapGestureRecognizer];
-    _mTitleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划"],@[@"修改密码"]];
+    _mTitleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划",@"设置训练计划"],@[@"修改密码"]];
     
     _mHeaderImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 10, 80, 80)];
     _mHeaderImageView.backgroundColor=[UIColor cyanColor];
     _mHeaderImageView.layer.masksToBounds=YES;
     _mHeaderImageView.layer.cornerRadius=40;
+    [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        _mPersonInfo=[[PersonInfoBaseClass alloc]initWithDictionary:content];
+        NSLog(@"%s---%@",__FUNCTION__,content);
+        [_mTable reloadData];
+    }];
 }
--(void)handlePan:(UIPanGestureRecognizer*)pan
+-(void)handleTap:(UITapGestureRecognizer*)tap
 {
     _mCoverView.hidden=YES;
 }
@@ -78,6 +82,10 @@
         _mCoverView.hidden=YES;
     }
 }
+- (IBAction)sureBtnClick:(id)sender {
+}
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section==0)
@@ -88,7 +96,7 @@
     {
         return 3;
     }
-    else if (section==2)
+    else if (section==2||section==3)
     {
         return 2;
     }
@@ -136,12 +144,12 @@
         }
     }
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    if (indexPath.section==0||indexPath.section==2||(indexPath.section==1&&indexPath.row==1)||(indexPath.section==4&&indexPath.row==0))
+    if (indexPath.section==0||(indexPath.section==2&&indexPath.row==0)||(indexPath.section==1&&indexPath.row==1)||(indexPath.section==4&&indexPath.row==0)||(indexPath.section==3&&indexPath.row==1))
     {
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
 
-    if(indexPath.section==3)
+    if(indexPath.section==3&&indexPath.row==0)
     {
         UISwitch*swt=[[UISwitch alloc]init];
         cell.accessoryView=swt;
@@ -151,38 +159,28 @@
     {
         cell.accessoryView=_mHeaderImageView;
     }
-#warning line
-    if (indexPath.section==1)
-    {
-        
-    }
     cell.textLabel.text=[[_mTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    
-    NSMutableDictionary*dic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults]objectForKey:@"personInfoDic"]];
-    
+//    if (indexPath.section==2&&indexPath.row==1&&[[_mPersonInfoDic objectForKey:@"venue"] length]>=1) {
+//        cell.textLabel.text=[_mPersonInfoDic objectForKey:@"venue"];
+//    }
     if (indexPath.section==0&&indexPath.row==1)
     {
-        cell.detailTextLabel.text=[dic objectForKey:@"name"];
+        cell.detailTextLabel.text=_mPersonInfo.name;
     }
     else if (indexPath.section==1&&indexPath.row==0)
     {
-        cell.detailTextLabel.text=[[dic objectForKey:@"sex"]boolValue]?@"女":@"男";
+        cell.detailTextLabel.text=[_mPersonInfo.gender isEqualToString:@"MALE"]?@"男":@"女";
     }
     else if (indexPath.section==1&&indexPath.row==1)
     {
-        cell.detailTextLabel.text=[dic objectForKey:@"height"];
+        cell.detailTextLabel.text=[NSString stringWithFormat:@"%.0fcm",_mPersonInfo.height];
     }
     else if (indexPath.section==1&&indexPath.row==2)
     {
-        cell.detailTextLabel.text=[dic objectForKey:@"weight"];
-    }
+        cell.detailTextLabel.text=[NSString stringWithFormat:@"%.0fkg",_mPersonInfo.weight];    }
     else if (indexPath.section==2&&indexPath.row==0)
     {
-        cell.detailTextLabel.text=[dic objectForKey:@"email"];
-    }
-    else if (indexPath.section==2&&indexPath.row==1)
-    {
-        cell.detailTextLabel.text=[dic objectForKey:@"venue"];
+        cell.detailTextLabel.text=_mPersonInfo.email;
     }
     return cell;
 }
@@ -204,9 +202,9 @@
     {
         [self performSegueWithIdentifier:@"changeEmailVC" sender:nil];
     }
-    else if (2==indexPath.section&&1==indexPath.row)
+    else if (3==indexPath.section&&1==indexPath.row)
     {
-        [self performSegueWithIdentifier:@"changeVenueVC" sender:nil];
+        //修改计划
     }
     else if (4==indexPath.section)
     {
@@ -249,14 +247,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"changeNameVC"])
+    {
+        ChangeNameVC*vc=segue.destinationViewController;
+        vc.mName=_mPersonInfo.name;
+        vc.block=^(NSDictionary*vDic){
+            _mPersonInfo.name=[vDic objectForKey:@"name"];
+            [_mTable reloadData];
+        };
+    }
+    else if ([segue.identifier isEqualToString:@"changeInfoVC"])
+    {
+        ChangeWeightAndHeightVC*vc=segue.destinationViewController;
+        vc.mHeight=_mPersonInfo.height;
+        vc.mWeight=_mPersonInfo.weight;
+        vc.mSex=![_mPersonInfo.gender isEqualToString:@"MALE"];
+        vc.block=^(NSDictionary*vDic){
+            _mPersonInfo.height=[[vDic objectForKey:@"height"] doubleValue];
+            _mPersonInfo.weight=[[vDic objectForKey:@"weight"] doubleValue];
+            _mPersonInfo.gender=[[vDic objectForKey:@"sex"]boolValue]?@"Female":@"MALE";
+            [_mTable reloadData];
+        };
+    }
+    else if ([segue.identifier isEqualToString:@"changeEmailVC"])
+    {
+        ChangeEmailVC*vc=segue.destinationViewController;
+        vc.mEmail=_mPersonInfo.email;
+        vc.block=^(NSDictionary*vDic){
+            _mPersonInfo.email=[vDic objectForKey:@"email"];
+            [_mTable reloadData];
+        };
+    }
 }
-*/
 
 @end

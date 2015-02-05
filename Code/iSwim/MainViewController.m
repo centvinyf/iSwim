@@ -7,8 +7,11 @@
 //
 
 #import "MainViewController.h"
-
+#import "MBLineChart.h"
+#import "Header.h"
 @interface MainViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *mBgImageView;
 
 @end
 
@@ -23,7 +26,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/api/client/updates",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        _mBgImageView.userInteractionEnabled=YES;
+        CGRect rect=CGRectMake(0, 0, _mBgImageView.frame.size.width, _mBgImageView.frame.size.height);
+        UIScrollView *chartView = [MBLineChart giveMeAGraphForDictionary:content frame:rect delegate:nil];
+        NSLog(@"%@",NSStringFromCGRect(chartView.frame));
+        [_mBgImageView addSubview:chartView];
+    }];
+}
 /*
 #pragma mark - Navigation
 
