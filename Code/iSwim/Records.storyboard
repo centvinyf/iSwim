@@ -1356,9 +1356,6 @@
                                                     <state key="normal" image="score_blue">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="147" y="25" width="106" height="54"/>
-                                                    </variation>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4V-Xj-7gL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -9594,6 +9591,19 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="2800"/>
+                    <connections>
+                        <outlet property="m1000m" destination="oWQ-qI-XXD" id="4dF-W2-RZC"/>
+                        <outlet property="m100m" destination="qCT-1O-7Ts" id="fHU-WA-cOm"/>
+                        <outlet property="m1500m" destination="bey-Ir-SED" id="f8o-lX-zx0"/>
+                        <outlet property="m200m" destination="IlS-Pe-wvy" id="BHX-ZQ-XcM"/>
+                        <outlet property="m25m" destination="ssY-HM-e2a" id="0d1-8g-dIv"/>
+                        <outlet property="m400m" destination="vyE-Oq-ncx" id="ldf-AG-Kgr"/>
+                        <outlet property="m50m" destination="ICt-6t-tdG" id="0Gc-Pf-Gu8"/>
+                        <outlet property="m800m" destination="yHc-NL-BEC" id="0z7-eh-7qV"/>
+                        <outlet property="mTotalCaluli" destination="Prb-u7-jJ9" id="Tyg-Mo-0Lc"/>
+                        <outlet property="mTotalDistance" destination="1DF-FB-I8T" id="Eck-XB-bAJ"/>
+                        <outlet property="mTotalTime" destination="sVR-7c-fLh" id="Zue-9h-B1n"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="er0-Z2-fti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

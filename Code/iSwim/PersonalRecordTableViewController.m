@@ -44,7 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.mInitData = [[NSDictionary alloc]init];
+    
     [self loadData:@"http://54.172.152.115:9000/api/client/records/current?authToken=b1f329d6d6d5c9614459eb6c2197afffe50c3969!1"];
     
     
@@ -102,6 +102,8 @@
     NSString *vLongestDis = [NSString stringWithFormat:@"%.2fkm",[dic[@"longestEventDis"] floatValue]/1000];
     [self.mLongestEventDis setText:vLongestDis];
     NSString *vLongestDate = [dic[@"ledDt"] substringToIndex:10];
+    NSString *vLongestEventPlace = [dic objectForKey:@"ledPoolName"] ;
+    [self.mLongestEventPlace setText:vLongestEventPlace];
     [self.mLongestEventDate setText:vLongestDate];
     NSString *v25mTime = [[dic objectForKey:@"m25Bt"] objectForKey:@"time"];
     [self.m25BestTime setText:v25mTime];
@@ -135,6 +137,8 @@
     [self.m1500BestTime setText:v1500mTime];
     NSString *v1500mDate = [[[dic objectForKey:@"m1500Bt"] objectForKey:@"splitDt"] substringToIndex:10];
     [self.m1500Date setText:v1500mDate];
+   
+    
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
