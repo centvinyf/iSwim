@@ -42,7 +42,9 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    [HttpJsonManager postWithParameters:@{@"password":_mPassword1.text,@"passwordConfirmed":_mPassword2.text} sender:self url:[NSString stringWithFormat:@"%@/api/client/profile/password",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        NSLog(@"%d-%@",sucess,content);
+    }];
 }
 
 

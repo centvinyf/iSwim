@@ -7,11 +7,8 @@
 //
 #define kSLIDERWEIGHT _mHeightSlider.bounds.size.width
 #import "ChangeWeightAndHeightVC.h"
-
+#import "Header.h"
 @interface ChangeWeightAndHeightVC ()
-{
-    BOOL _mSex;
-}
 @property (weak, nonatomic) IBOutlet UISlider               *mHeightSlider;
 @property (weak, nonatomic) IBOutlet UISlider               *mWeightSlider;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint     *mHeightConstraint;
@@ -25,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _mSexBtn.userInteractionEnabled=NO;
     [_mHeightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
     [_mWeightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
     
@@ -36,37 +35,56 @@
     [_mWeightSlider setMinimumTrackImage:[UIImage imageNamed:@"SliderMin"] forState:UIControlStateNormal];
     [_mWeightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
     
+    _mHeightSlider.value=_mHeight  / 100.0 - 120 / 100.0;
+    _mWeightSlider.value=_mWeight / 100.0 - 50 / 100.0;
+}
+-(void)viewDidLayoutSubviews
+{
+    [self valueChange:_mHeightSlider];
+    [self valueChange:_mWeightSlider];
+    [self initViews:_mSexBtn];
 }
 -(void)valueChange:(UISlider*)slider
 {
     if (slider==_mHeightSlider)
     {
-        _mHeightLab.text=[NSString stringWithFormat:@"%dcm",120+(int)(slider.value*100)];
-        _mHeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 )-9.0;
+        _mHeightLab.text=[NSString stringWithFormat:@"%dcm",120 + (int)(slider.value * 100)];
+        _mHeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 ) - 9.0;
     }
     else
     {
-        _mWeightLab.text=[NSString stringWithFormat:@"%dkg",50+(int)(slider.value*100)];
-        _mWeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 )-9.0;
+        _mWeightLab.text=[NSString stringWithFormat:@"%dkg",50 + (int)(slider.value * 100)];
+        _mWeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 ) - 9.0;
     }
 }
 - (IBAction)btnClick:(UIButton *)sender
 {
-    if (!_mSex)
+    _mSex=!_mSex;
+    [self initViews:sender];
+    
+}
+-(void)initViews:(UIButton*)btn
+{
+    if (_mSex)
     {
-        [sender setBackgroundImage:[UIImage imageNamed:@"woman"] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageNamed:@"woman"] forState:UIControlStateNormal];
     }
     else
     {
-        [sender setBackgroundImage:[UIImage imageNamed:@"man"] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageNamed:@"man"] forState:UIControlStateNormal];
     }
-    _mSex=!_mSex;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)saveBtnClick:(id)sender {
+    _block(@{@"height":[NSNumber numberWithInt:[_mHeightLab.text doubleValue]],@"weight":[NSNumber numberWithInt:[_mWeightLab.text doubleValue]],@"sex":[NSNumber numberWithBool:_mSex]});
+    [HttpJsonManager postWithParameters:@{@"height":[NSNumber numberWithInt:[_mHeightLab.text doubleValue]],@"weight":[NSNumber numberWithInt:[_mWeightLab.text doubleValue]],@"sex":[NSNumber numberWithBool:_mSex]} sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        NSLog(@"%s---%@",__FUNCTION__,content);
+    }];
+    ALERT(@"保存成功");
 }
 
 /*

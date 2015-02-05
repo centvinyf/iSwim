@@ -40,8 +40,9 @@ static HttpJsonManager *sharedInstance;
     NSLog(@"request URL:%@",url);
     NSMutableDictionary *vParams = [NSMutableDictionary dictionaryWithDictionary:params];
     if (manager.mToken) {
-        [vParams setObject:manager.mToken forKey:@"autoToken"];
+        [vParams setObject:manager.mToken forKey:@"authToken"];
     }
+    NSLog(@"token:%@",manager.mToken);
     //Post
     [manager POST:url parameters:vParams sender:viewController success:^(AFHTTPRequestOperation *operation, id responseObject){
         [manager hideWaitView:viewController];
@@ -80,7 +81,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     NSLog(@"request URL:%@",url);
     NSMutableDictionary *vParams = [NSMutableDictionary dictionaryWithDictionary:params];
     if (manager.mToken) {
-        [vParams setObject:manager.mToken forKey:@"autoToken"];
+        [vParams setObject:manager.mToken forKey:@"authToken"];
     }
     //Post
     [manager POST:url parameters:vParams sender:viewController constructingBodyWithBlock:block success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -118,22 +119,22 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     NSLog(@"request URL:%@",url);
     NSMutableDictionary *vParams = [NSMutableDictionary dictionaryWithDictionary:params];
     if (manager.mToken) {
-        [vParams setObject:manager.mToken forKey:@"autoToken"];
+        [vParams setObject:manager.mToken forKey:@"authToken"];
     }
     //Get
     AFHTTPRequestOperation *operation = [manager GET:url parameters:vParams sender:viewController success:^(AFHTTPRequestOperation *operation, id responseObject){
         [manager hideWaitView:viewController];
         //判断是否成功
-        BOOL sucess = [responseObject[@"rs"] integerValue] == 1 ? YES : NO;
+        //BOOL sucess = [responseObject[@"rs"] integerValue] == 1 ? YES : NO;
         
         //根据成功与否，返回相应值
         if (YES)
         {
-            completion(sucess, responseObject);
+            completion(YES, responseObject);
         }
         else
         {
-            completion(sucess, responseObject[@"info"]);
+            completion(YES, responseObject[@"info"]);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
