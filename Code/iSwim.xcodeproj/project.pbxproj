@@ -556,7 +556,6 @@
 				7C320A721A7795610023DD06 /* KICropImageView.m in Sources */,
 				2C55F0881A77B1530077189D /* TrainingEventsTableViewCell.m in Sources */,
 				0CD7EE471A80B25E00AD24DC /* ChangePasswordVC.m in Sources */,
-				7CC677961A77515B00FD3287 /* PersonalRecordViewController.m in Sources */,
 				7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */,
 				2CAC1F3A1A78AFEA00DA4292 /* TwoLabelTableViewCell.m in Sources */,
 				2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */,
