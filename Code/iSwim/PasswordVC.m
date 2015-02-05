@@ -5,8 +5,9 @@
 //  Created by MagicBeans2 on 15/1/27.
 //  Copyright (c) 2015年 Magic Beans. All rights reserved.
 //
-
+#import "Header.h"
 #import "PasswordVC.h"
+
 
 @interface PasswordVC ()
 @property (weak, nonatomic) IBOutlet UITextField *mPassword1;
@@ -41,8 +42,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
 
 

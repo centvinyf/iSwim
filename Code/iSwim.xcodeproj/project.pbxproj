@@ -64,6 +64,7 @@
 		0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthdayDateVC.m; sourceTree = "<group>"; };
 		0C9021461A7B550400740536 /* ChangeWeightAndHeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeightAndHeightVC.h; sourceTree = "<group>"; };
 		0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeightAndHeightVC.m; sourceTree = "<group>"; };
+		0CD7EE091A80664C00AD24DC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = iSwim/Header.h; sourceTree = "<group>"; };
 		2C2D8B4C1A7A207300A93D57 /* TimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerView.h; sourceTree = "<group>"; };
 		2C2D8B4D1A7A207300A93D57 /* TimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerView.m; sourceTree = "<group>"; };
 		2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JifenDetailViewController.h; sourceTree = "<group>"; };
@@ -328,6 +329,7 @@
 		7CC677751A763D9100FD3287 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0CD7EE091A80664C00AD24DC /* Header.h */,
 				7CEB269B1A805BBB003221E0 /* MBProgressHUD+Extension */,
 				7CEB26971A805B88003221E0 /* HTTP */,
 				2CAC1F4F1A78E3FB00DA4292 /* MBPicker */,

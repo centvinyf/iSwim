@@ -5,9 +5,10 @@
 //  Created by MagicBeans2 on 15/1/27.
 //  Copyright (c) 2015年 Magic Beans. All rights reserved.
 //
-#define LOGINED YES
-
+#define LOGINED [[HttpJsonManager manager]mToken]
+#import "Header.h"
 #import "LoginAndRegistVC.h"
+
 
 @interface LoginAndRegistVC ()
 
@@ -49,15 +50,19 @@
 }
 - (IBAction)btnClick:(UIButton *)sender
 {
-    if (LOGINED)
-    {
-        [self performSegueWithIdentifier:@"PasswordVC" sender:nil];
-    }
-    else
-    {
-        UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
-        vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainVC"];
-    }
+    [HttpJsonManager getWithParameters:@{@"phoneNumber":_mPhoneNumberTextField.text,@"password":_mPasswordTextField.text} sender:self url:[NSString stringWithFormat:@"%@/api/client/authenticate",SERVERADDRESS]completionHandler:^(BOOL sucess, id content) {
+        NSLog(@"%@",content);
+        if ([[content objectForKey:@"code"]integerValue]==5001)
+        {
+            [self performSegueWithIdentifier:@"PasswordVC" sender:nil];
+        }
+        else
+        {
+            [HttpJsonManager setToken:[content objectForKey:@"authToken"]];
+            UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
+            vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainNav"];
+        }
+    }];
 }
 - (IBAction)forgetPasswordBtn:(id)sender
 {
