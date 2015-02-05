@@ -56,7 +56,14 @@
     CGFloat xLabelWidth;
     
     if (_showLabel) {
-        xLabelWidth = _chartCavanWidth / ([xLabels count] - 1);
+        if (xLabels.count > 1)
+        {
+            xLabelWidth = _chartCavanWidth / ([xLabels count] - 1);
+        }
+        else
+        {
+            xLabelWidth = _chartCavanWidth;
+        }
     } else {
         xLabelWidth = (self.frame.size.width) / [xLabels count];
     }
@@ -84,7 +91,15 @@
             {
                 labelText = xLabels[index];
                 
-                float x = _chartMargin +  (index * _xLabelWidth) - (_xLabelWidth / 2);
+                float x = 0;
+                if (xLabels.count > 1)
+                {
+                    x = _chartMargin +  (index * _xLabelWidth) - (_xLabelWidth / 2);
+                }
+                else
+                {
+                    x = _chartMargin;
+                }
                 NSInteger y = _chartMargin + _chartCavanHeight;
                 
                 PNChartLabel *label = [[PNChartLabel alloc] initWithFrame:CGRectMake(x, y, _xLabelWidth, (NSInteger)kLbelHeight)];
@@ -211,73 +226,97 @@
     {
         
         PNLineChartData *chartData = self.chartData[lineIndex];
-        //re-calculate frame width
-        if (chartData.itemCount > 7) {
-            float minWidhtForItem = (self.frame.size.width - _chartMargin * 2) / 6;
-            _chartCavanWidth = minWidhtForItem * (chartData.itemCount - 1);
+        if(chartData.itemCount > 1)
+        {
+            //re-calculate frame width
+            if (chartData.itemCount > 7) {
+                float minWidhtForItem = (self.frame.size.width - _chartMargin * 2) / 6;
+                _chartCavanWidth = minWidhtForItem * (chartData.itemCount - 1);
+            }
+            else
+            {
+                _chartCavanWidth = self.frame.size.width - _chartMargin * 2;
+            }
+            
+            _chartPath = [[NSMutableArray alloc] init];
+            _pointPath = [[NSMutableArray alloc] init];
+            [self calculateChartPath:_chartPath andPointsPath:_pointPath andPathKeyPoints:_pathPoints andPathStartEndPoints:_endPointsOfPath];
+
+            CAShapeLayer *chartLine = (CAShapeLayer *)self.chartLineArray[lineIndex];
+            CAShapeLayer *pointLayer = (CAShapeLayer *)self.chartPointArray[lineIndex];
+            UIGraphicsBeginImageContext(self.frame.size);
+            // setup the color of the chart line
+            if (chartData.color) {
+                chartLine.strokeColor = [[chartData.color colorWithAlphaComponent:chartData.alpha]CGColor];
+            } else {
+                chartLine.strokeColor = [PNGreen CGColor];
+                pointLayer.strokeColor = [PNGreen CGColor];
+            }
+            
+            UIBezierPath *progressline = [_chartPath objectAtIndex:lineIndex];
+            UIBezierPath *pointPath = [_pointPath objectAtIndex:lineIndex];
+            
+            chartLine.path = progressline.CGPath;
+            pointLayer.path = pointPath.CGPath;
+            
+            chartLine.strokeEnd = 1.0;
+            
+            //shadow
+            NSMutableArray *_chartShadow = [[NSMutableArray alloc] init];
+            NSMutableArray *_pointShadow = [[NSMutableArray alloc] init];
+            [self calculateChartShadow:_chartShadow andPointsPath:_pointShadow];
+
+            // create as many chart line layers as there are data-lines
+            chartLine = [CAShapeLayer layer];
+            chartLine.lineCap       = kCALineCapButt;
+            chartLine.lineJoin      = kCALineJoinMiter;
+            chartLine.fillColor     = [[UIColor whiteColor] CGColor];
+            chartLine.lineWidth     = chartData.lineWidth;
+            chartLine.strokeEnd     = 0.0;
+            [self.layer addSublayer:chartLine];
+            
+            // create point
+            pointLayer = [CAShapeLayer layer];
+            pointLayer.strokeColor   = [PNLightGrey CGColor];
+            pointLayer.lineCap       = kCALineCapRound;
+            pointLayer.lineJoin      = kCALineJoinBevel;
+            pointLayer.fillColor     = nil;
+            pointLayer.lineWidth     = chartData.lineWidth;
+            [self.layer addSublayer:pointLayer];
+
+            chartLine.strokeColor = [PNLightGrey CGColor];
+            
+            progressline = [_chartShadow objectAtIndex:lineIndex];
+            pointPath = [_pointShadow objectAtIndex:lineIndex];
+            
+            chartLine.path = progressline.CGPath;
+            pointLayer.path = pointPath.CGPath;
+            
+            chartLine.strokeEnd = 1.0;
+
+            UIGraphicsEndImageContext();
         }
         else
         {
+            // create point
             _chartCavanWidth = self.frame.size.width - _chartMargin * 2;
+            UIBezierPath *pointPath = [UIBezierPath bezierPath];
+            CGPoint circleCenter = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0);
+            [pointPath moveToPoint:circleCenter];
+            [pointPath addArcWithCenter:circleCenter radius:chartData.inflexionPointWidth / 2 startAngle:0 endAngle:2 * M_PI clockwise:YES];
+
+            CAShapeLayer *pointLayer = [CAShapeLayer layer];
+            pointLayer.strokeColor   = [PNBlack CGColor];
+            pointLayer.lineCap       = kCALineCapRound;
+            pointLayer.lineJoin      = kCALineJoinBevel;
+            pointLayer.fillColor     = nil;
+            pointLayer.lineWidth     = chartData.lineWidth;
+            [self.layer addSublayer:pointLayer];
+            pointLayer.path = pointPath.CGPath;
+            
+            UIGraphicsEndImageContext();
+
         }
-        
-        _chartPath = [[NSMutableArray alloc] init];
-        _pointPath = [[NSMutableArray alloc] init];
-        [self calculateChartPath:_chartPath andPointsPath:_pointPath andPathKeyPoints:_pathPoints andPathStartEndPoints:_endPointsOfPath];
-
-        CAShapeLayer *chartLine = (CAShapeLayer *)self.chartLineArray[lineIndex];
-        CAShapeLayer *pointLayer = (CAShapeLayer *)self.chartPointArray[lineIndex];
-        UIGraphicsBeginImageContext(self.frame.size);
-        // setup the color of the chart line
-        if (chartData.color) {
-            chartLine.strokeColor = [[chartData.color colorWithAlphaComponent:chartData.alpha]CGColor];
-        } else {
-            chartLine.strokeColor = [PNGreen CGColor];
-            pointLayer.strokeColor = [PNGreen CGColor];
-        }
-        
-        UIBezierPath *progressline = [_chartPath objectAtIndex:lineIndex];
-        UIBezierPath *pointPath = [_pointPath objectAtIndex:lineIndex];
-        
-        chartLine.path = progressline.CGPath;
-        pointLayer.path = pointPath.CGPath;
-        
-        chartLine.strokeEnd = 1.0;
-        
-        //shadow
-        NSMutableArray *_chartShadow = [[NSMutableArray alloc] init];
-        NSMutableArray *_pointShadow = [[NSMutableArray alloc] init];
-        [self calculateChartShadow:_chartShadow andPointsPath:_pointShadow];
-
-        // create as many chart line layers as there are data-lines
-        chartLine = [CAShapeLayer layer];
-        chartLine.lineCap       = kCALineCapButt;
-        chartLine.lineJoin      = kCALineJoinMiter;
-        chartLine.fillColor     = [[UIColor whiteColor] CGColor];
-        chartLine.lineWidth     = chartData.lineWidth;
-        chartLine.strokeEnd     = 0.0;
-        [self.layer addSublayer:chartLine];
-        
-        // create point
-        pointLayer = [CAShapeLayer layer];
-        pointLayer.strokeColor   = [PNLightGrey CGColor];
-        pointLayer.lineCap       = kCALineCapRound;
-        pointLayer.lineJoin      = kCALineJoinBevel;
-        pointLayer.fillColor     = nil;
-        pointLayer.lineWidth     = chartData.lineWidth;
-        [self.layer addSublayer:pointLayer];
-
-        chartLine.strokeColor = [PNLightGrey CGColor];
-        
-        progressline = [_chartShadow objectAtIndex:lineIndex];
-        pointPath = [_pointShadow objectAtIndex:lineIndex];
-        
-        chartLine.path = progressline.CGPath;
-        pointLayer.path = pointPath.CGPath;
-        
-        chartLine.strokeEnd = 1.0;
-
-        UIGraphicsEndImageContext();
     }
 }
 
