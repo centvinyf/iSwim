@@ -1367,6 +1367,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="游泳控" id="2qi-7R-QRa"/>
+                    <connections>
+                        <outlet property="mBgImageView" destination="kyu-9G-mnQ" id="Gty-Gw-T86"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nj4-Ql-0O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,12 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总成绩"
-                               yValues:@[@60.1, @160.1, @126.4, @262.2, @186.2, @127.2, @176.2,@127.2, @176.2]
-                      xValues:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"]
-                        frame:CGRectMake(0, 0, 320, 300)
-                     delegate:self];
-    [self.view addSubview:chartView];
+//    UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总成绩"
+//                               yValues:@[@60.1, @160.1, @126.4, @262.2, @186.2, @127.2, @176.2,@127.2, @176.2]
+//                      xValues:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"]
+//                        frame:CGRectMake(0, 0, 320, 300)
+//                     delegate:self];
+//    [self.view addSubview:chartView];
 
 }
 

@@ -143,7 +143,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
             [manager hideWaitView:viewController];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"网络错误" message:error.localizedDescription delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil];
             [alert show];
-            completion(NO, @"网络请求失败");
+           // completion(NO, @"网络请求失败");
         }
     }];
 
