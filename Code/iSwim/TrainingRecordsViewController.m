@@ -7,15 +7,29 @@
 //
 
 #import "TrainingRecordsViewController.h"
-
+#import "HttpJsonManager.h"
+#import "MBLineChart.h"
 @interface TrainingRecordsViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *mTotalDistance;
 
+@property (weak, nonatomic) IBOutlet UIImageView *mTotalTime;
+@property (weak, nonatomic) IBOutlet UIImageView *mTotalCaluli;
+@property (weak, nonatomic) IBOutlet UIImageView *m25m;
+@property (weak, nonatomic) IBOutlet UIImageView *m50m;
+@property (weak, nonatomic) IBOutlet UIImageView *m100m;
+@property (weak, nonatomic) IBOutlet UIImageView *m200m;
+@property (weak, nonatomic) IBOutlet UIImageView *m400m;
+@property (weak, nonatomic) IBOutlet UIImageView *m800m;
+@property (weak, nonatomic) IBOutlet UIImageView *m1000m;
+@property (weak, nonatomic) IBOutlet UIImageView *m1500m;
+@property (retain,nonatomic) NSDictionary * mInitData;
 @end
 
 @implementation TrainingRecordsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadData:@"http://54.172.152.115:9000/api/client/pbts?authToken=b1f329d6d6d5c9614459eb6c2197afffe50c3969!1&startDt=2015-1-1&endDt=2015-10-1&baseEventId=10"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -29,72 +43,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (void)loadData:(NSString *)url
+{
+    NSDictionary *parameters = @{};
+    [HttpJsonManager getWithParameters:parameters
+                                sender:self url:url
+                     completionHandler:^(BOOL sucess, id content)
+     {
+         if (sucess) {
+             self.mInitData = content;
+             [self initViews:self.mInitData];
+             NSLog(@"%@",content);
+         }
+     }];
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+-(void) addChartToImageview : (NSArray *) xValues : (NSArray *) yValues :(UIImageView *) imageView
+{
+    UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总成绩"
+                                                       yValues:yValues
+                                                       xValues:xValues
+                                                         frame:imageView.frame
+                                                      delegate:nil];
+    [imageView addSubview:chartView];
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+-(void) initViews : (NSDictionary * )dic
+{
     
-    // Configure the cell...
-    
-    return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -102,6 +102,8 @@
     NSString *vLongestDis = [NSString stringWithFormat:@"%.2fkm",[dic[@"longestEventDis"] floatValue]/1000];
     [self.mLongestEventDis setText:vLongestDis];
     NSString *vLongestDate = [dic[@"ledDt"] substringToIndex:10];
+    NSString *vLongestEventPlace = [dic objectForKey:@"ledPoolName"] ;
+    [self.mLongestEventPlace setText:vLongestEventPlace];
     [self.mLongestEventDate setText:vLongestDate];
     NSString *v25mTime = [[dic objectForKey:@"m25Bt"] objectForKey:@"time"];
     [self.m25BestTime setText:v25mTime];
@@ -135,6 +137,8 @@
     [self.m1500BestTime setText:v1500mTime];
     NSString *v1500mDate = [[[dic objectForKey:@"m1500Bt"] objectForKey:@"splitDt"] substringToIndex:10];
     [self.m1500Date setText:v1500mDate];
+   
+    
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
