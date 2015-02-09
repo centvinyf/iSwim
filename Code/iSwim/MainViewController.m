@@ -30,6 +30,7 @@
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mIsFirst=YES;
+    self.automaticallyAdjustsScrollViewInsets=NO;
     //_mXArray=[[NSMutableArray alloc]initWithObjects:@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss",@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss", nil];
     //_mYArray=[[NSMutableArray alloc]initWithObjects:@260,@300,@36.5,@10.9,@105,@260,@300,@36.5,@10.9,@105, nil];
 }

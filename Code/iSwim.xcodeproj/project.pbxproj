@@ -12,6 +12,7 @@
 		0C5BE43F1A885F5D007F1D76 /* PersonInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE43C1A885F5D007F1D76 /* PersonInfoBaseClass.m */; };
 		0C5BE4401A885F5D007F1D76 /* PersonInfoPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */; };
 		0C5BE4431A889486007F1D76 /* PointBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4421A889486007F1D76 /* PointBaseClass.m */; };
+		0C5BE4461A88A0DA007F1D76 /* PointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4451A88A0DA007F1D76 /* PointsCell.m */; };
 		0C9021481A7B550400740536 /* ChangeWeightAndHeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */; };
 		0CD7EE3E1A80A81100AD24DC /* ChangeNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE3D1A80A81100AD24DC /* ChangeNameVC.m */; };
 		0CD7EE411A80A9B900AD24DC /* ChangeEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE401A80A9B900AD24DC /* ChangeEmailVC.m */; };
@@ -74,6 +75,8 @@
 		0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoPool.m; sourceTree = "<group>"; };
 		0C5BE4411A889486007F1D76 /* PointBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointBaseClass.h; sourceTree = "<group>"; };
 		0C5BE4421A889486007F1D76 /* PointBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointBaseClass.m; sourceTree = "<group>"; };
+		0C5BE4441A88A0DA007F1D76 /* PointsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsCell.h; sourceTree = "<group>"; };
+		0C5BE4451A88A0DA007F1D76 /* PointsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsCell.m; sourceTree = "<group>"; };
 		0C9021461A7B550400740536 /* ChangeWeightAndHeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeightAndHeightVC.h; sourceTree = "<group>"; };
 		0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeightAndHeightVC.m; sourceTree = "<group>"; };
 		0CD7EE091A80664C00AD24DC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = iSwim/Header.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				7CC677911A77515B00FD3287 /* TrainingPlanTableViewCell.m */,
 				2CAC1F431A78C6F100DA4292 /* ThreeLabelTableViewCell.h */,
 				2CAC1F441A78C6F100DA4292 /* ThreeLabelTableViewCell.m */,
+				0C5BE4441A88A0DA007F1D76 /* PointsCell.h */,
+				0C5BE4451A88A0DA007F1D76 /* PointsCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				7CDEF5A71A7B2A79006FF48D /* TrainingRecordsViewController.m in Sources */,
 				7C320A671A775C890023DD06 /* NameAndEmailVC.m in Sources */,
 				7C320A6C1A7794AC0023DD06 /* CropImageViewController.m in Sources */,
+				0C5BE4461A88A0DA007F1D76 /* PointsCell.m in Sources */,
 				7CC677781A763DE600FD3287 /* MBLineChart.m in Sources */,
 				7CC6779C1A77515B00FD3287 /* TrainingPlanTableViewCell.m in Sources */,
 				2CAC1F4E1A78E1DA00DA4292 /* ChangePlanViewController.m in Sources */,

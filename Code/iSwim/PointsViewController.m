@@ -10,12 +10,14 @@
 #import "Header.h"
 #import "MBLineChart.h"
 #import "PointBaseClass.h"
+#import "PointsCell.h"
 @interface PointsViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     BOOL _mIsFirst;
     NSMutableArray      *_mXArray;
     NSMutableArray      *_mYArray;
     NSArray             *_mDataSourceArray;
+    BOOL _mIsStart;
 }
 @property (weak, nonatomic) IBOutlet UIButton *mStartBtn;
 @property (weak, nonatomic) IBOutlet UIButton *mEndBtn;
@@ -43,10 +45,11 @@
         [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/api/client/profile/points",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
             NSLog(@"%s---%@",__FUNCTION__,content);
             _mDataSourceArray=(NSArray*)content;
+            [_mTableView reloadData];
             for (int i=0; i<_mDataSourceArray.count; i++) {
                 NSDictionary*vPoint=_mDataSourceArray[i];
                 [_mXArray addObject:[vPoint objectForKey:@"createdDt"]];
-                [_mYArray addObject:[vPoint objectForKey:@"change"]];
+                [_mYArray addObject:[NSNumber numberWithInteger:[[vPoint objectForKey:@"change"] integerValue]]];
             }
             CGRect rect=CGRectMake(0, 0, _mBgImageView.frame.size.width, _mBgImageView.frame.size.height);
             UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总时长" yValues:_mYArray xValues:_mXArray frame:rect delegate:nil];
@@ -59,21 +62,48 @@
         }];
     }
 }
+- (IBAction)queryBtnClick:(id)sender {
+    _mCoverView.hidden=NO;
+}
 - (IBAction)btnClick:(UIButton *)sender {
     _mDatePicker.hidden=NO;
+    if (sender==_mStartBtn) {
+        _mIsStart=YES;
+    }
+    else
+    {
+        _mIsStart=NO;
+    }
     [_mDatePicker date];
 }
 - (IBAction)coverViewCancelBtnClick:(id)sender {
     _mCoverView.hidden=YES;
 }
 - (IBAction)coverViewSureBtnClick:(id)sender {
+    
     _mCoverView.hidden=YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark -datep\Picker delegate And datasource-
+
+- (IBAction)datePickerChangeValues:(UIDatePicker*)sender {
+    NSDateFormatter*vFormatter=[[NSDateFormatter alloc]init];
+    vFormatter.dateFormat=@"yyyy-MM-dd";
+    NSString*vStr=[vFormatter stringFromDate:[sender date]];
+    if (_mIsStart) {
+        [_mStartBtn setTitle:vStr forState:UIControlStateNormal];
+    }
+    else
+    {
+        [_mEndBtn setTitle:vStr forState:UIControlStateNormal];
+    }
+}
+
 
 #pragma mark -tableView delegate And datasource-
 
@@ -83,7 +113,24 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    PointsCell*cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell=[[PointsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    NSDictionary*vPoint=_mDataSourceArray[indexPath.row];
+    cell.mDateLab.text=[[vPoint objectForKey:@"changeDt"] substringToIndex:10];
+    cell.mDesLab.text=[vPoint objectForKey:@"descr"];
+    if ([[vPoint objectForKey:@"change"] intValue]>0) {
+        cell.mChangeLab.text=[NSString stringWithFormat:@"积分变化+%d",[[vPoint objectForKey:@"change"] intValue]];
+        cell.mChangeLab.textColor=[UIColor colorWithRed:0x00/255.0 green:0x71/255.0 blue:0x31/255.0 alpha:1];
+    }
+    else
+    {
+        cell.mChangeLab.text=[NSString stringWithFormat:@"积分变化%d",[[vPoint objectForKey:@"change"] intValue]];
+        cell.mChangeLab.textColor=[UIColor colorWithRed:0xd1/255.0 green:0x31/255.0 blue:0x01/255.0 alpha:1];
+    }
+    
+    return cell;
 }
 /*
 #pragma mark - Navigation

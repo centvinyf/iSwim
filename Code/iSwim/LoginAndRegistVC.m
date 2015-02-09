@@ -75,6 +75,9 @@
             }
             else
             {
+                [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+                    [HttpJsonManager manager].mDictionary=[NSMutableDictionary dictionaryWithDictionary:(NSDictionary*)content];
+                }];
                 UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
                 vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainNav"];
             }

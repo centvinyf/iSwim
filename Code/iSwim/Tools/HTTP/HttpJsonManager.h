@@ -40,4 +40,5 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
         completionHandler:(void (^)(BOOL sucess, id content))completion;
 
 @property (retain, nonatomic) NSString *mToken;
+@property (strong, nonatomic) NSMutableDictionary *mDictionary;
 @end

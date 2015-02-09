@@ -121,6 +121,7 @@
         
         [HttpJsonManager postWithParameters:vPersonInfoDic sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
             NSLog(@"%s---%@",__FUNCTION__,content);
+           [HttpJsonManager manager].mDictionary=[NSMutableDictionary dictionaryWithDictionary:(NSDictionary*)content];
         }];
     }
     
