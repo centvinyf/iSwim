@@ -110,13 +110,12 @@
         {
             vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
-        NSDateFormatter*formatter=[[NSDateFormatter alloc]init];
-        [formatter setDateFormat:@"yyyy-MM-dd"];
+        //NSDateFormatter*formatter=[[NSDateFormatter alloc]init];
+        //[formatter setDateFormat:@"yyyy-MM-dd"];
         NSString*str=[NSString stringWithFormat:@"%@-%@-%@",_mYearLab.text,_mMonthLab.text,_mDayLab.text];
-        NSDate*date=[formatter dateFromString:str];
-        double interval=[date timeIntervalSince1970];
-        [vPersonInfoDic setObject:[NSNumber numberWithDouble:interval] forKey:@"birthday"];
-        [vPersonInfoDic setObject:_mVenueTextField.text forKey:@"venue"];
+        //NSDate*date=[formatter dateFromString:str];
+        //double interval=[date timeIntervalSince1970];
+        [vPersonInfoDic setObject:str forKey:@"birthday"];
         [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         
@@ -124,6 +123,7 @@
             NSLog(@"%s---%@",__FUNCTION__,content);
         }];
     }
+    
 }
 
 @end

@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		0C28E67A1A776CC6006A2EE8 /* HeightAndWeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */; };
 		0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */; };
-		0C37EB121A81AEC400FFA202 /* PersonInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C37EB0F1A81AEC400FFA202 /* PersonInfoBaseClass.m */; };
-		0C37EB131A81AEC400FFA202 /* PersonInfoPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C37EB111A81AEC400FFA202 /* PersonInfoPool.m */; };
-		0C37EB161A82214600FFA202 /* PointBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C37EB151A82214600FFA202 /* PointBaseClass.m */; };
+		0C5BE43F1A885F5D007F1D76 /* PersonInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE43C1A885F5D007F1D76 /* PersonInfoBaseClass.m */; };
+		0C5BE4401A885F5D007F1D76 /* PersonInfoPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */; };
+		0C5BE4431A889486007F1D76 /* PointBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4421A889486007F1D76 /* PointBaseClass.m */; };
 		0C9021481A7B550400740536 /* ChangeWeightAndHeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */; };
 		0CD7EE3E1A80A81100AD24DC /* ChangeNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE3D1A80A81100AD24DC /* ChangeNameVC.m */; };
 		0CD7EE411A80A9B900AD24DC /* ChangeEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE401A80A9B900AD24DC /* ChangeEmailVC.m */; };
@@ -68,12 +68,12 @@
 		0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightAndWeightVC.m; sourceTree = "<group>"; };
 		0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthdayDateVC.h; sourceTree = "<group>"; };
 		0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthdayDateVC.m; sourceTree = "<group>"; };
-		0C37EB0E1A81AEC400FFA202 /* PersonInfoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoBaseClass.h; sourceTree = "<group>"; };
-		0C37EB0F1A81AEC400FFA202 /* PersonInfoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoBaseClass.m; sourceTree = "<group>"; };
-		0C37EB101A81AEC400FFA202 /* PersonInfoPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoPool.h; sourceTree = "<group>"; };
-		0C37EB111A81AEC400FFA202 /* PersonInfoPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoPool.m; sourceTree = "<group>"; };
-		0C37EB141A82214600FFA202 /* PointBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointBaseClass.h; sourceTree = "<group>"; };
-		0C37EB151A82214600FFA202 /* PointBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointBaseClass.m; sourceTree = "<group>"; };
+		0C5BE43B1A885F5D007F1D76 /* PersonInfoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoBaseClass.h; sourceTree = "<group>"; };
+		0C5BE43C1A885F5D007F1D76 /* PersonInfoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoBaseClass.m; sourceTree = "<group>"; };
+		0C5BE43D1A885F5D007F1D76 /* PersonInfoPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoPool.h; sourceTree = "<group>"; };
+		0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoPool.m; sourceTree = "<group>"; };
+		0C5BE4411A889486007F1D76 /* PointBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointBaseClass.h; sourceTree = "<group>"; };
+		0C5BE4421A889486007F1D76 /* PointBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointBaseClass.m; sourceTree = "<group>"; };
 		0C9021461A7B550400740536 /* ChangeWeightAndHeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeightAndHeightVC.h; sourceTree = "<group>"; };
 		0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeightAndHeightVC.m; sourceTree = "<group>"; };
 		0CD7EE091A80664C00AD24DC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = iSwim/Header.h; sourceTree = "<group>"; };
@@ -393,12 +393,12 @@
 		7CED55501A7F753D00C7E01F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0C37EB0E1A81AEC400FFA202 /* PersonInfoBaseClass.h */,
-				0C37EB0F1A81AEC400FFA202 /* PersonInfoBaseClass.m */,
-				0C37EB101A81AEC400FFA202 /* PersonInfoPool.h */,
-				0C37EB111A81AEC400FFA202 /* PersonInfoPool.m */,
-				0C37EB141A82214600FFA202 /* PointBaseClass.h */,
-				0C37EB151A82214600FFA202 /* PointBaseClass.m */,
+				0C5BE4411A889486007F1D76 /* PointBaseClass.h */,
+				0C5BE4421A889486007F1D76 /* PointBaseClass.m */,
+				0C5BE43B1A885F5D007F1D76 /* PersonInfoBaseClass.h */,
+				0C5BE43C1A885F5D007F1D76 /* PersonInfoBaseClass.m */,
+				0C5BE43D1A885F5D007F1D76 /* PersonInfoPool.h */,
+				0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -552,13 +552,13 @@
 				2CAC1F521A78E41F00DA4292 /* MBPickerView.m in Sources */,
 				7CDEF59B1A7B0DBB006FF48D /* MainViewController.m in Sources */,
 				0C9021481A7B550400740536 /* ChangeWeightAndHeightVC.m in Sources */,
-				0C37EB121A81AEC400FFA202 /* PersonInfoBaseClass.m in Sources */,
 				7C320A721A7795610023DD06 /* KICropImageView.m in Sources */,
 				2C55F0881A77B1530077189D /* TrainingEventsTableViewCell.m in Sources */,
 				0CD7EE471A80B25E00AD24DC /* ChangePasswordVC.m in Sources */,
 				7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */,
 				2CAC1F3A1A78AFEA00DA4292 /* TwoLabelTableViewCell.m in Sources */,
 				2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */,
+				0C5BE43F1A885F5D007F1D76 /* PersonInfoBaseClass.m in Sources */,
 				0CD7EE3E1A80A81100AD24DC /* ChangeNameVC.m in Sources */,
 				7CC677971A77515B00FD3287 /* ScoreDetailViewController.m in Sources */,
 				7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */,
@@ -566,17 +566,17 @@
 				7CDEF59E1A7B2743006FF48D /* MyRecordViewController.m in Sources */,
 				7CEB269E1A805BBB003221E0 /* XMProgressHUD.m in Sources */,
 				7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */,
-				0C37EB131A81AEC400FFA202 /* PersonInfoPool.m in Sources */,
 				2CAC1F451A78C6F100DA4292 /* ThreeLabelTableViewCell.m in Sources */,
 				7CEB269A1A805B88003221E0 /* HttpJsonManager.m in Sources */,
 				7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */,
 				7CAB6B451A75DF46000C6F99 /* main.m in Sources */,
 				0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */,
+				0C5BE4401A885F5D007F1D76 /* PersonInfoPool.m in Sources */,
 				0CD7EE411A80A9B900AD24DC /* ChangeEmailVC.m in Sources */,
 				7CC6779A1A77515B00FD3287 /* ThisBestRecordViewController.m in Sources */,
 				7CC677951A77515B00FD3287 /* BasicInfoViewCell.m in Sources */,
 				2CAC1F421A78C15400DA4292 /* RankingViewController.m in Sources */,
-				0C37EB161A82214600FFA202 /* PointBaseClass.m in Sources */,
+				0C5BE4431A889486007F1D76 /* PointBaseClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

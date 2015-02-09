@@ -1,7 +1,7 @@
 //
 //  PersonInfoPool.m
 //
-//  Created by MagicBeans2  on 15/2/4
+//  Created by MagicBeans2  on 15/2/9
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ NSString *const kPersonInfoPoolCode = @"code";
 NSString *const kPersonInfoPoolCreatedDt = @"createdDt";
 NSString *const kPersonInfoPoolLength = @"length";
 NSString *const kPersonInfoPoolModifiedDt = @"modifiedDt";
+NSString *const kPersonInfoPoolName = @"name";
 
 
 @interface PersonInfoPool ()
@@ -26,6 +27,7 @@ NSString *const kPersonInfoPoolModifiedDt = @"modifiedDt";
 @synthesize createdDt = _createdDt;
 @synthesize length = _length;
 @synthesize modifiedDt = _modifiedDt;
+@synthesize name = _name;
 
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
@@ -44,6 +46,7 @@ NSString *const kPersonInfoPoolModifiedDt = @"modifiedDt";
             self.createdDt = [self objectOrNilForKey:kPersonInfoPoolCreatedDt fromDictionary:dict];
             self.length = [[self objectOrNilForKey:kPersonInfoPoolLength fromDictionary:dict] doubleValue];
             self.modifiedDt = [self objectOrNilForKey:kPersonInfoPoolModifiedDt fromDictionary:dict];
+            self.name = [self objectOrNilForKey:kPersonInfoPoolName fromDictionary:dict];
 
     }
     
@@ -58,6 +61,7 @@ NSString *const kPersonInfoPoolModifiedDt = @"modifiedDt";
     [mutableDict setValue:self.createdDt forKey:kPersonInfoPoolCreatedDt];
     [mutableDict setValue:[NSNumber numberWithDouble:self.length] forKey:kPersonInfoPoolLength];
     [mutableDict setValue:self.modifiedDt forKey:kPersonInfoPoolModifiedDt];
+    [mutableDict setValue:self.name forKey:kPersonInfoPoolName];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
@@ -85,6 +89,7 @@ NSString *const kPersonInfoPoolModifiedDt = @"modifiedDt";
     self.createdDt = [aDecoder decodeObjectForKey:kPersonInfoPoolCreatedDt];
     self.length = [aDecoder decodeDoubleForKey:kPersonInfoPoolLength];
     self.modifiedDt = [aDecoder decodeObjectForKey:kPersonInfoPoolModifiedDt];
+    self.name = [aDecoder decodeObjectForKey:kPersonInfoPoolName];
     return self;
 }
 
@@ -95,6 +100,7 @@ NSString *const kPersonInfoPoolModifiedDt = @"modifiedDt";
     [aCoder encodeObject:_createdDt forKey:kPersonInfoPoolCreatedDt];
     [aCoder encodeDouble:_length forKey:kPersonInfoPoolLength];
     [aCoder encodeObject:_modifiedDt forKey:kPersonInfoPoolModifiedDt];
+    [aCoder encodeObject:_name forKey:kPersonInfoPoolName];
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -107,6 +113,7 @@ NSString *const kPersonInfoPoolModifiedDt = @"modifiedDt";
         copy.createdDt = [self.createdDt copyWithZone:zone];
         copy.length = self.length;
         copy.modifiedDt = [self.modifiedDt copyWithZone:zone];
+        copy.name = [self.name copyWithZone:zone];
     }
     
     return copy;

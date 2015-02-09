@@ -1356,9 +1356,6 @@
                                                     <state key="normal" image="score_blue">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="147" y="25" width="106" height="54"/>
-                                                    </variation>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4V-Xj-7gL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -8716,8 +8713,12 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VWK-Cn-np6" id="bwb-1B-5oL"/>
+                                    <outlet property="delegate" destination="VWK-Cn-np6" id="bE0-Qn-fj5"/>
+                                </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZn-a1-4WL">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZn-a1-4WL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rcx-0H-Ky4">
@@ -9051,10 +9052,12 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="mBgImageView" destination="Bw9-6E-Yut" id="TrJ-cg-avR"/>
                         <outlet property="mCoverView" destination="FZn-a1-4WL" id="yJN-gh-omM"/>
                         <outlet property="mDatePicker" destination="UHx-Du-H6z" id="UH1-8n-s0p"/>
                         <outlet property="mEndBtn" destination="Tqf-Ml-jcO" id="zmC-R7-zwv"/>
                         <outlet property="mStartBtn" destination="GHs-Bn-lIq" id="KmD-hT-DnH"/>
+                        <outlet property="mTableView" destination="q1l-Se-VM5" id="kkf-PH-bpU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQm-Kl-Va1" userLabel="First Responder" sceneMemberID="firstResponder"/>

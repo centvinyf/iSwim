@@ -1,7 +1,7 @@
 //
 //  PersonInfoBaseClass.m
 //
-//  Created by MagicBeans2  on 15/2/4
+//  Created by MagicBeans2  on 15/2/9
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
@@ -9,18 +9,17 @@
 #import "PersonInfoPool.h"
 
 
-NSString *const kPersonInfoBaseClassName = @"name";
-NSString *const kPersonInfoBaseClassPoints = @"points";
-NSString *const kPersonInfoBaseClassPool = @"pool";
-NSString *const kPersonInfoBaseClassModifiedDt = @"modifiedDt";
-NSString *const kPersonInfoBaseClassWeight = @"weight";
-NSString *const kPersonInfoBaseClassCreatedDt = @"createdDt";
-NSString *const kPersonInfoBaseClassBirthday = @"birthday";
-NSString *const kPersonInfoBaseClassHeight = @"height";
-NSString *const kPersonInfoBaseClassMobilePhone = @"mobilePhone";
-NSString *const kPersonInfoBaseClassGrade = @"grade";
 NSString *const kPersonInfoBaseClassGender = @"gender";
+NSString *const kPersonInfoBaseClassPoints = @"points";
+NSString *const kPersonInfoBaseClassWeight = @"weight";
+NSString *const kPersonInfoBaseClassHeight = @"height";
+NSString *const kPersonInfoBaseClassPool = @"pool";
+NSString *const kPersonInfoBaseClassGrade = @"grade";
 NSString *const kPersonInfoBaseClassEmail = @"email";
+NSString *const kPersonInfoBaseClassCreatedDt = @"createdDt";
+NSString *const kPersonInfoBaseClassMobilePhone = @"mobilePhone";
+NSString *const kPersonInfoBaseClassModifiedDt = @"modifiedDt";
+NSString *const kPersonInfoBaseClassName = @"name";
 
 
 @interface PersonInfoBaseClass ()
@@ -31,18 +30,17 @@ NSString *const kPersonInfoBaseClassEmail = @"email";
 
 @implementation PersonInfoBaseClass
 
-@synthesize name = _name;
-@synthesize points = _points;
-@synthesize pool = _pool;
-@synthesize modifiedDt = _modifiedDt;
-@synthesize weight = _weight;
-@synthesize createdDt = _createdDt;
-@synthesize birthday = _birthday;
-@synthesize height = _height;
-@synthesize mobilePhone = _mobilePhone;
-@synthesize grade = _grade;
 @synthesize gender = _gender;
+@synthesize points = _points;
+@synthesize weight = _weight;
+@synthesize height = _height;
+@synthesize pool = _pool;
+@synthesize grade = _grade;
 @synthesize email = _email;
+@synthesize createdDt = _createdDt;
+@synthesize mobilePhone = _mobilePhone;
+@synthesize modifiedDt = _modifiedDt;
+@synthesize name = _name;
 
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
@@ -57,18 +55,17 @@ NSString *const kPersonInfoBaseClassEmail = @"email";
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.name = [self objectOrNilForKey:kPersonInfoBaseClassName fromDictionary:dict];
-            self.points = [[self objectOrNilForKey:kPersonInfoBaseClassPoints fromDictionary:dict] doubleValue];
-            self.pool = [PersonInfoPool modelObjectWithDictionary:[dict objectForKey:kPersonInfoBaseClassPool]];
-            self.modifiedDt = [self objectOrNilForKey:kPersonInfoBaseClassModifiedDt fromDictionary:dict];
-            self.weight = [[self objectOrNilForKey:kPersonInfoBaseClassWeight fromDictionary:dict] doubleValue];
-            self.createdDt = [self objectOrNilForKey:kPersonInfoBaseClassCreatedDt fromDictionary:dict];
-            self.birthday = [self objectOrNilForKey:kPersonInfoBaseClassBirthday fromDictionary:dict];
-            self.height = [[self objectOrNilForKey:kPersonInfoBaseClassHeight fromDictionary:dict] doubleValue];
-            self.mobilePhone = [self objectOrNilForKey:kPersonInfoBaseClassMobilePhone fromDictionary:dict];
-            self.grade = [[self objectOrNilForKey:kPersonInfoBaseClassGrade fromDictionary:dict] doubleValue];
             self.gender = [self objectOrNilForKey:kPersonInfoBaseClassGender fromDictionary:dict];
+            self.points = [[self objectOrNilForKey:kPersonInfoBaseClassPoints fromDictionary:dict] doubleValue];
+            self.weight = [[self objectOrNilForKey:kPersonInfoBaseClassWeight fromDictionary:dict] doubleValue];
+            self.height = [[self objectOrNilForKey:kPersonInfoBaseClassHeight fromDictionary:dict] doubleValue];
+            self.pool = [PersonInfoPool modelObjectWithDictionary:[dict objectForKey:kPersonInfoBaseClassPool]];
+            self.grade = [[self objectOrNilForKey:kPersonInfoBaseClassGrade fromDictionary:dict] doubleValue];
             self.email = [self objectOrNilForKey:kPersonInfoBaseClassEmail fromDictionary:dict];
+            self.createdDt = [self objectOrNilForKey:kPersonInfoBaseClassCreatedDt fromDictionary:dict];
+            self.mobilePhone = [self objectOrNilForKey:kPersonInfoBaseClassMobilePhone fromDictionary:dict];
+            self.modifiedDt = [self objectOrNilForKey:kPersonInfoBaseClassModifiedDt fromDictionary:dict];
+            self.name = [self objectOrNilForKey:kPersonInfoBaseClassName fromDictionary:dict];
 
     }
     
@@ -79,18 +76,17 @@ NSString *const kPersonInfoBaseClassEmail = @"email";
 - (NSDictionary *)dictionaryRepresentation
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-    [mutableDict setValue:self.name forKey:kPersonInfoBaseClassName];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.points] forKey:kPersonInfoBaseClassPoints];
-    [mutableDict setValue:[self.pool dictionaryRepresentation] forKey:kPersonInfoBaseClassPool];
-    [mutableDict setValue:self.modifiedDt forKey:kPersonInfoBaseClassModifiedDt];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.weight] forKey:kPersonInfoBaseClassWeight];
-    [mutableDict setValue:self.createdDt forKey:kPersonInfoBaseClassCreatedDt];
-    [mutableDict setValue:self.birthday forKey:kPersonInfoBaseClassBirthday];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.height] forKey:kPersonInfoBaseClassHeight];
-    [mutableDict setValue:self.mobilePhone forKey:kPersonInfoBaseClassMobilePhone];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.grade] forKey:kPersonInfoBaseClassGrade];
     [mutableDict setValue:self.gender forKey:kPersonInfoBaseClassGender];
+    [mutableDict setValue:[NSNumber numberWithDouble:self.points] forKey:kPersonInfoBaseClassPoints];
+    [mutableDict setValue:[NSNumber numberWithDouble:self.weight] forKey:kPersonInfoBaseClassWeight];
+    [mutableDict setValue:[NSNumber numberWithDouble:self.height] forKey:kPersonInfoBaseClassHeight];
+    [mutableDict setValue:[self.pool dictionaryRepresentation] forKey:kPersonInfoBaseClassPool];
+    [mutableDict setValue:[NSNumber numberWithDouble:self.grade] forKey:kPersonInfoBaseClassGrade];
     [mutableDict setValue:self.email forKey:kPersonInfoBaseClassEmail];
+    [mutableDict setValue:self.createdDt forKey:kPersonInfoBaseClassCreatedDt];
+    [mutableDict setValue:self.mobilePhone forKey:kPersonInfoBaseClassMobilePhone];
+    [mutableDict setValue:self.modifiedDt forKey:kPersonInfoBaseClassModifiedDt];
+    [mutableDict setValue:self.name forKey:kPersonInfoBaseClassName];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
@@ -114,36 +110,34 @@ NSString *const kPersonInfoBaseClassEmail = @"email";
 {
     self = [super init];
 
-    self.name = [aDecoder decodeObjectForKey:kPersonInfoBaseClassName];
-    self.points = [aDecoder decodeDoubleForKey:kPersonInfoBaseClassPoints];
-    self.pool = [aDecoder decodeObjectForKey:kPersonInfoBaseClassPool];
-    self.modifiedDt = [aDecoder decodeObjectForKey:kPersonInfoBaseClassModifiedDt];
-    self.weight = [aDecoder decodeDoubleForKey:kPersonInfoBaseClassWeight];
-    self.createdDt = [aDecoder decodeObjectForKey:kPersonInfoBaseClassCreatedDt];
-    self.birthday = [aDecoder decodeObjectForKey:kPersonInfoBaseClassBirthday];
-    self.height = [aDecoder decodeDoubleForKey:kPersonInfoBaseClassHeight];
-    self.mobilePhone = [aDecoder decodeObjectForKey:kPersonInfoBaseClassMobilePhone];
-    self.grade = [aDecoder decodeDoubleForKey:kPersonInfoBaseClassGrade];
     self.gender = [aDecoder decodeObjectForKey:kPersonInfoBaseClassGender];
+    self.points = [aDecoder decodeDoubleForKey:kPersonInfoBaseClassPoints];
+    self.weight = [aDecoder decodeDoubleForKey:kPersonInfoBaseClassWeight];
+    self.height = [aDecoder decodeDoubleForKey:kPersonInfoBaseClassHeight];
+    self.pool = [aDecoder decodeObjectForKey:kPersonInfoBaseClassPool];
+    self.grade = [aDecoder decodeDoubleForKey:kPersonInfoBaseClassGrade];
     self.email = [aDecoder decodeObjectForKey:kPersonInfoBaseClassEmail];
+    self.createdDt = [aDecoder decodeObjectForKey:kPersonInfoBaseClassCreatedDt];
+    self.mobilePhone = [aDecoder decodeObjectForKey:kPersonInfoBaseClassMobilePhone];
+    self.modifiedDt = [aDecoder decodeObjectForKey:kPersonInfoBaseClassModifiedDt];
+    self.name = [aDecoder decodeObjectForKey:kPersonInfoBaseClassName];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 
-    [aCoder encodeObject:_name forKey:kPersonInfoBaseClassName];
-    [aCoder encodeDouble:_points forKey:kPersonInfoBaseClassPoints];
-    [aCoder encodeObject:_pool forKey:kPersonInfoBaseClassPool];
-    [aCoder encodeObject:_modifiedDt forKey:kPersonInfoBaseClassModifiedDt];
-    [aCoder encodeDouble:_weight forKey:kPersonInfoBaseClassWeight];
-    [aCoder encodeObject:_createdDt forKey:kPersonInfoBaseClassCreatedDt];
-    [aCoder encodeObject:_birthday forKey:kPersonInfoBaseClassBirthday];
-    [aCoder encodeDouble:_height forKey:kPersonInfoBaseClassHeight];
-    [aCoder encodeObject:_mobilePhone forKey:kPersonInfoBaseClassMobilePhone];
-    [aCoder encodeDouble:_grade forKey:kPersonInfoBaseClassGrade];
     [aCoder encodeObject:_gender forKey:kPersonInfoBaseClassGender];
+    [aCoder encodeDouble:_points forKey:kPersonInfoBaseClassPoints];
+    [aCoder encodeDouble:_weight forKey:kPersonInfoBaseClassWeight];
+    [aCoder encodeDouble:_height forKey:kPersonInfoBaseClassHeight];
+    [aCoder encodeObject:_pool forKey:kPersonInfoBaseClassPool];
+    [aCoder encodeDouble:_grade forKey:kPersonInfoBaseClassGrade];
     [aCoder encodeObject:_email forKey:kPersonInfoBaseClassEmail];
+    [aCoder encodeObject:_createdDt forKey:kPersonInfoBaseClassCreatedDt];
+    [aCoder encodeObject:_mobilePhone forKey:kPersonInfoBaseClassMobilePhone];
+    [aCoder encodeObject:_modifiedDt forKey:kPersonInfoBaseClassModifiedDt];
+    [aCoder encodeObject:_name forKey:kPersonInfoBaseClassName];
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -152,18 +146,17 @@ NSString *const kPersonInfoBaseClassEmail = @"email";
     
     if (copy) {
 
-        copy.name = [self.name copyWithZone:zone];
-        copy.points = self.points;
-        copy.pool = [self.pool copyWithZone:zone];
-        copy.modifiedDt = [self.modifiedDt copyWithZone:zone];
-        copy.weight = self.weight;
-        copy.createdDt = [self.createdDt copyWithZone:zone];
-        copy.birthday = [self.birthday copyWithZone:zone];
-        copy.height = self.height;
-        copy.mobilePhone = [self.mobilePhone copyWithZone:zone];
-        copy.grade = self.grade;
         copy.gender = [self.gender copyWithZone:zone];
+        copy.points = self.points;
+        copy.weight = self.weight;
+        copy.height = self.height;
+        copy.pool = [self.pool copyWithZone:zone];
+        copy.grade = self.grade;
         copy.email = [self.email copyWithZone:zone];
+        copy.createdDt = [self.createdDt copyWithZone:zone];
+        copy.mobilePhone = [self.mobilePhone copyWithZone:zone];
+        copy.modifiedDt = [self.modifiedDt copyWithZone:zone];
+        copy.name = [self.name copyWithZone:zone];
     }
     
     return copy;

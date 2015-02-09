@@ -12,6 +12,7 @@
 #import "ChangeNameVC.h"
 #import "ChangeEmailVC.h"
 #import "PersonInfoBaseClass.h"
+#import "PersonInfoPool.h"
 @interface PersonInfoVC ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     
@@ -160,9 +161,9 @@
         cell.accessoryView=_mHeaderImageView;
     }
     cell.textLabel.text=[[_mTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-//    if (indexPath.section==2&&indexPath.row==1&&[[_mPersonInfoDic objectForKey:@"venue"] length]>=1) {
-//        cell.textLabel.text=[_mPersonInfoDic objectForKey:@"venue"];
-//    }
+    if (indexPath.section==2&&indexPath.row==1) {
+        cell.textLabel.text=_mPersonInfo.pool.name;
+    }
     if (indexPath.section==0&&indexPath.row==1)
     {
         cell.detailTextLabel.text=_mPersonInfo.name;
