@@ -44,8 +44,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self loadData:@"http://54.172.152.115:9000/api/client/records/current?authToken=b1f329d6d6d5c9614459eb6c2197afffe50c3969!1"];
+    self.mInitData = [[NSDictionary alloc]init];
+    [self loadData:@"http://54.172.152.115:9000/api/client/records/current"];
     
     
     // Uncomment the following line to preserve selection between presentations.
