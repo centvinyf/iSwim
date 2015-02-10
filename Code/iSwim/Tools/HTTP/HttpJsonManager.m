@@ -238,4 +238,10 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     sharedInstance.mToken = token;
 }
 
++ (void)setDictionary:(NSMutableDictionary *)dictionary
+{
+    sharedInstance.mDictionary = dictionary;
+    NSLog(@"%@",sharedInstance.mDictionary);
+}
+
 @end

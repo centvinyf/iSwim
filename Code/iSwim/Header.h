@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 Magic Beans. All rights reserved.
 //
 #import "HttpJsonManager.h"
+#import "UserProfile.h"
 #ifndef iSwim_Header_h
 #define iSwim_Header_h
 

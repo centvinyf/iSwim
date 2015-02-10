@@ -33,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"------%@",[UserProfile manager].mPersonInfo);
     _mPhotographBtn.layer.masksToBounds=YES;
     _mPhotographBtn.layer.cornerRadius=10;
     _mPhotographBtn.layer.borderWidth=1;

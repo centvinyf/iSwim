@@ -13,6 +13,7 @@
 		0C5BE4401A885F5D007F1D76 /* PersonInfoPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */; };
 		0C5BE4431A889486007F1D76 /* PointBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4421A889486007F1D76 /* PointBaseClass.m */; };
 		0C5BE4461A88A0DA007F1D76 /* PointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4451A88A0DA007F1D76 /* PointsCell.m */; };
+		0C5BE4491A88B984007F1D76 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4481A88B984007F1D76 /* UserProfile.m */; };
 		0C9021481A7B550400740536 /* ChangeWeightAndHeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */; };
 		0CD7EE3E1A80A81100AD24DC /* ChangeNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE3D1A80A81100AD24DC /* ChangeNameVC.m */; };
 		0CD7EE411A80A9B900AD24DC /* ChangeEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE401A80A9B900AD24DC /* ChangeEmailVC.m */; };
@@ -77,6 +78,8 @@
 		0C5BE4421A889486007F1D76 /* PointBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointBaseClass.m; sourceTree = "<group>"; };
 		0C5BE4441A88A0DA007F1D76 /* PointsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsCell.h; sourceTree = "<group>"; };
 		0C5BE4451A88A0DA007F1D76 /* PointsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsCell.m; sourceTree = "<group>"; };
+		0C5BE4471A88B984007F1D76 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		0C5BE4481A88B984007F1D76 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		0C9021461A7B550400740536 /* ChangeWeightAndHeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeightAndHeightVC.h; sourceTree = "<group>"; };
 		0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeightAndHeightVC.m; sourceTree = "<group>"; };
 		0CD7EE091A80664C00AD24DC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = iSwim/Header.h; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 			children = (
 				7CEB26981A805B88003221E0 /* HttpJsonManager.h */,
 				7CEB26991A805B88003221E0 /* HttpJsonManager.m */,
+				0C5BE4471A88B984007F1D76 /* UserProfile.h */,
+				0C5BE4481A88B984007F1D76 /* UserProfile.m */,
 			);
 			name = HTTP;
 			path = iSwim/Tools/HTTP;
@@ -581,6 +586,7 @@
 				0CD7EE411A80A9B900AD24DC /* ChangeEmailVC.m in Sources */,
 				7CC6779A1A77515B00FD3287 /* ThisBestRecordViewController.m in Sources */,
 				7CC677951A77515B00FD3287 /* BasicInfoViewCell.m in Sources */,
+				0C5BE4491A88B984007F1D76 /* UserProfile.m in Sources */,
 				2CAC1F421A78C15400DA4292 /* RankingViewController.m in Sources */,
 				0C5BE4431A889486007F1D76 /* PointBaseClass.m in Sources */,
 			);

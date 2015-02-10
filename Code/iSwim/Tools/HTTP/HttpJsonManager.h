@@ -22,7 +22,7 @@
  */
 
 + (void)setToken:(NSString *)token;
-
++ (void)setDictionary:(NSMutableDictionary *)dictionary;
 +(void)postWithParameters:(NSDictionary *)params
                      sender:(UIViewController *)viewController
                       url:(NSString *)url
@@ -40,5 +40,5 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
         completionHandler:(void (^)(BOOL sucess, id content))completion;
 
 @property (retain, nonatomic) NSString *mToken;
-@property (strong, nonatomic) NSMutableDictionary *mDictionary;
+@property (strong, nonatomic) NSMutableDictionary *mDictionary; 
 @end

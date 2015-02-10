@@ -76,10 +76,11 @@
             else
             {
                 [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
-                    [HttpJsonManager manager].mDictionary=[NSMutableDictionary dictionaryWithDictionary:(NSDictionary*)content];
+                    [UserProfile manager].mPersonInfo = [[PersonInfoBaseClass alloc]initWithDictionary:content];
+                    UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
+                    vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainNav"];
+
                 }];
-                UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
-                vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainNav"];
             }
         }
     }];
