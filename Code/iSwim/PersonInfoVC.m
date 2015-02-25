@@ -12,7 +12,7 @@
 #import "ChangeNameVC.h"
 #import "ChangeEmailVC.h"
 #import "PersonInfoBaseClass.h"
-#import "PersonInfoPool.h"
+#import "UIImageView+AFNetworking.h"
 @interface PersonInfoVC ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     
@@ -58,7 +58,7 @@
     _mHeaderImageView.backgroundColor=[UIColor cyanColor];
     _mHeaderImageView.layer.masksToBounds=YES;
     _mHeaderImageView.layer.cornerRadius=40;
-    [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
         _mPersonInfo=[[PersonInfoBaseClass alloc]initWithDictionary:content];
         NSLog(@"%s---%@",__FUNCTION__,content);
         [_mTable reloadData];
@@ -136,6 +136,7 @@
         if (!cell)
         {
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"headerCell"];
+            cell.accessoryView=_mHeaderImageView;
         }
     }
     else{
@@ -159,11 +160,13 @@
     
     else if (indexPath.section==0&&indexPath.row==0)
     {
-        cell.accessoryView=_mHeaderImageView;
+        NSURL *url = [NSURL URLWithString:_mPersonInfo.path];
+        NSLog(@"url==%@",url);
+        _mHeaderImageView.backgroundColor=[UIColor yellowColor];
     }
     cell.textLabel.text=[[_mTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     if (indexPath.section==2&&indexPath.row==1) {
-        cell.textLabel.text=_mPersonInfo.pool.name;
+        //cell.textLabel.text=_mPersonInfo.pool.name;
     }
     if (indexPath.section==0&&indexPath.row==1)
     {
@@ -171,10 +174,11 @@
     }
     else if (indexPath.section==1&&indexPath.row==0)
     {
-        cell.detailTextLabel.text=[_mPersonInfo.gender isEqualToString:@"MALE"]?@"男":@"女";
+        cell.detailTextLabel.text=_mPersonInfo.gender;
     }
     else if (indexPath.section==1&&indexPath.row==1)
     {
+        NSLog(@"%@",_mPersonInfo);
         cell.detailTextLabel.text=[NSString stringWithFormat:@"%.0fcm",_mPersonInfo.height];
     }
     else if (indexPath.section==1&&indexPath.row==2)
@@ -269,11 +273,10 @@
         ChangeWeightAndHeightVC*vc=segue.destinationViewController;
         vc.mHeight=_mPersonInfo.height;
         vc.mWeight=_mPersonInfo.weight;
-        vc.mSex=![_mPersonInfo.gender isEqualToString:@"MALE"];
+        vc.mSex=_mPersonInfo.gender;
         vc.block=^(NSDictionary*vDic){
             _mPersonInfo.height=[[vDic objectForKey:@"height"] doubleValue];
             _mPersonInfo.weight=[[vDic objectForKey:@"weight"] doubleValue];
-            _mPersonInfo.gender=[[vDic objectForKey:@"sex"]boolValue]?@"Female":@"MALE";
             [_mTable reloadData];
         };
     }

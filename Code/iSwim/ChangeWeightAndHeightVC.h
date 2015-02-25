@@ -11,7 +11,7 @@
 @interface ChangeWeightAndHeightVC : UIViewController
 
 @property (copy,nonatomic) void(^block)(NSDictionary*dic);
-@property (assign,nonatomic) BOOL mSex;
+@property (copy,nonatomic) NSString* mSex;
 @property (assign,nonatomic)double mHeight;
 @property (assign,nonatomic)double mWeight;
 @end

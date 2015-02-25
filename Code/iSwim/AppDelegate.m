@@ -5,9 +5,8 @@
 //  Created by Magic Beans on 15/1/26.
 //  Copyright (c) 2015年 Magic Beans. All rights reserved.
 //
-
+#import "Header.h"
 #import "AppDelegate.h"
-
 @interface AppDelegate ()
 
 @end
@@ -17,6 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSLog(@"%@",[@"000" MD5]);
     return YES;
 }
 

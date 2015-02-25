@@ -7,6 +7,7 @@
 //
 
 #import "AFNetworking.h"
+
 @class XMProgressHUD;
 
 @interface HttpJsonManager : AFHTTPRequestOperationManager

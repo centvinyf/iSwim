@@ -74,7 +74,7 @@
         }
         [vPersonInfoDic setObject:_mNameTextField.text forKey:@"name"];
         [vPersonInfoDic setObject:_mEmailTextField.text forKey:@"email"];
-        [vPersonInfoDic setObject:[NSNumber numberWithBool:_mSex] forKey:@"sex"];
+        [vPersonInfoDic setObject:_mSex?@"男":@"女" forKey:@"gender"];
         [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }

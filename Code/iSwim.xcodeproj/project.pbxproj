@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		0C28E67A1A776CC6006A2EE8 /* HeightAndWeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */; };
 		0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */; };
-		0C5BE43F1A885F5D007F1D76 /* PersonInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE43C1A885F5D007F1D76 /* PersonInfoBaseClass.m */; };
-		0C5BE4401A885F5D007F1D76 /* PersonInfoPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */; };
 		0C5BE4431A889486007F1D76 /* PointBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4421A889486007F1D76 /* PointBaseClass.m */; };
 		0C5BE4461A88A0DA007F1D76 /* PointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4451A88A0DA007F1D76 /* PointsCell.m */; };
 		0C5BE4491A88B984007F1D76 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5BE4481A88B984007F1D76 /* UserProfile.m */; };
+		0C8FBAB11A8D947700F8D4D7 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FBAB01A8D947700F8D4D7 /* NSString+MD5.m */; };
+		0C8FBAB41A8D9D1C00F8D4D7 /* PersonInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FBAB31A8D9D1C00F8D4D7 /* PersonInfoBaseClass.m */; };
 		0C9021481A7B550400740536 /* ChangeWeightAndHeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */; };
 		0CD7EE3E1A80A81100AD24DC /* ChangeNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE3D1A80A81100AD24DC /* ChangeNameVC.m */; };
 		0CD7EE411A80A9B900AD24DC /* ChangeEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE401A80A9B900AD24DC /* ChangeEmailVC.m */; };
@@ -70,16 +70,16 @@
 		0C28E6791A776CC6006A2EE8 /* HeightAndWeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightAndWeightVC.m; sourceTree = "<group>"; };
 		0C28E67B1A77981D006A2EE8 /* BirthdayDateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthdayDateVC.h; sourceTree = "<group>"; };
 		0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthdayDateVC.m; sourceTree = "<group>"; };
-		0C5BE43B1A885F5D007F1D76 /* PersonInfoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoBaseClass.h; sourceTree = "<group>"; };
-		0C5BE43C1A885F5D007F1D76 /* PersonInfoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoBaseClass.m; sourceTree = "<group>"; };
-		0C5BE43D1A885F5D007F1D76 /* PersonInfoPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoPool.h; sourceTree = "<group>"; };
-		0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoPool.m; sourceTree = "<group>"; };
 		0C5BE4411A889486007F1D76 /* PointBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointBaseClass.h; sourceTree = "<group>"; };
 		0C5BE4421A889486007F1D76 /* PointBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointBaseClass.m; sourceTree = "<group>"; };
 		0C5BE4441A88A0DA007F1D76 /* PointsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsCell.h; sourceTree = "<group>"; };
 		0C5BE4451A88A0DA007F1D76 /* PointsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsCell.m; sourceTree = "<group>"; };
 		0C5BE4471A88B984007F1D76 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		0C5BE4481A88B984007F1D76 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		0C8FBAAF1A8D947700F8D4D7 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		0C8FBAB01A8D947700F8D4D7 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		0C8FBAB21A8D9D1C00F8D4D7 /* PersonInfoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoBaseClass.h; sourceTree = "<group>"; };
+		0C8FBAB31A8D9D1C00F8D4D7 /* PersonInfoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoBaseClass.m; sourceTree = "<group>"; };
 		0C9021461A7B550400740536 /* ChangeWeightAndHeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeightAndHeightVC.h; sourceTree = "<group>"; };
 		0C9021471A7B550400740536 /* ChangeWeightAndHeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeightAndHeightVC.m; sourceTree = "<group>"; };
 		0CD7EE091A80664C00AD24DC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = iSwim/Header.h; sourceTree = "<group>"; };
@@ -202,6 +202,15 @@
 				0C28E67C1A77981D006A2EE8 /* BirthdayDateVC.m */,
 			);
 			name = "Login&Regist";
+			sourceTree = "<group>";
+		};
+		0C8FBAAE1A8D947700F8D4D7 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				0C8FBAAF1A8D947700F8D4D7 /* NSString+MD5.h */,
+				0C8FBAB01A8D947700F8D4D7 /* NSString+MD5.m */,
+			);
+			path = MD5;
 			sourceTree = "<group>";
 		};
 		2CAC1F3B1A78B92800DA4292 /* Views */ = {
@@ -356,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				0CD7EE091A80664C00AD24DC /* Header.h */,
+				0C8FBAAE1A8D947700F8D4D7 /* MD5 */,
 				7CEB269B1A805BBB003221E0 /* MBProgressHUD+Extension */,
 				7CEB26971A805B88003221E0 /* HTTP */,
 				2CAC1F4F1A78E3FB00DA4292 /* MBPicker */,
@@ -405,10 +415,8 @@
 			children = (
 				0C5BE4411A889486007F1D76 /* PointBaseClass.h */,
 				0C5BE4421A889486007F1D76 /* PointBaseClass.m */,
-				0C5BE43B1A885F5D007F1D76 /* PersonInfoBaseClass.h */,
-				0C5BE43C1A885F5D007F1D76 /* PersonInfoBaseClass.m */,
-				0C5BE43D1A885F5D007F1D76 /* PersonInfoPool.h */,
-				0C5BE43E1A885F5D007F1D76 /* PersonInfoPool.m */,
+				0C8FBAB21A8D9D1C00F8D4D7 /* PersonInfoBaseClass.h */,
+				0C8FBAB31A8D9D1C00F8D4D7 /* PersonInfoBaseClass.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -553,6 +561,7 @@
 				7C320A731A7795610023DD06 /* UIImage+KIAdditions.m in Sources */,
 				7C320A681A775C890023DD06 /* PasswordVC.m in Sources */,
 				2CE5DE6F1A806B72003AB0EB /* PersonalRecordTableViewController.m in Sources */,
+				0C8FBAB11A8D947700F8D4D7 /* NSString+MD5.m in Sources */,
 				7CAB6B481A75DF46000C6F99 /* AppDelegate.m in Sources */,
 				2C2D8B4E1A7A207300A93D57 /* TimePickerView.m in Sources */,
 				0C28E67A1A776CC6006A2EE8 /* HeightAndWeightVC.m in Sources */,
@@ -569,7 +578,6 @@
 				7CC6779D1A77515B00FD3287 /* TrainingPlanViewController.m in Sources */,
 				2CAC1F3A1A78AFEA00DA4292 /* TwoLabelTableViewCell.m in Sources */,
 				2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */,
-				0C5BE43F1A885F5D007F1D76 /* PersonInfoBaseClass.m in Sources */,
 				0CD7EE3E1A80A81100AD24DC /* ChangeNameVC.m in Sources */,
 				7CC677971A77515B00FD3287 /* ScoreDetailViewController.m in Sources */,
 				7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */,
@@ -582,13 +590,13 @@
 				7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */,
 				7CAB6B451A75DF46000C6F99 /* main.m in Sources */,
 				0C28E67D1A77981D006A2EE8 /* BirthdayDateVC.m in Sources */,
-				0C5BE4401A885F5D007F1D76 /* PersonInfoPool.m in Sources */,
 				0CD7EE411A80A9B900AD24DC /* ChangeEmailVC.m in Sources */,
 				7CC6779A1A77515B00FD3287 /* ThisBestRecordViewController.m in Sources */,
 				7CC677951A77515B00FD3287 /* BasicInfoViewCell.m in Sources */,
 				0C5BE4491A88B984007F1D76 /* UserProfile.m in Sources */,
 				2CAC1F421A78C15400DA4292 /* RankingViewController.m in Sources */,
 				0C5BE4431A889486007F1D76 /* PointBaseClass.m in Sources */,
+				0C8FBAB41A8D9D1C00F8D4D7 /* PersonInfoBaseClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
