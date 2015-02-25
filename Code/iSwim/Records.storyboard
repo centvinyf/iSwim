@@ -3023,15 +3023,19 @@
                         <outlet property="mBigestCalCal" destination="Gum-jr-a2F" id="yFb-lP-bhg"/>
                         <outlet property="mBigestCalDate" destination="K3D-qw-hzq" id="Jne-hl-wlg"/>
                         <outlet property="mBigestCalPlace" destination="qRC-WD-4T4" id="aWr-fi-l6H"/>
+                        <outlet property="mCaluli" destination="rbz-G0-bGw" id="kG7-OW-rC9"/>
                         <outlet property="mLongestEventDate" destination="pHt-60-Z3n" id="xF4-qx-cJ3"/>
                         <outlet property="mLongestEventDis" destination="6TY-fy-OsN" id="m8E-eM-piP"/>
                         <outlet property="mLongestEventPlace" destination="hkS-Ct-qcW" id="eOS-dY-UfL"/>
                         <outlet property="mLongestTimeDate" destination="Pgl-9I-vZL" id="W0w-aa-jDb"/>
                         <outlet property="mLongestTimePlace" destination="c7X-Bd-seG" id="lzr-YL-sKf"/>
                         <outlet property="mLongestTimeTimt" destination="dbq-gU-YI8" id="FcA-h9-g21"/>
+                        <outlet property="mSwimmingPoolName" destination="Ftd-q0-ZbJ" id="mdJ-qu-9Vs"/>
                         <outlet property="mTotalCaluli" destination="rbz-G0-bGw" id="iNn-nG-4Mz"/>
                         <outlet property="mTotalDistance" destination="V0J-WT-PzB" id="DJX-tK-Riu"/>
                         <outlet property="mTotalSwimmingTime" destination="oIl-ir-Uc7" id="uSu-Io-XcY"/>
+                        <outlet property="mUserGrade" destination="5Rq-T5-4cD" id="sEA-sx-qUP"/>
+                        <outlet property="mUserId" destination="Y2J-3l-Pml" id="hM4-jX-uru"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ua-Ur-huS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8691,7 +8695,8 @@
                                                             <exclude reference="rpY-Cz-4v2"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="204" y="24" width="100" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="aCB-GV-Uf5"/>
                                                             <include reference="rpY-Cz-4v2"/>
@@ -8715,7 +8720,8 @@
                                                             <exclude reference="jbG-dX-3Wg"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="67" y="40" width="245" height="21"/>
                                                         <mask key="constraints">
                                                             <exclude reference="N3v-ew-Zm0"/>
                                                             <include reference="RRm-Wh-6U3"/>
@@ -8757,20 +8763,20 @@
                                                     <exclude reference="vyF-pD-rvq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="sdZ-oM-77r"/>
-                                                    <exclude reference="zpi-TU-WYI"/>
-                                                    <exclude reference="YuU-0f-VNO"/>
-                                                    <exclude reference="fYb-uR-9D9"/>
-                                                    <exclude reference="lrd-bb-0Bq"/>
                                                     <exclude reference="AtZ-4u-Yyg"/>
                                                     <exclude reference="XRL-vv-CmM"/>
                                                     <exclude reference="YpJ-X3-l6U"/>
-                                                    <exclude reference="gqy-pa-A0a"/>
-                                                    <exclude reference="sab-j4-M85"/>
                                                     <exclude reference="1Qk-WE-iKZ"/>
                                                     <exclude reference="AT5-O9-elo"/>
                                                     <exclude reference="rOi-T3-3MM"/>
                                                     <exclude reference="vZZ-GV-1Ke"/>
+                                                    <exclude reference="YuU-0f-VNO"/>
+                                                    <exclude reference="fYb-uR-9D9"/>
+                                                    <exclude reference="lrd-bb-0Bq"/>
+                                                    <exclude reference="gqy-pa-A0a"/>
+                                                    <exclude reference="sab-j4-M85"/>
+                                                    <exclude reference="sdZ-oM-77r"/>
+                                                    <exclude reference="zpi-TU-WYI"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -8782,20 +8788,20 @@
                                                     <include reference="vyF-pD-rvq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="sdZ-oM-77r"/>
-                                                    <include reference="zpi-TU-WYI"/>
-                                                    <include reference="YuU-0f-VNO"/>
-                                                    <include reference="fYb-uR-9D9"/>
-                                                    <include reference="lrd-bb-0Bq"/>
                                                     <include reference="AtZ-4u-Yyg"/>
                                                     <include reference="XRL-vv-CmM"/>
                                                     <include reference="YpJ-X3-l6U"/>
-                                                    <include reference="gqy-pa-A0a"/>
-                                                    <exclude reference="sab-j4-M85"/>
                                                     <exclude reference="1Qk-WE-iKZ"/>
                                                     <exclude reference="AT5-O9-elo"/>
                                                     <include reference="rOi-T3-3MM"/>
                                                     <include reference="vZZ-GV-1Ke"/>
+                                                    <include reference="YuU-0f-VNO"/>
+                                                    <include reference="fYb-uR-9D9"/>
+                                                    <include reference="lrd-bb-0Bq"/>
+                                                    <include reference="gqy-pa-A0a"/>
+                                                    <exclude reference="sab-j4-M85"/>
+                                                    <include reference="sdZ-oM-77r"/>
+                                                    <include reference="zpi-TU-WYI"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

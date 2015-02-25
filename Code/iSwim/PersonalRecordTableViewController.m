@@ -9,6 +9,10 @@
 #import "PersonalRecordTableViewController.h"
 #import "HttpJsonManager.h"
 @interface PersonalRecordTableViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *mCaluli;
+@property (weak, nonatomic) IBOutlet UILabel *mSwimmingPoolName;
+@property (weak, nonatomic) IBOutlet UILabel *mUserGrade;
+@property (weak, nonatomic) IBOutlet UILabel *mUserId;
 @property (weak, nonatomic) IBOutlet UILabel *mTotalDistance;
 @property (weak, nonatomic) IBOutlet UILabel *mTotalSwimmingTime;
 @property (weak, nonatomic) IBOutlet UILabel *mTotalCaluli;
@@ -45,7 +49,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mInitData = [[NSDictionary alloc]init];
-    [self loadData:@"http://54.172.152.115:9000/api/client/records/current"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/records/current.do"];
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -95,48 +99,57 @@
 }
 -(void)initViews: (NSDictionary *)dic
 {
-    NSString *vTotalDistance = [NSString stringWithFormat:@"%.2fkm",[dic[@"totalDistance"] floatValue]/1000];
+    NSString *vUserId = [NSString stringWithFormat:@"%@",dic[@"userId"] ];
+    [self.mUserId setText:vUserId];
+    NSString *vUserGrade = [NSString stringWithFormat:@"%@",dic[@"userGrade"] ];
+    [self.mUserGrade setText:vUserGrade];
+    NSString *vSwimmingPoolName = [NSString stringWithFormat:@"%@", dic[@"swimmingPoolName"]];
+    [self.mSwimmingPoolName setText:vSwimmingPoolName];
+    NSString *vTotalDistance = [NSString stringWithFormat:@"%@", dic[@"distance"] ];
     [self.mTotalDistance setText:vTotalDistance];
-    NSString *vTotalSwimmingTime = [NSString stringWithFormat:@"%.2fh",[dic[@"totalSwimmingTime"] floatValue]/3600];
-    [self.mTotalSwimmingTime setText:vTotalSwimmingTime];
-    NSString *vLongestDis = [NSString stringWithFormat:@"%.2fkm",[dic[@"longestEventDis"] floatValue]/1000];
-    [self.mLongestEventDis setText:vLongestDis];
-    NSString *vLongestDate = [dic[@"ledDt"] substringToIndex:10];
-    NSString *vLongestEventPlace = [dic objectForKey:@"ledPoolName"] ;
-    [self.mLongestEventPlace setText:vLongestEventPlace];
-    [self.mLongestEventDate setText:vLongestDate];
-    NSString *v25mTime = [[dic objectForKey:@"m25Bt"] objectForKey:@"time"];
-    [self.m25BestTime setText:v25mTime];
-    NSString *v25mDate = [[[dic objectForKey:@"m25Bt"] objectForKey:@"splitDt"] substringToIndex:10];
-    [self.m25Date setText:v25mDate];
-    NSString *v50mTime = [[dic objectForKey:@"m50Bt"] objectForKey:@"time"];
-    [self.m50BestTime setText:v50mTime];
-    NSString *v50mDate = [[[dic objectForKey:@"m50Bt"] objectForKey:@"splitDt"] substringToIndex:10];
-    [self.m50Date setText:v50mDate];
-    NSString *v100mTime = [[dic objectForKey:@"m100Bt"] objectForKey:@"time"];
-    [self.m100BestTime setText:v100mTime];
-    NSString *v100mDate = [[[dic objectForKey:@"m100Bt"] objectForKey:@"splitDt"] substringToIndex:10];
-    [self.m100Date setText:v100mDate];
-    NSString *v200mTime = [[dic objectForKey:@"m200Bt"] objectForKey:@"time"];
-    [self.m200BestTime setText:v200mTime];
-    NSString *v200mDate = [[[dic objectForKey:@"m200Bt"] objectForKey:@"splitDt"] substringToIndex:10];
-    [self.m200Date setText:v200mDate];
-    NSString *v400mTime = [[dic objectForKey:@"m400Bt"] objectForKey:@"time"];
-    [self.m400BestTime setText:v400mTime];
-    NSString *v400mDate = [[[dic objectForKey:@"m400Bt"] objectForKey:@"splitDt"] substringToIndex:10];
-    [self.m400Date setText:v400mDate];
-    NSString *v800mTime = [[dic objectForKey:@"m800Bt"] objectForKey:@"time"];
-    [self.m800BestTime setText:v800mTime];
-    NSString *v800mDate = [[[dic objectForKey:@"m800Bt"] objectForKey:@"splitDt"] substringToIndex:10];
-    [self.m800Date setText:v800mDate];
-    NSString *v1000mTime = [[dic objectForKey:@"m1000Bt"] objectForKey:@"time"];
-    [self.m1000BestTime setText:v1000mTime];
-    NSString *v1000mDate = [[[dic objectForKey:@"m1000Bt"] objectForKey:@"splitDt"] substringToIndex:10];
-    [self.m1000Date setText:v1000mDate];
-    NSString *v1500mTime = [[dic objectForKey:@"m1500Bt"] objectForKey:@"time"];
-    [self.m1500BestTime setText:v1500mTime];
-    NSString *v1500mDate = [[[dic objectForKey:@"m1500Bt"] objectForKey:@"splitDt"] substringToIndex:10];
-    [self.m1500Date setText:v1500mDate];
+    
+//    NSString *vTotalDistance = [NSString stringWithFormat:@"%.2fkm",[dic[@"totalDistance"] floatValue]/1000];
+//    [self.mTotalDistance setText:vTotalDistance];
+//    NSString *vTotalSwimmingTime = [NSString stringWithFormat:@"%.2fh",[dic[@"totalSwimmingTime"] floatValue]/3600];
+//    [self.mTotalSwimmingTime setText:vTotalSwimmingTime];
+//    NSString *vLongestDis = [NSString stringWithFormat:@"%.2fkm",[dic[@"longestEventDis"] floatValue]/1000];
+//    [self.mLongestEventDis setText:vLongestDis];
+//    NSString *vLongestDate = [dic[@"ledDt"] substringToIndex:10];
+//    NSString *vLongestEventPlace = [dic objectForKey:@"ledPoolName"] ;
+//    [self.mLongestEventPlace setText:vLongestEventPlace];
+//    [self.mLongestEventDate setText:vLongestDate];
+//    NSString *v25mTime = [[dic objectForKey:@"m25Bt"] objectForKey:@"time"];
+//    [self.m25BestTime setText:v25mTime];
+//    NSString *v25mDate = [[[dic objectForKey:@"m25Bt"] objectForKey:@"splitDt"] substringToIndex:10];
+//    [self.m25Date setText:v25mDate];
+//    NSString *v50mTime = [[dic objectForKey:@"m50Bt"] objectForKey:@"time"];
+//    [self.m50BestTime setText:v50mTime];
+//    NSString *v50mDate = [[[dic objectForKey:@"m50Bt"] objectForKey:@"splitDt"] substringToIndex:10];
+//    [self.m50Date setText:v50mDate];
+//    NSString *v100mTime = [[dic objectForKey:@"m100Bt"] objectForKey:@"time"];
+//    [self.m100BestTime setText:v100mTime];
+//    NSString *v100mDate = [[[dic objectForKey:@"m100Bt"] objectForKey:@"splitDt"] substringToIndex:10];
+//    [self.m100Date setText:v100mDate];
+//    NSString *v200mTime = [[dic objectForKey:@"m200Bt"] objectForKey:@"time"];
+//    [self.m200BestTime setText:v200mTime];
+//    NSString *v200mDate = [[[dic objectForKey:@"m200Bt"] objectForKey:@"splitDt"] substringToIndex:10];
+//    [self.m200Date setText:v200mDate];
+//    NSString *v400mTime = [[dic objectForKey:@"m400Bt"] objectForKey:@"time"];
+//    [self.m400BestTime setText:v400mTime];
+//    NSString *v400mDate = [[[dic objectForKey:@"m400Bt"] objectForKey:@"splitDt"] substringToIndex:10];
+//    [self.m400Date setText:v400mDate];
+//    NSString *v800mTime = [[dic objectForKey:@"m800Bt"] objectForKey:@"time"];
+//    [self.m800BestTime setText:v800mTime];
+//    NSString *v800mDate = [[[dic objectForKey:@"m800Bt"] objectForKey:@"splitDt"] substringToIndex:10];
+//    [self.m800Date setText:v800mDate];
+//    NSString *v1000mTime = [[dic objectForKey:@"m1000Bt"] objectForKey:@"time"];
+//    [self.m1000BestTime setText:v1000mTime];
+//    NSString *v1000mDate = [[[dic objectForKey:@"m1000Bt"] objectForKey:@"splitDt"] substringToIndex:10];
+//    [self.m1000Date setText:v1000mDate];
+//    NSString *v1500mTime = [[dic objectForKey:@"m1500Bt"] objectForKey:@"time"];
+//    [self.m1500BestTime setText:v1500mTime];
+//    NSString *v1500mDate = [[[dic objectForKey:@"m1500Bt"] objectForKey:@"splitDt"] substringToIndex:10];
+//    [self.m1500Date setText:v1500mDate];
    
     
 }
