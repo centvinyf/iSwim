@@ -74,7 +74,7 @@
             break;
         case 6:
         {
-            _mDayLab.text=[NSString stringWithFormat:@"%ld",([_mDayLab.text integerValue]-1)];
+            _mDayLab.text=[NSString stringWithFormat:@"%d",([_mDayLab.text integerValue]-1)];
             if (_mDayLab.text.intValue==0)
             {
                 _mDayLab.text=@"31";
@@ -112,14 +112,14 @@
         }
         //NSDateFormatter*formatter=[[NSDateFormatter alloc]init];
         //[formatter setDateFormat:@"yyyy-MM-dd"];
-        NSString*str=[NSString stringWithFormat:@"%@-%@-%@",_mYearLab.text,_mMonthLab.text,_mDayLab.text];
+        //NSString*str=[NSString stringWithFormat:@"%@-%@-%@",_mYearLab.text,_mMonthLab.text,_mDayLab.text];
         //NSDate*date=[formatter dateFromString:str];
         //double interval=[date timeIntervalSince1970];
-        [vPersonInfoDic setObject:str forKey:@"birthday"];
+        //[vPersonInfoDic setObject:str forKey:@"birthday"];
         [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         
-        [HttpJsonManager postWithParameters:vPersonInfoDic sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        [HttpJsonManager getWithParameters:vPersonInfoDic sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
             NSLog(@"%s---%@",__FUNCTION__,content);
            [UserProfile manager].mPersonInfo = [[PersonInfoBaseClass alloc]initWithDictionary:content];
         }];

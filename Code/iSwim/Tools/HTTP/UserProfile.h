@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "PersonInfoBaseClass.h"
-#import "PersonInfoPool.h"
 @interface UserProfile : NSObject
 
 

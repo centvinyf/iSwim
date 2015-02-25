@@ -27,10 +27,12 @@
 }
 - (IBAction)saveBtnClick:(id)sender {
     _block(@{@"name":_mNameTextField.text});
-    [HttpJsonManager postWithParameters:@{@"name":_mNameTextField.text} sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:@{@"name":_mNameTextField.text} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
         NSLog(@"%s---%@",__FUNCTION__,content);
+        if (sucess) {
+             ALERT(@"保存成功");
+        }
     }];
-    ALERT(@"保存成功");
 }
 
 /*

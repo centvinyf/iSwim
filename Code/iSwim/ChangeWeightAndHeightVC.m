@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"%@",self.mSex);
     _mSexBtn.userInteractionEnabled=NO;
     [_mHeightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
     [_mWeightSlider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
@@ -49,23 +50,22 @@
     if (slider==_mHeightSlider)
     {
         _mHeightLab.text=[NSString stringWithFormat:@"%dcm",120 + (int)(slider.value * 100)];
+        _mHeight = 120 + (int)(slider.value * 100);
+        NSLog(@" height = %f",_mHeight);
         _mHeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 ) - 9.0;
     }
     else
     {
         _mWeightLab.text=[NSString stringWithFormat:@"%dkg",50 + (int)(slider.value * 100)];
+        _mWeight = 50 + (int)(slider.value * 100);
+        NSLog(@" weight = %f",_mWeight);
         _mWeightConstraint.constant=slider.value*(kSLIDERWEIGHT - 36.0 ) - 9.0;
     }
 }
-- (IBAction)btnClick:(UIButton *)sender
-{
-    _mSex=!_mSex;
-    [self initViews:sender];
-    
-}
+
 -(void)initViews:(UIButton*)btn
 {
-    if (_mSex)
+    if ([_mSex isEqualToString:@"女"])
     {
         [btn setBackgroundImage:[UIImage imageNamed:@"woman"] forState:UIControlStateNormal];
     }
@@ -80,11 +80,16 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveBtnClick:(id)sender {
-    _block(@{@"height":[NSNumber numberWithInt:[_mHeightLab.text doubleValue]],@"weight":[NSNumber numberWithInt:[_mWeightLab.text doubleValue]],@"sex":[NSNumber numberWithBool:_mSex]});
-    [HttpJsonManager postWithParameters:@{@"height":[NSNumber numberWithInt:[_mHeightLab.text doubleValue]],@"weight":[NSNumber numberWithInt:[_mWeightLab.text doubleValue]],@"sex":[NSNumber numberWithBool:_mSex]} sender:self url:[NSString stringWithFormat:@"%@/api/client/profile",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+    _block(@{@"height":[NSNumber numberWithDouble:_mHeight],@"weight":[NSNumber numberWithDouble:_mWeight]});
+    [HttpJsonManager getWithParameters:@{@"gender":_mSex,@"height":[NSNumber numberWithInt:_mHeight],@"weight":[NSNumber numberWithInt:_mWeight]} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
         NSLog(@"%s---%@",__FUNCTION__,content);
+        if (sucess) {
+            ALERT(@"保存成功");
+        }
+        [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+            NSLog(@"%@",content);
+        }];
     }];
-    ALERT(@"保存成功");
 }
 
 /*
