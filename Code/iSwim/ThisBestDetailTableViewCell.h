@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *mBegin;
 @property (weak, nonatomic) IBOutlet UILabel *mEnd;
 
+- (void)initViewWith:(NSString *)title Scroe:(NSString *)scroe StartID:(NSString *)startID EndID:(NSString *)endID;
 @end

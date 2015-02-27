@@ -42,6 +42,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *m1500BestTime;
 @property (weak, nonatomic) IBOutlet UILabel *m1500Date;
 @property (retain,nonatomic) NSDictionary * mInitData;
+@property (retain,nonatomic) NSString * mLongestDisEventId;
+@property (retain,nonatomic) NSString * mLongestTimeEventId;
+@property (retain,nonatomic) NSString * mBestCaluliId;
+@property (retain,nonatomic) NSString * m25EventId;
+@property (retain,nonatomic) NSString * m50EventId;
+@property (retain,nonatomic) NSString * m100EventId;
+@property (retain,nonatomic) NSString * m200EventId;
+@property (retain,nonatomic) NSString * m400EventId;
+@property (retain,nonatomic) NSString * m800EventId;
+@property (retain,nonatomic) NSString * m1000EventId;
+@property (retain,nonatomic) NSString * m1500EventId;
 @end
 
 @implementation PersonalRecordTableViewController
@@ -161,6 +172,28 @@
     [self.m1500BestTime setText:vM1500BestScore];
     NSString *vM1500Date = [NSString stringWithFormat:@"%@",dic[@"m1500Date"]];
     [self.m1500Date setText:vM1500Date];
+    NSString *vLongestDisId = [NSString stringWithFormat:@"%@", dic[@"ledEventId"]];
+    self.mLongestDisEventId = vLongestDisId;
+    NSString *vLongestTimeId = [NSString stringWithFormat:@"%@", dic[@"lestEventId"]];
+    self.mLongestTimeEventId = vLongestTimeId;
+    NSString *vBiggestCalId = [NSString stringWithFormat:@"%@",dic[@"bcEventId"]];
+    self.mBestCaluliId = vBiggestCalId;
+    NSString *vM25Id = [NSString stringWithFormat:@"%@", dic[@"m25EventId"]];
+    self.m25EventId = vM25Id;
+    NSString *vM50Id = [NSString stringWithFormat:@"%@", dic[@"m50EventId"]];
+    self.m50EventId = vM50Id;
+    NSString *vM100Id = [NSString stringWithFormat:@"%@", dic[@"m100EventId"]];
+    self.m100EventId = vM100Id;
+    NSString *vM200Id = [NSString stringWithFormat:@"%@", dic[@"m200EventId"]];
+    self.m200EventId = vM200Id;
+    NSString *vM400Id = [NSString stringWithFormat:@"%@", dic[@"m400EventId"]];
+    self.m400EventId = vM400Id;
+    NSString *vM800Id = [NSString stringWithFormat:@"%@", dic[@"m800EventId"]];
+    self.m800EventId = vM800Id;
+    NSString *vM1000Id = [NSString stringWithFormat:@"%@", dic[@"m1000EventId"]];
+    self.m1000EventId = vM1000Id;
+    NSString *vM1500Id = [NSString stringWithFormat:@"%@", dic[@"m1500EventId"]];
+    self.m1500EventId = vM1500Id;
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

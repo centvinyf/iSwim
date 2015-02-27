@@ -8,13 +8,13 @@
 
 #import "BasicInfomationViewController.h"
 #import "BasicInfoViewCell.h"
+#import "HttpJsonManager.h"
 @interface BasicInfomationViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (weak,nonatomic) NSArray * mPicName;
 @property (weak, nonatomic) NSArray *mTitleName;
 @property (weak,nonatomic) NSMutableArray * mData;
-
-
+@property (retain,nonatomic) NSDictionary * mInitData;
 @end
 
 @implementation BasicInfomationViewController
@@ -25,6 +25,7 @@
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
     [self initStructure];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/info.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -62,6 +63,25 @@
     
     vCell.mTitle.text = vPicName[indexPath.row];
     return vCell;
+}
+#pragma mark--
+- (void)loadData:(NSString *)url
+{
+    NSDictionary *parameters = @{};
+    [HttpJsonManager getWithParameters:parameters
+                                sender:self url:url
+                     completionHandler:^(BOOL sucess, id content)
+     {
+         if (sucess) {
+             self.mInitData = content;
+             [self initViews:self.mInitData];
+             NSLog(@"%@",content);
+         }
+     }];
+}
+-(void)initViews: (NSDictionary *)dic
+{
+    
 }
 
 /*
