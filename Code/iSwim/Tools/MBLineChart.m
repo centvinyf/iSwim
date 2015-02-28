@@ -844,6 +844,10 @@
     {
         color = [UIColor colorWithRed:0xd1/0xff green:0x31/0xff blue:0x01/0xff alpha:1];
     }
+    else{
+//        color = [UIColor colorWithRed:0x00/0xff green:0x71/0xff blue:0x31/0xff alpha:1];
+        color=[UIColor redColor];
+    }
     MBLineChart *lineChart = [[MBLineChart alloc] initWithFrame:frame];
     lineChart.yLabelFormat = @"%1.1f";
     lineChart.backgroundColor = [UIColor clearColor];
@@ -851,8 +855,18 @@
     
     //Use yFixedValueMax and yFixedValueMin to Fix the Max and Min Y Value
     //Only if you needed
-    lineChart.yFixedValueMax = 500.0;
-    lineChart.yFixedValueMin = 1.0;
+    NSNumber * big =yValues[0];
+    NSNumber * small = yValues[0];
+    for (int i = 0; i<yValues.count; i++) {
+        if (yValues[i]>big) {
+            big = yValues[i];
+        }
+        if (yValues[i]<small) {
+            small = yValues[i];
+        }
+    }
+    lineChart.yFixedValueMax = [big floatValue]*1.5;
+    lineChart.yFixedValueMin = 0;//[small floatValue]*0.8;
     
     // Line Chart #1
     NSArray * data01Array = yValues;
