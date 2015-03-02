@@ -12,7 +12,9 @@
 #import "HttpJsonManager.h"
 
 @interface TrainingEventsViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (retain,nonatomic) NSArray * mInitData;
+@property (assign,nonatomic) NSInteger mNumberofDetail;
 @end
 
 @implementation TrainingEventsViewController
@@ -22,6 +24,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
+    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -39,7 +42,9 @@
      {
          if (sucess) {
              self.mInitData = content;
+             self.mNumberofDetail = self.mInitData.count;
              [self initViews:self.mInitData];
+             [self.mTableView reloadData];
              NSLog(@"%@",content);
          }
      }];
@@ -51,7 +56,7 @@
 #pragma mark - TableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return self.mNumberofDetail;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

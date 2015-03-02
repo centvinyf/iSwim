@@ -6986,6 +6986,9 @@
                         </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mTableView" destination="vH7-72-ZoH" id="IrB-up-WRH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F80-CP-tbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,6 +17,7 @@
     NSMutableArray      *_mXArray;
     NSMutableArray      *_mYArray;
     NSArray             *_mDataSourceArray;
+    NSDictionary        *mInitData;
     BOOL _mIsStart;
 }
 @property (weak, nonatomic) IBOutlet UIButton *mStartBtn;
@@ -42,15 +43,18 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     if (_mIsFirst) {
-        [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/api/client/profile/points",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/points.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
             NSLog(@"%s---%@",__FUNCTION__,content);
-            _mDataSourceArray=(NSArray*)content;
+            mInitData = content;
+            _mDataSourceArray=(NSArray*)content[@"result"];
             [_mTableView reloadData];
-            for (int i=0; i<_mDataSourceArray.count; i++) {
-                NSDictionary*vPoint=_mDataSourceArray[i];
-                [_mXArray addObject:[vPoint objectForKey:@"createdDt"]];
-                [_mYArray addObject:[NSNumber numberWithInteger:[[vPoint objectForKey:@"change"] integerValue]]];
-            }
+//            for (int i=0; i<_mDataSourceArray.count; i++) {
+//                NSDictionary*vPoint=_mDataSourceArray[i];
+//                [_mXArray addObject:[vPoint objectForKey:@"createdDt"]];
+//                [_mYArray addObject:[NSNumber numberWithInteger:[[vPoint objectForKey:@"change"] integerValue]]];
+//            }
+            _mXArray = [mInitData[@"chart"] valueForKey:@"X"];
+            _mYArray = [mInitData[@"chart"] valueForKey:@"Y"];
             CGRect rect=CGRectMake(0, 0, _mBgImageView.frame.size.width, _mBgImageView.frame.size.height);
             UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总时长" yValues:_mYArray xValues:_mXArray frame:rect delegate:nil];
 //            chartView.backgroundColor=[UIColor redColor];
@@ -120,7 +124,12 @@
     NSDictionary*vPoint=_mDataSourceArray[indexPath.row];
     cell.mDateLab.text=[[vPoint objectForKey:@"changeDt"] substringToIndex:10];
     cell.mDesLab.text=[vPoint objectForKey:@"descr"];
-    if ([[vPoint objectForKey:@"change"] intValue]>0) {
+//    if ([vPoint objectForKey:@"change"]) {
+//        NSString *vTag = (NSString *)[vPoint objectForKey:@"change"] substringToIndex:<#(NSUInteger)#>;
+//        NSLog(@"%@",vTag);
+//    }
+    
+    if ([[[vPoint objectForKey:@"change"] substringToIndex:1] isEqual:@"+"]) {
         cell.mChangeLab.text=[NSString stringWithFormat:@"积分变化+%d",[[vPoint objectForKey:@"change"] intValue]];
         cell.mChangeLab.textColor=[UIColor colorWithRed:0x00/255.0 green:0x71/255.0 blue:0x31/255.0 alpha:1];
     }
