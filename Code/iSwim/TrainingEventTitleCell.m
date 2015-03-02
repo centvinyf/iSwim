@@ -1,16 +1,14 @@
 //
-//  TrainingEventsTableViewCell.m
+//  TrainingEventTitleCell.m
 //  iSwim
 //
-//  Created by Sylar-MagicBeans on 15/1/27.
+//  Created by Sylar-MagicBeans on 15/3/2.
 //  Copyright (c) 2015年 Magic Beans. All rights reserved.
 //
 
-#import "TrainingEventsTableViewCell.h"
+#import "TrainingEventTitleCell.h"
 
-
-
-@implementation TrainingEventsTableViewCell
+@implementation TrainingEventTitleCell
 
 - (void)awakeFromNib {
     // Initialization code

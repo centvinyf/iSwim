@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mImageView;
 @property (retain,nonatomic) NSArray * mXArray;
 @property (retain,nonatomic) NSArray * mYArray;
+@property (retain,nonatomic) NSString * mCurrentEventID;
+
 @end
 
 @implementation TrainingDetailViewController
@@ -22,7 +24,8 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split/chart.do"];
+    [self loadEventIdData:@"http://192.168.1.113:8081/swimming_app/app/client/events/info/enevtId.do"];
+//    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split/chart.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -59,6 +62,20 @@
                          delegate:self];
         [self.mImageView addSubview:chartView];
 
+}
+- (void)loadEventIdData:(NSString *)url
+{
+    NSDictionary *parameters = @{};
+    [HttpJsonManager getWithParameters:parameters
+                                sender:self url:url
+                     completionHandler:^(BOOL sucess, id content)
+     {
+         if (sucess) {
+             self.mCurrentEventID = content[@"eventId"];
+                         NSLog(@"%@",content);
+             
+         }
+     }];
 }
 
 /*

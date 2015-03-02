@@ -6625,7 +6625,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainingEventTitle" id="H5f-hD-rUO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainingEventTitle" id="H5f-hD-rUO" customClass="TrainingEventTitleCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5f-hD-rUO" id="lMX-F4-gsM">
@@ -6713,6 +6713,10 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mDate" destination="Xag-z6-uAY" id="ICN-I2-XOv"/>
+                                            <outlet property="mTrainingCishu" destination="abB-aJ-XuD" id="JgC-KR-Y2y"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainingEventDetail" rowHeight="200" id="7or-jX-sa0" customClass="TrainingEventsTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -6934,6 +6938,15 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mEventID" destination="jqi-Aa-kg8" id="K7u-2q-ase"/>
+                                            <outlet property="mTrainingCal" destination="xlQ-4S-8xc" id="m9H-bT-06H"/>
+                                            <outlet property="mTrainingDIs" destination="h6q-kG-eLL" id="rpq-z6-SC3"/>
+                                            <outlet property="mTrainingDanbianshu" destination="DZV-4I-DIJ" id="PPQ-HR-ToQ"/>
+                                            <outlet property="mTrainingDate" destination="dwn-us-WuD" id="EJH-vr-vCP"/>
+                                            <outlet property="mTrainingPool" destination="IkL-6i-r7B" id="Zfb-Q7-MV7"/>
+                                            <outlet property="mTrainingTime" destination="NRi-5C-7PC" id="SWs-SR-sF0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -18,6 +18,7 @@
 		0CD7EE3E1A80A81100AD24DC /* ChangeNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE3D1A80A81100AD24DC /* ChangeNameVC.m */; };
 		0CD7EE411A80A9B900AD24DC /* ChangeEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE401A80A9B900AD24DC /* ChangeEmailVC.m */; };
 		0CD7EE471A80B25E00AD24DC /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7EE461A80B25E00AD24DC /* ChangePasswordVC.m */; };
+		2C0810F31AA4078D00856604 /* TrainingEventTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0810F21AA4078D00856604 /* TrainingEventTitleCell.m */; };
 		2C2D8B4E1A7A207300A93D57 /* TimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2D8B4D1A7A207300A93D57 /* TimePickerView.m */; };
 		2C55F07F1A77A9BB0077189D /* JifenDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */; };
 		2C55F0821A77AC1C0077189D /* JifenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */; };
@@ -89,6 +90,8 @@
 		0CD7EE401A80A9B900AD24DC /* ChangeEmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeEmailVC.m; sourceTree = "<group>"; };
 		0CD7EE451A80B25E00AD24DC /* ChangePasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
 		0CD7EE461A80B25E00AD24DC /* ChangePasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
+		2C0810F11AA4078D00856604 /* TrainingEventTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingEventTitleCell.h; sourceTree = "<group>"; };
+		2C0810F21AA4078D00856604 /* TrainingEventTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingEventTitleCell.m; sourceTree = "<group>"; };
 		2C2D8B4C1A7A207300A93D57 /* TimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerView.h; sourceTree = "<group>"; };
 		2C2D8B4D1A7A207300A93D57 /* TimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerView.m; sourceTree = "<group>"; };
 		2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JifenDetailViewController.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				2CAC1F3E1A78C0D200DA4292 /* PaimingTableViewCell.m */,
 				2C55F0861A77B1530077189D /* TrainingEventsTableViewCell.h */,
 				2C55F0871A77B1530077189D /* TrainingEventsTableViewCell.m */,
+				2C0810F11AA4078D00856604 /* TrainingEventTitleCell.h */,
+				2C0810F21AA4078D00856604 /* TrainingEventTitleCell.m */,
 				7CC677821A77515B00FD3287 /* BasicInfoViewCell.h */,
 				7CC677831A77515B00FD3287 /* BasicInfoViewCell.m */,
 				2C55F0801A77AC1C0077189D /* JifenTableViewCell.h */,
@@ -585,6 +590,7 @@
 				7CDEF59E1A7B2743006FF48D /* MyRecordViewController.m in Sources */,
 				7CEB269E1A805BBB003221E0 /* XMProgressHUD.m in Sources */,
 				7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */,
+				2C0810F31AA4078D00856604 /* TrainingEventTitleCell.m in Sources */,
 				2CAC1F451A78C6F100DA4292 /* ThreeLabelTableViewCell.m in Sources */,
 				7CEB269A1A805B88003221E0 /* HttpJsonManager.m in Sources */,
 				7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */,

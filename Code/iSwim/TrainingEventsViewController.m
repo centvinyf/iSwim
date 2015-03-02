@@ -8,8 +8,11 @@
 
 #import "TrainingEventsViewController.h"
 #import "TrainingEventsTableViewCell.h"
-@interface TrainingEventsViewController ()
+#import "TrainingEventTitleCell.h"
+#import "HttpJsonManager.h"
 
+@interface TrainingEventsViewController ()
+@property (retain,nonatomic) NSArray * mInitData;
 @end
 
 @implementation TrainingEventsViewController
@@ -26,6 +29,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark--
+- (void)loadData:(NSString *)url
+{
+    NSDictionary *parameters = @{@"page":@1};
+    [HttpJsonManager getWithParameters:parameters
+                                sender:self url:url
+                     completionHandler:^(BOOL sucess, id content)
+     {
+         if (sucess) {
+             self.mInitData = content;
+             [self initViews:self.mInitData];
+             NSLog(@"%@",content);
+         }
+     }];
+}
+-(void)initViews: (NSArray *)dic
+{
+    
+}
+#pragma mark - TableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 7;
@@ -35,9 +58,9 @@
 {
     static NSString *vIdentifiller = @"TrainingEventTitle";
     if (indexPath.row == 0) {
-        TrainingEventsTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        TrainingEventTitleCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
         if (!vCell) {
-            vCell = [[TrainingEventsTableViewCell alloc]
+            vCell = [[TrainingEventTitleCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
         }
@@ -53,6 +76,15 @@
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller2];
         }
+        NSDictionary * vThisData = self.mInitData [indexPath.row -1];
+        [vCell.mTrainingDate setText:[NSString stringWithFormat:@"%@训练基本信息", vThisData[@"endTime"]]];
+        [vCell.mEventID setText:[NSString stringWithFormat:@"场次号%@", vThisData[@"eventId"]]];
+        [vCell.mTrainingDIs setText:[NSString stringWithFormat:@"%@m",vThisData[@"distance"]]];
+        [vCell.mTrainingTime setText:[NSString stringWithFormat:@"%@",vThisData[@"swimmingTime"]]];
+        [vCell.mTrainingCal setText:[NSString stringWithFormat:@"%@cal", vThisData[@"calorie"]]];
+        [vCell.mTrainingDanbianshu setText:[NSString stringWithFormat:@"%@",vThisData[@"numOfSplit"]]];
+        
+        
         
         return vCell;
 
