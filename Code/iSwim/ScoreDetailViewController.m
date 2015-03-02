@@ -8,10 +8,12 @@
 
 #import "ScoreDetailViewController.h"
 #import "ThisBestHeadTableViewCell.h"
+#import "HttpJsonManager.h"
 #import "ThisBestDetailTableViewCell.h"
 @interface ScoreDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (assign,nonatomic) NSInteger mNumberOfDetail;
+@property (retain, nonatomic) NSArray * mInitData;
 @end
 
 @implementation ScoreDetailViewController
@@ -21,7 +23,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    self.mNumberOfDetail = 9;
+    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -29,6 +31,29 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark--
+- (void)loadData:(NSString *)url
+{
+    NSDictionary *parameters = @{@"page": @1};
+    [HttpJsonManager getWithParameters:parameters
+                                sender:self url:url
+                     completionHandler:^(BOOL sucess, id content)
+     {
+         if (sucess) {
+             self.mInitData = content;
+             self.mNumberOfDetail = self.mInitData.count;
+            
+             [self initViews:self.mInitData];
+             NSLog(@"%@",content);
+             [self.mTableView reloadData];
+         }
+     }];
+}
+-(void)initViews: (NSArray *)dic
+{
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -58,8 +83,11 @@
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller2];
         }
-        NSArray * vName =[[NSArray alloc]initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
-        vCell.mName.text = vName[indexPath.row-1];
+        NSDictionary *dic = self.mInitData[indexPath.row -1];
+        [vCell.mScore setText: [[self.mInitData[indexPath.row-1] valueForKey:@"score"] stringValue]];
+        [vCell.mName setText:[[self.mInitData[indexPath.row-1] valueForKey:@"splitId"] stringValue]];
+        [vCell.mBegin setText:[self.mInitData[indexPath.row-1] valueForKey:@"splitDepTime" ]];
+        [vCell.mEnd setText:[self.mInitData[indexPath.row-1] valueForKey:@"splitArrTime" ]];
         
         return vCell;
     }

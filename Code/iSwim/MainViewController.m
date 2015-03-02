@@ -13,8 +13,8 @@
 @interface MainViewController ()
 {
     NSString            * _mType;
-    NSMutableArray      *_mXArray;
-    NSMutableArray      *_mYArray;
+    NSArray      *_mXArray;
+    NSArray      *_mYArray;
     BOOL                _mIsFirst;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *mBgImageView;
@@ -31,8 +31,8 @@
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mIsFirst=YES;
     self.automaticallyAdjustsScrollViewInsets=NO;
-    //_mXArray=[[NSMutableArray alloc]initWithObjects:@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss",@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss", nil];
-    //_mYArray=[[NSMutableArray alloc]initWithObjects:@260,@300,@36.5,@10.9,@105,@260,@300,@36.5,@10.9,@105, nil];
+    _mXArray=[[NSMutableArray alloc]initWithObjects:@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss",@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss", nil];
+    _mYArray=[[NSMutableArray alloc]initWithObjects:@260,@300,@36.5,@10.9,@105,@260,@300,@36.5,@10.9,@105, nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,36 +42,15 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     if (_mIsFirst) {
-        [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/api/client/updates",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
-            NSArray*array=[content objectForKey:@"records"];
-            _mType = [array[0] objectForKey:@"type"];
+        [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/break.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
             
-            if ([_mType isEqualToString:@"DISTANCE"])
-            {
-                
-            }
-            else if ([_mType isEqualToString:@"TIME"])
-            {
-                
-            }
-            else if ([_mType isEqualToString:@"COLORITE"])
-            {
-                
-            }
-            else if ([_mType isEqualToString:@"SPLIT"])
-            {
-                
-            }
-            else
-            {
-                for (int i=0; i<array.count; i++) {
-                    NSDictionary*vDic=array[i];
-                    [_mXArray addObject:[vDic objectForKey:@"createdDt"]];
-                    NSArray*vTimeArray=[[vDic objectForKey:@"time"]componentsSeparatedByString:@":"];
-                    float vSecond = [vTimeArray[0] floatValue]*3600+[vTimeArray[1] floatValue]*60+[vTimeArray[2] floatValue];
-                    [_mYArray addObject:[NSNumber numberWithFloat:vSecond]];
-                }
-            }
+            
+            
+                    NSDictionary*vDic=content;
+                   // _mXArray = [vDic objectForKey:@"X"];
+                   // _mYArray = [vDic objectForKey:@"Y"];
+                               
+            
             CGRect rect=CGRectMake(0, 0, _mBgImageView.frame.size.width, _mBgImageView.frame.size.height);
             UIScrollView *chartView = [MBLineChart giveMeAGraphForType:_mType yValues:_mYArray xValues:_mXArray frame:rect delegate:nil];
             NSLog(@"%@",NSStringFromCGRect(chartView.frame));

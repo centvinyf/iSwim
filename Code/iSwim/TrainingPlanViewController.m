@@ -58,7 +58,7 @@
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
         }
-        NSArray * vTitle = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"计划训练距离",@"计划训练时长",@"计划energy",@"计划单边数",@"训练场馆", nil];
+        NSArray * vTitle = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"计划训练距离",@"计划训练时长",@"计划热量消耗",@"计划单边数",@"训练场馆", nil];
         NSArray * vButton= [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"place", nil];
         [vCell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
         vCell.mTitle.text = vTitle[indexPath.row-1];

@@ -11,8 +11,10 @@
 #import "TwoLabelTableViewCell.h"
 #import "PaimingTableViewCell.h"
 #import "ThreeLabelTableViewCell.h"
+#import "HttpJsonManager.h"
 @interface RankingViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property (retain,nonatomic) NSDictionary * mInitData;
 @end
 
 @implementation RankingViewController
@@ -22,6 +24,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
+    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/ranking.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -29,6 +32,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark--
+- (void)loadData:(NSString *)url
+{
+    NSDictionary *parameters = @{};
+    [HttpJsonManager getWithParameters:parameters
+                                sender:self url:url
+                     completionHandler:^(BOOL sucess, id content)
+     {
+         if (sucess) {
+             self.mInitData = content;
+             [self initViews:self.mInitData];
+             NSLog(@"%@",content);
+             [self.mTableView reloadData];
+         }
+     }];
+}
+-(void)initViews: (NSDictionary *)dic
+{
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -57,22 +81,33 @@
     if(indexPath.row==1||indexPath.row ==2||indexPath.row == 6)//直接显示
     {
         static NSString *vIdentifiller = @"TrainingPlan";
-        TrainingPlanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if (!cell) {
-            cell = [[TrainingPlanTableViewCell alloc]
+        TrainingPlanTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
+        if (!vCell) {
+            vCell = [[TrainingPlanTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
         }
         
-        [cell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
-        cell.mTitle.text = vTitle[indexPath.row-1];
-        return cell;
+        [vCell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
+        vCell.mTitle.text = vTitle[indexPath.row-1];
+        switch (indexPath.row) {
+            case 1:
+                [vCell.mData setText:self.mInitData[@"endTime"] ];
+                break;
+            case 2:
+                [vCell.mData setText:[self.mInitData[@"eventId"] stringValue]];
+//            case 6:
+//                [vCell.mData setText:[self.mInitData[@""]]]
+            default:
+                break;
+        }
+        return vCell;
         
         
     }
     else if(indexPath.row>=3&&indexPath.row<=5)//有排名
     {
-        static NSString *vIdentifiller = @"TrainingPlan";
+        static NSString *vIdentifiller = @"Paiming";
         PaimingTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
         if (!vCell) {
             vCell = [[PaimingTableViewCell alloc]
@@ -82,6 +117,21 @@
         
         [vCell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
         vCell.mTitle.text = vTitle[indexPath.row-1];
+        NSString * vAllRanking = [NSString stringWithFormat:@"/%@", self.mInitData[@"placeTotal"]];
+        switch (indexPath.row) {
+            case 3:
+                [vCell.mMyRanking setText: [self.mInitData[@"placeD"] stringValue]];
+                [vCell.mAllRanking setText:vAllRanking];
+                break;
+            case 4:
+                [vCell.mMyRanking setText:[self.mInitData[@"placeT"] stringValue]];
+                [vCell.mAllRanking setText:vAllRanking];
+            case 5:
+                [vCell.mMyRanking setText:[self.mInitData[@"placeC"] stringValue]];
+               [vCell.mAllRanking setText:vAllRanking];
+            default:
+                break;
+        }
         return vCell;
 
     
@@ -110,6 +160,35 @@
         NSArray * vTitle = [[NSArray alloc] initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
         
         vCell.mTitle.text = vTitle[indexPath.row-8];
+        [vCell.mAllRanking setText:[NSString stringWithFormat:@"/%@", self.mInitData[@"placeTotal"]]];
+        switch (indexPath.row) {
+            case 8:
+                [vCell.mMyRanking setText:[self.mInitData[@"place25"] stringValue]];
+                break;
+            case 9:
+                [vCell.mMyRanking setText:[self.mInitData[@"place50"] stringValue]];
+                break;
+            case 10:
+                [vCell.mMyRanking setText:[self.mInitData[@"place100"] stringValue]];
+                break;
+            case 11:
+                [vCell.mMyRanking setText:[self.mInitData[@"place200"] stringValue]];
+                break;
+            case 12:
+                [vCell.mMyRanking setText:[self.mInitData[@"place400"] stringValue]];
+                break;
+            case 13:
+                [vCell.mMyRanking setText:[self.mInitData[@"place800"] stringValue]];
+                break;
+            case 14:
+                [vCell.mMyRanking setText:[self.mInitData[@"place1000"] stringValue]];
+                break;
+            case 15:
+                [vCell.mMyRanking setText:[self.mInitData[@"place1500"] stringValue]];
+                break;
+            default:
+                break;
+        }
         return vCell;
         
     }
