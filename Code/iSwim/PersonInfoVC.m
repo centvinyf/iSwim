@@ -162,7 +162,7 @@
     {
         NSURL *url = [NSURL URLWithString:_mPersonInfo.path];
         NSLog(@"url==%@",url);
-        _mHeaderImageView.backgroundColor=[UIColor yellowColor];
+        [_mHeaderImageView setImageWithURL:url];
     }
     cell.textLabel.text=[[_mTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     if (indexPath.section==2&&indexPath.row==1) {
@@ -244,7 +244,7 @@
     NSString* encodeResult = [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     
 
-    [HttpJsonManager postWithParameters:@{@"image":encodeResult} sender:self url:@"http://192.168.1.113:8080/swimming_app/app/client/uploadImg.do"
+    [HttpJsonManager postWithParameters:@{@"image":encodeResult} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS]
                       completionHandler:^(BOOL sucess, id content)
      {
          if (sucess)
