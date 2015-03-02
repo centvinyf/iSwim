@@ -238,14 +238,24 @@
         //[[UIApplication sharedApplication] setStatusBarStyle:0];
     });
 }
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    NSData *data = UIImagePNGRepresentation(image);
+    NSString* encodeResult = [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        _mHeaderImageView.image = image;
-        _mCoverView.hidden=YES;
-        [self dismissViewControllerAnimated:YES completion:nil];
-        //[[UIApplication sharedApplication] setStatusBarStyle:1];
-    });
+
+    [HttpJsonManager postWithParameters:@{@"image":encodeResult} sender:self url:@"http://192.168.1.113:8080/swimming_app/app/client/uploadImg.do"
+                      completionHandler:^(BOOL sucess, id content)
+     {
+         if (sucess)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 _mHeaderImageView.image = image;
+                 _mCoverView.hidden=YES;
+                 [self dismissViewControllerAnimated:YES completion:nil];
+             });
+         }
+     }];
 }
 
 - (void)didReceiveMemoryWarning {

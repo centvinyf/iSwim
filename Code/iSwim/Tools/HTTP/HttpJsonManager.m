@@ -81,7 +81,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     NSLog(@"request URL:%@",url);
     NSMutableDictionary *vParams = [NSMutableDictionary dictionaryWithDictionary:params];
     if (manager.mToken) {
-        [vParams setObject:manager.mToken forKey:@"authToken"];
+        [vParams setObject:manager.mToken forKey:@"id"];
     }
     //Post
     [manager POST:url parameters:vParams sender:viewController constructingBodyWithBlock:block success:^(AFHTTPRequestOperation *operation, id responseObject) {
