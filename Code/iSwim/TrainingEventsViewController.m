@@ -40,12 +40,24 @@
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
-             [self.mInitData addObjectsFromArray:(NSArray *)content];
-             self.mNumberofDetail = self.mInitData.count;
-             [self.mTableView reloadData];
-             NSLog(@"%@",content);
+         if (self.mCurrentPage == 1) {
+             if (sucess) {
+                 self.mInitData = [[NSMutableArray alloc]init];
+                 [self.mInitData addObjectsFromArray:(NSArray *)content];
+                 self.mNumberofDetail = self.mInitData.count;
+             }
+             [self.mTableView topRefreshControlStopRefreshing];
          }
+         else
+         {
+             if (sucess) {
+                 [self.mInitData addObjectsFromArray:(NSArray *)content];
+                 self.mNumberofDetail = self.mInitData.count;
+             }
+             [self.mTableView bottomRefreshControlStopRefreshing];
+         }
+         [self.mTableView reloadData];
+
      }];
 }
 -(void)initViews
@@ -56,15 +68,16 @@
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
     
     [self.mTableView addTopRefreshControlUsingBlock:^{
-        [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" PageIndex:1];
-    }];
-    self.mCurrentPage = 1;
+        self.mCurrentPage = 1;
+        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" PageIndex:1];
+    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
     
     [self.mTableView addBottomRefreshControlUsingBlock:^{
         self.mCurrentPage ++;
-        [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" PageIndex: self.mCurrentPage];
-    }];
+        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" PageIndex: self.mCurrentPage];
+    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
 
+    self.mCurrentPage = 1;
     [self.mTableView topRefreshControlStartInitializeRefreshing];
 }
 #pragma mark - TableViewDelegate
@@ -93,7 +106,8 @@
         
         return vCell;
     }
-    else{
+    else
+    {
        static NSString *vIdentifiller2 = @"TrainingEventDetail";
     
         TrainingEventsTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller2];
@@ -102,21 +116,22 @@
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller2];
         }
+        
         NSDictionary * vThisData = self.mInitData [indexPath.row -1];
+        
         [vCell.mTrainingDate setText:[NSString stringWithFormat:@"%@训练基本信息", vThisData[@"endTime"]]];
         [vCell.mEventID setText:[NSString stringWithFormat:@"场次号%@", vThisData[@"eventId"]]];
-        [vCell.mTrainingDIs setText:[NSString stringWithFormat:@"%@m",vThisData[@"distance"]]];
+        [vCell.mTrainingDIs setText:[NSString stringWithFormat:@"%@",vThisData[@"distance"]]];
         [vCell.mTrainingTime setText:[NSString stringWithFormat:@"%@",vThisData[@"swimmingTime"]]];
-        [vCell.mTrainingCal setText:[NSString stringWithFormat:@"%@cal", vThisData[@"calorie"]]];
+        [vCell.mTrainingCal setText:[NSString stringWithFormat:@"%@", vThisData[@"calorie"]]];
         [vCell.mTrainingDanbianshu setText:[NSString stringWithFormat:@"%@",vThisData[@"numOfSplit"]]];
-        
-        
-        
+        [vCell.mTrainingPool setText:[NSString stringWithFormat:@"%@",vThisData[@"swimmingPoolName"]]];
         return vCell;
 
    
+    }
 }
-}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
@@ -124,7 +139,7 @@
     }
     else
     {
-        return 200;
+        return 165;
     }
     
 }

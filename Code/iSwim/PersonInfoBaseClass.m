@@ -17,6 +17,7 @@ NSString *const kPersonInfoBaseClassGrade = @"grade";
 NSString *const kPersonInfoBaseClassEmail = @"email";
 NSString *const kPersonInfoBaseClassPath = @"path";
 NSString *const kPersonInfoBaseClassName = @"name";
+NSString *const kPersonInfoBaseClassPoolName = @"poolName";
 
 
 @interface PersonInfoBaseClass ()
@@ -50,15 +51,16 @@ NSString *const kPersonInfoBaseClassName = @"name";
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.gender = [self objectOrNilForKey:kPersonInfoBaseClassGender fromDictionary:dict];
-            self.mobile = [self objectOrNilForKey:kPersonInfoBaseClassMobile fromDictionary:dict];
-            self.weight = [[self objectOrNilForKey:kPersonInfoBaseClassWeight fromDictionary:dict] doubleValue];
-            self.height = [[self objectOrNilForKey:kPersonInfoBaseClassHeight fromDictionary:dict] doubleValue];
-            self.cODE = [self objectOrNilForKey:kPersonInfoBaseClassCODE fromDictionary:dict];
-            self.grade = [self objectOrNilForKey:kPersonInfoBaseClassGrade fromDictionary:dict];
-            self.email = [self objectOrNilForKey:kPersonInfoBaseClassEmail fromDictionary:dict];
-            self.path = [self objectOrNilForKey:kPersonInfoBaseClassPath fromDictionary:dict];
-            self.name = [self objectOrNilForKey:kPersonInfoBaseClassName fromDictionary:dict];
+        self.gender = [self objectOrNilForKey:kPersonInfoBaseClassGender fromDictionary:dict];
+        self.mobile = [self objectOrNilForKey:kPersonInfoBaseClassMobile fromDictionary:dict];
+        self.weight = [[self objectOrNilForKey:kPersonInfoBaseClassWeight fromDictionary:dict] doubleValue];
+        self.height = [[self objectOrNilForKey:kPersonInfoBaseClassHeight fromDictionary:dict] doubleValue];
+        self.cODE = [self objectOrNilForKey:kPersonInfoBaseClassCODE fromDictionary:dict];
+        self.grade = [self objectOrNilForKey:kPersonInfoBaseClassGrade fromDictionary:dict];
+        self.email = [self objectOrNilForKey:kPersonInfoBaseClassEmail fromDictionary:dict];
+        self.path = [self objectOrNilForKey:kPersonInfoBaseClassPath fromDictionary:dict];
+        self.name = [self objectOrNilForKey:kPersonInfoBaseClassName fromDictionary:dict];
+        self.poolName = [self objectOrNilForKey:kPersonInfoBaseClassPoolName fromDictionary:dict];
 
     }
     
@@ -78,7 +80,7 @@ NSString *const kPersonInfoBaseClassName = @"name";
     [mutableDict setValue:self.email forKey:kPersonInfoBaseClassEmail];
     [mutableDict setValue:self.path forKey:kPersonInfoBaseClassPath];
     [mutableDict setValue:self.name forKey:kPersonInfoBaseClassName];
-
+    [mutableDict setValue:self.poolName forKey:kPersonInfoBaseClassPoolName];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 
@@ -110,6 +112,7 @@ NSString *const kPersonInfoBaseClassName = @"name";
     self.email = [aDecoder decodeObjectForKey:kPersonInfoBaseClassEmail];
     self.path = [aDecoder decodeObjectForKey:kPersonInfoBaseClassPath];
     self.name = [aDecoder decodeObjectForKey:kPersonInfoBaseClassName];
+    self.poolName = [aDecoder decodeObjectForKey:kPersonInfoBaseClassPoolName];
     return self;
 }
 
@@ -125,6 +128,7 @@ NSString *const kPersonInfoBaseClassName = @"name";
     [aCoder encodeObject:_email forKey:kPersonInfoBaseClassEmail];
     [aCoder encodeObject:_path forKey:kPersonInfoBaseClassPath];
     [aCoder encodeObject:_name forKey:kPersonInfoBaseClassName];
+    [aCoder encodeObject:_poolName forKey:kPersonInfoBaseClassPoolName];
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -142,6 +146,7 @@ NSString *const kPersonInfoBaseClassName = @"name";
         copy.email = [self.email copyWithZone:zone];
         copy.path = [self.path copyWithZone:zone];
         copy.name = [self.name copyWithZone:zone];
+        copy.poolName = [self.poolName copyWithZone:zone];
     }
     
     return copy;

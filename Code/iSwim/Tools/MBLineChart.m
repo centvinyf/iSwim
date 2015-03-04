@@ -270,21 +270,20 @@
             chartLine = [CAShapeLayer layer];
             chartLine.lineCap       = kCALineCapButt;
             chartLine.lineJoin      = kCALineJoinMiter;
-            chartLine.fillColor     = [[UIColor whiteColor] CGColor];
-            chartLine.lineWidth     = chartData.lineWidth;
+            chartLine.strokeColor = [PNPinkGrey CGColor];
+            chartLine.lineWidth     = chartData.lineWidth/2;
             chartLine.strokeEnd     = 0.0;
             [self.layer addSublayer:chartLine];
             
             // create point
             pointLayer = [CAShapeLayer layer];
-            pointLayer.strokeColor   = [PNLightGrey CGColor];
+            pointLayer.strokeColor   = [PNPinkGrey CGColor];
             pointLayer.lineCap       = kCALineCapRound;
             pointLayer.lineJoin      = kCALineJoinBevel;
             pointLayer.fillColor     = nil;
-            pointLayer.lineWidth     = chartData.lineWidth;
+            pointLayer.lineWidth     = chartData.lineWidth/2;
             [self.layer addSublayer:pointLayer];
 
-            chartLine.strokeColor = [PNLightGrey CGColor];
             
             progressline = [_chartShadow objectAtIndex:lineIndex];
             pointPath = [_pointShadow objectAtIndex:lineIndex];
@@ -845,8 +844,7 @@
         color = [UIColor colorWithRed:0xd1/0xff green:0x31/0xff blue:0x01/0xff alpha:1];
     }
     else{
-//        color = [UIColor colorWithRed:0x00/0xff green:0x71/0xff blue:0x31/0xff alpha:1];
-        color=[UIColor redColor];
+        color = [UIColor colorWithRed:0x00/0xff green:0x71/0xff blue:0x31/0xff alpha:1];
     }
     MBLineChart *lineChart = [[MBLineChart alloc] initWithFrame:frame];
     lineChart.yLabelFormat = @"%1.1f";
@@ -862,16 +860,23 @@
     
     NSNumber * big =yValues[0];
     NSNumber * small = yValues[0];
+    
     for (int i = 0; i<yValues.count; i++) {
-        if (yValues[i]>big) {
+        
+        if ([yValues[i] floatValue] > [big floatValue]) {
             big = yValues[i];
         }
-        if (yValues[i]<small) {
+    }
+    
+    for (int i = 0; i<yValues.count; i++) {
+
+        if ([yValues[i] floatValue] < [small floatValue]) {
             small = yValues[i];
         }
     }
-    lineChart.yFixedValueMax = [big floatValue]*1.5;
-    lineChart.yFixedValueMin = 0;//[small floatValue]*0.8;
+    
+    lineChart.yFixedValueMax = [big floatValue];// * 1.2;
+    lineChart.yFixedValueMin = [small floatValue];// * 0.8;
     
     // Line Chart #1
     NSArray * data01Array = yValues;
@@ -883,7 +888,7 @@
         CGFloat yValue = [data01Array[index] floatValue];
         return [PNLineChartDataItem dataItemWithY:yValue];
     };
-    data01.lineWidth = 5;
+    data01.lineWidth = 10;
     data01.inflexionPointWidth = 0;
     
     lineChart.chartData = @[data01];

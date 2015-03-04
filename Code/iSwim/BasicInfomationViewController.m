@@ -26,7 +26,7 @@
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
     [self initStructure];
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/info.do"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/info.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -60,30 +60,66 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier: vIdentifiller];
     }
+    //icon
     [vCell.mImage setImage:[UIImage imageNamed:vPicName1[indexPath.row]] ];
-    
+    //titile
     vCell.mTitle.text = vPicName[indexPath.row];
+    //value
+    switch (indexPath.row) {
+        case 0:
+            vCell.mData.text = self.mInitData[@"endTime"];
+            break;
+        case 1:
+            vCell.mData.text = [self.mInitData[@"eventId"] stringValue];
+            break;
+        case 2:
+            vCell.mData.text = self.mInitData[@"totalDistance"];
+            break;
+        case 3:
+            vCell.mData.text = self.mInitData[@"totalTime"];
+            break;
+        case 4:
+            vCell.mData.text = self.mInitData[@"totalCalorie"];
+            break;
+        case 5:
+            vCell.mData.text = [self.mInitData[@"numOfSplit"] stringValue];
+            break;
+        case 6:
+            vCell.mData.text = self.mInitData[@"entryTime"];
+            break;
+        case 7:
+            vCell.mData.text = self.mInitData[@"exitTime"];
+            break;
+        case 8:
+            vCell.mData.text = self.mInitData[@"startTime"];
+            break;
+        case 9:
+            vCell.mData.text = self.mInitData[@"end_time"];
+            break;
+        case 10:
+            vCell.mData.text = self.mInitData[@"swimmingPoolName"];
+            break;
+        default:
+            break;
+    }
+
     return vCell;
 }
 #pragma mark--
 - (void)loadData:(NSString *)url
 {
-    NSDictionary *parameters = @{@"EventId": self.mCurrentEventId};
+    NSDictionary *parameters = @{@"eventId": self.mCurrentEventId};
     [HttpJsonManager getWithParameters:parameters
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
      {
          if (sucess) {
              self.mInitData = content;
-             [self initViews:self.mInitData];
-             NSLog(@"%@",content);
+             [self.mTableView reloadData];
          }
      }];
 }
--(void)initViews: (NSDictionary *)dic
-{
-    
-}
+
 #pragma mark - Navigation
 -(void) initWithEventId : (NSString *)EventId
 {

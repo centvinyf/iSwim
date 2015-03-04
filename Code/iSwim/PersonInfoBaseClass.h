@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *path;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, retain) NSString *poolName;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

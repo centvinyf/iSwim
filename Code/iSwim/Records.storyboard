@@ -3179,7 +3179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYc-2H-fRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="-1131.75"/>
+            <point key="canvasLocation" x="480" y="-972.75"/>
         </scene>
         <!--分段成绩详情-->
         <scene sceneID="900-CJ-D3d">
@@ -3333,7 +3333,7 @@
                                                         <rect key="frame" x="80" y="11" width="80" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41t-5T-m0t">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="41t-5T-m0t">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3342,7 +3342,7 @@
                                                         <rect key="frame" x="160" y="11" width="80" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arS-Xw-CyC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="arS-Xw-CyC">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3470,7 +3470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4x-8H-hMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="-1131.75"/>
+            <point key="canvasLocation" x="1755" y="-972.75"/>
         </scene>
         <!--训练计划-->
         <scene sceneID="Hb8-wo-syy">
@@ -3713,7 +3713,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yl8-z3-zWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2410.5" y="-1131.75"/>
+            <point key="canvasLocation" x="2404.5" y="-972.75"/>
         </scene>
         <!--修改计划-->
         <scene sceneID="omf-qW-gUe">
@@ -5883,7 +5883,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4a-sk-aTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2410.5" y="-469.5"/>
+            <point key="canvasLocation" x="2404.5" y="-310.5"/>
         </scene>
         <!--本场最好成绩-->
         <scene sceneID="vMJ-ek-kYQ">
@@ -6183,7 +6183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kq-43-f3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="-1131.75"/>
+            <point key="canvasLocation" x="1110" y="-972.75"/>
         </scene>
         <!--本场排名-->
         <scene sceneID="aYm-Wb-lCy">
@@ -6582,7 +6582,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D7Y-bC-vu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060" y="-1131.75"/>
+            <point key="canvasLocation" x="3054" y="-972.75"/>
         </scene>
         <!--训练事件-->
         <scene sceneID="8pO-rP-qCP">
@@ -6693,7 +6693,7 @@
                                             <outlet property="mTrainingCishu" destination="abB-aJ-XuD" id="JgC-KR-Y2y"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainingEventDetail" rowHeight="200" id="7or-jX-sa0" customClass="TrainingEventsTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainingEventDetail" rowHeight="165" id="7or-jX-sa0" customClass="TrainingEventsTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7or-jX-sa0" id="pom-Oc-OKA">
@@ -6968,7 +6968,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F80-CP-tbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2923.5" y="194.25"/>
+            <point key="canvasLocation" x="2917.5" y="353.25"/>
         </scene>
         <!--Jifen Detail View Controller-->
         <scene sceneID="7nW-pp-i4m">
@@ -7141,12 +7141,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSk-Ir-wsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528.5" y="-330.75"/>
+            <point key="canvasLocation" x="1522.5" y="-171.75"/>
         </scene>
         <!--训练详情-->
         <scene sceneID="bid-p4-PBs">
             <objects>
-                <viewController storyboardIdentifier="TrainingDetailViewController" id="8j6-8P-xY8" customClass="TrainingDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainingDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="8j6-8P-xY8" customClass="TrainingDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R6g-Nd-qaN"/>
                         <viewControllerLayoutGuide type="bottom" id="PAc-4X-tGb"/>
@@ -7186,7 +7186,7 @@
                                         <include reference="R8B-R9-Iyd"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="h7o-2m-Eih"/>
+                                        <exclude reference="h7o-2m-Eih"/>
                                         <include reference="2sW-Cp-m2U"/>
                                         <include reference="3xr-Ya-Dpn"/>
                                         <include reference="a9k-AS-dH2"/>
@@ -7717,6 +7717,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PAc-4X-tGb" firstAttribute="top" secondItem="NS1-aD-9mI" secondAttribute="bottom" constant="8" id="0N3-7Q-Gmf"/>
                             <constraint firstItem="5uE-Rd-7Ks" firstAttribute="leading" secondItem="LxD-n7-QVh" secondAttribute="leading" id="3fQ-hS-spy"/>
                             <constraint firstItem="NS1-aD-9mI" firstAttribute="top" secondItem="5uE-Rd-7Ks" secondAttribute="bottom" constant="8" symbolic="YES" id="59N-K6-s8I"/>
                             <constraint firstItem="bXi-5w-E3c" firstAttribute="top" secondItem="Dxo-qf-Oi3" secondAttribute="bottom" id="DbG-mD-7gU"/>
@@ -7736,6 +7737,7 @@
                             <constraint firstItem="bXi-5w-E3c" firstAttribute="leading" secondItem="Md4-Y1-Zbw" secondAttribute="leading" id="WGD-5a-39U"/>
                             <constraint firstItem="PAc-4X-tGb" firstAttribute="top" secondItem="Dxo-qf-Oi3" secondAttribute="bottom" constant="356" id="WmE-B3-8QC"/>
                             <constraint firstItem="5uE-Rd-7Ks" firstAttribute="trailing" secondItem="bXi-5w-E3c" secondAttribute="trailing" id="Xft-Wu-LMg"/>
+                            <constraint firstItem="Dxo-qf-Oi3" firstAttribute="top" secondItem="R6g-Nd-qaN" secondAttribute="bottom" id="Z5l-AW-P85"/>
                             <constraint firstItem="5uE-Rd-7Ks" firstAttribute="leading" secondItem="P6T-Nn-FY3" secondAttribute="leading" id="ZHv-Lz-9Wy"/>
                             <constraint firstItem="NS1-aD-9mI" firstAttribute="trailing" secondItem="5uE-Rd-7Ks" secondAttribute="trailing" id="dRb-xc-gWf"/>
                             <constraint firstAttribute="trailing" secondItem="bXi-5w-E3c" secondAttribute="trailing" id="o9M-9C-kRU"/>
@@ -7743,7 +7745,7 @@
                             <constraint firstItem="NS1-aD-9mI" firstAttribute="leading" secondItem="5uE-Rd-7Ks" secondAttribute="leading" id="vDz-B4-fGz"/>
                             <constraint firstItem="5uE-Rd-7Ks" firstAttribute="trailing" secondItem="LxD-n7-QVh" secondAttribute="trailing" id="yhP-Ig-dmG"/>
                             <constraint firstItem="bXi-5w-E3c" firstAttribute="top" secondItem="Dxo-qf-Oi3" secondAttribute="bottom" constant="20" id="zd2-mR-XrF">
-                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -7756,7 +7758,16 @@
                                 <exclude reference="5uE-Rd-7Ks"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="WmE-B3-8QC"/>
+                                <exclude reference="U8P-oI-1Ci"/>
+                                <exclude reference="Z5l-AW-P85"/>
+                                <exclude reference="uBd-P5-bGf"/>
+                                <exclude reference="DbG-mD-7gU"/>
+                                <exclude reference="Nbp-tR-uzm"/>
+                                <exclude reference="WGD-5a-39U"/>
+                                <exclude reference="o9M-9C-kRU"/>
+                                <exclude reference="zd2-mR-XrF"/>
+                                <exclude reference="LUX-27-NTR"/>
+                                <exclude reference="EU5-0m-Ob1"/>
                                 <exclude reference="3fQ-hS-spy"/>
                                 <exclude reference="N7M-J9-BtJ"/>
                                 <exclude reference="SlV-4U-cgW"/>
@@ -7764,18 +7775,11 @@
                                 <exclude reference="Xft-Wu-LMg"/>
                                 <exclude reference="ZHv-Lz-9Wy"/>
                                 <exclude reference="yhP-Ig-dmG"/>
-                                <exclude reference="U8P-oI-1Ci"/>
-                                <exclude reference="uBd-P5-bGf"/>
-                                <exclude reference="LUX-27-NTR"/>
                                 <exclude reference="59N-K6-s8I"/>
                                 <exclude reference="dRb-xc-gWf"/>
                                 <exclude reference="vDz-B4-fGz"/>
-                                <exclude reference="EU5-0m-Ob1"/>
-                                <exclude reference="DbG-mD-7gU"/>
-                                <exclude reference="Nbp-tR-uzm"/>
-                                <exclude reference="WGD-5a-39U"/>
-                                <exclude reference="o9M-9C-kRU"/>
-                                <exclude reference="zd2-mR-XrF"/>
+                                <exclude reference="0N3-7Q-Gmf"/>
+                                <exclude reference="WmE-B3-8QC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -7788,7 +7792,16 @@
                                 <include reference="5uE-Rd-7Ks"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="WmE-B3-8QC"/>
+                                <include reference="U8P-oI-1Ci"/>
+                                <include reference="Z5l-AW-P85"/>
+                                <include reference="uBd-P5-bGf"/>
+                                <exclude reference="DbG-mD-7gU"/>
+                                <include reference="Nbp-tR-uzm"/>
+                                <include reference="WGD-5a-39U"/>
+                                <include reference="o9M-9C-kRU"/>
+                                <include reference="zd2-mR-XrF"/>
+                                <include reference="LUX-27-NTR"/>
+                                <include reference="EU5-0m-Ob1"/>
                                 <include reference="3fQ-hS-spy"/>
                                 <include reference="N7M-J9-BtJ"/>
                                 <include reference="SlV-4U-cgW"/>
@@ -7796,18 +7809,11 @@
                                 <include reference="Xft-Wu-LMg"/>
                                 <include reference="ZHv-Lz-9Wy"/>
                                 <include reference="yhP-Ig-dmG"/>
-                                <include reference="U8P-oI-1Ci"/>
-                                <include reference="uBd-P5-bGf"/>
-                                <include reference="LUX-27-NTR"/>
                                 <include reference="59N-K6-s8I"/>
                                 <include reference="dRb-xc-gWf"/>
                                 <include reference="vDz-B4-fGz"/>
-                                <include reference="EU5-0m-Ob1"/>
-                                <exclude reference="DbG-mD-7gU"/>
-                                <include reference="Nbp-tR-uzm"/>
-                                <include reference="WGD-5a-39U"/>
-                                <include reference="o9M-9C-kRU"/>
-                                <include reference="zd2-mR-XrF"/>
+                                <include reference="0N3-7Q-Gmf"/>
+                                <exclude reference="WmE-B3-8QC"/>
                             </mask>
                         </variation>
                     </view>

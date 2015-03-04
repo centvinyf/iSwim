@@ -24,7 +24,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split.do"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/split.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -88,8 +88,8 @@
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller2];
         }
-        NSDictionary *dic = self.mInitData[indexPath.row -1];
-        [vCell.mScore setText: [[self.mInitData[indexPath.row-1] valueForKey:@"score"] stringValue]];
+
+        [vCell.mScore setText:[self.mInitData[indexPath.row-1] valueForKey:@"score"]];
         [vCell.mName setText:[[self.mInitData[indexPath.row-1] valueForKey:@"splitId"] stringValue]];
         [vCell.mBegin setText:[self.mInitData[indexPath.row-1] valueForKey:@"splitDepTime" ]];
         [vCell.mEnd setText:[self.mInitData[indexPath.row-1] valueForKey:@"splitArrTime" ]];

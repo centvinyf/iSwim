@@ -29,7 +29,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/best.do"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/best.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -95,44 +95,44 @@
         vCell.mName.text = vName[indexPath.row-1];
         switch (indexPath.row) {
             case 1:
-                [vCell.mScore setText: [self.mInitData[@"m25BestScore"] stringValue]];
-                [vCell.mBegin setText: [self.mInitData[@"m25StartId"] stringValue]];
-                [vCell.mEnd setText:[self.mInitData[@"m25EndId"] stringValue]];
+                [vCell.mScore setText:self.mInitData[@"m25BestScore"]];
+                [vCell.mBegin setText:self.mInitData[@"m25StartId"]];
+                [vCell.mEnd setText:self.mInitData[@"m25EndId"]];
                 break;
             case 2:
-                [vCell.mScore setText: [self.mInitData[@"m50BestScore"] stringValue]];
-                [vCell.mBegin setText: [self.mInitData[@"m50StartId"] stringValue]];
-                [vCell.mEnd setText:[self.mInitData[@"m50EndId"] stringValue]];
+                [vCell.mScore setText:self.mInitData[@"m50BestScore"]];
+                [vCell.mBegin setText:self.mInitData[@"m50StartId"]];
+                [vCell.mEnd setText:self.mInitData[@"m50EndId"]];
                 break;
             case 3:
-                [vCell.mScore setText: [self.mInitData[@"m100BestScore"] stringValue]];
-                [vCell.mBegin setText: [self.mInitData[@"m100StartId"] stringValue]];
-                [vCell.mEnd setText:[self.mInitData[@"m100EndId"] stringValue]];
+                [vCell.mScore setText:self.mInitData[@"m100BestScore"]];
+                [vCell.mBegin setText:self.mInitData[@"m100StartId"]];
+                [vCell.mEnd setText:self.mInitData[@"m100EndId"]];
                 break;
             case 4:
-                [vCell.mScore setText: [self.mInitData[@"m200BestScore"] stringValue]];
-                [vCell.mBegin setText: [self.mInitData[@"m200StartId"] stringValue]];
-                [vCell.mEnd setText:[self.mInitData[@"m200EndId"] stringValue]];
+                [vCell.mScore setText:self.mInitData[@"m200BestScore"]];
+                [vCell.mBegin setText:self.mInitData[@"m200StartId"]];
+                [vCell.mEnd setText:self.mInitData[@"m200EndId"]];
                 break;
             case 5:
-                [vCell.mScore setText: [self.mInitData[@"m400BestScore"] stringValue]];
-                [vCell.mBegin setText: [self.mInitData[@"m400StartId"] stringValue]];
-                [vCell.mEnd setText:[self.mInitData[@"m400EndId"] stringValue]];
+                [vCell.mScore setText:self.mInitData[@"m400BestScore"]];
+                [vCell.mBegin setText:self.mInitData[@"m400StartId"]];
+                [vCell.mEnd setText:self.mInitData[@"m400EndId"]];
                 break;
             case 6:
-                [vCell.mScore setText: [self.mInitData[@"m800BestScore"] stringValue]];
-                [vCell.mBegin setText: [self.mInitData[@"m800StartId"] stringValue]];
-                [vCell.mEnd setText:[self.mInitData[@"m800EndId"] stringValue]];
+                [vCell.mScore setText:self.mInitData[@"m800BestScore"]];
+                [vCell.mBegin setText:self.mInitData[@"m800StartId"]];
+                [vCell.mEnd setText:self.mInitData[@"m800EndId"]];
                 break;
             case 7:
-                [vCell.mScore setText: [self.mInitData[@"m1000BestScore"] stringValue]];
-                [vCell.mBegin setText: [self.mInitData[@"m1000StartId"] stringValue]];
-                [vCell.mEnd setText:[self.mInitData[@"m1000EndId"] stringValue]];
+                [vCell.mScore setText:self.mInitData[@"m1000BestScore"]];
+                [vCell.mBegin setText:self.mInitData[@"m1000StartId"]];
+                [vCell.mEnd setText:self.mInitData[@"m1000EndId"]];
                 break;
             case 8:
-                [vCell.mScore setText: [self.mInitData[@"m1500BestScore"] stringValue]];
-                [vCell.mBegin setText: [self.mInitData[@"m1500StartId"] stringValue]];
-                [vCell.mEnd setText:[self.mInitData[@"m1500EndId"] stringValue]];
+                [vCell.mScore setText:self.mInitData[@"m1500BestScore"]];
+                [vCell.mBegin setText:self.mInitData[@"m1500StartId"]];
+                [vCell.mEnd setText:self.mInitData[@"m1500EndId"]];
                 break;
             default:
                 break;

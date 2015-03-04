@@ -58,7 +58,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKu-IW-xup">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13160885723" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKu-IW-xup">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="H9O-GU-0T8"/>
@@ -83,7 +83,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OML-42-Xzj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OML-42-Xzj">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="N8D-iD-nY9"/>
@@ -782,7 +782,7 @@
         <!--登陆-->
         <scene sceneID="Xnn-Ib-ri8">
             <objects>
-                <viewController title="游泳控" id="fn8-he-Gl7" userLabel="登陆" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController title="游泳控" automaticallyAdjustsScrollViewInsets="NO" id="fn8-he-Gl7" userLabel="登陆" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iic-jU-g4k"/>
                         <viewControllerLayoutGuide type="bottom" id="5Ls-ca-agp"/>

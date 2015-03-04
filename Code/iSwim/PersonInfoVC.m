@@ -98,9 +98,14 @@
     {
         return 3;
     }
-    else if (section==2||section==3)
+    else if (section==2)
     {
         return 2;
+    }
+    else if (section == 3)
+    {
+#warning 屏蔽计划
+        return 0;
     }
     else
     {
@@ -146,12 +151,19 @@
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
         }
     }
-    cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    if (indexPath.section==0||(indexPath.section==2&&indexPath.row==0)||(indexPath.section==1&&indexPath.row==1)||(indexPath.section==4&&indexPath.row==0)||(indexPath.section==3&&indexPath.row==1))
+    if (
+        (indexPath.section==2&&indexPath.row==0)||
+        (indexPath.section==1&&indexPath.row==1)||
+        (indexPath.section==4&&indexPath.row==0)||
+        (indexPath.section==3&&indexPath.row==1)
+       )
     {
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
-
+    else
+    {
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    }
     if(indexPath.section==3&&indexPath.row==0)
     {
         UISwitch*swt=[[UISwitch alloc]init];
@@ -165,8 +177,9 @@
         [_mHeaderImageView setImageWithURL:url];
     }
     cell.textLabel.text=[[_mTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    if (indexPath.section==2&&indexPath.row==1) {
-        //cell.textLabel.text=_mPersonInfo.pool.name;
+    if (indexPath.section==2&&indexPath.row==1)
+    {
+        cell.detailTextLabel.text=_mPersonInfo.poolName;
     }
     if (indexPath.section==0&&indexPath.row==1)
     {
@@ -190,16 +203,17 @@
     }
     return cell;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (0==indexPath.section&&0==indexPath.row)
     {
         _mCoverView.hidden=NO;
     }
-    else if (0==indexPath.section&&1==indexPath.row)
-    {
-        [self performSegueWithIdentifier:@"changeNameVC" sender:nil];
-    }
+//    else if (0==indexPath.section&&1==indexPath.row)
+//    {
+//        [self performSegueWithIdentifier:@"changeNameVC" sender:nil];
+//    }
     else if (1==indexPath.section)
     {
         [self performSegueWithIdentifier:@"changeInfoVC" sender:nil];
