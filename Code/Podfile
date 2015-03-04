@@ -5,4 +5,5 @@ target 'iSwim' do
 pod 'PNChart'
 pod 'AFNetworking'
 pod 'MBProgressHUD'
+pod 'RefreshControl'
 end

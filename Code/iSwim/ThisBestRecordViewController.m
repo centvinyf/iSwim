@@ -18,6 +18,7 @@
 @property (weak,nonatomic) NSArray * mBegin;
 @property (weak,nonatomic) NSArray * mEnd;
 @property(retain,nonatomic) NSDictionary * mInitData;
+@property (retain,nonatomic) NSString * mCurrentEventId;
 @end
 
 @implementation ThisBestRecordViewController
@@ -40,7 +41,7 @@
 #pragma mark--
 - (void)loadData:(NSString *)url
 {
-    NSDictionary *parameters = @{};
+    NSDictionary *parameters = @{@"eventId": self.mCurrentEventId};
     [HttpJsonManager getWithParameters:parameters
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
@@ -48,7 +49,7 @@
          if (sucess) {
              self.mInitData = content;
              [self initViews:self.mInitData];
-             NSLog(@"%@",content);
+            NSLog(@"%@",content);
              [self.mTableView reloadData];
          }
      }];
@@ -57,7 +58,10 @@
 {
     
 }
-
+-(void) initWithEventId : (NSString *)EventId
+{
+    self.mCurrentEventId = EventId;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

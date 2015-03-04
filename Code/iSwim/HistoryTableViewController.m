@@ -1,15 +1,14 @@
 //
-//  TrainingRecordsViewController.m
+//  HistoryTableViewController.m
 //  iSwim
 //
-//  Created by Magic Beans on 15/1/30.
+//  Created by Sylar-MagicBeans on 15/3/3.
 //  Copyright (c) 2015年 Magic Beans. All rights reserved.
 //
-
-#import "TrainingRecordsViewController.h"
+#import "HistoryTableViewController.h"
 #import "HttpJsonManager.h"
 #import "MBLineChart.h"
-@interface TrainingRecordsViewController ()
+@interface HistoryTableViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *mTotalDistance;
 
 @property (strong, nonatomic) IBOutlet UITableView *mTableView;
@@ -26,11 +25,11 @@
 @property (retain,nonatomic) NSDictionary * mInitData;
 @end
 
-@implementation TrainingRecordsViewController
+@implementation HistoryTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/train.do"];
+    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/records.do"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -54,8 +53,8 @@
          if (sucess) {
              self.mInitData = content;
              [self initViews:self.mInitData];
-//             [self.mTableView reloadData];
-//             NSLog(@"%@",content);
+             //             [self.mTableView reloadData];
+             //             NSLog(@"%@",content);
          }
      }];
 }
@@ -88,6 +87,6 @@
     [self addChartToImageview:[self.mInitData[@"M800"] valueForKey:@"X"] :[self.mInitData[@"M800"] valueForKey:@"Y"] :self.m800m];
     [self addChartToImageview:[self.mInitData[@"M1000"] valueForKey:@"X"] :[self.mInitData[@"M1000"] valueForKey:@"Y"] :self.m1000m];
     [self addChartToImageview:[self.mInitData[@"M1500"] valueForKey:@"X"] :[self.mInitData[@"M1500"] valueForKey:@"Y"] :self.m1500m];
-
+    
 }
 @end

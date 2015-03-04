@@ -31,8 +31,8 @@
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mIsFirst=YES;
     self.automaticallyAdjustsScrollViewInsets=NO;
-    _mXArray=[[NSMutableArray alloc]initWithObjects:@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss",@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss", nil];
-    _mYArray=[[NSMutableArray alloc]initWithObjects:@260,@300,@36.5,@10.9,@105,@260,@300,@36.5,@10.9,@105, nil];
+//    _mXArray=[[NSMutableArray alloc]initWithObjects:@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss",@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss", nil];
+//    _mYArray=[[NSMutableArray alloc]initWithObjects:@260,@300,@36.5,@10.9,@105,@260,@300,@36.5,@10.9,@105, nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,9 +47,9 @@
             
             
                     NSDictionary*vDic=content;
-                   // _mXArray = [vDic objectForKey:@"X"];
-                   // _mYArray = [vDic objectForKey:@"Y"];
-                               
+            _mXArray = [[vDic objectForKey:@"chart"] objectForKey:@"X"] ;
+                    _mYArray = [[vDic objectForKey:@"chart"] objectForKey:@"Y"];
+            
             
             CGRect rect=CGRectMake(0, 0, _mBgImageView.frame.size.width, _mBgImageView.frame.size.height);
             UIScrollView *chartView = [MBLineChart giveMeAGraphForType:_mType yValues:_mYArray xValues:_mXArray frame:rect delegate:nil];

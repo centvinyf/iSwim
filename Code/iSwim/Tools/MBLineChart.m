@@ -855,6 +855,11 @@
     
     //Use yFixedValueMax and yFixedValueMin to Fix the Max and Min Y Value
     //Only if you needed
+    if (yValues.count == 0)
+    {
+        return nil;
+    }
+    
     NSNumber * big =yValues[0];
     NSNumber * small = yValues[0];
     for (int i = 0; i<yValues.count; i++) {

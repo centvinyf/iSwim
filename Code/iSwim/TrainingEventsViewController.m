@@ -10,21 +10,20 @@
 #import "TrainingEventsTableViewCell.h"
 #import "TrainingEventTitleCell.h"
 #import "HttpJsonManager.h"
+#import "UIScrollView+RefreshControl.h"
 
 @interface TrainingEventsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
-@property (retain,nonatomic) NSArray * mInitData;
+@property (retain,nonatomic) NSMutableArray * mInitData;
 @property (assign,nonatomic) NSInteger mNumberofDetail;
+@property (assign,nonatomic) NSInteger mCurrentPage;
 @end
 
 @implementation TrainingEventsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
-    vReturnButtonItem.title = @" ";
-    self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do"];
+    [self initViews];
     // Do any additional setup after loading the view.
 }
 
@@ -33,27 +32,49 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark--
-- (void)loadData:(NSString *)url
+
+- (void)loadData:(NSString *)url PageIndex:(NSInteger)pageIndex
 {
-    NSDictionary *parameters = @{@"page":@1};
+    NSDictionary *parameters = @{@"page":[NSNumber numberWithInteger:pageIndex]};
     [HttpJsonManager getWithParameters:parameters
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
      {
          if (sucess) {
-             self.mInitData = content;
+             [self.mInitData addObjectsFromArray:(NSArray *)content];
              self.mNumberofDetail = self.mInitData.count;
-             [self initViews:self.mInitData];
              [self.mTableView reloadData];
              NSLog(@"%@",content);
          }
      }];
 }
--(void)initViews: (NSArray *)dic
+-(void)initViews
 {
+    self.mInitData = [[NSMutableArray alloc]init];
+    UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
+    vReturnButtonItem.title = @" ";
+    self.navigationItem.backBarButtonItem = vReturnButtonItem;
     
+    [self.mTableView addTopRefreshControlUsingBlock:^{
+        [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" PageIndex:1];
+    }];
+    self.mCurrentPage = 1;
+    
+    [self.mTableView addBottomRefreshControlUsingBlock:^{
+        self.mCurrentPage ++;
+        [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" PageIndex: self.mCurrentPage];
+    }];
+
+    [self.mTableView topRefreshControlStartInitializeRefreshing];
 }
 #pragma mark - TableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString * vEventId = [self.mInitData[indexPath.row-1] valueForKey:@"eventId"];
+    [self performSegueWithIdentifier:@"toDetail" sender:vEventId];
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.mNumberofDetail;
@@ -109,14 +130,15 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (assign,nonatomic) NSInteger mNumberOfDetail;
 @property (retain, nonatomic) NSArray * mInitData;
+@property (retain,nonatomic) NSString * mCurrentEventId;
 @end
 
 @implementation ScoreDetailViewController
@@ -34,7 +35,8 @@
 #pragma mark--
 - (void)loadData:(NSString *)url
 {
-    NSDictionary *parameters = @{@"page": @1};
+    NSDictionary *parameters = @{@"eventId": self.mCurrentEventId,
+                                 @"page": @1};
     [HttpJsonManager getWithParameters:parameters
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
@@ -53,7 +55,10 @@
 {
     
 }
-
+-(void) initWithEventId : (NSString *)EventId
+{
+    self.mCurrentEventId = EventId;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

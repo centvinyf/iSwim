@@ -15,6 +15,7 @@
 @property (weak, nonatomic) NSArray *mTitleName;
 @property (weak,nonatomic) NSMutableArray * mData;
 @property (retain,nonatomic) NSDictionary * mInitData;
+@property (retain,nonatomic) NSString *mCurrentEventId;
 @end
 
 @implementation BasicInfomationViewController
@@ -67,7 +68,7 @@
 #pragma mark--
 - (void)loadData:(NSString *)url
 {
-    NSDictionary *parameters = @{};
+    NSDictionary *parameters = @{@"EventId": self.mCurrentEventId};
     [HttpJsonManager getWithParameters:parameters
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
@@ -83,7 +84,11 @@
 {
     
 }
-
+#pragma mark - Navigation
+-(void) initWithEventId : (NSString *)EventId
+{
+    self.mCurrentEventId = EventId;
+}
 /*
  #pragma mark - Navigation
  

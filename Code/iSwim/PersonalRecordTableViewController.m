@@ -122,10 +122,12 @@
     [self.mTotalSwimmingTime setText:vSwimmingTime];
     NSString *vCaluli = [NSString stringWithFormat:@"%@cal", dic[@"calorie"]];
     [self.mCaluli setText:vCaluli];
+    
     NSString *vLongestEventDis = [NSString stringWithFormat:@"%@", dic[@"longestEventDis"]];
     [self.mLongestEventDis setText:vLongestEventDis];
     NSString *vLongestEventDate =[NSString stringWithFormat:@"%@", dic[@"ledDate"]];
     [self.mLongestEventDate setText:vLongestEventDate];
+    
     NSString *vLedSwimmingPool = [NSString stringWithFormat:@"%@", dic[@"ledSwimmingPool"]];
     [self.mLongestEventPlace setText:vLedSwimmingPool];
     NSString *vLongestEventST = [NSString stringWithFormat:@"%@", dic[@"longestEventST"]];
@@ -140,10 +142,18 @@
     [self.mBigestCalDate setText:vBcDate];
     NSString *vBcSwimmingPool = [NSString stringWithFormat:@"%@", dic[@"bcSwimmingPool"]];
     [self.mBigestCalPlace setText: vBcSwimmingPool];
-    NSString *vM25BestScore = [NSString stringWithFormat:@"%@", dic[@"m25BestScore"]];
-    [self.m25BestTime setText:vM25BestScore];
-    NSString *vM25Date = [NSString stringWithFormat:@"%@", dic[@"m25Date"]];
-    [self.m25Date setText: vM25Date];
+    
+    /**
+     *  25M
+     */
+    if ([dic[@"m25BestScore"] intValue] != -1)
+    {
+        NSString *vM25BestScore = [NSString stringWithFormat:@"%@", dic[@"m25BestScore"]];
+        [self.m25BestTime setText:vM25BestScore];
+        NSString *vM25Date = [NSString stringWithFormat:@"%@", dic[@"m25Date"]];
+        [self.m25Date setText: vM25Date];
+    }
+    
     NSString *vM50BestScore = [NSString stringWithFormat:@"%@", dic[@"m50BestScore"]];
     [self.m50BestTime setText:vM50BestScore];
     NSString *vM50Date = [NSString stringWithFormat:@"%@", dic[@"m50Date"]];
@@ -239,14 +249,129 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        if ([self.mLongestDisEventId intValue]>0) {
+            [self performSegueWithIdentifier:@"LED" sender:nil];
+        }
+    }
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        if ([self.mLongestTimeEventId intValue]>0) {
+            [self performSegueWithIdentifier:@"LST" sender:nil];
+        }
+    }
+    if (indexPath.section == 1 && indexPath.row == 2) {
+        if ([self.mBestCaluliId intValue]>0) {
+            [self performSegueWithIdentifier:@"LBC" sender:nil];
+        }
+        
+    }
+    if (indexPath.section == 2 && indexPath.row == 1) {
+        if ([self.m25EventId intValue]>0) {
+            [self performSegueWithIdentifier:@"25m" sender:nil];
+        }
+    }
+    if (indexPath.section == 2 && indexPath.row == 2) {
+        if ([self.m50EventId intValue]>0) {
+            [self performSegueWithIdentifier:@"50m" sender:nil];
+        }
+    }
+    if (indexPath.section == 2 && indexPath.row == 3) {
+        if ([self.m100EventId intValue]>0) {
+            [self performSegueWithIdentifier:@"100m" sender:nil];
+        }
+    }
+    if (indexPath.section == 2 && indexPath.row == 4) {
+        if ([self.m200EventId intValue]>0) {
+            [self performSegueWithIdentifier:@"200m" sender:nil];
+        }
+    }
+    if (indexPath.section == 2 && indexPath.row == 5) {
+        if ([self.m400EventId intValue]>0) {
+            [self performSegueWithIdentifier:@"400m" sender:nil];
+        }
+    }
+    if (indexPath.section == 2 && indexPath.row == 6) {
+        if ([self.m800EventId intValue]>0) {
+            [self performSegueWithIdentifier:@"800m" sender:nil];
+        }
+    }
+    if (indexPath.section == 2 && indexPath.row == 7) {
+        if ([self.m1000EventId intValue]>0) {
+            [self performSegueWithIdentifier:@"1000m" sender:nil];
+        }
+    }
+    if (indexPath.section == 2 && indexPath.row == 8) {
+        if ([self.m1500EventId intValue]>0) {
+            [self performSegueWithIdentifier:@"1500m" sender:nil];
+        }
+    }
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"LED"]) {
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:self.mLongestDisEventId];
+    }
+    else if([segue.identifier isEqualToString:@"LST"])
+    {
+        sender = self.mLongestTimeEventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"LBC"])
+    {
+        sender = self.mBestCaluliId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"25m"])
+    {
+        sender = self.m25EventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"50m"])
+    {
+        sender = self.m50EventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"100m"])
+    {
+        sender = self.m100EventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"200m"])
+    {
+        sender = self.m200EventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"400m"])
+    {
+        sender = self.m400EventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"800m"])
+    {
+        sender = self.m800EventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"1000m"])
+    {
+        sender = self.m1000EventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+    else if([segue.identifier isEqualToString:@"1500m"])
+    {
+        sender = self.m1500EventId;
+        [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
+    }
+
+
+    
 }
-*/
+
 
 @end

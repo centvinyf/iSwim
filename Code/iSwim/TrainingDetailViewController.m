@@ -25,7 +25,7 @@
     vReturnButtonItem.title = @" ";//改改改
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
     [self loadEventIdData:@"http://192.168.1.113:8081/swimming_app/app/client/events/info/enevtId.do"];
-//    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split/chart.do"];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -36,7 +36,9 @@
 #pragma mark--
 - (void)loadData:(NSString *)url
 {
-    NSDictionary *parameters = @{@"page": @1};
+    NSDictionary *parameters = @{
+                                 @"eventId": self.mCurrentEventID,
+                                 @"page": @1};
     [HttpJsonManager getWithParameters:parameters
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
@@ -56,7 +58,7 @@
 -(void) loadChartWithXY : (NSArray *) Xarray : (NSArray *) Yarray
 {
         UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总成绩"
-                                   yValues:Yarray
+                                   yValues:[NSMutableArray arrayWithArray:Yarray]
                           xValues:Xarray
                             frame:self.mImageView.frame
                          delegate:self];
@@ -71,21 +73,31 @@
                      completionHandler:^(BOOL sucess, id content)
      {
          if (sucess) {
-             self.mCurrentEventID = content[@"eventId"];
-                         NSLog(@"%@",content);
+             if (!self.mCurrentEventID) {
+                  self.mCurrentEventID = content[@"eventId"];
+             }
+            
+            NSLog(@"%@",content);
+             [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split/chart.do"];
              
          }
      }];
+}
+-(void)initWithEventId : (NSString *) EventID
+{
+    self.mCurrentEventID = EventID;
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    sender = self.mCurrentEventID;
+    [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:sender];
 }
 
 /*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
 
 @end
