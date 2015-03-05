@@ -193,7 +193,7 @@
     CGPoint point = plot.xPoints[i];
     CGPathAddLineToPoint(graphPath, NULL, point.x, point.y);
     CGPathAddLineToPoint(backgroundPath, NULL, point.x, point.y);
-    CGPathAddEllipseInRect(circlePath, NULL, CGRectMake(point.x - 5, point.y - 5, 10, 10));
+    CGPathAddEllipseInRect(circlePath, NULL, CGRectMake(point.x - 2.5, point.y - 2.5, 5, 5));
   }
   
   //move to initial point for path and background.
@@ -223,7 +223,9 @@
   [self.layer addSublayer:graphLayer];
   [self.layer addSublayer:circleLayer];
   [self.layer addSublayer:backgroundLayer];
-	
+    bgLayer = backgroundLayer;
+    lineLayer = graphLayer;
+    pointLayer = circleLayer;
 	NSUInteger count2 = _xAxisValues.count;
 	for(int i=0; i< count2; i++){
 		CGPoint point = plot.xPoints[i];

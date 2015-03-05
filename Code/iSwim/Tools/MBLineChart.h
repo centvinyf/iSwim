@@ -1,5 +1,11 @@
 #import "SHLineGraphView.h"
 
 @interface MBLineChart : SHLineGraphView
-+ (UIScrollView *)initGraph:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues inView:(UIView *)view;
+@property (retain, nonatomic) UIScrollView *containererView;
+@property (assign, nonatomic) float minWidth;
+
++ (MBLineChart *)initGraph:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues inView:(UIView *)view;
+
+- (void)updateGraph:(float)scale;
+
 @end;
