@@ -21,22 +21,19 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - MBProgressHUD (0.9)
-  - PNChart (0.7.5):
-    - UICountingLabel (~> 1.0.0)
   - RefreshControl (1.5.6.1)
-  - UICountingLabel (1.0.0)
+  - SHLineGraphView (1.0.6)
 
 DEPENDENCIES:
   - AFNetworking
   - MBProgressHUD
-  - PNChart
   - RefreshControl
+  - SHLineGraphView
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
-  PNChart: 18d4c57f43df3357ab14b3847a930f36d1fbce48
   RefreshControl: 5de746c645b2c94a67d0edc6b90cbcd709446953
-  UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
+  SHLineGraphView: ea496febee7a19bef01d5d1c832cf83a5e6a443e
 
 COCOAPODS: 0.35.0

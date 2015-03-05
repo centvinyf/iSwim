@@ -8,9 +8,11 @@
 
 #import "TrainingDetailViewController.h"
 #import "HttpJsonManager.h"
+#import "MBLineChart.h"
+
 @interface TrainingDetailViewController ()
 @property (retain,nonatomic) NSDictionary * mInitData;
-@property (weak, nonatomic) IBOutlet UIImageView *mImageView;
+@property (weak, nonatomic) IBOutlet MBLineChart *mGraphicView;
 @property (retain,nonatomic) NSArray * mXArray;
 @property (retain,nonatomic) NSArray * mYArray;
 @property (retain,nonatomic) NSString * mCurrentEventID;
@@ -24,7 +26,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    [self loadEventIdData:@"http://192.168.1.113:8080/swimming_app/app/client/events/info/enevtId.do"];
+    [self loadEventIdData:@"http://192.168.1.113:8081/swimming_app/app/client/events/info/enevtId.do"];
     
     // Do any additional setup after loading the view.
 }
@@ -47,24 +49,17 @@
              self.mInitData = content;
              self.mXArray = [self.mInitData valueForKey:@"X"];
              self.mYArray = [self.mInitData valueForKey:@"Y"];
-//             NSLog(content);
-             
              [self loadChartWithXY:self.mXArray :self.mYArray];
-             NSLog(@"%@",content);
-            
     }
      }];
 }
+
 -(void) loadChartWithXY : (NSArray *) Xarray : (NSArray *) Yarray
 {
-        UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总成绩"
-                                   yValues:[NSMutableArray arrayWithArray:Yarray]
-                          xValues:Xarray
-                            frame:self.mImageView.frame
-                         delegate:self];
-        [self.mImageView addSubview:chartView];
+        [self.mGraphicView initGraph:@"" yValues:Yarray xValues:Xarray];
 
 }
+
 - (void)loadEventIdData:(NSString *)url
 {
     NSDictionary *parameters = @{};
@@ -78,7 +73,7 @@
              }
             
             NSLog(@"%@",content);
-             [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/split/chart.do"];
+             [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split/chart.do"];
              
          }
      }];

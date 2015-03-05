@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MBLineChart.h"
 
-@interface GraphViewController : UIViewController<PNChartDelegate>
+@interface GraphViewController : UIViewController
 
 @end

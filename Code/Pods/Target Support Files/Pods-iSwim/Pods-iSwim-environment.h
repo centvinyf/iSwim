@@ -54,12 +54,6 @@
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
 
-// PNChart
-#define COCOAPODS_POD_AVAILABLE_PNChart
-#define COCOAPODS_VERSION_MAJOR_PNChart 0
-#define COCOAPODS_VERSION_MINOR_PNChart 7
-#define COCOAPODS_VERSION_PATCH_PNChart 5
-
 // RefreshControl
 #define COCOAPODS_POD_AVAILABLE_RefreshControl
 // This library does not follow semantic-versioning,
@@ -67,9 +61,9 @@
 // Please contact the author.
 // Version: 1.5.6.1.
 
-// UICountingLabel
-#define COCOAPODS_POD_AVAILABLE_UICountingLabel
-#define COCOAPODS_VERSION_MAJOR_UICountingLabel 1
-#define COCOAPODS_VERSION_MINOR_UICountingLabel 0
-#define COCOAPODS_VERSION_PATCH_UICountingLabel 0
+// SHLineGraphView
+#define COCOAPODS_POD_AVAILABLE_SHLineGraphView
+#define COCOAPODS_VERSION_MAJOR_SHLineGraphView 1
+#define COCOAPODS_VERSION_MINOR_SHLineGraphView 0
+#define COCOAPODS_VERSION_PATCH_SHLineGraphView 6
 

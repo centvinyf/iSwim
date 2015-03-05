@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrainingRecordsViewController : UITableViewController
+@interface TrainingRecordsViewController : UIViewController
 {
     CGRect mChartFrame;
 }

@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *mEndBtn;
 @property (weak, nonatomic) IBOutlet UIView *mCoverView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *mDatePicker;
-@property (weak, nonatomic) IBOutlet UIImageView *mBgImageView;
+@property (weak, nonatomic) IBOutlet MBLineChart *mGraphicView;
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
 @end
@@ -38,34 +38,21 @@
     _mDatePicker.hidden=YES;
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
-    _mIsFirst=YES;
+    [self loadData];
 }
--(void)viewDidAppear:(BOOL)animated
+
+-(void)loadData
 {
-    if (_mIsFirst) {
         [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/points.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
-            NSLog(@"%s---%@",__FUNCTION__,content);
             mInitData = content;
             _mDataSourceArray=(NSArray*)content[@"result"];
             [_mTableView reloadData];
-//            for (int i=0; i<_mDataSourceArray.count; i++) {
-//                NSDictionary*vPoint=_mDataSourceArray[i];
-//                [_mXArray addObject:[vPoint objectForKey:@"createdDt"]];
-//                [_mYArray addObject:[NSNumber numberWithInteger:[[vPoint objectForKey:@"change"] integerValue]]];
-//            }
             _mXArray = [mInitData[@"chart"] valueForKey:@"X"];
             _mYArray = [mInitData[@"chart"] valueForKey:@"Y"];
-            CGRect rect=CGRectMake(0, 0, _mBgImageView.frame.size.width, _mBgImageView.frame.size.height);
-            UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总时长" yValues:_mYArray xValues:_mXArray frame:rect delegate:nil];
-//            chartView.backgroundColor=[UIColor redColor];
-//            _mBgImageView.backgroundColor=[UIColor cyanColor];
-            
-            NSLog(@"%@",NSStringFromCGRect(chartView.frame));
-            [_mBgImageView addSubview:chartView];
-            _mIsFirst=NO;
+            [self.mGraphicView initGraph:@"" yValues:_mYArray xValues:_mXArray];
         }];
-    }
 }
+
 - (IBAction)queryBtnClick:(id)sender {
     _mCoverView.hidden=NO;
 }

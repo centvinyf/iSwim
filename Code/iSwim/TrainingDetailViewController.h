@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MBLineChart.h"
 
-@interface TrainingDetailViewController : UIViewController<PNChartDelegate>
-
+@interface TrainingDetailViewController : UIViewController
 @end

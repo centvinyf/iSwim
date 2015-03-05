@@ -17,7 +17,7 @@
     NSArray      *_mYArray;
     BOOL                _mIsFirst;
 }
-@property (weak, nonatomic) IBOutlet UIImageView *mBgImageView;
+@property (weak, nonatomic) IBOutlet MBLineChart *mGraphicView;
 
 @end
 
@@ -26,39 +26,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _mBgImageView.userInteractionEnabled=YES;
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mIsFirst=YES;
-    self.automaticallyAdjustsScrollViewInsets=NO;
-//    _mXArray=[[NSMutableArray alloc]initWithObjects:@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss",@"sdffsdf",@"ssads",@"ssaaxs",@"sqqqss",@"spppss", nil];
-//    _mYArray=[[NSMutableArray alloc]initWithObjects:@260,@300,@36.5,@10.9,@105,@260,@300,@36.5,@10.9,@105, nil];
+    [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/break.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content)
+     {
+         NSDictionary*vDic=content;
+         _mXArray = [[vDic objectForKey:@"chart"] objectForKey:@"X"] ;
+         _mYArray = [[vDic objectForKey:@"chart"] objectForKey:@"Y"];
+         [self.mGraphicView initGraph:_mType yValues:_mYArray xValues:_mXArray];
+     }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    if (_mIsFirst) {
-        [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/break.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
-            
-            
-            
-                    NSDictionary*vDic=content;
-            _mXArray = [[vDic objectForKey:@"chart"] objectForKey:@"X"] ;
-                    _mYArray = [[vDic objectForKey:@"chart"] objectForKey:@"Y"];
-            
-            
-            CGRect rect=CGRectMake(0, 0, _mBgImageView.frame.size.width, _mBgImageView.frame.size.height);
-            UIScrollView *chartView = [MBLineChart giveMeAGraphForType:_mType yValues:_mYArray xValues:_mXArray frame:rect delegate:nil];
-            NSLog(@"%@",NSStringFromCGRect(chartView.frame));
-            [_mBgImageView addSubview:chartView];
-            _mIsFirst=NO;
-        }];
-    }
-}
+
 /*
 #pragma mark - Navigation
 

@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'iSwim' do
-pod 'PNChart'
+pod 'SHLineGraphView'
 pod 'AFNetworking'
 pod 'MBProgressHUD'
 pod 'RefreshControl'
