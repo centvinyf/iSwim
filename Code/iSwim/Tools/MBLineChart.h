@@ -1,6 +1,5 @@
 #import "SHLineGraphView.h"
 
 @interface MBLineChart : SHLineGraphView
-- (void)initGraph:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues;
-
++ (UIScrollView *)initGraph:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues inView:(UIView *)view;
 @end;

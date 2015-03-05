@@ -34,7 +34,7 @@
          NSDictionary*vDic=content;
          _mXArray = [[vDic objectForKey:@"chart"] objectForKey:@"X"] ;
          _mYArray = [[vDic objectForKey:@"chart"] objectForKey:@"Y"];
-         [self.mGraphicView initGraph:_mType yValues:_mYArray xValues:_mXArray];
+         [MBLineChart initGraph:_mType yValues:_mYArray xValues:_mXArray inView:self.mGraphicView];
      }];
 }
 

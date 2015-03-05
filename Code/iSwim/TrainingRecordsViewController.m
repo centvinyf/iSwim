@@ -59,17 +59,60 @@
 
 -(void) initViews : (NSDictionary * )dic
 {
-    [self.mTotalDistance initGraph:@"title" yValues:[self.mInitData[@"LED"] valueForKey:@"Y"] xValues:[self.mInitData[@"LED"] valueForKey:@"X"]];
-    [self.mTotalTime initGraph:@"title" yValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"Y"] xValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"X"]];
-    [self.mTotalCaluli initGraph:@"title" yValues:[self.mInitData[@"CALORIE"] valueForKey:@"Y"] xValues:[self.mInitData[@"CALORIE"] valueForKey:@"X"]];
-    [self.m25m initGraph:@"title" yValues:[self.mInitData[@"M25"] valueForKey:@"Y"] xValues:[self.mInitData[@"M25"] valueForKey:@"X"]];
-    [self.m50m initGraph:@"title" yValues:[self.mInitData[@"M50"] valueForKey:@"Y"] xValues:[self.mInitData[@"M50"] valueForKey:@"X"]];
-    [self.m100m initGraph:@"title" yValues:[self.mInitData[@"M100"] valueForKey:@"Y"] xValues:[self.mInitData[@"M100"] valueForKey:@"X"]];
-    [self.m200m initGraph:@"title" yValues:[self.mInitData[@"M200"] valueForKey:@"Y"] xValues:[self.mInitData[@"M200"] valueForKey:@"X"]];
-    [self.m400m initGraph:@"title" yValues:[self.mInitData[@"M400"] valueForKey:@"Y"] xValues:[self.mInitData[@"M400"] valueForKey:@"X"]];
-    [self.m800m initGraph:@"title" yValues:[self.mInitData[@"M800"] valueForKey:@"Y"] xValues:[self.mInitData[@"M800"] valueForKey:@"X"]];
-    [self.m1000m initGraph:@"title" yValues:[self.mInitData[@"M1000"] valueForKey:@"Y"] xValues:[self.mInitData[@"M1000"] valueForKey:@"X"]];
-    [self.m1500m initGraph:@"title" yValues:[self.mInitData[@"M1500"] valueForKey:@"Y"] xValues:[self.mInitData[@"M1500"] valueForKey:@"X"]];
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"LED"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"LED"] valueForKey:@"X"]
+                    inView:self.mTotalDistance];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"X"]
+                    inView:self.mTotalTime];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"CALORIE"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"CALORIE"] valueForKey:@"X"]
+                    inView:self.mTotalCaluli];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"M25"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"M25"] valueForKey:@"X"]
+                    inView:self.m25m];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"M50"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"M50"] valueForKey:@"X"]
+                    inView:self.m50m];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"M100"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"M100"] valueForKey:@"X"]
+                    inView:self.m100m];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"M200"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"M200"] valueForKey:@"X"]
+                    inView:self.m200m];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"M400"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"M400"] valueForKey:@"X"]
+                    inView:self.m400m];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"M800"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"M800"] valueForKey:@"X"]
+                    inView:self.m800m];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"M1000"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"M1000"] valueForKey:@"X"]
+                    inView:self.m1000m];
+    
+    [MBLineChart initGraph:@"title"
+                   yValues:[self.mInitData[@"M1500"] valueForKey:@"Y"]
+                   xValues:[self.mInitData[@"M1500"] valueForKey:@"X"]
+                    inView:self.m1500m];
 
 }
 

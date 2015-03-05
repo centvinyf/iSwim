@@ -120,7 +120,7 @@
     [self.mTotalDistance setText:vTotalDistance];
     NSString *vSwimmingTime = [NSString stringWithFormat:@"%@", dic[@"swimmingTime"]];
     [self.mTotalSwimmingTime setText:vSwimmingTime];
-    NSString *vCaluli = [NSString stringWithFormat:@"%@cal", dic[@"calorie"]];
+    NSString *vCaluli = [NSString stringWithFormat:@"%@", dic[@"calorie"]];
     [self.mCaluli setText:vCaluli];
     
     NSString *vLongestEventDis = [NSString stringWithFormat:@"%@", dic[@"longestEventDis"]];

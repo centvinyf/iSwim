@@ -49,15 +49,12 @@
              self.mInitData = content;
              self.mXArray = [self.mInitData valueForKey:@"X"];
              self.mYArray = [self.mInitData valueForKey:@"Y"];
-             [self loadChartWithXY:self.mXArray :self.mYArray];
+             [MBLineChart initGraph:@""
+                            yValues:self.mYArray
+                            xValues:self.mXArray
+                             inView:self.mGraphicView];
     }
      }];
-}
-
--(void) loadChartWithXY : (NSArray *) Xarray : (NSArray *) Yarray
-{
-        [self.mGraphicView initGraph:@"" yValues:Yarray xValues:Xarray];
-
 }
 
 - (void)loadEventIdData:(NSString *)url

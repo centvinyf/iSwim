@@ -49,13 +49,17 @@
             [_mTableView reloadData];
             _mXArray = [mInitData[@"chart"] valueForKey:@"X"];
             _mYArray = [mInitData[@"chart"] valueForKey:@"Y"];
-            [self.mGraphicView initGraph:@"" yValues:_mYArray xValues:_mXArray];
+            [MBLineChart initGraph:@""
+                           yValues:_mYArray
+                           xValues:_mXArray
+                            inView:self.mGraphicView];
         }];
 }
 
 - (IBAction)queryBtnClick:(id)sender {
     _mCoverView.hidden=NO;
 }
+
 - (IBAction)btnClick:(UIButton *)sender {
     _mDatePicker.hidden=NO;
     if (sender==_mStartBtn) {
