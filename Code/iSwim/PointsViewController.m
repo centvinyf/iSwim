@@ -19,12 +19,13 @@
     NSArray             *_mDataSourceArray;
     NSDictionary        *mInitData;
     BOOL _mIsStart;
+    MBLineChart *mGraphicView;
 }
 @property (weak, nonatomic) IBOutlet UIButton *mStartBtn;
 @property (weak, nonatomic) IBOutlet UIButton *mEndBtn;
 @property (weak, nonatomic) IBOutlet UIView *mCoverView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *mDatePicker;
-@property (weak, nonatomic) IBOutlet MBLineChart *mGraphicView;
+@property (weak, nonatomic) IBOutlet UIImageView *mGraphicViewBG;
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
 @end
@@ -49,11 +50,22 @@
             [_mTableView reloadData];
             _mXArray = [mInitData[@"chart"] valueForKey:@"X"];
             _mYArray = [mInitData[@"chart"] valueForKey:@"Y"];
-            [MBLineChart initGraph:@""
+            mGraphicView = [MBLineChart initGraph:@""
                            yValues:_mYArray
                            xValues:_mXArray
-                            inView:self.mGraphicView];
+                            inView:self.mGraphicViewBG];
+            
+            UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
+            [mGraphicView addGestureRecognizer:pinch];
+
         }];
+}
+
+- (void)zoommGraphicView:(UIPinchGestureRecognizer *)sender
+{
+    [mGraphicView updateGraph:sender.scale];
+    sender.scale = 1;
+    
 }
 
 - (IBAction)queryBtnClick:(id)sender {
@@ -71,9 +83,11 @@
     }
     [_mDatePicker date];
 }
+
 - (IBAction)coverViewCancelBtnClick:(id)sender {
     _mCoverView.hidden=YES;
 }
+
 - (IBAction)coverViewSureBtnClick:(id)sender {
     
     _mCoverView.hidden=YES;
@@ -109,6 +123,7 @@
 {
     return _mDataSourceArray.count;
 }
+
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PointsCell*cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -118,10 +133,6 @@
     NSDictionary*vPoint=_mDataSourceArray[indexPath.row];
     cell.mDateLab.text=[[vPoint objectForKey:@"changeDt"] substringToIndex:10];
     cell.mDesLab.text=[vPoint objectForKey:@"descr"];
-//    if ([vPoint objectForKey:@"change"]) {
-//        NSString *vTag = (NSString *)[vPoint objectForKey:@"change"] substringToIndex:<#(NSUInteger)#>;
-//        NSLog(@"%@",vTag);
-//    }
     
     if ([[[vPoint objectForKey:@"change"] substringToIndex:1] isEqual:@"+"]) {
         cell.mChangeLab.text=[NSString stringWithFormat:@"积分变化+%d",[[vPoint objectForKey:@"change"] intValue]];
