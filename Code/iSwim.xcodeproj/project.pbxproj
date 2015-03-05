@@ -47,7 +47,6 @@
 		7CAB6B531A75DF46000C6F99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B511A75DF46000C6F99 /* LaunchScreen.xib */; };
 		7CAB6B691A75DF5E000C6F99 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B681A75DF5E000C6F99 /* Records.storyboard */; };
 		7CC677781A763DE600FD3287 /* MBLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677771A763DE600FD3287 /* MBLineChart.m */; };
-		7CC6777A1A763E4800FD3287 /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC677791A763E4800FD3287 /* Graph.storyboard */; };
 		7CC6777D1A763E6400FD3287 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6777C1A763E6400FD3287 /* GraphViewController.m */; };
 		7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */; };
 		7CC677951A77515B00FD3287 /* BasicInfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677831A77515B00FD3287 /* BasicInfoViewCell.m */; };
@@ -145,7 +144,6 @@
 		7CAB6B681A75DF5E000C6F99 /* Records.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = "<group>"; };
 		7CC677761A763DE600FD3287 /* MBLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBLineChart.h; path = iSwim/Tools/MBLineChart.h; sourceTree = "<group>"; };
 		7CC677771A763DE600FD3287 /* MBLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLineChart.m; path = iSwim/Tools/MBLineChart.m; sourceTree = "<group>"; };
-		7CC677791A763E4800FD3287 /* Graph.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
 		7CC6777B1A763E6400FD3287 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		7CC6777C1A763E6400FD3287 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		7CC677801A77515B00FD3287 /* BasicInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfomationViewController.h; sourceTree = "<group>"; };
@@ -354,7 +352,6 @@
 				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
 				7CAB6B681A75DF5E000C6F99 /* Records.storyboard */,
-				7CC677791A763E4800FD3287 /* Graph.storyboard */,
 				7CAB6B511A75DF46000C6F99 /* LaunchScreen.xib */,
 				7CAB6B4F1A75DF46000C6F99 /* Images.xcassets */,
 				7CAB6B421A75DF46000C6F99 /* Supporting Files */,
@@ -512,7 +509,6 @@
 			files = (
 				7CAB6B4E1A75DF46000C6F99 /* Main.storyboard in Resources */,
 				7CAB6B531A75DF46000C6F99 /* LaunchScreen.xib in Resources */,
-				7CC6777A1A763E4800FD3287 /* Graph.storyboard in Resources */,
 				7CAB6B501A75DF46000C6F99 /* Images.xcassets in Resources */,
 				7CAB6B691A75DF5E000C6F99 /* Records.storyboard in Resources */,
 			);
