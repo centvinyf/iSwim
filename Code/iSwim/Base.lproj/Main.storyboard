@@ -795,10 +795,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="1" green="0.87683929199999999" blue="0.51057787369999996" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHN-Ds-f8U" customClass="MBLineChart">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brownBg" translatesAutoresizingMaskIntoConstraints="NO" id="atG-1i-2Hr">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
@@ -1062,7 +1058,6 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                             </constraint>
                             <constraint firstItem="W6S-Xm-acu" firstAttribute="leading" secondItem="dBi-Ow-zcb" secondAttribute="leading" id="AJo-n4-kI4"/>
-                            <constraint firstItem="PHN-Ds-f8U" firstAttribute="bottom" secondItem="kyu-9G-mnQ" secondAttribute="bottom" id="DBx-kG-mL8"/>
                             <constraint firstItem="oKe-UB-Juq" firstAttribute="centerY" secondItem="7Nj-gI-JXL" secondAttribute="centerY" id="G95-vE-2od"/>
                             <constraint firstItem="hON-rc-BTW" firstAttribute="top" secondItem="CFl-9K-eGF" secondAttribute="bottom" constant="2" id="GVc-3P-hz2"/>
                             <constraint firstItem="oKe-UB-Juq" firstAttribute="height" secondItem="msS-Dy-3Ps" secondAttribute="height" id="Hg6-16-gUX"/>
@@ -1075,7 +1070,6 @@
                             <constraint firstItem="DW2-iI-8CI" firstAttribute="width" secondItem="W6S-Xm-acu" secondAttribute="width" id="MB8-Wb-DEW"/>
                             <constraint firstItem="pS9-Lf-DHn" firstAttribute="centerX" secondItem="4qF-0I-SKF" secondAttribute="centerX" id="MQE-rA-geU"/>
                             <constraint firstItem="atG-1i-2Hr" firstAttribute="top" secondItem="HCQ-48-cQe" secondAttribute="bottom" id="MZ1-qt-F1R"/>
-                            <constraint firstItem="PHN-Ds-f8U" firstAttribute="trailing" secondItem="kyu-9G-mnQ" secondAttribute="trailing" id="O0D-Xc-Obg"/>
                             <constraint firstItem="R06-Wv-Pa2" firstAttribute="centerX" secondItem="DOp-lf-K0k" secondAttribute="centerX" id="OOm-5U-Hw9"/>
                             <constraint firstItem="KfJ-Z9-b2q" firstAttribute="centerX" secondItem="DZ4-Bf-RgJ" secondAttribute="centerX" id="OQ0-dR-zr6"/>
                             <constraint firstItem="W6S-Xm-acu" firstAttribute="top" secondItem="HCQ-48-cQe" secondAttribute="bottom" id="OeY-X6-aEM"/>
@@ -1085,7 +1079,6 @@
                             <constraint firstItem="8iB-RB-Z6Y" firstAttribute="top" secondItem="W6S-Xm-acu" secondAttribute="bottom" constant="1" id="Qrs-kx-SZ4"/>
                             <constraint firstItem="RWM-hJ-sEA" firstAttribute="centerY" secondItem="iYw-J6-tDT" secondAttribute="centerY" id="RAD-NZ-Q0v"/>
                             <constraint firstItem="4qF-0I-SKF" firstAttribute="centerY" secondItem="msS-Dy-3Ps" secondAttribute="centerY" id="RvD-r3-jJJ"/>
-                            <constraint firstItem="PHN-Ds-f8U" firstAttribute="leading" secondItem="kyu-9G-mnQ" secondAttribute="leading" id="SsA-az-DsR"/>
                             <constraint firstItem="CFl-9K-eGF" firstAttribute="centerX" secondItem="1NQ-Vr-HQ7" secondAttribute="centerX" id="Tkd-zE-Rdd"/>
                             <constraint firstItem="msS-Dy-3Ps" firstAttribute="leading" secondItem="vbf-Ws-fQX" secondAttribute="trailing" constant="1" id="VDR-PY-NZI"/>
                             <constraint firstItem="uPg-le-R1t" firstAttribute="leading" secondItem="oKe-UB-Juq" secondAttribute="trailing" constant="1" id="Vv3-NK-G5l"/>
@@ -1094,7 +1087,6 @@
                             <constraint firstItem="oKe-UB-Juq" firstAttribute="width" secondItem="msS-Dy-3Ps" secondAttribute="width" id="a4Z-fd-sqJ"/>
                             <constraint firstItem="oKe-UB-Juq" firstAttribute="leading" secondItem="8iB-RB-Z6Y" secondAttribute="trailing" constant="1" id="a4h-I4-S9s"/>
                             <constraint firstItem="R06-Wv-Pa2" firstAttribute="centerY" secondItem="DOp-lf-K0k" secondAttribute="centerY" id="bXv-ZJ-tk9"/>
-                            <constraint firstItem="PHN-Ds-f8U" firstAttribute="top" secondItem="kyu-9G-mnQ" secondAttribute="top" id="cAX-GL-CeN"/>
                             <constraint firstItem="vbf-Ws-fQX" firstAttribute="centerY" secondItem="msS-Dy-3Ps" secondAttribute="centerY" id="cB1-iS-OgG"/>
                             <constraint firstItem="kyu-9G-mnQ" firstAttribute="leading" secondItem="dBi-Ow-zcb" secondAttribute="leading" id="dE0-dJ-qZ0"/>
                             <constraint firstItem="CFl-9K-eGF" firstAttribute="centerX" secondItem="W6S-Xm-acu" secondAttribute="centerX" id="e0f-pN-jRb"/>
@@ -1132,7 +1124,6 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="kyu-9G-mnQ"/>
-                                <exclude reference="PHN-Ds-f8U"/>
                                 <exclude reference="atG-1i-2Hr"/>
                                 <exclude reference="HCQ-48-cQe"/>
                                 <exclude reference="W6S-Xm-acu"/>
@@ -1240,16 +1231,11 @@
                                 <exclude reference="cB1-iS-OgG"/>
                                 <exclude reference="gGt-3c-SPV"/>
                                 <exclude reference="kv8-y6-48j"/>
-                                <exclude reference="DBx-kG-mL8"/>
-                                <exclude reference="O0D-Xc-Obg"/>
-                                <exclude reference="SsA-az-DsR"/>
-                                <exclude reference="cAX-GL-CeN"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="kyu-9G-mnQ"/>
-                                <include reference="PHN-Ds-f8U"/>
                                 <include reference="atG-1i-2Hr"/>
                                 <include reference="HCQ-48-cQe"/>
                                 <include reference="W6S-Xm-acu"/>
@@ -1357,16 +1343,12 @@
                                 <include reference="cB1-iS-OgG"/>
                                 <include reference="gGt-3c-SPV"/>
                                 <include reference="kv8-y6-48j"/>
-                                <include reference="DBx-kG-mL8"/>
-                                <include reference="O0D-Xc-Obg"/>
-                                <include reference="SsA-az-DsR"/>
-                                <include reference="cAX-GL-CeN"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="游泳控" id="2qi-7R-QRa"/>
                     <connections>
-                        <outlet property="mGraphicView" destination="PHN-Ds-f8U" id="XA8-Uo-jTn"/>
+                        <outlet property="mGraphicViewBG" destination="kyu-9G-mnQ" id="VYJ-cq-4eT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nj4-Ql-0O4" userLabel="First Responder" sceneMemberID="firstResponder"/>

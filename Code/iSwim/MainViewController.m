@@ -16,8 +16,9 @@
     NSArray      *_mXArray;
     NSArray      *_mYArray;
     BOOL                _mIsFirst;
+    MBLineChart *mGraphicView;
 }
-@property (weak, nonatomic) IBOutlet MBLineChart *mGraphicView;
+@property (weak, nonatomic) IBOutlet UIImageView *mGraphicViewBG;
 
 @end
 
@@ -34,9 +35,19 @@
          NSDictionary*vDic=content;
          _mXArray = [[vDic objectForKey:@"chart"] objectForKey:@"X"] ;
          _mYArray = [[vDic objectForKey:@"chart"] objectForKey:@"Y"];
-         [MBLineChart initGraph:_mType yValues:_mYArray xValues:_mXArray inView:self.mGraphicView];
+         mGraphicView = [MBLineChart initGraph:_mType yValues:_mYArray xValues:_mXArray inView:self.mGraphicViewBG];
+         UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handPinch:)];
+         [mGraphicView addGestureRecognizer:pinch];
      }];
 }
+
+- (void)handPinch:(UIPinchGestureRecognizer *)sender
+{
+    [mGraphicView updateGraph:sender.scale];
+    sender.scale = 1;
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
