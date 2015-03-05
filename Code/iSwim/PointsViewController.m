@@ -38,12 +38,12 @@
     _mDatePicker.hidden=YES;
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
-    [self loadData];
+    [self loadDataWithParameters:nil];
 }
 
--(void)loadData
+-(void)loadDataWithParameters: (NSDictionary *)parameters
 {
-        [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/points.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        [HttpJsonManager getWithParameters:parameters sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/points.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
             mInitData = content;
             _mDataSourceArray=(NSArray*)content[@"result"];
             [_mTableView reloadData];
@@ -77,6 +77,9 @@
 - (IBAction)coverViewSureBtnClick:(id)sender {
     
     _mCoverView.hidden=YES;
+    NSDictionary * parameters = @{@"startTime":self.mStartBtn.titleLabel.text,
+                                  @"endTime":self.mEndBtn.titleLabel.text};
+    [self loadDataWithParameters:parameters];
     
 }
 

@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.mCoverView.hidden = YES;
     
     _mLoginBtn.backgroundColor=[UIColor colorWithRed:0xff/255.0 green:0xa0/255.0 blue:0x22/255.0 alpha:1];
     _mLoginBtn.layer.masksToBounds=YES;
@@ -96,11 +97,24 @@
 }
 - (IBAction)forgetPasswordBtn:(id)sender
 {
-    _mCoverView.hidden=NO;
+    if(![self.mPhoneNumberTextField.text isEqualToString:@""]){
+        _mCoverView.hidden=NO;
+    
+    }
+    else{
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请输入手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
 }
 - (IBAction)coverSureBtnClick:(id)sender
 {
     _mCoverView.hidden=YES;
+    NSDictionary * Parameters = @{@"mobile":self.mPhoneNumberTextField.text};
+    [HttpJsonManager getWithParameters:Parameters sender:self url:@"http://192.168.1.113:8081/swimming_app/app/client/profile/forget.do" completionHandler:^(BOOL sucess, id content) {
+        NSLog(@"%@",content);
+    
+    }];
 }
 - (IBAction)coverCancelBtnClick:(id)sender
 {
