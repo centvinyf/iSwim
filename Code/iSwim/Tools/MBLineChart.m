@@ -201,8 +201,9 @@
      *  the dictionary which you can use to assing the theme attributes of the plot. if this property is nil, a default theme
      *  is applied selected and the graph is plotted with those default settings.
      */
+    
     NSDictionary *_plotThemeAttributes = @{
-                                           kPlotFillColorKey : [UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:0.6],
+                                           kPlotFillColorKey : [UIColor colorWithRed:0x24/255.0 green:0x8b/255.0 blue:0xcc/255.0 alpha:0.3],
                                            kPlotStrokeWidthKey : @1,
                                            kPlotStrokeColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
                                            kPlotPointFillColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
