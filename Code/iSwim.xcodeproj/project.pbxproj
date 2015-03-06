@@ -21,6 +21,10 @@
 		2C0810F31AA4078D00856604 /* TrainingEventTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0810F21AA4078D00856604 /* TrainingEventTitleCell.m */; };
 		2C2D8B4E1A7A207300A93D57 /* TimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2D8B4D1A7A207300A93D57 /* TimePickerView.m */; };
 		2C32F73F1AA5AE9A000ED917 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C32F73E1AA5AE9A000ED917 /* HistoryTableViewController.m */; };
+		2C4A60B41AA93E1200E4A534 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A60AF1AA93E1200E4A534 /* DetailViewController.m */; };
+		2C4A60B51AA93E1200E4A534 /* TotalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A60B11AA93E1200E4A534 /* TotalTableViewCell.m */; };
+		2C4A60B61AA93E1200E4A534 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A60B31AA93E1200E4A534 /* DetailTableViewCell.m */; };
+		2C4A60B91AA93E3500E4A534 /* TotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A60B81AA93E3500E4A534 /* TotalViewController.m */; };
 		2C55F07F1A77A9BB0077189D /* JifenDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */; };
 		2C55F0821A77AC1C0077189D /* JifenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */; };
 		2C55F0851A77ADAC0077189D /* TrainingEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */; };
@@ -96,6 +100,14 @@
 		2C2D8B4D1A7A207300A93D57 /* TimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerView.m; sourceTree = "<group>"; };
 		2C32F73D1AA5AE9A000ED917 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		2C32F73E1AA5AE9A000ED917 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		2C4A60AE1AA93E1200E4A534 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2C4A60AF1AA93E1200E4A534 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2C4A60B01AA93E1200E4A534 /* TotalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalTableViewCell.h; sourceTree = "<group>"; };
+		2C4A60B11AA93E1200E4A534 /* TotalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalTableViewCell.m; sourceTree = "<group>"; };
+		2C4A60B21AA93E1200E4A534 /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
+		2C4A60B31AA93E1200E4A534 /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
+		2C4A60B71AA93E3500E4A534 /* TotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalViewController.h; sourceTree = "<group>"; };
+		2C4A60B81AA93E3500E4A534 /* TotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalViewController.m; sourceTree = "<group>"; };
 		2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JifenDetailViewController.h; sourceTree = "<group>"; };
 		2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JifenDetailViewController.m; sourceTree = "<group>"; };
 		2C55F0801A77AC1C0077189D /* JifenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JifenTableViewCell.h; sourceTree = "<group>"; };
@@ -277,6 +289,14 @@
 				7CDEF5A61A7B2A79006FF48D /* TrainingRecordsViewController.m */,
 				2C32F73D1AA5AE9A000ED917 /* HistoryTableViewController.h */,
 				2C32F73E1AA5AE9A000ED917 /* HistoryTableViewController.m */,
+				2C4A60B71AA93E3500E4A534 /* TotalViewController.h */,
+				2C4A60B81AA93E3500E4A534 /* TotalViewController.m */,
+				2C4A60AE1AA93E1200E4A534 /* DetailViewController.h */,
+				2C4A60AF1AA93E1200E4A534 /* DetailViewController.m */,
+				2C4A60B01AA93E1200E4A534 /* TotalTableViewCell.h */,
+				2C4A60B11AA93E1200E4A534 /* TotalTableViewCell.m */,
+				2C4A60B21AA93E1200E4A534 /* DetailTableViewCell.h */,
+				2C4A60B31AA93E1200E4A534 /* DetailTableViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -554,6 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4A60B91AA93E3500E4A534 /* TotalViewController.m in Sources */,
 				2C55F0821A77AC1C0077189D /* JifenTableViewCell.m in Sources */,
 				7CDEF5A71A7B2A79006FF48D /* TrainingRecordsViewController.m in Sources */,
 				7C320A671A775C890023DD06 /* NameAndEmailVC.m in Sources */,
@@ -566,6 +587,7 @@
 				7CC6777D1A763E6400FD3287 /* GraphViewController.m in Sources */,
 				7C320A731A7795610023DD06 /* UIImage+KIAdditions.m in Sources */,
 				7C320A681A775C890023DD06 /* PasswordVC.m in Sources */,
+				2C4A60B61AA93E1200E4A534 /* DetailTableViewCell.m in Sources */,
 				2CE5DE6F1A806B72003AB0EB /* PersonalRecordTableViewController.m in Sources */,
 				0C8FBAB11A8D947700F8D4D7 /* NSString+MD5.m in Sources */,
 				7CAB6B481A75DF46000C6F99 /* AppDelegate.m in Sources */,
@@ -585,10 +607,12 @@
 				2CAC1F3A1A78AFEA00DA4292 /* TwoLabelTableViewCell.m in Sources */,
 				2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */,
 				0CD7EE3E1A80A81100AD24DC /* ChangeNameVC.m in Sources */,
+				2C4A60B51AA93E1200E4A534 /* TotalTableViewCell.m in Sources */,
 				7CC677971A77515B00FD3287 /* ScoreDetailViewController.m in Sources */,
 				7CC6779B1A77515B00FD3287 /* TrainingDetailViewController.m in Sources */,
 				7CDEF5A11A7B28AA006FF48D /* PointsViewController.m in Sources */,
 				7CDEF59E1A7B2743006FF48D /* MyRecordViewController.m in Sources */,
+				2C4A60B41AA93E1200E4A534 /* DetailViewController.m in Sources */,
 				7CEB269E1A805BBB003221E0 /* XMProgressHUD.m in Sources */,
 				7C320A691A775C890023DD06 /* PersonInfoVC.m in Sources */,
 				2C0810F31AA4078D00856604 /* TrainingEventTitleCell.m in Sources */,

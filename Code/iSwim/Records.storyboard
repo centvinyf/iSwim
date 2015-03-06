@@ -9026,8 +9026,8 @@
                         <outlet property="mTotalCaluliBG" destination="qeV-SG-3mm" id="Ar6-sN-rGx"/>
                         <outlet property="mTotalDistanceBG" destination="ba3-7D-Y48" id="qeh-Ek-gYg"/>
                         <outlet property="mTotalTimeBG" destination="9Np-x0-ZIx" id="izV-Cv-ur2"/>
-                        <segue destination="rYc-be-zkf" kind="show" id="Y5q-iq-Okj"/>
-                        <segue destination="UZI-k0-aek" kind="show" id="sEl-Ir-bbb"/>
+                        <segue destination="rYc-be-zkf" kind="show" identifier="toTotal" id="Y5q-iq-Okj"/>
+                        <segue destination="UZI-k0-aek" kind="show" identifier="toDetail" id="sEl-Ir-bbb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCl-fA-cHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -9789,7 +9789,7 @@
         <!--总距离详情-->
         <scene sceneID="ZEg-CA-aQO">
             <objects>
-                <viewController id="rYc-be-zkf" sceneMemberID="viewController">
+                <viewController id="rYc-be-zkf" customClass="TotalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vQ8-Xy-U6I"/>
                         <viewControllerLayoutGuide type="bottom" id="gub-kx-5J9"/>
@@ -9820,7 +9820,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8Dh-GT-uD3">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Detail" id="8Dh-GT-uD3" customClass="TotalTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Dh-GT-uD3" id="krB-T1-4I2">
@@ -9939,10 +9939,20 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mData" destination="hpG-xE-f56" id="sne-HZ-LLo"/>
+                                            <outlet property="mInfoType" destination="9Se-Q6-b00" id="AiU-IS-AOw"/>
+                                            <outlet property="mPlace" destination="Y00-qM-q4b" id="19E-MN-fuq"/>
+                                            <outlet property="mTime" destination="YaD-uC-1gP" id="VR3-Sy-Wnd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rYc-be-zkf" id="5rL-eL-Xra"/>
+                                    <outlet property="delegate" destination="rYc-be-zkf" id="qxV-wG-OzS"/>
+                                </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5W-qo-QNZ">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5W-qo-QNZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cmf-mB-6HK">
@@ -10257,15 +10267,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="总距离详情" id="8ym-Wh-PmA"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mImageView" destination="gyh-Vb-lEY" id="Etc-vb-VdU"/>
+                        <outlet property="mTableView" destination="xzK-SB-caD" id="YVl-Gm-GHI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NS2-c0-bQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2248.5" y="208.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="D7g-d7-RB5">
             <objects>
-                <viewController id="UZI-k0-aek" sceneMemberID="viewController">
+                <viewController id="UZI-k0-aek" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UW9-G1-qym"/>
                         <viewControllerLayoutGuide type="bottom" id="IyS-bA-jiF"/>
@@ -10296,7 +10310,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="384" placeholderIntrinsicHeight="60" selectionStyle="default" indentationWidth="10" rowHeight="60" id="eS9-aG-f0G">
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="384" placeholderIntrinsicHeight="60" selectionStyle="default" indentationWidth="10" reuseIdentifier="Title" rowHeight="60" id="eS9-aG-f0G">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eS9-aG-f0G" id="05V-gk-Wbq">
@@ -10597,7 +10611,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="384" placeholderIntrinsicHeight="40" selectionStyle="default" indentationWidth="10" rowHeight="40" id="cr7-T0-uYa">
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="384" placeholderIntrinsicHeight="40" selectionStyle="default" indentationWidth="10" reuseIdentifier="Detail" rowHeight="40" id="cr7-T0-uYa" customClass="DetailTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cr7-T0-uYa" id="kyJ-Wu-LYt">
@@ -10705,8 +10719,18 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mDate" destination="Sj7-sA-UzK" id="Nv5-99-PIb"/>
+                                            <outlet property="mPlace" destination="h4g-Ua-2Nl" id="IER-17-ql8"/>
+                                            <outlet property="mSingle" destination="SQe-ZX-v3F" id="zUB-YZ-TBo"/>
+                                            <outlet property="mTime" destination="ooW-rU-xbW" id="eaV-U5-fJh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UZI-k0-aek" id="rUC-sm-RCG"/>
+                                    <outlet property="delegate" destination="UZI-k0-aek" id="ZLU-z3-n3b"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sv-wH-3Xi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -10797,6 +10821,10 @@
                         </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mImageView" destination="2eq-vd-fkv" id="lkc-Fz-Vbt"/>
+                        <outlet property="mTableView" destination="jjU-Nq-6m4" id="IJc-cM-o4v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72p-Bi-DLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
