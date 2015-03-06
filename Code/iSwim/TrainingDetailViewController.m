@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet MBLineChart *mGraphicView;
 @property (retain,nonatomic) NSArray * mXArray;
 @property (retain,nonatomic) NSArray * mYArray;
+@property (retain,nonatomic) NSArray * mZArray;
 @property (retain,nonatomic) NSString * mCurrentEventID;
 
 @end
@@ -49,9 +50,11 @@
              self.mInitData = content;
              self.mXArray = [self.mInitData valueForKey:@"X"];
              self.mYArray = [self.mInitData valueForKey:@"Y"];
+             self.mZArray = [self.mInitData valueForKey:@"Z"];
              [MBLineChart initGraph:@"本场分段详情"
                             yValues:self.mYArray
                             xValues:self.mXArray
+                           zValues:self.mZArray
                              inView:self.mGraphicView];
     }
      }];

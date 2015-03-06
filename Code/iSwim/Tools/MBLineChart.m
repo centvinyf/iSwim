@@ -111,7 +111,7 @@
     //You can as much `SHPlots` as you can in a `SHLineGraphView` 
 }
 
-+ (MBLineChart *)initGraph:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues inView:(UIView *)view
++ (MBLineChart *)initGraph:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues zValues:(NSArray *)zValues inView:(UIView *)view
 {
     
     CGSize size = view.frame.size;
@@ -193,7 +193,7 @@
      *  in this array.
      */
     NSArray *arr = @[@"1", @"2", @"3", @"4", @"5", @"6" , @"7" , @"8", @"9", @"10", @"11", @"12"];
-    _plot1.plottingPointsLabels = arr;
+    _plot1.plottingPointsLabels = zValues;
     
     //set plot theme attributes
     

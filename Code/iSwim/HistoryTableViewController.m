@@ -72,81 +72,103 @@
 -(void) initViews : (NSDictionary * )dic
 {
     mTotalDistance = [MBLineChart initGraph:@"总距离"
-                   yValues:[self.mInitData[@"LED"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"LED"] valueForKey:@"X"]
-                    inView:self.mTotalDistanceBG];
+                                    yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                                    xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                                    zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                                     inView:self.mTotalDistanceBG];
     UIPinchGestureRecognizer *pinch_mTotalDistance = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalDistance:)];
     [mTotalDistance addGestureRecognizer:pinch_mTotalDistance];
 
+    
     mTotalTime = [MBLineChart initGraph:@"总时间"
-                   yValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"X"]
-                    inView:self.mTotalTimeBG];
+                                yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                                xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                                zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                                 inView:self.mTotalTimeBG];
     UIPinchGestureRecognizer *pinch_mTotalTime = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalTime:)];
     [mTotalTime addGestureRecognizer:pinch_mTotalTime];
-
+    
     mTotalCaluli = [MBLineChart initGraph:@"总消耗"
-                   yValues:[self.mInitData[@"CALORIE"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"CALORIE"] valueForKey:@"X"]
-                    inView:self.mTotalCaluliBG];
+                                  yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                                  xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                                  zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                                   inView:self.mTotalCaluliBG];
     UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
     [mTotalCaluli addGestureRecognizer:pinch_mTotalCaluli];
-
+   
+    
+    
     m25m = [MBLineChart initGraph:@"25m"
-                   yValues:[self.mInitData[@"M25"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"M25"] valueForKey:@"X"]
-                    inView:self.m25mBG];
+                          yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                          xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                          zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                           inView:self.m25mBG];
     UIPinchGestureRecognizer *pinch_m25m = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomm25m:)];
     [m25m addGestureRecognizer:pinch_m25m];
-
+    
+    
+    
     m50m = [MBLineChart initGraph:@"50m"
-                   yValues:[self.mInitData[@"M50"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"M50"] valueForKey:@"X"]
-                    inView:self.m50mBG];
+                          yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                          xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                          zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                           inView:self.m50mBG];
     UIPinchGestureRecognizer *pinch_m50m = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomm50m:)];
     [m50m addGestureRecognizer:pinch_m50m];
-
+   
+    
     m100m = [MBLineChart initGraph:@"100m"
-                   yValues:[self.mInitData[@"M100"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"M100"] valueForKey:@"X"]
-                    inView:self.m100mBG];
+                           yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                           xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                           zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                            inView:self.m100mBG];
     UIPinchGestureRecognizer *pinch_m100m = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomm100m:)];
     [m100m addGestureRecognizer:pinch_m100m];
-
+    
+    
     m200m = [MBLineChart initGraph:@"200m"
-                   yValues:[self.mInitData[@"M200"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"M200"] valueForKey:@"X"]
-                    inView:self.m200mBG];
+                           yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                           xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                           zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                            inView:self.m200mBG];
     UIPinchGestureRecognizer *pinch_m200m = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomm200m:)];
     [m200m addGestureRecognizer:pinch_m200m];
-
+   
+    
     m400m = [MBLineChart initGraph:@"400m"
-                   yValues:[self.mInitData[@"M400"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"M400"] valueForKey:@"X"]
-                    inView:self.m400mBG];
+                           yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                           xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                           zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                            inView:self.m400mBG];
     UIPinchGestureRecognizer *pinch_m400m = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomm400m:)];
     [m400m addGestureRecognizer:pinch_m400m];
-
+    
     m800m = [MBLineChart initGraph:@"800m"
-                   yValues:[self.mInitData[@"M800"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"M800"] valueForKey:@"X"]
-                    inView:self.m800mBG];
+                           yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                           xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                           zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                            inView:self.m800mBG];
     UIPinchGestureRecognizer *pinch_m800m = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomm800m:)];
     [m800m addGestureRecognizer:pinch_m800m];
-
+   
+    
     m1000m = [MBLineChart initGraph:@"1000m"
-                   yValues:[self.mInitData[@"M1000"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"M1000"] valueForKey:@"X"]
-                    inView:self.m1000mBG];
+                            yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                            xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                            zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                             inView:self.m1000mBG];
     UIPinchGestureRecognizer *pinch_m1000m = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomm1000m:)];
     [m1000m addGestureRecognizer:pinch_m1000m];
-
+   
+    
     m1500m = [MBLineChart initGraph:@"1500m"
-                   yValues:[self.mInitData[@"M1500"] valueForKey:@"Y"]
-                   xValues:[self.mInitData[@"M1500"] valueForKey:@"X"]
-                    inView:self.m1500mBG];
+                            yValues:[self.mInitData[@"chart"] valueForKey:@"Y"]
+                            xValues:[self.mInitData[@"chart"] valueForKey:@"X"]
+                            zValues:[self.mInitData[@"chart"] valueForKey:@"Z"]
+                             inView:self.m1500mBG];
     UIPinchGestureRecognizer *pinch_m1500m = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomm1500m:)];
     [m1500m addGestureRecognizer:pinch_m1500m];
+   
     
 }
 - (void)zoommTotalDistance:(UIPinchGestureRecognizer *)sender

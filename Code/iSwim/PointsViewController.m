@@ -16,6 +16,7 @@
     BOOL _mIsFirst;
     NSMutableArray      *_mXArray;
     NSMutableArray      *_mYArray;
+    NSMutableArray      *_mZArray;
     NSArray             *_mDataSourceArray;
     NSDictionary        *mInitData;
     BOOL _mIsStart;
@@ -50,9 +51,11 @@
             [_mTableView reloadData];
             _mXArray = [mInitData[@"chart"] valueForKey:@"X"];
             _mYArray = [mInitData[@"chart"] valueForKey:@"Y"];
-            mGraphicView = [MBLineChart initGraph:@""
+            _mZArray = [mInitData[@"chart"] valueForKey:@"Z"];
+            mGraphicView = [MBLineChart initGraph:@"总积分"
                            yValues:_mYArray
                            xValues:_mXArray
+                           zValues:_mZArray
                             inView:self.mGraphicViewBG];
             
             UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];

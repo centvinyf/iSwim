@@ -18,6 +18,7 @@
 @property (retain,nonatomic) MBLineChart * mChart;
 @property (retain,nonatomic) NSArray * mXArray;
 @property(retain,nonatomic) NSArray * mYArray;
+@property(retain,nonatomic) NSArray * mZArray;
 @end
 
 @implementation DetailViewController
@@ -50,6 +51,8 @@
         self.mChart = [MBLineChart initGraph:self.mInitData[@"title"]
                                              yValues:self.mYArray
                                              xValues:self.mXArray
+                                             zValues:self.mZArray
+
                                               inView:self.mImageView];
              UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
              [self.mChart addGestureRecognizer:pinch_mTotalCaluli];

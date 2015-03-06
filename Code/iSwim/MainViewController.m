@@ -35,8 +35,9 @@
          NSDictionary*vDic=content;
          _mXArray = [[vDic objectForKey:@"chart"] objectForKey:@"X"] ;
          _mYArray = [[vDic objectForKey:@"chart"] objectForKey:@"Y"];
+         NSArray * _mZArray = [[vDic objectForKey:@"chart"] objectForKey:@"Z"];
          _mType = [vDic objectForKey:@"title"];
-         mGraphicView = [MBLineChart initGraph:_mType yValues:_mYArray xValues:_mXArray inView:self.mGraphicViewBG];
+         mGraphicView = [MBLineChart initGraph:_mType yValues:_mYArray xValues:_mXArray  zValues:_mZArray inView:self.mGraphicViewBG];
          UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
          [mGraphicView addGestureRecognizer:pinch];
      }];

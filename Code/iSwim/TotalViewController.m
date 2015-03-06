@@ -18,6 +18,7 @@
 @property (retain,nonatomic) MBLineChart * mChart;
 @property (retain,nonatomic) NSArray * mXArray;
 @property(retain,nonatomic) NSArray * mYArray;
+@property (retain,nonatomic) NSArray *mZArray;
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (weak, nonatomic) IBOutlet UIImageView *mImageView;
 @end
@@ -56,11 +57,13 @@
              NSArray * array = self.mInitData[@"rs"];
              self.mNumOfDetail =array.count;
              
-             self.mXArray = self.mInitData[self.mType][@"X"];
-             self.mYArray = self.mInitData[self.mType][@"Y"];
+             self.mXArray = self.mInitData[@"chart"][@"X"];
+             self.mYArray = self.mInitData[@"chart"][@"Y"];
+             self.mZArray = self.mInitData[@"chart"][@"Z"];
              self.mChart = [MBLineChart initGraph:self.mInitData[@"title"]
                                           yValues:self.mYArray
                                           xValues:self.mXArray
+                            zValues:self.mZArray
                                            inView:self.mImageView];
              UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
              [self.mChart addGestureRecognizer:pinch_mTotalCaluli];
