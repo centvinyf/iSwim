@@ -51,11 +51,18 @@
                                              yValues:self.mYArray
                                              xValues:self.mXArray
                                               inView:self.mImageView];
-             
+             UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
+             [self.mChart addGestureRecognizer:pinch_mTotalCaluli];
              NSLog(@"%@",content);
              [self.mTableView reloadData];
          }
      }];
+}
+- (void)zoommTotalCaluli:(UIPinchGestureRecognizer *)sender
+{
+    [self.mChart updateGraph:sender.scale];
+    sender.scale = 1;
+    
 }
 -(void)initViews: (NSArray *)dic
 {
@@ -66,7 +73,7 @@
     if(indexPath.row == 0)
         return 60;
     else
-    return 44;
+    return 40;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

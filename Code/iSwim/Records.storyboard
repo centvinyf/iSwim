@@ -9798,7 +9798,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBg-1" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-Vb-lEY">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBg-1" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-Vb-lEY">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="qmk-cd-RRE">
@@ -9955,7 +9955,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5W-qo-QNZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cmf-mB-6HK">
+                                    <imageView alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cmf-mB-6HK">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
@@ -10288,7 +10288,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBg-1" translatesAutoresizingMaskIntoConstraints="NO" id="2eq-vd-fkv">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBg-1" translatesAutoresizingMaskIntoConstraints="NO" id="2eq-vd-fkv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="7UC-TU-PPP">
@@ -10322,10 +10322,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygR-Vf-Nl2">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <subviews>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="training_score" translatesAutoresizingMaskIntoConstraints="NO" id="JF2-jD-dDT">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="成绩" translatesAutoresizingMaskIntoConstraints="NO" id="JF2-jD-dDT">
                                                                     <rect key="frame" x="0.0" y="-30" width="29" height="30"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1F-0B-jg8">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成绩" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1F-0B-jg8">
                                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -10335,7 +10335,9 @@
                                                             <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="centerX" secondItem="JF2-jD-dDT" secondAttribute="centerX" id="IQm-Ry-eV7"/>
-                                                                <constraint firstItem="g1F-0B-jg8" firstAttribute="top" secondItem="JF2-jD-dDT" secondAttribute="bottom" id="Vgy-uz-4dt"/>
+                                                                <constraint firstItem="g1F-0B-jg8" firstAttribute="top" secondItem="JF2-jD-dDT" secondAttribute="bottom" id="Vgy-uz-4dt">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                                                </constraint>
                                                                 <constraint firstItem="JF2-jD-dDT" firstAttribute="top" secondItem="ygR-Vf-Nl2" secondAttribute="top" id="c7R-Oz-L1y">
                                                                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                                                 </constraint>
@@ -10369,13 +10371,13 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1r-O7-mKK">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-zx-hQQ">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-zx-hQQ">
                                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="training_score" translatesAutoresizingMaskIntoConstraints="NO" id="7el-R6-ScT">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="日期" translatesAutoresizingMaskIntoConstraints="NO" id="7el-R6-ScT">
                                                                     <rect key="frame" x="0.0" y="-30" width="29" height="30"/>
                                                                 </imageView>
                                                             </subviews>
@@ -10386,7 +10388,9 @@
                                                                 </constraint>
                                                                 <constraint firstItem="7el-R6-ScT" firstAttribute="centerX" secondItem="eSU-zx-hQQ" secondAttribute="centerX" id="Xwe-bM-yOV"/>
                                                                 <constraint firstAttribute="centerX" secondItem="7el-R6-ScT" secondAttribute="centerX" id="Yia-DA-Qhd"/>
-                                                                <constraint firstItem="eSU-zx-hQQ" firstAttribute="top" secondItem="7el-R6-ScT" secondAttribute="bottom" id="uZk-Xc-Wal"/>
+                                                                <constraint firstItem="eSU-zx-hQQ" firstAttribute="top" secondItem="7el-R6-ScT" secondAttribute="bottom" id="uZk-Xc-Wal">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                                                </constraint>
                                                             </constraints>
                                                             <variation key="default">
                                                                 <mask key="subviews">
@@ -10416,10 +10420,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4V-56-vsY">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <subviews>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="training_score" translatesAutoresizingMaskIntoConstraints="NO" id="cIJ-eD-nMI">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="场馆" translatesAutoresizingMaskIntoConstraints="NO" id="cIJ-eD-nMI">
                                                                     <rect key="frame" x="0.0" y="-30" width="29" height="30"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIk-bL-xEk">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="场馆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIk-bL-xEk">
                                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -10431,7 +10435,9 @@
                                                                 <constraint firstItem="cIJ-eD-nMI" firstAttribute="top" secondItem="E4V-56-vsY" secondAttribute="top" id="fxV-Ae-ZdW">
                                                                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                                                 </constraint>
-                                                                <constraint firstItem="lIk-bL-xEk" firstAttribute="top" secondItem="cIJ-eD-nMI" secondAttribute="bottom" id="gSq-EC-ajU"/>
+                                                                <constraint firstItem="lIk-bL-xEk" firstAttribute="top" secondItem="cIJ-eD-nMI" secondAttribute="bottom" id="gSq-EC-ajU">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                                                </constraint>
                                                                 <constraint firstAttribute="centerX" secondItem="cIJ-eD-nMI" secondAttribute="centerX" id="svx-6V-ZIj"/>
                                                                 <constraint firstItem="cIJ-eD-nMI" firstAttribute="centerX" secondItem="lIk-bL-xEk" secondAttribute="centerX" id="zY3-s2-cm6"/>
                                                             </constraints>
@@ -10463,10 +10469,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faB-O2-C6S">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <subviews>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="training_score" translatesAutoresizingMaskIntoConstraints="NO" id="W5v-H8-462">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="始末单边号" translatesAutoresizingMaskIntoConstraints="NO" id="W5v-H8-462">
                                                                     <rect key="frame" x="0.0" y="-30" width="29" height="30"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHy-2Z-9nT">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="始末单边号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHy-2Z-9nT">
                                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -10479,7 +10485,9 @@
                                                                 <constraint firstItem="W5v-H8-462" firstAttribute="top" secondItem="faB-O2-C6S" secondAttribute="top" id="ILO-i6-f0i">
                                                                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                                                 </constraint>
-                                                                <constraint firstItem="SHy-2Z-9nT" firstAttribute="top" secondItem="W5v-H8-462" secondAttribute="bottom" id="Ttb-nz-yvb"/>
+                                                                <constraint firstItem="SHy-2Z-9nT" firstAttribute="top" secondItem="W5v-H8-462" secondAttribute="bottom" id="Ttb-nz-yvb">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                                                </constraint>
                                                                 <constraint firstAttribute="centerX" secondItem="W5v-H8-462" secondAttribute="centerX" id="mcM-O0-9Kf"/>
                                                             </constraints>
                                                             <variation key="default">
@@ -10860,9 +10868,12 @@
         <image name="this_training_plan" width="22" height="31"/>
         <image name="training_date" width="15" height="17"/>
         <image name="training_distance" width="15" height="17"/>
-        <image name="training_score" width="29" height="30"/>
         <image name="training_time" width="15" height="17"/>
         <image name="white_score" width="30" height="54"/>
+        <image name="场馆" width="30" height="26"/>
+        <image name="始末单边号" width="19" height="25"/>
+        <image name="成绩" width="29" height="30"/>
+        <image name="日期" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="32h-dj-01h"/>
