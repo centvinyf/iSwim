@@ -10269,6 +10269,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="mImageView" destination="gyh-Vb-lEY" id="Etc-vb-VdU"/>
+                        <outlet property="mNaviTitle" destination="8ym-Wh-PmA" id="paC-xP-jJ6"/>
                         <outlet property="mTableView" destination="xzK-SB-caD" id="YVl-Gm-GHI"/>
                     </connections>
                 </viewController>

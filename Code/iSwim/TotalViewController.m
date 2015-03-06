@@ -12,6 +12,7 @@
 #import "TotalTableViewCell.h"
 
 @interface TotalViewController ()
+@property (weak, nonatomic) IBOutlet UINavigationItem *mNaviTitle;
 @property (assign,nonatomic) NSInteger mNumOfDetail;
 @property (retain,nonatomic) NSDictionary * mInitData;
 @property (retain,nonatomic) MBLineChart * mChart;
@@ -26,6 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/showDetail.do"];
+    if ([self.mType isEqualToString:@"LED"]) {
+        self.mNaviTitle.title = @"总距离详情";
+    }
+    if ([self.mType isEqualToString:@"SWIMMINGTIME"]) {
+        self.mNaviTitle.title = @"总时间详情";
+    }
+    if ([self.mType isEqualToString:@"CALORIE"]) {
+        self.mNaviTitle.title = @"总消耗详情";
+    }
     // Do any additional setup after loading the view.
 }
 
