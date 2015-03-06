@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (retain,nonatomic) NSMutableArray * mInitData;
 @property (assign,nonatomic) NSInteger mNumberofDetail;
+@property (assign,nonatomic) NSInteger mCishu;
+@property (retain,nonatomic) NSString * mQiZhiDate;
 @property (assign,nonatomic) NSInteger mCurrentPage;
 @end
 
@@ -67,10 +69,10 @@
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
     
-    [self.mTableView addTopRefreshControlUsingBlock:^{
+//    [self.mTableView addTopRefreshControlUsingBlock:^{
         self.mCurrentPage = 1;
         [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" PageIndex:1];
-    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
+//    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
     
     [self.mTableView addBottomRefreshControlUsingBlock:^{
         self.mCurrentPage ++;
@@ -78,7 +80,7 @@
     } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
 
     self.mCurrentPage = 1;
-    [self.mTableView topRefreshControlStartInitializeRefreshing];
+//    [self.mTableView topRefreshControlStartInitializeRefreshing];
 }
 #pragma mark - TableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -102,8 +104,14 @@
             vCell = [[TrainingEventTitleCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
+            
         }
-        
+        [vCell.mTrainingCishu setText:[NSString stringWithFormat:@"%ld次训练", (long)self.mNumberofDetail]];
+        NSArray *data = self.mInitData;
+        NSString * end = data[0][@"endTime"];
+        NSString * first = data[self.mNumberofDetail-1][@"endTime"];
+        NSString * Info = [NSString stringWithFormat:@"%@至%@",first,end];
+        [vCell.mDate setText:Info];
         return vCell;
     }
     else

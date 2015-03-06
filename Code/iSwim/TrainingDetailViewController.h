@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TrainingDetailViewController : UIViewController
+@property (retain,nonatomic) NSString * mCurrentEventID;
 @end

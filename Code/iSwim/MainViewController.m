@@ -40,6 +40,8 @@
          mGraphicView = [MBLineChart initGraph:_mType yValues:_mYArray xValues:_mXArray  zValues:_mZArray inView:self.mGraphicViewBG];
          UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
          [mGraphicView addGestureRecognizer:pinch];
+         NSString * ad = [vDic objectForKey:@"ad"];
+         [self.mAdLabel setText: ad];
      }];
 }
 

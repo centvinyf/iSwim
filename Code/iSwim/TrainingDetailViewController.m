@@ -12,11 +12,12 @@
 
 @interface TrainingDetailViewController ()
 @property (retain,nonatomic) NSDictionary * mInitData;
-@property (weak, nonatomic) IBOutlet MBLineChart *mGraphicView;
+@property (weak, nonatomic) IBOutlet UIImageView *mGraphicView;
+@property (weak,nonatomic) MBLineChart * mb;
 @property (retain,nonatomic) NSArray * mXArray;
 @property (retain,nonatomic) NSArray * mYArray;
 @property (retain,nonatomic) NSArray * mZArray;
-@property (retain,nonatomic) NSString * mCurrentEventID;
+
 
 @end
 
@@ -51,13 +52,21 @@
              self.mXArray = [self.mInitData valueForKey:@"X"];
              self.mYArray = [self.mInitData valueForKey:@"Y"];
              self.mZArray = [self.mInitData valueForKey:@"Z"];
-             [MBLineChart initGraph:@"本场分段详情"
+              self.mb= [MBLineChart initGraph:@"本场分段详情"
                             yValues:self.mYArray
                             xValues:self.mXArray
                            zValues:self.mZArray
                              inView:self.mGraphicView];
+             UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
+             [self.mGraphicView addGestureRecognizer:pinch_mTotalCaluli];
     }
      }];
+}
+- (void)zoommTotalCaluli:(UIPinchGestureRecognizer *)sender
+{
+    [self.mb updateGraph:sender.scale];
+    sender.scale = 1;
+    
 }
 
 - (void)loadEventIdData:(NSString *)url

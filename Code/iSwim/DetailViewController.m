@@ -10,6 +10,7 @@
 #import "DetailTableViewCell.h"
 #import "HttpJsonManager.h"
 #import "MBLineChart.h"
+#import "TrainingDetailViewController.h"
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *mImageView;
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
@@ -18,6 +19,7 @@
 @property (retain,nonatomic) MBLineChart * mChart;
 @property (retain,nonatomic) NSArray * mXArray;
 @property(retain,nonatomic) NSArray * mYArray;
+@property (weak, nonatomic) IBOutlet UINavigationItem *mTitle;
 @property(retain,nonatomic) NSArray * mZArray;
 @end
 
@@ -26,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/showDetail.do"];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -46,8 +49,9 @@
              NSArray * array = self.mInitData[@"rs"];
              self.mNumOfDetail =array.count;
              
-             self.mXArray = self.mInitData[self.mType][@"X"];
-             self.mYArray = self.mInitData[self.mType][@"Y"];
+             self.mXArray = self.mInitData[@"chart"][@"X"];
+             self.mYArray = self.mInitData[@"chart"][@"Y"];
+             self.mZArray = self.mInitData[@"chart"][@"Z"];
         self.mChart = [MBLineChart initGraph:self.mInitData[@"title"]
                                              yValues:self.mYArray
                                              xValues:self.mXArray
@@ -58,6 +62,7 @@
              [self.mChart addGestureRecognizer:pinch_mTotalCaluli];
              NSLog(@"%@",content);
              [self.mTableView reloadData];
+             [self.mTitle setTitle:self.mInitData[@"title"]];
          }
      }];
 }
@@ -164,6 +169,20 @@
         
         
         return vCell;    }
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Fucku"]) {
+        TrainingDetailViewController * vc =[segue destinationViewController];
+        vc.mCurrentEventID = sender;
+    }
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row>0) {
+        [self performSegueWithIdentifier:@"Fucku" sender:self.mInitData[@"rs"][indexPath.row-1][@"eventId"]];
+
+    }
+    
 }
 /*
 #pragma mark - Navigation

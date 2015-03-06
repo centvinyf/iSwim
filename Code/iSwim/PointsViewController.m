@@ -16,7 +16,7 @@
     BOOL _mIsFirst;
     NSMutableArray      *_mXArray;
     NSMutableArray      *_mYArray;
-    NSMutableArray      *_mZArray;
+    NSArray      *_mZArray;
     NSArray             *_mDataSourceArray;
     NSDictionary        *mInitData;
     BOOL _mIsStart;
@@ -40,6 +40,7 @@
     _mDatePicker.hidden=YES;
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
+    
     [self loadDataWithParameters:nil];
 }
 
@@ -52,7 +53,11 @@
             _mXArray = [mInitData[@"chart"] valueForKey:@"X"];
             _mYArray = [mInitData[@"chart"] valueForKey:@"Y"];
             _mZArray = [mInitData[@"chart"] valueForKey:@"Z"];
-            mGraphicView = [MBLineChart initGraph:@"总积分"
+            if (mGraphicView) {
+                [mGraphicView removeFromSuperview];
+            }
+            
+            mGraphicView = [MBLineChart initGraph:[NSString stringWithFormat:@"总积分：%@",mInitData[@"total"]]
                            yValues:_mYArray
                            xValues:_mXArray
                            zValues:_mZArray
@@ -73,6 +78,10 @@
 
 - (IBAction)queryBtnClick:(id)sender {
     _mCoverView.hidden=NO;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    [self.mEndBtn.titleLabel setText:strDate];
 }
 
 - (IBAction)btnClick:(UIButton *)sender {

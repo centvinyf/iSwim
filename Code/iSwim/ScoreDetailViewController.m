@@ -27,6 +27,10 @@
     [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split.do"];
     // Do any additional setup after loading the view.
 }
+- (IBAction)mToTop:(id)sender {
+    [self.mTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    [self.mTableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -63,7 +67,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.mNumberOfDetail;
+    return self.mNumberOfDetail+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

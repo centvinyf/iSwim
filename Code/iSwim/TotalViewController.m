@@ -10,7 +10,7 @@
 #import "MBLineChart.h"
 #import "HttpJsonManager.h"
 #import "TotalTableViewCell.h"
-
+#import "TrainingDetailViewController.h"
 @interface TotalViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *mNaviTitle;
 @property (assign,nonatomic) NSInteger mNumOfDetail;
@@ -71,6 +71,11 @@
              [self.mTableView reloadData];
          }
      }];
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"Fuck" sender:self.mInitData[@"rs"][indexPath.row][@"eventId"]];
+
 }
 - (void)zoommTotalCaluli:(UIPinchGestureRecognizer *)sender
 {
@@ -136,15 +141,17 @@
         
         
         return vCell;    }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Fuck"]) {
+        TrainingDetailViewController * vc =[segue destinationViewController];
+        vc.mCurrentEventID = sender;
+    }
+}
 
 /*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
 
 @end

@@ -193,6 +193,7 @@
     {
         NSLog(@"%@",_mPersonInfo);
         cell.detailTextLabel.text=[NSString stringWithFormat:@"%.0fcm",_mPersonInfo.height];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     else if (indexPath.section==1&&indexPath.row==2)
     {
@@ -200,7 +201,9 @@
     else if (indexPath.section==2&&indexPath.row==0)
     {
         cell.detailTextLabel.text=_mPersonInfo.email;
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
 
