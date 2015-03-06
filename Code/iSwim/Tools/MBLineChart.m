@@ -218,6 +218,11 @@
     [_lineGraph.containererView addSubview:_lineGraph];
     [view addSubview:_lineGraph.containererView];
     _lineGraph.minWidth = _lineGraph.frame.size.width;
+    
+    UILabel *titileLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 21)];
+    titileLabel.text = type;
+    [view addSubview:titileLabel];
+    
     return _lineGraph;
 }
 
