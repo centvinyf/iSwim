@@ -131,7 +131,7 @@
 #pragma mark --
 -(void) initViews : (NSDictionary * )dic
 {
-    mTotalDistance = [MBLineChart initGraph:@"title"
+    mTotalDistance = [MBLineChart initGraph:@"总距离"
                                     yValues:[self.mInitData[@"LED"] valueForKey:@"Y"]
                                     xValues:[self.mInitData[@"LED"] valueForKey:@"X"]
                                      inView:self.mTotalDistanceBG];
@@ -140,7 +140,7 @@
     UITapGestureRecognizer * vToLED = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(toLED)];
     [mTotalDistance addGestureRecognizer:vToLED];
     
-    mTotalTime = [MBLineChart initGraph:@"title"
+    mTotalTime = [MBLineChart initGraph:@"总时间"
                                 yValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"Y"]
                                 xValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"X"]
                                  inView:self.mTotalTimeBG];
@@ -149,7 +149,7 @@
     UITapGestureRecognizer * vToLST = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(toLST)];
     [mTotalTime addGestureRecognizer:vToLST];
     
-    mTotalCaluli = [MBLineChart initGraph:@"title"
+    mTotalCaluli = [MBLineChart initGraph:@"总消耗"
                                   yValues:[self.mInitData[@"CALORIE"] valueForKey:@"Y"]
                                   xValues:[self.mInitData[@"CALORIE"] valueForKey:@"X"]
                                    inView:self.mTotalCaluliBG];
@@ -159,7 +159,7 @@
     [mTotalCaluli addGestureRecognizer:vToLBC];
 
     
-    m25m = [MBLineChart initGraph:@"title"
+    m25m = [MBLineChart initGraph:@"25m"
                           yValues:[self.mInitData[@"M25"] valueForKey:@"Y"]
                           xValues:[self.mInitData[@"M25"] valueForKey:@"X"]
                            inView:self.m25mBG];
@@ -169,7 +169,7 @@
     [m25m addGestureRecognizer:vTo25];
 
     
-    m50m = [MBLineChart initGraph:@"title"
+    m50m = [MBLineChart initGraph:@"50m"
                           yValues:[self.mInitData[@"M50"] valueForKey:@"Y"]
                           xValues:[self.mInitData[@"M50"] valueForKey:@"X"]
                            inView:self.m50mBG];
@@ -180,7 +180,7 @@
     UITapGestureRecognizer * vTo50 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to50)];
     [m50m addGestureRecognizer:vTo50];
     
-    m100m = [MBLineChart initGraph:@"title"
+    m100m = [MBLineChart initGraph:@"100m"
                            yValues:[self.mInitData[@"M100"] valueForKey:@"Y"]
                            xValues:[self.mInitData[@"M100"] valueForKey:@"X"]
                             inView:self.m100mBG];
@@ -189,7 +189,7 @@
     UITapGestureRecognizer * vTo100 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to100)];
     [m100m addGestureRecognizer:vTo100];
     
-    m200m = [MBLineChart initGraph:@"title"
+    m200m = [MBLineChart initGraph:@"200m"
                            yValues:[self.mInitData[@"M200"] valueForKey:@"Y"]
                            xValues:[self.mInitData[@"M200"] valueForKey:@"X"]
                             inView:self.m200mBG];
@@ -198,7 +198,7 @@
     UITapGestureRecognizer * vTo200 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to200)];
     [m200m addGestureRecognizer:vTo200];
     
-    m400m = [MBLineChart initGraph:@"title"
+    m400m = [MBLineChart initGraph:@"400m"
                            yValues:[self.mInitData[@"M400"] valueForKey:@"Y"]
                            xValues:[self.mInitData[@"M400"] valueForKey:@"X"]
                             inView:self.m400mBG];
@@ -207,7 +207,7 @@
     UITapGestureRecognizer * vTo400 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to400)];
     [m400m addGestureRecognizer:vTo400];
     
-    m800m = [MBLineChart initGraph:@"title"
+    m800m = [MBLineChart initGraph:@"800m"
                            yValues:[self.mInitData[@"M800"] valueForKey:@"Y"]
                            xValues:[self.mInitData[@"M800"] valueForKey:@"X"]
                             inView:self.m800mBG];
@@ -216,7 +216,7 @@
     UITapGestureRecognizer * vTo800 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to800)];
     [m800m addGestureRecognizer:vTo800];
     
-    m1000m = [MBLineChart initGraph:@"title"
+    m1000m = [MBLineChart initGraph:@"1000m"
                             yValues:[self.mInitData[@"M1000"] valueForKey:@"Y"]
                             xValues:[self.mInitData[@"M1000"] valueForKey:@"X"]
                              inView:self.m1000mBG];
@@ -225,7 +225,7 @@
     UITapGestureRecognizer * vTo1000 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to1000)];
     [m1000m addGestureRecognizer:vTo1000];
     
-    m1500m = [MBLineChart initGraph:@"title"
+    m1500m = [MBLineChart initGraph:@"1500m"
                             yValues:[self.mInitData[@"M1500"] valueForKey:@"Y"]
                             xValues:[self.mInitData[@"M1500"] valueForKey:@"X"]
                              inView:self.m1500mBG];

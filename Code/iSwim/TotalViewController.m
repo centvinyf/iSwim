@@ -58,7 +58,7 @@
              
              self.mXArray = self.mInitData[self.mType][@"X"];
              self.mYArray = self.mInitData[self.mType][@"Y"];
-             self.mChart = [MBLineChart initGraph:@"title"
+             self.mChart = [MBLineChart initGraph:self.mType
                                           yValues:self.mYArray
                                           xValues:self.mXArray
                                            inView:self.mImageView];
@@ -105,21 +105,21 @@
         if([self.mType isEqualToString:@"LED"])
         {
             [vCell.mTime setText:self.mInitData[@"rs"][indexPath.row][@"endTime"] ];
-            [vCell.mData setText:[self.mInitData[@"rs"][indexPath.row][@"distance"] stringValue]];
+            [vCell.mData setText:self.mInitData[@"rs"][indexPath.row][@"distance"] ];
             [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row][@"swimmingPoolName"]];
             [vCell.mInfoType setText:@"本日游泳总距离"];
         }
     if([self.mType isEqualToString:@"SWIMMINGTIME"])
     {
         [vCell.mTime setText:self.mInitData[@"rs"][indexPath.row][@"endTime"]];
-        [vCell.mData setText:[self.mInitData[@"rs"][indexPath.row][@"swimmingTime"] stringValue]];
+        [vCell.mData setText:self.mInitData[@"rs"][indexPath.row][@"swimmingTime"] ];
         [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row][@"swimmingPoolName"]];
         [vCell.mInfoType setText:@"本日游泳总时间"];
     }
     if([self.mType isEqualToString:@"CALORIE"])
     {
         [vCell.mTime setText:self.mInitData[@"rs"][indexPath.row][@"endTime"]];
-        [vCell.mData setText:[self.mInitData[@"rs"][indexPath.row][@"calorie"] stringValue]];
+        [vCell.mData setText:self.mInitData[@"rs"][indexPath.row][@"calorie"]];
         [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row][@"swimmingPoolName"]];
         [vCell.mInfoType setText:@"本日游泳总消耗"];
     }

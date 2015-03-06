@@ -47,7 +47,7 @@
              
              self.mXArray = self.mInitData[self.mType][@"X"];
              self.mYArray = self.mInitData[self.mType][@"Y"];
-        self.mChart = [MBLineChart initGraph:@"title"
+        self.mChart = [MBLineChart initGraph:self.mType
                                              yValues:self.mYArray
                                              xValues:self.mXArray
                                               inView:self.mImageView];

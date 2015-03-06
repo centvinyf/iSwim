@@ -49,7 +49,7 @@
              self.mInitData = content;
              self.mXArray = [self.mInitData valueForKey:@"X"];
              self.mYArray = [self.mInitData valueForKey:@"Y"];
-             [MBLineChart initGraph:@""
+             [MBLineChart initGraph:@"本场分段详情"
                             yValues:self.mYArray
                             xValues:self.mXArray
                              inView:self.mGraphicView];
