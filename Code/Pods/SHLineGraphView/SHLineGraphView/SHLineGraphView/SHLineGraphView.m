@@ -205,8 +205,8 @@
   CGPathAddLineToPoint(backgroundPath, NULL, _leftMarginToLeave, self.bounds.size.height - BOTTOM_MARGIN_TO_LEAVE);
   CGPathCloseSubpath(backgroundPath);
   
-  backgroundLayer.path =  [self smoothedPathWithGranularity:20 BezierPath:[UIBezierPath bezierPathWithCGPath:backgroundPath]].CGPath;
-  graphLayer.path = [self smoothedPathWithGranularity:20 BezierPath:[UIBezierPath bezierPathWithCGPath:graphPath]].CGPath;
+  backgroundLayer.path = backgroundPath;
+  graphLayer.path = graphPath;
   circleLayer.path = circlePath;
   
   //animation
@@ -220,9 +220,10 @@
   graphLayer.zPosition = 1;
   circleLayer.zPosition = 2;
   
-  [self.layer addSublayer:graphLayer];
   [self.layer addSublayer:circleLayer];
   [self.layer addSublayer:backgroundLayer];
+  [self.layer addSublayer:graphLayer];
+
     bgLayer = backgroundLayer;
     lineLayer = graphLayer;
     pointLayer = circleLayer;
@@ -235,8 +236,15 @@
 		btn.frame = CGRectMake(point.x - 20, point.y - 20, 40, 40);
 		[btn addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
 		objc_setAssociatedObject(btn, kAssociatedPlotObject, plot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    [self addSubview:btn];
+        
+        [self addSubview:btn];
+        
+        float currentYValue = [[[plot.plottingValues objectAtIndex:i] objectForKey:[NSNumber numberWithInt:i+1]] floatValue];
+        
+        if(currentYValue == [_yAxisRange floatValue])
+        {
+            [self clicked:btn];
+        }
 	}
 }
 

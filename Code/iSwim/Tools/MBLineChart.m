@@ -46,7 +46,7 @@
      *  the maximum y-value possible in the graph. make sure that the y-value is not in the plotting points is not greater
      *  then this number. otherwise the graph plotting will show wrong results.
      */
-    _lineGraph.yAxisRange = big;
+    _lineGraph.yAxisRange =big;
     
     /**
      *  y-axis values are calculated according to the yAxisRange passed. so you do not have to pass the explicit labels for
@@ -123,6 +123,7 @@
     for (int i = 0; i<yValues.count; i++) {
         if ([yValues[i] floatValue] > [big floatValue]) {
             big = yValues[i];
+        
         }
     }
     
@@ -150,7 +151,7 @@
      *  the maximum y-value possible in the graph. make sure that the y-value is not in the plotting points is not greater
      *  then this number. otherwise the graph plotting will show wrong results.
      */
-    _lineGraph.yAxisRange = big;
+    _lineGraph.yAxisRange =big;
     
     /**
      *  y-axis values are calculated according to the yAxisRange passed. so you do not have to pass the explicit labels for
@@ -212,6 +213,12 @@
     _plot1.plotThemeAttributes = _plotThemeAttributes;
     [_lineGraph addPlot:_plot1];
     
+    
+    CGRect frame = _lineGraph.frame;
+    frame.origin.y +=58;
+    frame.size.height -=58;
+    _lineGraph.frame = frame;
+
     [_lineGraph setupTheView];
     
     _lineGraph.containererView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];

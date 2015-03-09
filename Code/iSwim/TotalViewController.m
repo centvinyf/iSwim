@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/showDetail.do"];
+    [self loadData:@"http://192.168.1.142:8080/swimming_app/app/client/showDetail.do"];
     if ([self.mType isEqualToString:@"LED"]) {
         self.mNaviTitle.title = @"总距离详情";
     }

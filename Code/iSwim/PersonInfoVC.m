@@ -259,20 +259,32 @@
 {
     NSData *data = UIImagePNGRepresentation(image);
     NSString* encodeResult = [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-    
 
-    [HttpJsonManager postWithParameters:@{@"image":encodeResult} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS]
-                      completionHandler:^(BOOL sucess, id content)
-     {
-         if (sucess)
-         {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 _mHeaderImageView.image = image;
-                 _mCoverView.hidden=YES;
-                 [self dismissViewControllerAnimated:YES completion:nil];
-             });
-         }
-     }];
+//    [HttpJsonManager postWithParameters:@{@"imageFile":st} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS]
+//                      completionHandler:^(BOOL sucess, id content)
+//     {
+//         if (sucess)
+//         {
+//             dispatch_async(dispatch_get_main_queue(), ^{
+//                 _mHeaderImageView.image = image;
+//                 _mCoverView.hidden=YES;
+//                 [self dismissViewControllerAnimated:YES completion:nil];
+//             });
+//         }
+//     }];
+    
+    [HttpJsonManager postWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS] constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFormData:data name:@"123.png"];
+    } completionHandler:^(BOOL sucess, id content) {
+        if (sucess)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _mHeaderImageView.image = image;
+                _mCoverView.hidden=YES;
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
