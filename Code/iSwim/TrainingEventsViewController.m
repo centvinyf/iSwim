@@ -18,7 +18,11 @@
 @property (assign,nonatomic) NSInteger mNumberofDetail;
 @property (assign,nonatomic) NSInteger mCishu;
 @property (retain,nonatomic) NSString * mQiZhiDate;
+@property (weak, nonatomic) IBOutlet UIButton *mStartBtn;
 @property (assign,nonatomic) NSInteger mCurrentPage;
+@property (weak, nonatomic) IBOutlet UIView *mCoverView;
+@property (weak, nonatomic) IBOutlet UIButton *mEndBtn;
+@property (nonatomic)BOOL IsStart;
 @end
 
 @implementation TrainingEventsViewController
@@ -33,8 +37,32 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)mQueryBtnPressed:(id)sender {
+    self.mCoverView.hidden=!self.mCoverView.isHidden;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    [self.mEndBtn.titleLabel setText:strDate];
+}
+- (IBAction)mStartPressed:(id)sender {
+    self.IsStart =YES;
+}
+- (IBAction)mEndPressed:(id)sender {
+    self.IsStart = NO;
+}
 #pragma mark--
-
+- (IBAction)datePickerChangeValues:(UIDatePicker*)sender {
+    NSDateFormatter*vFormatter=[[NSDateFormatter alloc]init];
+    vFormatter.dateFormat=@"yyyy-MM-dd";
+    NSString*vStr=[vFormatter stringFromDate:[sender date]];
+    if (_IsStart) {
+        [_mStartBtn setTitle:vStr forState:UIControlStateNormal];
+    }
+    else
+    {
+        [_mEndBtn setTitle:vStr forState:UIControlStateNormal];
+    }
+}
 - (void)loadData:(NSString *)url PageIndex:(NSInteger)pageIndex
 {
     NSDictionary *parameters = @{@"page":[NSNumber numberWithInteger:pageIndex]};

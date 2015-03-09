@@ -77,7 +77,7 @@
 }
 
 - (IBAction)queryBtnClick:(id)sender {
-    _mCoverView.hidden=NO;
+    _mCoverView.hidden=!_mCoverView.isHidden;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];

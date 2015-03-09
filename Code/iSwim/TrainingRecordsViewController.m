@@ -38,6 +38,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *m1000mBG;
 @property (weak, nonatomic) IBOutlet UIImageView *m1500mBG;
 @property (retain,nonatomic) NSDictionary * mInitData;
+@property (weak, nonatomic) IBOutlet UIView *mCoverView;
+@property (weak, nonatomic) IBOutlet UIButton *mStartBtn;
+@property (weak, nonatomic) IBOutlet UIButton *mEndBtn;
+@property (nonatomic) BOOL IsStart;
 @end
 
 @implementation TrainingRecordsViewController
@@ -51,6 +55,32 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+- (IBAction)datePickerChangeValues:(UIDatePicker*)sender {
+    NSDateFormatter*vFormatter=[[NSDateFormatter alloc]init];
+    vFormatter.dateFormat=@"yyyy-MM-dd";
+    NSString*vStr=[vFormatter stringFromDate:[sender date]];
+    if (_IsStart) {
+        [_mStartBtn setTitle:vStr forState:UIControlStateNormal];
+    }
+    else
+    {
+        [_mEndBtn setTitle:vStr forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)mQBtnPressed:(id)sender {
+    self.mCoverView.hidden=!self.mCoverView.isHidden;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    [self.mEndBtn.titleLabel setText:strDate];
+}
+- (IBAction)mStartPressed:(id)sender {
+    self.IsStart = YES;
+}
+- (IBAction)mEndPressed:(id)sender {
+    self.IsStart = NO;
 }
 
 - (void)didReceiveMemoryWarning {
