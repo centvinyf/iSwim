@@ -26,7 +26,7 @@
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
     [self initStructure];
-    [self loadData:@"http://192.168.1.142:8080/swimming_app/app/client/events/info.do"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/info.do"];
     // Do any additional setup after loading the view.
 }
 

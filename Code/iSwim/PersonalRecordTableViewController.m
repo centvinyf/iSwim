@@ -60,7 +60,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mInitData = [[NSDictionary alloc]init];
-    [self loadData:@"http://192.168.1.142:8080/swimming_app/app/client/records/current.do"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/records/current.do"];
     
     
     // Uncomment the following line to preserve selection between presentations.
