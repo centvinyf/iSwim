@@ -9534,7 +9534,7 @@
                             <constraint firstItem="jzN-bV-aCk" firstAttribute="top" secondItem="lwQ-gk-Jkk" secondAttribute="bottom" id="dcg-AF-LpU"/>
                             <constraint firstItem="0qr-J1-bkd" firstAttribute="leading" secondItem="lwQ-gk-Jkk" secondAttribute="leading" id="ijT-cd-fT1"/>
                             <constraint firstAttribute="trailing" secondItem="lwQ-gk-Jkk" secondAttribute="trailing" id="qRi-Yu-InG"/>
-                            <constraint firstItem="jzN-bV-aCk" firstAttribute="top" secondItem="0qr-J1-bkd" secondAttribute="bottom" constant="32" id="urT-Td-6mJ"/>
+                            <constraint firstItem="jzN-bV-aCk" firstAttribute="top" secondItem="0qr-J1-bkd" secondAttribute="bottom" id="urT-Td-6mJ"/>
                             <constraint firstItem="0qr-J1-bkd" firstAttribute="centerY" secondItem="0Wp-8O-vdw" secondAttribute="centerY" id="yOv-e6-o7d"/>
                         </constraints>
                         <variation key="default">

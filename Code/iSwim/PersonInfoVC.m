@@ -273,8 +273,9 @@
 //         }
 //     }];
     
-    [HttpJsonManager postWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS] constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFormData:data name:@"123.png"];
+    [HttpJsonManager postWithParameters:@{@"id":@"123"} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS] constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        [formData appendPartWithFormData:data name:@"imageFile"];
+        [formData appendPartWithFileData:data name:@"imageFile" fileName:@"imageFile" mimeType:@"image/png"];
     } completionHandler:^(BOOL sucess, id content) {
         if (sucess)
         {
