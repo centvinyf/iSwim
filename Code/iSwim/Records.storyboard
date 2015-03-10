@@ -7008,7 +7008,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="coverViewCancelBtnClick:" destination="VWK-Cn-np6" eventType="touchUpInside" id="dkJ-NK-8YA"/>
+                                                    <action selector="mCancelBtnPressed:" destination="xeY-5U-lI0" eventType="touchUpInside" id="6O3-no-0uD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1N-Lt-Yxd">
@@ -7039,7 +7039,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="coverViewSureBtnClick:" destination="VWK-Cn-np6" eventType="touchUpInside" id="WvF-Dp-DmD"/>
+                                                    <action selector="mConfirmBtnPressed:" destination="xeY-5U-lI0" eventType="touchUpInside" id="3PT-gg-pON"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -9336,7 +9336,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="coverViewCancelBtnClick:" destination="VWK-Cn-np6" eventType="touchUpInside" id="zU3-ru-hf9"/>
+                                                    <action selector="mCancelBtnPressed:" destination="pyL-9D-leb" eventType="touchUpInside" id="F9a-uU-aPW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9c-nT-z4a">
@@ -9367,7 +9367,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="coverViewSureBtnClick:" destination="VWK-Cn-np6" eventType="touchUpInside" id="3t2-1X-eJ2"/>
+                                                    <action selector="mConfirmBtnPressed:" destination="pyL-9D-leb" eventType="touchUpInside" id="aoX-GN-d4N"/>
                                                 </connections>
                                             </button>
                                         </subviews>

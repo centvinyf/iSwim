@@ -22,7 +22,6 @@
             big = yValues[i];
         }
     }
-
     
     //initate the graph view
     SHLineGraphView *_lineGraph = self;
@@ -231,14 +230,25 @@
     titileLabel.text = type;
     [view addSubview:titileLabel];
     
-    UILabel *avgLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 21, 200, 30)];
+    
+        UILabel *avgLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 21, 500, 30)];
+        _lineGraph.AVG =avgLabel;
+    
     avgLabel.text = avgValue;
     avgLabel.font = [UIFont systemFontOfSize:30];
     avgLabel.textColor = [UIColor orangeColor];
     [view addSubview:avgLabel];
+    
+   
 
     
     return _lineGraph;
+}
+
+-(void) cleanChart
+{
+    [self.AVG removeFromSuperview];
+    [self removeFromSuperview];
 }
 
 - (void)updateGraph:(float)scale

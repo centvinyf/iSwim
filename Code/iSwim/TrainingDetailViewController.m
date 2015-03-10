@@ -28,7 +28,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    [self loadEventIdData:@"http://192.168.1.113:8080/swimming_app/app/client/events/info/enevtId.do"];
+    [self loadEventIdData:@"http://192.168.1.113:8081/swimming_app/app/client/events/info/enevtId.do"];
     
     // Do any additional setup after loading the view.
 }
@@ -56,6 +56,7 @@
                             yValues:self.mYArray
                             xValues:self.mXArray
                            zValues:self.mZArray
+                          avg:[self.mInitData valueForKey:@"AVG"]
                              inView:self.mGraphicView];
              UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
              [self.mGraphicView addGestureRecognizer:pinch_mTotalCaluli];
@@ -82,7 +83,7 @@
              }
             
             NSLog(@"%@",content);
-             [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/split/chart.do"];
+             [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split/chart.do"];
              
          }
      }];

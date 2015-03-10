@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/showDetail.do"];
+    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/showDetail.do"];
     
     // Do any additional setup after loading the view.
 }
@@ -56,7 +56,7 @@
                                              yValues:self.mYArray
                                              xValues:self.mXArray
                                              zValues:self.mZArray
-
+                                                 avg:self.mInitData[@"chart"][@"AVG"]
                                               inView:self.mImageView];
              UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
              [self.mChart addGestureRecognizer:pinch_mTotalCaluli];

@@ -61,6 +61,7 @@
                            yValues:_mYArray
                            xValues:_mXArray
                            zValues:_mZArray
+                               avg:nil 
                             inView:self.mGraphicViewBG];
             
             UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];

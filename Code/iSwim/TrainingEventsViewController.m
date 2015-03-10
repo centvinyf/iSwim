@@ -37,6 +37,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)mConfirmBtnPressed:(id)sender {
+    [self initViewsWithDate:self.mStartBtn.titleLabel.text endTime:self.mEndBtn.titleLabel.text];
+    self.mCoverView.hidden = YES;
+    
+}
+
+- (IBAction)mCancelBtnPressed:(id)sender {
+    self.mCoverView.hidden = YES;
+}
 - (IBAction)mQueryBtnPressed:(id)sender {
     self.mCoverView.hidden=!self.mCoverView.isHidden;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -62,6 +71,36 @@
     {
         [_mEndBtn setTitle:vStr forState:UIControlStateNormal];
     }
+}
+-(void)loadData:(NSString*)url startTime :(NSString *) startTime endTime : (NSString *) endTime pageIndex:(NSInteger) pageIndex
+{
+    NSDictionary *parameters = @{@"startTime":startTime,
+                                 @"endTime":endTime,
+                                 @"page":[NSNumber numberWithInteger:pageIndex]};
+    [HttpJsonManager getWithParameters:parameters
+                                sender:self url:url
+                     completionHandler:^(BOOL sucess, id content)
+     {
+         if (self.mCurrentPage == 1) {
+             if (sucess) {
+                 self.mInitData = [[NSMutableArray alloc]init];
+                 [self.mInitData addObjectsFromArray:(NSArray *)content];
+                 self.mNumberofDetail = self.mInitData.count;
+             }
+             [self.mTableView topRefreshControlStopRefreshing];
+         }
+         else
+         {
+             if (sucess) {
+                 [self.mInitData addObjectsFromArray:(NSArray *)content];
+                 self.mNumberofDetail = self.mInitData.count;
+             }
+             [self.mTableView bottomRefreshControlStopRefreshing];
+         }
+         [self.mTableView reloadData];
+         
+     }];
+
 }
 - (void)loadData:(NSString *)url PageIndex:(NSInteger)pageIndex
 {
@@ -90,6 +129,23 @@
 
      }];
 }
+-(void)initViewsWithDate :(NSString *) startTime   endTime:(NSString *) endTime
+{
+    
+    //    [self.mTableView addTopRefreshControlUsingBlock:^{
+    self.mCurrentPage = 1;
+    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" startTime:startTime endTime:endTime pageIndex:self.mCurrentPage];
+    //    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
+    
+    [self.mTableView addBottomRefreshControlUsingBlock:^{
+        self.mCurrentPage ++;
+        [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" startTime:startTime endTime:endTime pageIndex:self.mCurrentPage];
+    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
+    
+    self.mCurrentPage = 1;
+    //    [self.mTableView topRefreshControlStartInitializeRefreshing];
+
+}
 -(void)initViews
 {
     self.mInitData = [[NSMutableArray alloc]init];
@@ -99,12 +155,12 @@
     
 //    [self.mTableView addTopRefreshControlUsingBlock:^{
         self.mCurrentPage = 1;
-        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" PageIndex:1];
+        [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" PageIndex:1];
 //    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
     
     [self.mTableView addBottomRefreshControlUsingBlock:^{
         self.mCurrentPage ++;
-        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" PageIndex: self.mCurrentPage];
+        [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/pbts.do" PageIndex: self.mCurrentPage];
     } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
 
     self.mCurrentPage = 1;

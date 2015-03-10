@@ -17,6 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSLog(@"%@",[@"000" MD5]);
+    [ShareSDK registerApp:@"60492c9b88ea"];
     return YES;
 }
 
