@@ -228,6 +228,7 @@
     
     UILabel *titileLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 10, 200, 21)];
     titileLabel.text = type;
+    titileLabel.font = [UIFont systemFontOfSize:15];
     [view addSubview:titileLabel];
     
     

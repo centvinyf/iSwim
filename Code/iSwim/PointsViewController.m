@@ -144,7 +144,7 @@
         cell=[[PointsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     NSDictionary*vPoint=_mDataSourceArray[indexPath.row];
-    cell.mDateLab.text=[[vPoint objectForKey:@"changeDt"] substringToIndex:10];
+    cell.mDateLab.text=[vPoint objectForKey:@"changeDt"];
     cell.mDesLab.text=[vPoint objectForKey:@"descr"];
     
     if ([[[vPoint objectForKey:@"change"] substringToIndex:1] isEqual:@"+"]) {

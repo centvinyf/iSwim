@@ -48,7 +48,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/train.do" withDic:nil];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/train.do" withDic:nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -59,7 +59,7 @@
 - (IBAction)mConfirmBtnPressed:(id)sender {
     NSDictionary * parameters = @{@"startTime": self.mStartBtn.titleLabel.text,
                                   @"endTime":self.mEndBtn.titleLabel.text};
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/train.do" withDic:parameters];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/train.do" withDic:parameters];
     self.mCoverView.hidden = YES;
 }
 - (IBAction)mCancelBtnPressed:(id)sender {
