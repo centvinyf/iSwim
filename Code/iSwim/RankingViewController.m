@@ -89,9 +89,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray * vTitle = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"本场距离排名",@"本场时长排名",@"本场消耗排名",@"训练场馆", nil];
-    NSArray * vButton= [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"place", nil];
     
+    NSMutableArray * vTitle = [[NSMutableArray alloc]initWithArray:[[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"本场距离排名",@"本场时长排名",@"本场消耗排名",@"训练场馆", nil]];
+    NSArray * vButton= [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"place", nil];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+       vTitle = [[NSMutableArray alloc]initWithArray:[[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"本场距离排名",@"本场时长排名",@"本场消耗排名",@"训练场馆", nil]];
+    }else
+    {
+       vTitle = [[NSMutableArray alloc]initWithArray:[[NSArray alloc] initWithObjects:@"游泳日期",@"游泳场次",@"本场距离排名",@"本场时长排名",@"本场消耗排名",@"游泳场馆", nil]];
+    }
     if(indexPath.row==1||indexPath.row ==2||indexPath.row == 6)//直接显示
     {
         static NSString *vIdentifiller = @"TrainingPlan";

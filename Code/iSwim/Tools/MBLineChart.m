@@ -221,7 +221,10 @@
     [_lineGraph setupTheView];
     
     _lineGraph.containererView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    [_lineGraph.containererView setContentSize:_lineGraph.frame.size];
+    //pading right
+    CGSize contentSize = _lineGraph.frame.size;
+    contentSize.width += 30;
+    [_lineGraph.containererView setContentSize:contentSize];
     [_lineGraph.containererView addSubview:_lineGraph];
     [view addSubview:_lineGraph.containererView];
     _lineGraph.minWidth = _lineGraph.frame.size.width;

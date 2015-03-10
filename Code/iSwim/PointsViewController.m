@@ -164,16 +164,18 @@
     cell.mDateLab.text=[vPoint objectForKey:@"changeDt"];
     cell.mDesLab.text=[vPoint objectForKey:@"descr"];
     
-    if ([[[vPoint objectForKey:@"change"] substringToIndex:1] isEqual:@"+"])
-    {
-        cell.mChangeLab.text=[NSString stringWithFormat:@"积分变化+%d",[[vPoint objectForKey:@"change"] intValue]];
-        cell.mChangeLab.textColor=[UIColor colorWithRed:0x00/255.0 green:0x71/255.0 blue:0x31/255.0 alpha:1];
-    }
-    else
-    {
-        cell.mChangeLab.text=[NSString stringWithFormat:@"积分变化%d",[[vPoint objectForKey:@"change"] intValue]];
-        cell.mChangeLab.textColor=[UIColor colorWithRed:0xd1/255.0 green:0x31/255.0 blue:0x01/255.0 alpha:1];
-    }
+    cell.mChangeLab.text=[NSString stringWithFormat:@"当前积分：%@",[[vPoint objectForKey:@"pointsAfterChange"] stringValue]];
+    cell.mChangeLab.textColor=[UIColor colorWithRed:0x00/255.0 green:0x71/255.0 blue:0x31/255.0 alpha:1];
+//    if ([[[vPoint objectForKey:@"change"] substringToIndex:1] isEqual:@"+"])
+//    {
+//        cell.mChangeLab.text=[NSString stringWithFormat:@"当前积分：%@",[vPoint objectForKey:@"pointsAfterChange"]];
+//        cell.mChangeLab.textColor=[UIColor colorWithRed:0x00/255.0 green:0x71/255.0 blue:0x31/255.0 alpha:1];
+//    }
+//    else
+//    {
+//        cell.mChangeLab.text=[NSString stringWithFormat:@"积分变化%d",[[vPoint objectForKey:@"change"] intValue]];
+//        cell.mChangeLab.textColor=[UIColor colorWithRed:0xd1/255.0 green:0x31/255.0 blue:0x01/255.0 alpha:1];
+//    }
     
     return cell;
 }

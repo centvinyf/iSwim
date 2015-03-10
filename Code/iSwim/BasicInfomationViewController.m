@@ -41,9 +41,17 @@
 -(void)initStructure
 {
     NSArray *vPicName = [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"in",@"out",@"in",@"out",@"place", nil];
-    NSArray *vTitleName = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
+    NSArray *vTitleNamePRO = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
+    NSArray *vTitleName = [[NSArray alloc] initWithObjects:@"游泳日期",@"游泳场次",@"游泳距离",@"游泳时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"游泳场馆", nil];
+    NSUserDefaults *defaults=  [NSUserDefaults  standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+        self.mTitleName=vTitleNamePRO;
+    }else
+    {
+        self.mTitleName=vTitleName;
+    }
     self.mPicName = vPicName;
-    self.mTitleName=vTitleName;
     
     
 }
@@ -92,6 +100,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSArray *vTitleNamePRO = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
+    NSArray *vTitleName = [[NSArray alloc] initWithObjects:@"游泳日期",@"游泳场次",@"游泳距离",@"游泳时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"游泳场馆", nil];
+    NSUserDefaults *defaults=  [NSUserDefaults  standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+        self.mTitleName=vTitleNamePRO;
+    }else
+    {
+        self.mTitleName=vTitleName;
+    }
     NSArray *vPicName = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
     NSArray *vPicName1 = [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"in",@"out",@"in",@"out",@"place", nil];
     static NSString *vIdentifiller = @"BasicInfoViewCell";
@@ -105,7 +123,7 @@
     //icon
     [vCell.mImage setImage:[UIImage imageNamed:vPicName1[indexPath.row]] ];
     //titile
-    vCell.mTitle.text = vPicName[indexPath.row];
+    vCell.mTitle.text = self.mTitleName[indexPath.row];
     //value
     switch (indexPath.row)
     {

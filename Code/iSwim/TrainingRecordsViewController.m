@@ -179,8 +179,11 @@
              if (self.ShoulAlert) {
                  UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"警告" message:@"您所查看的数据过多，是否继续显示" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
                  [alert show];
+             }else
+             {
+                 [self initViews:self.mInitData];
+
              }
-//             [self initViews:self.mInitData];
          }
      }]; 
 }

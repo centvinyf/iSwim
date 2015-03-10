@@ -52,8 +52,14 @@
     
     UITapGestureRecognizer *vTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
     [_mCoverView addGestureRecognizer:vTapGestureRecognizer];
-    _mTitleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆"],@[@"使用训练计划",@"设置训练计划"],@[@"修改密码"]];
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+         _mTitleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆",@"是否开启专业模式"],@[@"使用训练计划",@"设置训练计划"],@[@"修改密码"]];
+    }else
+    {
+    _mTitleArray=@[@[@"头像",@"姓名"],@[@"性别",@"身高",@"体重"],@[@"邮箱",@"所属场馆",@"是否开启专业模式"],@[@"使用游泳计划",@"设置游泳计划"],@[@"修改密码"]];
+    }
     _mHeaderImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 10, 80, 80)];
     _mHeaderImageView.backgroundColor=[UIColor cyanColor];
     _mHeaderImageView.layer.masksToBounds=YES;
@@ -100,7 +106,7 @@
     }
     else if (section==2)
     {
-        return 2;
+        return 3;
     }
     else if (section == 3)
     {
@@ -203,8 +209,33 @@
         cell.detailTextLabel.text=_mPersonInfo.email;
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
+    else if (indexPath.section == 2 && indexPath.row == 2)
+    {
+        UISwitch * mSwith = [[UISwitch alloc]init];
+        [mSwith addTarget:self action:@selector(change) forControlEvents:UIControlEventValueChanged];
+//        CGRect frame = mSwith.frame;
+//        frame.origin.x = [UIScreen mainScreen].bounds.size.width- mSwith.frame.size.width-16;
+//        frame.origin.y = cell.frame.size.height/2 - mSwith.frame.size.height/2;
+//        mSwith.frame = frame;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        BOOL isPro = [defaults boolForKey:@"isPro"];
+        
+        [mSwith setOn:isPro];
+//
+      
+        cell.accessoryView = mSwith;
+    }
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+-(void)change
+{
+   NSUserDefaults  *defaults =  [NSUserDefaults standardUserDefaults];
+    BOOL isPro = [defaults boolForKey:@"isPro"];
+    [defaults setBool:!isPro  forKey:@"isPro"];
+    [defaults synchronize];
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

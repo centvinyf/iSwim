@@ -236,7 +236,28 @@
 		btn.frame = CGRectMake(point.x - 20, point.y - 20, 40, 40);
 		[btn addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
 		objc_setAssociatedObject(btn, kAssociatedPlotObject, plot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        
+        if (i == count2-1)
+        {
+            SHPlot *_plot = objc_getAssociatedObject(btn, kAssociatedPlotObject);
+            NSString *text = [_plot.plottingPointsLabels objectAtIndex:i];
+            CGRect labelFrame;
+            labelFrame.origin = point;
+            labelFrame.size = CGSizeMake(60, 21);
+            labelFrame.origin.x -= labelFrame.size.width/2;
+            labelFrame.origin.y -= labelFrame.size.height;
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
+            if([text isKindOfClass:[NSString class]])
+            {
+                label.text = text;
+                label.font = [UIFont systemFontOfSize:12];
+                [self addSubview:label];
+            
+            }
+            
+
+        }
+
         [self addSubview:btn];
         
 //        float currentYValue = [[[plot.plottingValues objectAtIndex:i] objectForKey:[NSNumber numberWithInt:i+1]] floatValue];
