@@ -239,12 +239,12 @@
         
         [self addSubview:btn];
         
-        float currentYValue = [[[plot.plottingValues objectAtIndex:i] objectForKey:[NSNumber numberWithInt:i+1]] floatValue];
-        
-        if(currentYValue == [_yAxisRange floatValue])
-        {
-            [self clicked:btn];
-        }
+//        float currentYValue = [[[plot.plottingValues objectAtIndex:i] objectForKey:[NSNumber numberWithInt:i+1]] floatValue];
+//        
+//        if(currentYValue == [_yAxisRange floatValue])
+//        {
+//            [self clicked:btn];
+//        }
 	}
 }
 

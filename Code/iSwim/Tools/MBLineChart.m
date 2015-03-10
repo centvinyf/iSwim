@@ -111,7 +111,7 @@
     //You can as much `SHPlots` as you can in a `SHLineGraphView` 
 }
 
-+ (MBLineChart *)initGraph:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues zValues:(NSArray *)zValues inView:(UIView *)view
++ (MBLineChart *)initGraph:(NSString *)type yValues:(NSArray *)yValues xValues:(NSArray *)xValues zValues:(NSArray *)zValues avg:(NSString *)avgValue inView:(UIView *)view
 {
     
     CGSize size = view.frame.size;
@@ -215,8 +215,8 @@
     
     
     CGRect frame = _lineGraph.frame;
-    frame.origin.y +=58;
-    frame.size.height -=58;
+    frame.origin.y += 51;
+    frame.size.height -= 51;
     _lineGraph.frame = frame;
 
     [_lineGraph setupTheView];
@@ -227,9 +227,16 @@
     [view addSubview:_lineGraph.containererView];
     _lineGraph.minWidth = _lineGraph.frame.size.width;
     
-    UILabel *titileLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 21)];
+    UILabel *titileLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 0, 200, 21)];
     titileLabel.text = type;
     [view addSubview:titileLabel];
+    
+    UILabel *avgLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 21, 200, 30)];
+    avgLabel.text = avgValue;
+    avgLabel.font = [UIFont systemFontOfSize:30];
+    avgLabel.textColor = [UIColor orangeColor];
+    [view addSubview:avgLabel];
+
     
     return _lineGraph;
 }
