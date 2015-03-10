@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *mDatePicker;
 @property (weak, nonatomic) IBOutlet UIImageView *mGraphicViewBG;
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property (weak, nonatomic) IBOutlet UILabel *mPointsLabel;
 
 @end
 
@@ -63,13 +64,15 @@
                 [mGraphicView removeFromSuperview];
             }
             
-            mGraphicView = [MBLineChart initGraph:[NSString stringWithFormat:@"总积分：%@",mInitData[@"total"]]
+            mGraphicView = [MBLineChart initGraph:[NSString stringWithFormat:@"总积分："]
                            yValues:_mYArray
                            xValues:_mXArray
                            zValues:_mZArray
                                avg:nil 
                             inView:self.mGraphicViewBG];
-            
+        [self.mPointsLabel setText:[NSString stringWithFormat:@"%@",mInitData[@"total"]]];
+        UILabel * vLabel = self.mPointsLabel;
+        [mGraphicView addSubview:vLabel];
             UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
             [mGraphicView addGestureRecognizer:pinch];
 

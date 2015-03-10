@@ -122,6 +122,8 @@
          if (sucess)
          {
              self.mInitData = content;
+             NSArray * vCurrentData = self.mInitData[@"CALORIE"][@"X"];
+             NSInteger vMaxNum =vCurrentData.count;
              [self initViews:self.mInitData];
          }
      }];

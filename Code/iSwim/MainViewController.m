@@ -50,6 +50,7 @@
                                         inView:self.mGraphicViewBG];
          UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
          [mGraphicView addGestureRecognizer:pinch];
+         
          NSString * vAd = [vDic objectForKey:@"ad"];
          [self.mAdLabel setText: vAd];
      }];

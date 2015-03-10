@@ -7988,6 +7988,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8w-pJ-oTN">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="100" y="114" width="58" height="21"/>
+                                </variation>
+                            </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBg-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bw9-6E-Yut">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
@@ -8508,7 +8517,11 @@
                             <constraint firstAttribute="trailing" secondItem="q1l-Se-VM5" secondAttribute="trailing" id="Cdf-K2-jbw"/>
                             <constraint firstItem="Bw9-6E-Yut" firstAttribute="top" secondItem="dHQ-Xl-hC4" secondAttribute="bottom" constant="10" id="Mmg-So-WQ0"/>
                             <constraint firstItem="q1l-Se-VM5" firstAttribute="leading" secondItem="b2w-9D-OlQ" secondAttribute="leading" id="Zjo-w2-Xpu"/>
+                            <constraint firstItem="P8w-pJ-oTN" firstAttribute="top" secondItem="dHQ-Xl-hC4" secondAttribute="bottom" constant="50" id="eO9-Kr-kTF"/>
                             <constraint firstAttribute="trailing" secondItem="Bw9-6E-Yut" secondAttribute="trailing" id="gcG-QB-irj"/>
+                            <constraint firstItem="P8w-pJ-oTN" firstAttribute="leading" secondItem="b2w-9D-OlQ" secondAttribute="leading" constant="100" id="iVB-f7-abW">
+                                <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                            </constraint>
                             <constraint firstItem="k3P-p9-hXW" firstAttribute="top" secondItem="q1l-Se-VM5" secondAttribute="bottom" id="nm6-xJ-pRb"/>
                             <constraint firstItem="Bw9-6E-Yut" firstAttribute="leading" secondItem="b2w-9D-OlQ" secondAttribute="leading" id="pLP-tx-ToO"/>
                             <constraint firstItem="q1l-Se-VM5" firstAttribute="top" secondItem="Bw9-6E-Yut" secondAttribute="bottom" constant="10" id="slt-q3-BXb"/>
@@ -8517,34 +8530,40 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="P8w-pJ-oTN"/>
                                 <exclude reference="Bw9-6E-Yut"/>
                                 <exclude reference="q1l-Se-VM5"/>
                                 <exclude reference="FZn-a1-4WL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="gcG-QB-irj"/>
-                                <exclude reference="pLP-tx-ToO"/>
                                 <exclude reference="AeP-d1-WsG"/>
                                 <exclude reference="wjd-vG-UIO"/>
+                                <exclude reference="gcG-QB-irj"/>
+                                <exclude reference="pLP-tx-ToO"/>
                                 <exclude reference="Cdf-K2-jbw"/>
                                 <exclude reference="Zjo-w2-Xpu"/>
                                 <exclude reference="slt-q3-BXb"/>
+                                <exclude reference="eO9-Kr-kTF"/>
+                                <exclude reference="iVB-f7-abW"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="P8w-pJ-oTN"/>
                                 <include reference="Bw9-6E-Yut"/>
                                 <include reference="q1l-Se-VM5"/>
                                 <include reference="FZn-a1-4WL"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="gcG-QB-irj"/>
-                                <include reference="pLP-tx-ToO"/>
                                 <include reference="AeP-d1-WsG"/>
                                 <include reference="wjd-vG-UIO"/>
+                                <include reference="gcG-QB-irj"/>
+                                <include reference="pLP-tx-ToO"/>
                                 <include reference="Cdf-K2-jbw"/>
                                 <include reference="Zjo-w2-Xpu"/>
                                 <include reference="slt-q3-BXb"/>
+                                <include reference="eO9-Kr-kTF"/>
+                                <include reference="iVB-f7-abW"/>
                             </mask>
                         </variation>
                     </view>
@@ -8561,6 +8580,7 @@
                         <outlet property="mDatePicker" destination="UHx-Du-H6z" id="UH1-8n-s0p"/>
                         <outlet property="mEndBtn" destination="Tqf-Ml-jcO" id="zmC-R7-zwv"/>
                         <outlet property="mGraphicViewBG" destination="Bw9-6E-Yut" id="Q0X-DU-Rb3"/>
+                        <outlet property="mPointsLabel" destination="P8w-pJ-oTN" id="8LI-FL-EE7"/>
                         <outlet property="mStartBtn" destination="GHs-Bn-lIq" id="KmD-hT-DnH"/>
                         <outlet property="mTableView" destination="q1l-Se-VM5" id="kkf-PH-bpU"/>
                     </connections>
