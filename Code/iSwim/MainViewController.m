@@ -24,24 +24,34 @@
 
 @implementation MainViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mIsFirst=YES;
-    [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/break.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content)
+    
+    [HttpJsonManager getWithParameters:nil
+                                sender:self
+                                   url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/break.do",SERVERADDRESS]
+                     completionHandler:^(BOOL sucess, id content)
      {
          NSDictionary*vDic=content;
          _mXArray = [[vDic objectForKey:@"chart"] objectForKey:@"X"] ;
          _mYArray = [[vDic objectForKey:@"chart"] objectForKey:@"Y"];
          NSArray * _mZArray = [[vDic objectForKey:@"chart"] objectForKey:@"Z"];
          _mType = [vDic objectForKey:@"title"];
-         mGraphicView = [MBLineChart initGraph:_mType yValues:_mYArray xValues:_mXArray  zValues:_mZArray avg:[[vDic objectForKey:@"chart"] objectForKey:@"AVG"]  inView:self.mGraphicViewBG];
+         mGraphicView = [MBLineChart initGraph:_mType
+                                       yValues:_mYArray
+                                       xValues:_mXArray
+                                       zValues:_mZArray
+                                           avg:[[vDic objectForKey:@"chart"] objectForKey:@"AVG"]
+                                        inView:self.mGraphicViewBG];
          UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
          [mGraphicView addGestureRecognizer:pinch];
-         NSString * ad = [vDic objectForKey:@"ad"];
-         [self.mAdLabel setText: ad];
+         NSString * vAd = [vDic objectForKey:@"ad"];
+         [self.mAdLabel setText: vAd];
      }];
 }
 

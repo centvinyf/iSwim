@@ -15,21 +15,30 @@
 
 @implementation ChangeEmailVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _mEmailTextField.text=_mEmail;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)saveBtnClick:(id)sender {
+
+- (IBAction)saveBtnClick:(id)sender
+{
      _block(@{@"email":_mEmailTextField.text});
-    [HttpJsonManager getWithParameters:@{@"email":_mEmailTextField.text} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:@{@"email":_mEmailTextField.text}
+                                sender:self
+                                   url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS]
+                     completionHandler:^(BOOL sucess, id content)
+    {
         NSLog(@"%s---%@",__FUNCTION__,content);
-        if (sucess) {
+        if (sucess)
+        {
             ALERT(@"保存成功");
         }
     }];

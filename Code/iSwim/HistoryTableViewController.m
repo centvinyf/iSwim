@@ -39,7 +39,8 @@
 
 @implementation HistoryTableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/records.do"];
     
@@ -50,7 +51,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -59,10 +61,12 @@
 {
     NSDictionary *parameters = @{};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                sender:self
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
+         if (sucess)
+         {
              self.mInitData = content;
              [self initViews:self.mInitData];
          }
@@ -75,7 +79,7 @@
                                     yValues:[self.mInitData[@"LED"] valueForKey:@"Y"]
                                     xValues:[self.mInitData[@"LED"] valueForKey:@"X"]
                                     zValues:[self.mInitData[@"LED"] valueForKey:@"Z"]
-                                     avg:nil
+                                        avg:nil
                                      inView:self.mTotalDistanceBG];
     UIPinchGestureRecognizer *pinch_mTotalDistance = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalDistance:)];
     [mTotalDistance addGestureRecognizer:pinch_mTotalDistance];
@@ -183,6 +187,7 @@
    
     
 }
+
 - (void)zoommTotalDistance:(UIPinchGestureRecognizer *)sender
 {
     [mTotalDistance updateGraph:sender.scale];
@@ -259,4 +264,5 @@
     sender.scale = 1;
     
 }
+
 @end

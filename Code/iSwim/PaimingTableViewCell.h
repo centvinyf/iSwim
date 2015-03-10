@@ -9,9 +9,21 @@
 #import <UIKit/UIKit.h>
 
 @interface PaimingTableViewCell : UITableViewCell
+/**
+ *  图标
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *mImage;
+/**
+ *  左侧文字
+ */
 @property (weak, nonatomic) IBOutlet UILabel *mTitle;
+/**
+ *  右侧排名左半部分
+ */
 @property (weak, nonatomic) IBOutlet UILabel *mMyRanking;
+/**
+ *  右侧排名右半部分
+ */
 @property (weak, nonatomic) IBOutlet UILabel *mAllRanking;
 
 @end

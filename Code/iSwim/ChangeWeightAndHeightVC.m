@@ -20,7 +20,8 @@
 
 @implementation ChangeWeightAndHeightVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     NSLog(@"%@",self.mSex);
@@ -39,12 +40,14 @@
     _mHeightSlider.value=_mHeight  / 100.0 - 120 / 100.0;
     _mWeightSlider.value=_mWeight / 100.0 - 50 / 100.0;
 }
+
 -(void)viewDidLayoutSubviews
 {
     [self valueChange:_mHeightSlider];
     [self valueChange:_mWeightSlider];
     [self initViews:_mSexBtn];
 }
+
 -(void)valueChange:(UISlider*)slider
 {
     if (slider==_mHeightSlider)
@@ -75,18 +78,32 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)saveBtnClick:(id)sender {
+
+- (IBAction)saveBtnClick:(id)sender
+{
     _block(@{@"height":[NSNumber numberWithDouble:_mHeight],@"weight":[NSNumber numberWithDouble:_mWeight]});
-    [HttpJsonManager getWithParameters:@{@"gender":_mSex,@"height":[NSNumber numberWithInt:_mHeight],@"weight":[NSNumber numberWithInt:_mWeight]} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:@{@"gender":_mSex,
+                                         @"height":[NSNumber numberWithInt:_mHeight],
+                                         @"weight":[NSNumber numberWithInt:_mWeight]}
+                                sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS]
+                     completionHandler:^(BOOL sucess, id content)
+    {
         NSLog(@"%s---%@",__FUNCTION__,content);
-        if (sucess) {
+        if (sucess)
+        {
             ALERT(@"保存成功");
         }
-        [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        [HttpJsonManager getWithParameters:nil
+                                    sender:self
+                                       url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS]
+                         completionHandler:^(BOOL sucess, id content)
+        {
             NSLog(@"%@",content);
         }];
     }];

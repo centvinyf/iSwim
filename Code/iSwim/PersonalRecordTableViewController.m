@@ -253,29 +253,39 @@
 #pragma mark - Navigation
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1 && indexPath.row == 0) {
-        if ([self.mLongestDisEventId intValue]>0) {
+    if (indexPath.section == 1 && indexPath.row == 0)
+    {
+        if ([self.mLongestDisEventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"LED" sender:nil];
         }
     }
-    if (indexPath.section == 1 && indexPath.row == 1) {
-        if ([self.mLongestTimeEventId intValue]>0) {
+    if (indexPath.section == 1 && indexPath.row == 1)
+    {
+        if ([self.mLongestTimeEventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"LST" sender:nil];
         }
     }
-    if (indexPath.section == 1 && indexPath.row == 2) {
-        if ([self.mBestCaluliId intValue]>0) {
+    if (indexPath.section == 1 && indexPath.row == 2)
+    {
+        if ([self.mBestCaluliId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"LBC" sender:nil];
         }
         
     }
-    if (indexPath.section == 2 && indexPath.row == 1) {
-        if ([self.m25EventId intValue]>0) {
+    if (indexPath.section == 2 && indexPath.row == 1)
+    {
+        if ([self.m25EventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"25m" sender:nil];
         }
     }
-    if (indexPath.section == 2 && indexPath.row == 2) {
-        if ([self.m50EventId intValue]>0) {
+    if (indexPath.section == 2 && indexPath.row == 2)
+    {
+        if ([self.m50EventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"50m" sender:nil];
         }
     }
@@ -284,38 +294,50 @@
             [self performSegueWithIdentifier:@"100m" sender:nil];
         }
     }
-    if (indexPath.section == 2 && indexPath.row == 4) {
-        if ([self.m200EventId intValue]>0) {
+    if (indexPath.section == 2 && indexPath.row == 4)
+    {
+        if ([self.m200EventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"200m" sender:nil];
         }
     }
-    if (indexPath.section == 2 && indexPath.row == 5) {
-        if ([self.m400EventId intValue]>0) {
+    if (indexPath.section == 2 && indexPath.row == 5)
+    {
+        if ([self.m400EventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"400m" sender:nil];
         }
     }
-    if (indexPath.section == 2 && indexPath.row == 6) {
-        if ([self.m800EventId intValue]>0) {
+    if (indexPath.section == 2 && indexPath.row == 6)
+    {
+        if ([self.m800EventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"800m" sender:nil];
         }
     }
-    if (indexPath.section == 2 && indexPath.row == 7) {
-        if ([self.m1000EventId intValue]>0) {
+    if (indexPath.section == 2 && indexPath.row == 7)
+    {
+        if ([self.m1000EventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"1000m" sender:nil];
         }
     }
-    if (indexPath.section == 2 && indexPath.row == 8) {
-        if ([self.m1500EventId intValue]>0) {
+    if (indexPath.section == 2 && indexPath.row == 8)
+    {
+        if ([self.m1500EventId intValue]>0)
+        {
             [self performSegueWithIdentifier:@"1500m" sender:nil];
         }
     }
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"LED"]) {
+    if ([segue.identifier isEqualToString:@"LED"])
+    {
         [segue.destinationViewController performSelector:@selector(initWithEventId:) withObject:self.mLongestDisEventId];
     }
     else if([segue.identifier isEqualToString:@"LST"])

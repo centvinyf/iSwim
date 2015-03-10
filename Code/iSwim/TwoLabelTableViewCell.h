@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface TwoLabelTableViewCell : UITableViewCell
+/**
+ *  左侧文字
+ */
 @property (weak, nonatomic) IBOutlet UILabel *mTitle;
+/**
+ *  右侧文字
+ */
 @property (weak, nonatomic) IBOutlet UILabel *mData;
 
 @end

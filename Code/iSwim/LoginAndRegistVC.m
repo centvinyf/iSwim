@@ -41,17 +41,23 @@
     
     [_mPasswordTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
      self.navigationController.navigationBarHidden=YES;
 }
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
 }
+
 -(void)loadData:(NSObject*)obj
 {
-    [HttpJsonManager getWithParameters:@{@"phoneNum":_mPhoneNumberTextField.text,@"password":[_mPasswordTextField.text MD5]} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/authenticate.do",SERVERADDRESS]completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:@{@"phoneNum":_mPhoneNumberTextField.text,@"password":[_mPasswordTextField.text MD5]}
+                                sender:self
+                                   url:[NSString stringWithFormat:@"%@/swimming_app/app/client/authenticate.do",SERVERADDRESS]
+                     completionHandler:^(BOOL sucess, id content) {
         NSLog(@"%@",content);
         if ([[content objectForKey:@"id"]length]==0)
         {
@@ -78,7 +84,10 @@
             else
             {
 //                获得个人信息
-                [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+                [HttpJsonManager getWithParameters:nil
+                                            sender:self
+                                               url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS]
+                                 completionHandler:^(BOOL sucess, id content) {
                     [UserProfile manager].mPersonInfo = [[PersonInfoBaseClass alloc]initWithDictionary:content];
                     
                     NSLog(@"%@",content);
@@ -91,37 +100,51 @@
         }
     }];
 }
+
 - (IBAction)btnClick:(UIButton *)sender
 {   if(_mPhoneNumberTextField)
     [self loadData:nil];
 }
+
 - (IBAction)forgetPasswordBtn:(id)sender
 {
-    if(![self.mPhoneNumberTextField.text isEqualToString:@""]){
+    if(![self.mPhoneNumberTextField.text isEqualToString:@""])
+    {
         _mCoverView.hidden=NO;
     
     }
-    else{
-        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请输入手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示"
+                                                        message:@"请输入手机号码"
+                                                       delegate:self
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil, nil];
         [alert show];
     }
     
 }
+
 - (IBAction)coverSureBtnClick:(id)sender
 {
     _mCoverView.hidden=YES;
     NSDictionary * Parameters = @{@"mobile":self.mPhoneNumberTextField.text};
-    [HttpJsonManager getWithParameters:Parameters sender:self url:@"http://192.168.1.113:8080/swimming_app/app/client/profile/forget.do" completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:Parameters
+                                sender:self
+                                   url:@"http://192.168.1.113:8080/swimming_app/app/client/profile/forget.do"
+                     completionHandler:^(BOOL sucess, id content) {
         NSLog(@"%@",content);
     
     }];
 }
+
 - (IBAction)coverCancelBtnClick:(id)sender
 {
     _mCoverView.hidden=YES;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -130,7 +153,8 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
      

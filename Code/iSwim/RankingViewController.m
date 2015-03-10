@@ -20,7 +20,8 @@
 
 @implementation RankingViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
@@ -29,19 +30,24 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark--
+
 - (void)loadData:(NSString *)url
 {
     NSDictionary *parameters = @{@"eventId": self.mCurrentEventId};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                sender:self
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
+         if (sucess)
+         {
              self.mInitData = content;
              [self initViews:self.mInitData];
              NSLog(@"%@",content);
@@ -49,14 +55,17 @@
          }
      }];
 }
+
 -(void)initViews: (NSDictionary *)dic
 {
     
 }
+
 -(void) initWithEventId : (NSString *)EventId
 {
     self.mCurrentEventId = EventId;
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -66,7 +75,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 7||indexPath.row == 0) {
+    if (indexPath.row == 7||indexPath.row == 0)
+    {
         return 20;
     }
     else
@@ -86,7 +96,8 @@
     {
         static NSString *vIdentifiller = @"TrainingPlan";
         TrainingPlanTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[TrainingPlanTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
@@ -94,7 +105,8 @@
         
         [vCell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
         vCell.mTitle.text = vTitle[indexPath.row-1];
-        switch (indexPath.row) {
+        switch (indexPath.row)
+        {
             case 1:
                 [vCell.mData setText:self.mInitData[@"endTime"] ];
                 break;
@@ -115,7 +127,8 @@
     {
         static NSString *vIdentifiller = @"Paiming";
         PaimingTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[PaimingTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
@@ -124,7 +137,8 @@
         [vCell.mImage setImage:[UIImage imageNamed:vButton[indexPath.row-1]]];
         vCell.mTitle.text = vTitle[indexPath.row-1];
         NSString * vAllRanking = [NSString stringWithFormat:@"/%@", self.mInitData[@"placeTotal"]];
-        switch (indexPath.row) {
+        switch (indexPath.row)
+        {
             case 3:
                 [vCell.mMyRanking setText: [self.mInitData[@"placeD"] stringValue]];
                 [vCell.mAllRanking setText:vAllRanking];
@@ -146,7 +160,8 @@
     {
         static NSString * vIdentifiller = @"gray";
         UITableViewCell * vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if(!vCell){
+        if(!vCell)
+        {
             vCell = [[UITableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
@@ -158,7 +173,8 @@
     {
         static NSString *vIdentifiller = @"ThreeLabel";
         ThreeLabelTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[ThreeLabelTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
@@ -167,7 +183,8 @@
         
         vCell.mTitle.text = vTitle[indexPath.row-8];
         [vCell.mAllRanking setText:[NSString stringWithFormat:@"/%@", self.mInitData[@"placeTotal"]]];
-        switch (indexPath.row) {
+        switch (indexPath.row)
+        {
             case 8:
                 [vCell.mMyRanking setText:[self.mInitData[@"place25"] stringValue]];
                 break;

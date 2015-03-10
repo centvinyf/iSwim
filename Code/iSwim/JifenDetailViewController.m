@@ -14,7 +14,8 @@
 
 @implementation JifenDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
@@ -22,7 +23,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -35,7 +37,8 @@
 {
     static NSString *vIdentifiller = @"JifenTableViewCell";
     JifenTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-    if (!vCell) {
+    if (!vCell)
+    {
         vCell = [[JifenTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier: vIdentifiller];

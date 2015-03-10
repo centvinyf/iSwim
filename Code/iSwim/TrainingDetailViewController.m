@@ -23,7 +23,8 @@
 
 @implementation TrainingDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
@@ -33,18 +34,22 @@
     // Do any additional setup after loading the view.
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark--
+
 - (void)loadData:(NSString *)url
 {
     NSDictionary *parameters = @{
                                  @"eventId": self.mCurrentEventID,
                                  @"page": @1};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                sender:self
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
          if (sucess) {
@@ -55,14 +60,15 @@
               self.mb= [MBLineChart initGraph:@"本场分段详情"
                             yValues:self.mYArray
                             xValues:self.mXArray
-                           zValues:self.mZArray
-                          avg:[self.mInitData valueForKey:@"AVG"]
+                            zValues:self.mZArray
+                                avg:[self.mInitData valueForKey:@"AVG"]
                              inView:self.mGraphicView];
              UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
              [self.mGraphicView addGestureRecognizer:pinch_mTotalCaluli];
     }
      }];
 }
+
 - (void)zoommTotalCaluli:(UIPinchGestureRecognizer *)sender
 {
     [self.mb updateGraph:sender.scale];
@@ -74,11 +80,14 @@
 {
     NSDictionary *parameters = @{};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                sender:self
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
-             if (!self.mCurrentEventID) {
+         if (sucess)
+         {
+             if (!self.mCurrentEventID)
+             {
                   self.mCurrentEventID = content[@"eventId"];
              }
             
@@ -88,10 +97,12 @@
          }
      }];
 }
+
 -(void)initWithEventId : (NSString *) EventID
 {
     self.mCurrentEventID = EventID;
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

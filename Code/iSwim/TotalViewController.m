@@ -25,22 +25,27 @@
 
 @implementation TotalViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/showDetail.do"];
-    if ([self.mType isEqualToString:@"LED"]) {
+    if ([self.mType isEqualToString:@"LED"])
+    {
         self.mNaviTitle.title = @"总距离详情";
     }
-    if ([self.mType isEqualToString:@"SWIMMINGTIME"]) {
+    if ([self.mType isEqualToString:@"SWIMMINGTIME"])
+    {
         self.mNaviTitle.title = @"总时间详情";
     }
-    if ([self.mType isEqualToString:@"CALORIE"]) {
+    if ([self.mType isEqualToString:@"CALORIE"])
+    {
         self.mNaviTitle.title = @"总消耗详情";
     }
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
@@ -52,7 +57,8 @@
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
+         if (sucess)
+         {
              self.mInitData = content;
              NSArray * array = self.mInitData[@"rs"];
              self.mNumOfDetail =array.count;
@@ -73,21 +79,26 @@
          }
      }];
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"Fuck" sender:self.mInitData[@"rs"][indexPath.row][@"eventId"]];
 
+    
 }
+
 - (void)zoommTotalCaluli:(UIPinchGestureRecognizer *)sender
 {
     [self.mChart updateGraph:sender.scale];
     sender.scale = 1;
     
 }
+
 -(void)initViews: (NSArray *)dic
 {
     
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
@@ -141,8 +152,10 @@
         
         
         
-        return vCell;    }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+        return vCell;
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"Fuck"]) {
         TrainingDetailViewController * vc =[segue destinationViewController];
         vc.mCurrentEventID = sender;

@@ -27,44 +27,59 @@
 
 @implementation TrainingEventsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self initViews];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)mConfirmBtnPressed:(id)sender {
+
+- (IBAction)mConfirmBtnPressed:(id)sender
+{
     [self initViewsWithDate:self.mStartBtn.titleLabel.text endTime:self.mEndBtn.titleLabel.text];
     self.mCoverView.hidden = YES;
     
 }
 
-- (IBAction)mCancelBtnPressed:(id)sender {
+- (IBAction)mCancelBtnPressed:(id)sender
+{
     self.mCoverView.hidden = YES;
 }
-- (IBAction)mQueryBtnPressed:(id)sender {
+
+- (IBAction)mQueryBtnPressed:(id)sender
+{
     self.mCoverView.hidden=!self.mCoverView.isHidden;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
     [self.mEndBtn.titleLabel setText:strDate];
 }
-- (IBAction)mStartPressed:(id)sender {
+
+- (IBAction)mStartPressed:(id)sender
+{
     self.IsStart =YES;
 }
-- (IBAction)mEndPressed:(id)sender {
+
+- (IBAction)mEndPressed:(id)sender
+{
     self.IsStart = NO;
 }
+
 #pragma mark--
-- (IBAction)datePickerChangeValues:(UIDatePicker*)sender {
+
+- (IBAction)datePickerChangeValues:(UIDatePicker*)sender
+{
     NSDateFormatter*vFormatter=[[NSDateFormatter alloc]init];
     vFormatter.dateFormat=@"yyyy-MM-dd";
     NSString*vStr=[vFormatter stringFromDate:[sender date]];
-    if (_IsStart) {
+    if (_IsStart)
+    {
         [_mStartBtn setTitle:vStr forState:UIControlStateNormal];
     }
     else
@@ -72,6 +87,7 @@
         [_mEndBtn setTitle:vStr forState:UIControlStateNormal];
     }
 }
+
 -(void)loadData:(NSString*)url startTime :(NSString *) startTime endTime : (NSString *) endTime pageIndex:(NSInteger) pageIndex
 {
     NSDictionary *parameters = @{@"startTime":startTime,
@@ -82,7 +98,8 @@
                      completionHandler:^(BOOL sucess, id content)
      {
          if (self.mCurrentPage == 1) {
-             if (sucess) {
+             if (sucess)
+             {
                  self.mInitData = [[NSMutableArray alloc]init];
                  [self.mInitData addObjectsFromArray:(NSArray *)content];
                  self.mNumberofDetail = self.mInitData.count;
@@ -91,7 +108,8 @@
          }
          else
          {
-             if (sucess) {
+             if (sucess)
+             {
                  [self.mInitData addObjectsFromArray:(NSArray *)content];
                  self.mNumberofDetail = self.mInitData.count;
              }
@@ -109,8 +127,10 @@
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (self.mCurrentPage == 1) {
-             if (sucess) {
+         if (self.mCurrentPage == 1)
+         {
+             if (sucess)
+             {
                  self.mInitData = [[NSMutableArray alloc]init];
                  [self.mInitData addObjectsFromArray:(NSArray *)content];
                  self.mNumberofDetail = self.mInitData.count;
@@ -119,7 +139,8 @@
          }
          else
          {
-             if (sucess) {
+             if (sucess)
+             {
                  [self.mInitData addObjectsFromArray:(NSArray *)content];
                  self.mNumberofDetail = self.mInitData.count;
              }
@@ -134,12 +155,19 @@
     
     //    [self.mTableView addTopRefreshControlUsingBlock:^{
     self.mCurrentPage = 1;
-    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" startTime:startTime endTime:endTime pageIndex:self.mCurrentPage];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do"
+         startTime:startTime
+           endTime:endTime
+         pageIndex:self.mCurrentPage];
     //    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
     
-    [self.mTableView addBottomRefreshControlUsingBlock:^{
+    [self.mTableView addBottomRefreshControlUsingBlock:^
+    {
         self.mCurrentPage ++;
-        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" startTime:startTime endTime:endTime pageIndex:self.mCurrentPage];
+        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do"
+             startTime:startTime
+               endTime:endTime
+             pageIndex:self.mCurrentPage];
     } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
     
     self.mCurrentPage = 1;
@@ -158,7 +186,9 @@
         [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" PageIndex:1];
 //    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
     
-    [self.mTableView addBottomRefreshControlUsingBlock:^{
+    [self.mTableView addBottomRefreshControlUsingBlock:^
+    {
+        
         self.mCurrentPage ++;
         [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" PageIndex: self.mCurrentPage];
     } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
@@ -166,7 +196,9 @@
     self.mCurrentPage = 1;
 //    [self.mTableView topRefreshControlStartInitializeRefreshing];
 }
+
 #pragma mark - TableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString * vEventId = [self.mInitData[indexPath.row-1] valueForKey:@"eventId"];
@@ -203,7 +235,8 @@
        static NSString *vIdentifiller2 = @"TrainingEventDetail";
     
         TrainingEventsTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller2];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[TrainingEventsTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller2];
@@ -226,7 +259,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         return 44;
     }
     else

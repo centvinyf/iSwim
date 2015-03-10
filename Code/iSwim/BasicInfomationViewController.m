@@ -21,7 +21,8 @@
 
 @implementation BasicInfomationViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
@@ -31,11 +32,14 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)initStructure{
+
+-(void)initStructure
+{
     NSArray *vPicName = [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"in",@"out",@"in",@"out",@"place", nil];
     NSArray *vTitleName = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
     self.mPicName = vPicName;
@@ -43,7 +47,8 @@
     
     
 }
-- (IBAction)mShareBtnPressed:(id)sender {
+- (IBAction)mShareBtnPressed:(id)sender
+{
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK" ofType:@"png"];
     
     //构造分享内容
@@ -65,7 +70,8 @@
                      statusBarTips:YES
                        authOptions:nil
                       shareOptions:nil
-                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
+    {
                                 
                                 if (state == SSResponseStateSuccess)
                                 {
@@ -90,7 +96,8 @@
     NSArray *vPicName1 = [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"in",@"out",@"in",@"out",@"place", nil];
     static NSString *vIdentifiller = @"BasicInfoViewCell";
     BasicInfoViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-    if (!vCell) {
+    if (!vCell)
+    {
         vCell = [[BasicInfoViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier: vIdentifiller];
@@ -100,7 +107,8 @@
     //titile
     vCell.mTitle.text = vPicName[indexPath.row];
     //value
-    switch (indexPath.row) {
+    switch (indexPath.row)
+    {
         case 0:
             vCell.mData.text = self.mInitData[@"endTime"];
             break;
@@ -140,15 +148,19 @@
 
     return vCell;
 }
+
 #pragma mark--
+
 - (void)loadData:(NSString *)url
 {
     NSDictionary *parameters = @{@"eventId": self.mCurrentEventId};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                sender:self
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
+         if (sucess)
+         {
              self.mInitData = content;
              [self.mTableView reloadData];
          }

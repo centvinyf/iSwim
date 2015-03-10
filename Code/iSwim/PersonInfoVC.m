@@ -273,7 +273,11 @@
 //         }
 //     }];
     
-    [HttpJsonManager postWithParameters:@{@"id":@"123"} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS] constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [HttpJsonManager postWithParameters:@{@"id":@"123"}
+                                 sender:self
+                                    url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS]
+              constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+    {
 //        [formData appendPartWithFormData:data name:@"imageFile"];
         [formData appendPartWithFileData:data name:@"imageFile" fileName:@"imageFile" mimeType:@"image/png"];
     } completionHandler:^(BOOL sucess, id content) {
@@ -288,7 +292,8 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -297,7 +302,8 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     
     if ([segue.identifier isEqualToString:@"changeNameVC"])
     {

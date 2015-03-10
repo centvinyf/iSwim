@@ -48,7 +48,8 @@
 
 @implementation ChangePlanViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
@@ -61,7 +62,8 @@
     mSecond = @"0";
     // Do any additional setup after loading the view.
     mNumber=[[NSMutableArray alloc]init];
-    for (int i = 0; i < 60; i++) {
+    for (int i = 0; i < 60; i++)
+    {
         [mNumber addObject:[NSString stringWithFormat:@"%d",i]];
     }
 
@@ -85,14 +87,16 @@
 //返回当前行的内容,此处是将数组中数值添加到滚动的那个显示栏上
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if (component == 2 || component == 4 || component == 0) {
+    if (component == 2 || component == 4 || component == 0)
+    {
         return [NSString stringWithFormat:@"%ld",(long)row];
     }
     else if(component == 1) return @"h";
     else if (component == 3) return @"m";
     else return @"s";
 }
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     
   
@@ -112,41 +116,52 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    if (component == 0) {
+    if (component == 0)
+    {
         
         mHour = mNumber[row];
     }
-    if (component == 2) {
+    if (component == 2)
+    {
         
         mMinute =mNumber[row];
     }
-    if (component == 4) {
+    if (component == 4)
+    {
         
         mSecond =mNumber[row];
     }
     else ;
     mCurrentTime = [NSString stringWithFormat:@"%@h%@m%@s",mHour,mMinute,mSecond];;
 };
-- (IBAction)TimeSetConfirmButtonPressed:(id)sender {
+
+- (IBAction)TimeSetConfirmButtonPressed:(id)sender
+{
     
     [(UIButton *)self.mTimePicker.sender setTitle:mCurrentTime forState:UIControlStateNormal];
     self.mTimeSetView.hidden = YES;
     self.mBigConfirmButton.hidden = NO;
 }
-- (IBAction)mHideButtonPressed:(id)sender {
+
+- (IBAction)mHideButtonPressed:(id)sender
+{
     self.mHideView.hidden = YES;
     [self.mTrainingDistance resignFirstResponder];
     [self.mTrainingChangci resignFirstResponder];
     [self.mSingle resignFirstResponder];
     [self.mHot resignFirstResponder];
 }
-- (IBAction)mDateButtonPressed:(id)sender {
+
+- (IBAction)mDateButtonPressed:(id)sender
+{
     self.mDateSetView.hidden = NO;
     self.mBigConfirmButton.hidden = YES;
     self.mDatePicker.sender = sender;
     
 }
-- (IBAction)DateConfirmButtonPressed:(id)sender {
+
+- (IBAction)DateConfirmButtonPressed:(id)sender
+{
     NSDateFormatter * vDataFomatter = [[NSDateFormatter alloc]init];
     [vDataFomatter setDateFormat:@"yyyy-MM-dd"];
     NSString * vDate = [vDataFomatter stringFromDate:self.mDatePicker.date];
@@ -154,10 +169,14 @@
     self.mDateSetView.hidden = YES;
     self.mBigConfirmButton.hidden = NO;
 }
-- (IBAction)mEditDidBegin:(id)sender {
+
+- (IBAction)mEditDidBegin:(id)sender
+{
     self.mHideView.hidden = NO;
 }
-- (IBAction)mTimeChangeButtonPressed:(id)sender {
+
+- (IBAction)mTimeChangeButtonPressed:(id)sender
+{
     self.mTimeSetView.hidden = NO;
     self.mBigConfirmButton.hidden = YES;
     self.mTimePicker.sender = sender;

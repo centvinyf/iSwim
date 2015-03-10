@@ -15,7 +15,8 @@
 
 @implementation GraphViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    UIScrollView *chartView = [MBLineChart giveMeAGraphForType:@"总成绩"
@@ -31,15 +32,19 @@
 {
     NSDictionary *parameters = @{};
     [HttpJsonManager postWithParameters:parameters
-                                 sender:self url:url
+                                 sender:self
+                                    url:url
                       completionHandler:^(BOOL sucess, id content)
     {
-        if (sucess) {
+        if (sucess)
+        {
             NSLog(@"%@",content);
         }
     }];
 }
-- (void)didReceiveMemoryWarning {
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

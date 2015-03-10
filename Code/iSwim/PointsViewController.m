@@ -33,7 +33,8 @@
 
 @implementation PointsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _mDatePicker.maximumDate=[NSDate date];
@@ -46,14 +47,19 @@
 
 -(void)loadDataWithParameters: (NSDictionary *)parameters
 {
-        [HttpJsonManager getWithParameters:parameters sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/points.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+        [HttpJsonManager getWithParameters:parameters
+                                    sender:self
+                                       url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/points.do",SERVERADDRESS]
+                         completionHandler:^(BOOL sucess, id content)
+    {
             mInitData = content;
             _mDataSourceArray=(NSArray*)content[@"result"];
             [_mTableView reloadData];
             _mXArray = [mInitData[@"chart"] valueForKey:@"X"];
             _mYArray = [mInitData[@"chart"] valueForKey:@"Y"];
             _mZArray = [mInitData[@"chart"] valueForKey:@"Z"];
-            if (mGraphicView) {
+            if (mGraphicView)
+            {
                 [mGraphicView removeFromSuperview];
             }
             
@@ -77,7 +83,8 @@
     
 }
 
-- (IBAction)queryBtnClick:(id)sender {
+- (IBAction)queryBtnClick:(id)sender
+{
     _mCoverView.hidden=!_mCoverView.isHidden;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -85,9 +92,11 @@
     [self.mEndBtn.titleLabel setText:strDate];
 }
 
-- (IBAction)btnClick:(UIButton *)sender {
+- (IBAction)btnClick:(UIButton *)sender
+{
     _mDatePicker.hidden=NO;
-    if (sender==_mStartBtn) {
+    if (sender==_mStartBtn)
+    {
         _mIsStart=YES;
     }
     else
@@ -97,11 +106,13 @@
     [_mDatePicker date];
 }
 
-- (IBAction)coverViewCancelBtnClick:(id)sender {
+- (IBAction)coverViewCancelBtnClick:(id)sender
+{
     _mCoverView.hidden=YES;
 }
 
-- (IBAction)coverViewSureBtnClick:(id)sender {
+- (IBAction)coverViewSureBtnClick:(id)sender
+{
     
     _mCoverView.hidden=YES;
     NSDictionary * parameters = @{@"startTime":self.mStartBtn.titleLabel.text,
@@ -116,11 +127,13 @@
 }
 #pragma mark -datep\Picker delegate And datasource-
 
-- (IBAction)datePickerChangeValues:(UIDatePicker*)sender {
+- (IBAction)datePickerChangeValues:(UIDatePicker*)sender
+{
     NSDateFormatter*vFormatter=[[NSDateFormatter alloc]init];
     vFormatter.dateFormat=@"yyyy-MM-dd";
     NSString*vStr=[vFormatter stringFromDate:[sender date]];
-    if (_mIsStart) {
+    if (_mIsStart)
+    {
         [_mStartBtn setTitle:vStr forState:UIControlStateNormal];
     }
     else
@@ -140,14 +153,16 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PointsCell*cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
+    if (!cell)
+    {
         cell=[[PointsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     NSDictionary*vPoint=_mDataSourceArray[indexPath.row];
     cell.mDateLab.text=[vPoint objectForKey:@"changeDt"];
     cell.mDesLab.text=[vPoint objectForKey:@"descr"];
     
-    if ([[[vPoint objectForKey:@"change"] substringToIndex:1] isEqual:@"+"]) {
+    if ([[[vPoint objectForKey:@"change"] substringToIndex:1] isEqual:@"+"])
+    {
         cell.mChangeLab.text=[NSString stringWithFormat:@"积分变化+%d",[[vPoint objectForKey:@"change"] intValue]];
         cell.mChangeLab.textColor=[UIColor colorWithRed:0x00/255.0 green:0x71/255.0 blue:0x31/255.0 alpha:1];
     }

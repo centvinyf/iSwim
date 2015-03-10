@@ -25,14 +25,16 @@
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/showDetail.do"];
     
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -41,10 +43,12 @@
 {
     NSDictionary *parameters = @{@"type": self.mType};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                sender:self
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
+         if (sucess)
+         {
              self.mInitData = content;
              NSArray * array = self.mInitData[@"rs"];
              self.mNumOfDetail =array.count;
@@ -63,19 +67,23 @@
              NSLog(@"%@",content);
              [self.mTableView reloadData];
              [self.mTitle setTitle:self.mInitData[@"title"]];
+         
          }
      }];
 }
+
 - (void)zoommTotalCaluli:(UIPinchGestureRecognizer *)sender
 {
     [self.mChart updateGraph:sender.scale];
     sender.scale = 1;
     
 }
+
 -(void)initViews: (NSArray *)dic
 {
     
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
@@ -92,9 +100,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *vIdentifiller = @"Title";
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         DetailTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[DetailTableViewCell alloc]
                      initWithStyle:UITableViewCellStyleDefault
                      reuseIdentifier: vIdentifiller];
@@ -102,7 +112,8 @@
         
         return vCell;
     }
-    else{
+    else
+    {
         static NSString *vIdentifiller2 = @"Detail";
 
         DetailTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller2];
@@ -112,49 +123,58 @@
                      initWithStyle:UITableViewCellStyleDefault
                      reuseIdentifier: vIdentifiller2];
         }
-        if ([self.mType isEqualToString:@"M25"]) {
+        if ([self.mType isEqualToString:@"M25"])
+        {
             NSString * vSingleInfo = [NSString stringWithFormat:@"%@/%@",self.mInitData[@"rs"][indexPath.row-1][@"m25StartId"],self.mInitData[@"rs"][indexPath.row-1][@"m25EndId"]];
             [vCell.mTime setText: self.mInitData[@"rs"][indexPath.row-1][@"m25BestScore"]];
             [vCell.mDate setText:self.mInitData[@"rs"][indexPath.row-1][@"endTime"]];
             [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row-1][@"swimmingPoolName"]];
             [vCell.mSingle setText: vSingleInfo];
-        }if ([self.mType isEqualToString:@"M50"]) {
+        }if ([self.mType isEqualToString:@"M50"])
+        {
             NSString * vSingleInfo = [NSString stringWithFormat:@"%@/%@",self.mInitData[@"rs"][indexPath.row-1][@"m50StartId"],self.mInitData[@"rs"][indexPath.row-1][@"m50EndId"]];
             [vCell.mTime setText: self.mInitData[@"rs"][indexPath.row-1][@"m50BestScore"]];
             [vCell.mDate setText:self.mInitData[@"rs"][indexPath.row-1][@"endTime"]];
             [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row-1][@"swimmingPoolName"]];
             [vCell.mSingle setText: vSingleInfo];
-        }if ([self.mType isEqualToString:@"M100"]) {
+        }if ([self.mType isEqualToString:@"M100"])
+        {
             NSString * vSingleInfo = [NSString stringWithFormat:@"%@/%@",self.mInitData[@"rs"][indexPath.row-1][@"m100StartId"],self.mInitData[@"rs"][indexPath.row-1][@"m100EndId"]];
             [vCell.mTime setText: self.mInitData[@"rs"][indexPath.row-1][@"m100BestScore"]];
             [vCell.mDate setText:self.mInitData[@"rs"][indexPath.row-1][@"endTime"]];
             [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row-1][@"swimmingPoolName"]];
             [vCell.mSingle setText: vSingleInfo];
-        }if ([self.mType isEqualToString:@"M200"]) {
+            
+        }if ([self.mType isEqualToString:@"M200"])
+        {
             NSString * vSingleInfo = [NSString stringWithFormat:@"%@/%@",self.mInitData[@"rs"][indexPath.row-1][@"m200StartId"],self.mInitData[@"rs"][indexPath.row-1][@"m200EndId"]];
             [vCell.mTime setText: self.mInitData[@"rs"][indexPath.row-1][@"m200BestScore"]];
             [vCell.mDate setText:self.mInitData[@"rs"][indexPath.row-1][@"endTime"]];
             [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row-1][@"swimmingPoolName"]];
             [vCell.mSingle setText: vSingleInfo];
-        }if ([self.mType isEqualToString:@"M400"]) {
+        }if ([self.mType isEqualToString:@"M400"])
+        {
             NSString * vSingleInfo = [NSString stringWithFormat:@"%@/%@",self.mInitData[@"rs"][indexPath.row-1][@"m400StartId"],self.mInitData[@"rs"][indexPath.row-1][@"m400EndId"]];
             [vCell.mTime setText: self.mInitData[@"rs"][indexPath.row-1][@"m400BestScore"]];
             [vCell.mDate setText:self.mInitData[@"rs"][indexPath.row-1][@"endTime"]];
             [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row-1][@"swimmingPoolName"]];
             [vCell.mSingle setText: vSingleInfo];
-        }if ([self.mType isEqualToString:@"M800"]) {
+        }if ([self.mType isEqualToString:@"M800"])
+        {
             NSString * vSingleInfo = [NSString stringWithFormat:@"%@/%@",self.mInitData[@"rs"][indexPath.row-1][@"m800StartId"],self.mInitData[@"rs"][indexPath.row-1][@"m800EndId"]];
             [vCell.mTime setText: self.mInitData[@"rs"][indexPath.row-1][@"m800BestScore"]];
             [vCell.mDate setText:self.mInitData[@"rs"][indexPath.row-1][@"endTime"]];
             [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row-1][@"swimmingPoolName"]];
             [vCell.mSingle setText: vSingleInfo];
-        }if ([self.mType isEqualToString:@"M1000"]) {
+        }if ([self.mType isEqualToString:@"M1000"])
+        {
             NSString * vSingleInfo = [NSString stringWithFormat:@"%@/%@",self.mInitData[@"rs"][indexPath.row-1][@"m1000StartId"],self.mInitData[@"rs"][indexPath.row-1][@"m1000EndId"]];
             [vCell.mTime setText: self.mInitData[@"rs"][indexPath.row-1][@"m1000BestScore"]];
             [vCell.mDate setText:self.mInitData[@"rs"][indexPath.row-1][@"endTime"]];
             [vCell.mPlace setText:self.mInitData[@"rs"][indexPath.row-1][@"swimmingPoolName"]];
             [vCell.mSingle setText: vSingleInfo];
-        }if ([self.mType isEqualToString:@"M1500"]) {
+        }if ([self.mType isEqualToString:@"M1500"])
+        {
             NSString * vSingleInfo = [NSString stringWithFormat:@"%@/%@",self.mInitData[@"rs"][indexPath.row-1][@"m1500StartId"],self.mInitData[@"rs"][indexPath.row-1][@"m1500EndId"]];
             [vCell.mTime setText: self.mInitData[@"rs"][indexPath.row-1][@"m1500BestScore"]];
             [vCell.mDate setText:self.mInitData[@"rs"][indexPath.row-1][@"endTime"]];
@@ -170,15 +190,19 @@
         
         return vCell;    }
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"Fucku"]) {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Fucku"])
+    {
         TrainingDetailViewController * vc =[segue destinationViewController];
         vc.mCurrentEventID = sender;
     }
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row>0) {
+    if (indexPath.row>0)
+    {
         [self performSegueWithIdentifier:@"Fucku" sender:self.mInitData[@"rs"][indexPath.row-1][@"eventId"]];
 
     }

@@ -33,6 +33,7 @@
     [super viewDidLoad];
     [self setCorpImage:[UIImage imageNamed:@"蓝底"]];
 }
+
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
@@ -49,7 +50,9 @@
         CropView=nil;
     }
 }
-- (void)didReceiveMemoryWarning {
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -64,13 +67,18 @@
  }
  */
 
-- (IBAction)onclick_CropImage {
+- (IBAction)onclick_CropImage
+{
 //    NSData *data = UIImagePNGRepresentation([_cropImageView cropImage]);
 //    
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectImageOkNotif" object:data];
 //    
 //    [self dismissViewControllerAnimated:YES completion:nil];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"头像设置成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"头像设置成功"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
     [alertView show];
 }
 @end

@@ -35,6 +35,7 @@
     [_mWeightSlider setMaximumTrackImage:[UIImage imageNamed:@"SliderMax"] forState:UIControlStateNormal];
     
 }
+
 -(void)valueChange:(UISlider*)slider
 {
     if (slider==_mHeightSlider)
@@ -55,6 +56,7 @@
 }
 
 #pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // save weight,height

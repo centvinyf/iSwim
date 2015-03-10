@@ -19,7 +19,8 @@
 
 @implementation ScoreDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
@@ -27,12 +28,14 @@
     [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/split.do"];
     // Do any additional setup after loading the view.
 }
-- (IBAction)mToTop:(id)sender {
+- (IBAction)mToTop:(id)sender
+{
     [self.mTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     [self.mTableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -45,7 +48,8 @@
                                 sender:self url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
+         if (sucess)
+         {
              self.mInitData = content;
              self.mNumberOfDetail = self.mInitData.count;
             
@@ -55,14 +59,17 @@
          }
      }];
 }
+
 -(void)initViews: (NSArray *)dic
 {
     
 }
+
 -(void) initWithEventId : (NSString *)EventId
 {
     self.mCurrentEventId = EventId;
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,11 +79,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         
         static NSString *vIdentifiller1 = @"HeadCell";
         ThisBestHeadTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller1];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[ThisBestHeadTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller1];
@@ -84,10 +93,12 @@
         return vCell;
         
     }
-    else{
+    else
+    {
         static NSString * vIdentifiller2 = @"DetailCell";
         ThisBestDetailTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller2];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[ThisBestDetailTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller2];
@@ -102,9 +113,11 @@
     }
     
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         return 88;
     }
     else

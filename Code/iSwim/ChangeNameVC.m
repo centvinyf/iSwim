@@ -15,21 +15,30 @@
 
 @implementation ChangeNameVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _mNameTextField.text=_mName;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)saveBtnClick:(id)sender {
+
+- (IBAction)saveBtnClick:(id)sender
+{
     _block(@{@"name":_mNameTextField.text});
-    [HttpJsonManager getWithParameters:@{@"name":_mNameTextField.text} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:@{@"name":_mNameTextField.text}
+                                sender:self
+                                   url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS]
+                     completionHandler:^(BOOL sucess, id content)
+    {
         NSLog(@"%s---%@",__FUNCTION__,content);
-        if (sucess) {
+        if (sucess)
+        {
              ALERT(@"保存成功");
         }
     }];

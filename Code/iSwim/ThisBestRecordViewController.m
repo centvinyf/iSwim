@@ -23,7 +23,8 @@
 
 @implementation ThisBestRecordViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.mInitData = [[NSDictionary alloc]init];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
@@ -33,7 +34,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -43,10 +45,12 @@
 {
     NSDictionary *parameters = @{@"eventId": self.mCurrentEventId};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                sender:self
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
-         if (sucess) {
+         if (sucess)
+         {
              self.mInitData = content;
              [self initViews:self.mInitData];
             NSLog(@"%@",content);
@@ -54,14 +58,18 @@
          }
      }];
 }
+
 -(void)initViews: (NSDictionary *)dic
 {
+   
     
 }
+
 -(void) initWithEventId : (NSString *)EventId
 {
     self.mCurrentEventId = EventId;
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -71,11 +79,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         
         static NSString *vIdentifiller1 = @"HeadCell";
         ThisBestHeadTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller1];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[ThisBestHeadTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller1];
@@ -83,17 +93,20 @@
         return vCell;
         
     }
-    else{
+    else
+    {
         static NSString * vIdentifiller1 = @"DetailCell";
         ThisBestDetailTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller1];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[ThisBestDetailTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller1];
         }
         NSArray * vName =[[NSArray alloc]initWithObjects:@"25m",@"50m",@"100m",@"200m",@"400m",@"800m",@"1000m",@"1500m", nil];
         vCell.mName.text = vName[indexPath.row-1];
-        switch (indexPath.row) {
+        switch (indexPath.row)
+        {
             case 1:
                 [vCell.mScore setText:self.mInitData[@"m25BestScore"]];
                 [vCell.mBegin setText:self.mInitData[@"m25StartId"]];
@@ -144,7 +157,8 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         return 88;
     }
     else

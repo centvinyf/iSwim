@@ -15,7 +15,8 @@
 
 @implementation TrainingPlanViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
@@ -23,7 +24,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -36,7 +38,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 8||indexPath.row == 0) {
+    if (indexPath.row == 8||indexPath.row == 0)
+    {
         return 20;
     }
     else
@@ -53,7 +56,8 @@
     {
         static NSString *vIdentifiller = @"TrainingPlan";
         TrainingPlanTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[TrainingPlanTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
@@ -70,7 +74,8 @@
     {
          static NSString * vIdentifiller = @"gray";
         UITableViewCell * vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if(!vCell){
+        if(!vCell)
+        {
             vCell = [[UITableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
@@ -82,7 +87,8 @@
     {
         static NSString *vIdentifiller = @"TwoLabel";
         TwoLabelTableViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[TwoLabelTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
