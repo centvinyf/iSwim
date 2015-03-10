@@ -62,7 +62,7 @@
 - (void)loadDefaultTheme {
   _themeAttributes = @{
                            kXAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
-                           kXAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:10],
+                           kXAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:12],
                            kYAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
                            kYAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:10],
                            kYAxisLabelSideMarginsKey : @10,
@@ -265,7 +265,7 @@
     xAxisLabel.backgroundColor = [UIColor clearColor];
     xAxisLabel.font = (UIFont *)_themeAttributes[kXAxisLabelFontKey];
     
-    xAxisLabel.textColor = (UIColor *)_themeAttributes[kXAxisLabelColorKey];
+      xAxisLabel.textColor = [UIColor blackColor];//(UIColor *)_themeAttributes[kXAxisLabelColorKey];
     xAxisLabel.textAlignment = NSTextAlignmentCenter;
     
     NSDictionary *dic = [_xAxisValues objectAtIndex:i];

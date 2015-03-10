@@ -226,16 +226,16 @@
     [view addSubview:_lineGraph.containererView];
     _lineGraph.minWidth = _lineGraph.frame.size.width;
     
-    UILabel *titileLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 0, 200, 21)];
+    UILabel *titileLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 10, 200, 21)];
     titileLabel.text = type;
     [view addSubview:titileLabel];
     
     
-        UILabel *avgLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 21, 500, 30)];
+        UILabel *avgLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 31, 500, 30)];
         _lineGraph.AVG =avgLabel;
     
     avgLabel.text = avgValue;
-    avgLabel.font = [UIFont systemFontOfSize:30];
+    avgLabel.font = [UIFont systemFontOfSize:15];
     avgLabel.textColor = [UIColor orangeColor];
     [view addSubview:avgLabel];
     
