@@ -42,6 +42,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *mStartBtn;
 @property (weak, nonatomic) IBOutlet UIButton *mEndBtn;
 @property (nonatomic) BOOL IsStart;
+@property (nonatomic) BOOL ShoulAlert;
+
 @end
 
 @implementation TrainingRecordsViewController
@@ -123,12 +125,73 @@
          {
              self.mInitData = content;
              NSArray * vCurrentData = self.mInitData[@"CALORIE"][@"X"];
-             NSInteger vMaxNum =vCurrentData.count;
-             [self initViews:self.mInitData];
+             
+             if (vCurrentData.count>100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"LED"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"SWIMMINGTIME"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"M25"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"M50"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"M100"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"M200"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"M400"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"M800"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"M1000"][@"X"];
+             if (vCurrentData.count >100)
+             {
+                 self.ShoulAlert = YES;
+             }
+             vCurrentData = self.mInitData[@"M1500"][@"X"];
+             if (self.ShoulAlert) {
+                 UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"警告" message:@"您所查看的数据过多，是否继续显示" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+                 [alert show];
+             }
+//             [self initViews:self.mInitData];
          }
-     }];
+     }]; 
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 1)
+    {
+        [self initViews:self.mInitData];
+    }
+}
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"toDetail"])

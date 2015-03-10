@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrainingRecordsViewController : UIViewController
+@interface TrainingRecordsViewController : UIViewController <UIAlertViewDelegate>
 {
     CGRect mChartFrame;
 }
