@@ -29,6 +29,12 @@
 		2C55F0821A77AC1C0077189D /* JifenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */; };
 		2C55F0851A77ADAC0077189D /* TrainingEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */; };
 		2C55F0881A77B1530077189D /* TrainingEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0871A77B1530077189D /* TrainingEventsTableViewCell.m */; };
+		2CA1F1FC1AAFF23D0012D6F5 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1F1FB1AAFF23D0012D6F5 /* libstdc++.dylib */; };
+		2CA1F1FE1AAFF2480012D6F5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1F1FD1AAFF2480012D6F5 /* libsqlite3.dylib */; };
+		2CA1F2011AAFF3170012D6F5 /* QQConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1F1FF1AAFF3170012D6F5 /* QQConnection.framework */; };
+		2CA1F2021AAFF3170012D6F5 /* QZoneConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1F2001AAFF3170012D6F5 /* QZoneConnection.framework */; };
+		2CA1F2061AAFF32B0012D6F5 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1F2041AAFF32B0012D6F5 /* TencentOpenAPI.framework */; };
+		2CA1F2071AAFF32B0012D6F5 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2CA1F2051AAFF32B0012D6F5 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		2CAC1F3A1A78AFEA00DA4292 /* TwoLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F391A78AFEA00DA4292 /* TwoLabelTableViewCell.m */; };
 		2CAC1F3F1A78C0D200DA4292 /* PaimingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F3E1A78C0D200DA4292 /* PaimingTableViewCell.m */; };
 		2CAC1F421A78C15400DA4292 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC1F411A78C15400DA4292 /* RankingViewController.m */; };
@@ -139,6 +145,12 @@
 		2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingEventsViewController.m; sourceTree = "<group>"; };
 		2C55F0861A77B1530077189D /* TrainingEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingEventsTableViewCell.h; sourceTree = "<group>"; };
 		2C55F0871A77B1530077189D /* TrainingEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingEventsTableViewCell.m; sourceTree = "<group>"; };
+		2CA1F1FB1AAFF23D0012D6F5 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		2CA1F1FD1AAFF2480012D6F5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2CA1F1FF1AAFF3170012D6F5 /* QQConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QQConnection.framework; sourceTree = "<group>"; };
+		2CA1F2001AAFF3170012D6F5 /* QZoneConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QZoneConnection.framework; sourceTree = "<group>"; };
+		2CA1F2041AAFF32B0012D6F5 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		2CA1F2051AAFF32B0012D6F5 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		2CAC1F381A78AFEA00DA4292 /* TwoLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoLabelTableViewCell.h; sourceTree = "<group>"; };
 		2CAC1F391A78AFEA00DA4292 /* TwoLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoLabelTableViewCell.m; sourceTree = "<group>"; };
 		2CAC1F3D1A78C0D200DA4292 /* PaimingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaimingTableViewCell.h; sourceTree = "<group>"; };
@@ -246,6 +258,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA1F1FE1AAFF2480012D6F5 /* libsqlite3.dylib in Frameworks */,
+				2CA1F1FC1AAFF23D0012D6F5 /* libstdc++.dylib in Frameworks */,
+				2CA1F2021AAFF3170012D6F5 /* QZoneConnection.framework in Frameworks */,
 				2CF2C0CE1AAE9E0A003FC820 /* MessageUI.framework in Frameworks */,
 				2CF2C0CC1AAE9DF9003FC820 /* ImageIO.framework in Frameworks */,
 				2CF2C0CA1AAE9DEE003FC820 /* Security.framework in Frameworks */,
@@ -253,7 +268,9 @@
 				2CF2C0C61AAE9DB7003FC820 /* libicucore.dylib in Frameworks */,
 				2CF2C0C41AAE9DA6003FC820 /* CoreTelephony.framework in Frameworks */,
 				2CF2C0C21AAE9D96003FC820 /* QuartzCore.framework in Frameworks */,
+				2CA1F2061AAFF32B0012D6F5 /* TencentOpenAPI.framework in Frameworks */,
 				2CF2C0C01AAE9D8E003FC820 /* SystemConfiguration.framework in Frameworks */,
+				2CA1F2011AAFF3170012D6F5 /* QQConnection.framework in Frameworks */,
 				2CF2C0B31AAE9C7E003FC820 /* WeChatConnection.framework in Frameworks */,
 				2CF2C0BD1AAE9C7E003FC820 /* ShareSDKFlatShareViewUI.framework in Frameworks */,
 				2CF2C0B71AAE9C7E003FC820 /* ShareSDKCoreService.framework in Frameworks */,
@@ -296,6 +313,15 @@
 				0C8FBAB01A8D947700F8D4D7 /* NSString+MD5.m */,
 			);
 			path = MD5;
+			sourceTree = "<group>";
+		};
+		2CA1F2031AAFF32B0012D6F5 /* QQConnectSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2CA1F2041AAFF32B0012D6F5 /* TencentOpenAPI.framework */,
+				2CA1F2051AAFF32B0012D6F5 /* TencentOpenApi_IOS_Bundle.bundle */,
+			);
+			path = QQConnectSDK;
 			sourceTree = "<group>";
 		};
 		2CAC1F3B1A78B92800DA4292 /* Views */ = {
@@ -396,6 +422,8 @@
 		2CF2C0961AAE9C7E003FC820 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
+				2CA1F1FF1AAFF3170012D6F5 /* QQConnection.framework */,
+				2CA1F2001AAFF3170012D6F5 /* QZoneConnection.framework */,
 				2CF2C0971AAE9C7E003FC820 /* MailConnection.framework */,
 				2CF2C0981AAE9C7E003FC820 /* SinaWeiboConnection.framework */,
 				2CF2C0991AAE9C7E003FC820 /* SMSConnection.framework */,
@@ -418,6 +446,7 @@
 		2CF2C0A21AAE9C7E003FC820 /* Extend */ = {
 			isa = PBXGroup;
 			children = (
+				2CA1F2031AAFF32B0012D6F5 /* QQConnectSDK */,
 				2CF2C0A31AAE9C7E003FC820 /* SinaWeiboSDK */,
 				2CF2C0A71AAE9C7E003FC820 /* WeChatSDK */,
 			);
@@ -466,6 +495,8 @@
 		5DEB0ED9765748E48E5B1CD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CA1F1FD1AAFF2480012D6F5 /* libsqlite3.dylib */,
+				2CA1F1FB1AAFF23D0012D6F5 /* libstdc++.dylib */,
 				2CF2C0CD1AAE9E0A003FC820 /* MessageUI.framework */,
 				2CF2C0CB1AAE9DF9003FC820 /* ImageIO.framework */,
 				2CF2C0C91AAE9DEE003FC820 /* Security.framework */,
@@ -685,6 +716,7 @@
 				2CF2C0B61AAE9C7E003FC820 /* Resource.bundle in Resources */,
 				2CF2C0B91AAE9C7E003FC820 /* WeiboSDK.bundle in Resources */,
 				7CAB6B501A75DF46000C6F99 /* Images.xcassets in Resources */,
+				2CA1F2071AAFF32B0012D6F5 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				2CF2C0BC1AAE9C7E003FC820 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				7CAB6B691A75DF5E000C6F99 /* Records.storyboard in Resources */,
 			);
@@ -912,6 +944,7 @@
 					"$(PROJECT_DIR)/ShareSDK/Core",
 					"$(PROJECT_DIR)/ShareSDK",
 					"$(PROJECT_DIR)/ShareSDK/UI",
+					"$(PROJECT_DIR)/ShareSDK/Extend/QQConnectSDK",
 				);
 				INFOPLIST_FILE = iSwim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -938,6 +971,7 @@
 					"$(PROJECT_DIR)/ShareSDK/Core",
 					"$(PROJECT_DIR)/ShareSDK",
 					"$(PROJECT_DIR)/ShareSDK/UI",
+					"$(PROJECT_DIR)/ShareSDK/Extend/QQConnectSDK",
 				);
 				INFOPLIST_FILE = iSwim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

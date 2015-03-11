@@ -8,6 +8,8 @@
 #import "Header.h"
 #import "AppDelegate.h"
 #import "WXApi.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
 @interface AppDelegate ()
 
 @end
@@ -26,6 +28,16 @@
                               weiboSDKCls:[WeiboSDK class]];
     [ShareSDK connectWeChatWithAppId:@"wx4868b35061f87885"
                            wechatCls:[WXApi class]];
+    //添加QQ空间应用  注册网址  http://connect.qq.com/intro/login/
+    [ShareSDK connectQZoneWithAppKey:@"100371282"
+                           appSecret:@"aed9b0303e3ed1e27bae87c33761161d"
+                   qqApiInterfaceCls:[QQApiInterface class]
+                     tencentOAuthCls:[TencentOAuth class]];
+    
+    //添加QQ应用  注册网址  http://open.qq.com/
+    [ShareSDK connectQQWithQZoneAppKey:@"100371282"
+                     qqApiInterfaceCls:[QQApiInterface class]
+                       tencentOAuthCls:[TencentOAuth class]];
     return YES;
 }
 
@@ -45,6 +57,7 @@
                  sourceApplication:sourceApplication
                         annotation:annotation
                         wxDelegate:self];
+    
 }
 - (void)applicationWillResignActive:(UIApplication *)application
 {

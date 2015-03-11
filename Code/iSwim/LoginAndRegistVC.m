@@ -131,7 +131,7 @@
     NSDictionary * Parameters = @{@"mobile":self.mPhoneNumberTextField.text};
     [HttpJsonManager getWithParameters:Parameters
                                 sender:self
-                                   url:@"http://192.168.1.113:8080/swimming_app/app/client/profile/forget.do"
+                                   url:@"http://192.168.1.113:8081/swimming_app/app/client/profile/forget.do"
                      completionHandler:^(BOOL sucess, id content) {
         NSLog(@"%@",content);
     
