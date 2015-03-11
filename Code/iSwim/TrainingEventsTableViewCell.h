@@ -16,5 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *mTrainingCal;
 @property (weak, nonatomic) IBOutlet UILabel *mTrainingDanbianshu;
 @property (weak, nonatomic) IBOutlet UILabel *mTrainingPool;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft1;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft2;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft3;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft5;
 
 @end

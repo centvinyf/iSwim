@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mCoverView;
 @property (weak, nonatomic) IBOutlet UIButton *mEndBtn;
 @property (nonatomic)BOOL IsStart;
+@property (weak, nonatomic) IBOutlet UINavigationItem *mNaviTitle;
 @end
 
 @implementation TrainingEventsViewController
@@ -30,8 +31,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self initViews];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,6 +183,15 @@
 }
 -(void)initViews
 {
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+        self.mNaviTitle.title =@"训练事件";
+    }
+    else
+    {
+        self.mNaviTitle.title = @"游泳事件";
+    }
     self.mInitData = [[NSMutableArray alloc]init];
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";
@@ -213,16 +229,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *vIdentifiller = @"TrainingEventTitle";
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         TrainingEventTitleCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
-        if (!vCell) {
+        if (!vCell)
+        {
             vCell = [[TrainingEventTitleCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier: vIdentifiller];
             
         }
-        [vCell.mTrainingCishu setText:[NSString stringWithFormat:@"%ld次训练", (long)self.mNumberofDetail]];
+        
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults boolForKey:@"isPro"])
+        {
+            [vCell.mTrainingCishu setText:[NSString stringWithFormat:@"%ld次训练", (long)self.mNumberofDetail]];
+        }else
+        {
+            [vCell.mTrainingCishu setText:[NSString stringWithFormat:@"%ld次游泳", (long)self.mNumberofDetail]];
+        }
+        
         NSArray *data = self.mInitData;
         NSString * end = data[0][@"endTime"];
         NSString * first = data[self.mNumberofDetail-1][@"endTime"];
@@ -244,7 +272,25 @@
         
         NSDictionary * vThisData = self.mInitData [indexPath.row -1];
         
-        [vCell.mTrainingDate setText:[NSString stringWithFormat:@"%@训练基本信息", vThisData[@"endTime"]]];
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults boolForKey:@"isPro"])
+        {
+            [vCell.mTrainingDate setText:[NSString stringWithFormat:@"%@训练基本信息", vThisData[@"endTime"]]];
+            [vCell.mLeft1 setText:@"训练距离"];
+            [vCell.mLeft2 setText:@"训练时长"];
+            [vCell.mLeft3 setText:@"训练消耗"];
+            [vCell.mLeft5 setText:@"训练场馆"];
+        }
+        else
+        {
+        [vCell.mTrainingDate setText:[NSString stringWithFormat:@"%@游泳基本信息", vThisData[@"endTime"]]];
+            [vCell.mLeft1 setText:@"游泳距离"];
+            [vCell.mLeft2 setText:@"游泳时长"];
+            [vCell.mLeft3 setText:@"游泳消耗"];
+            [vCell.mLeft5 setText:@"游泳场馆"];
+        }
+        
+        
         [vCell.mEventID setText:[NSString stringWithFormat:@"场次号%@", vThisData[@"eventId"]]];
         [vCell.mTrainingDIs setText:[NSString stringWithFormat:@"%@",vThisData[@"distance"]]];
         [vCell.mTrainingTime setText:[NSString stringWithFormat:@"%@",vThisData[@"swimmingTime"]]];

@@ -6924,6 +6924,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mEventID" destination="jqi-Aa-kg8" id="K7u-2q-ase"/>
+                                            <outlet property="mLeft1" destination="m7E-qd-eRf" id="MZj-va-jNZ"/>
+                                            <outlet property="mLeft2" destination="2US-ad-BOl" id="ilH-JA-Tb0"/>
+                                            <outlet property="mLeft3" destination="1NM-XW-3M0" id="fyY-CJ-6tz"/>
+                                            <outlet property="mLeft5" destination="FCz-Fg-yoC" id="sup-Ce-sJf"/>
                                             <outlet property="mTrainingCal" destination="xlQ-4S-8xc" id="m9H-bT-06H"/>
                                             <outlet property="mTrainingDIs" destination="h6q-kG-eLL" id="rpq-z6-SC3"/>
                                             <outlet property="mTrainingDanbianshu" destination="DZV-4I-DIJ" id="PPQ-HR-ToQ"/>
@@ -7265,7 +7269,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="训练事件" id="H1W-dA-7VM">
+                    <navigationItem key="navigationItem" id="H1W-dA-7VM">
                         <barButtonItem key="rightBarButtonItem" image="magnifier" id="sTr-LY-Md2">
                             <connections>
                                 <action selector="mQueryBtnPressed:" destination="xeY-5U-lI0" id="g7W-20-Tsw"/>
@@ -7276,6 +7280,7 @@
                     <connections>
                         <outlet property="mCoverView" destination="538-IM-18n" id="nxk-y9-YBU"/>
                         <outlet property="mEndBtn" destination="Zxj-Y4-lPv" id="1B8-Zq-pRl"/>
+                        <outlet property="mNaviTitle" destination="H1W-dA-7VM" id="tdK-Kd-ATy"/>
                         <outlet property="mStartBtn" destination="HjK-Sn-t2n" id="oM4-Tx-aPb"/>
                         <outlet property="mTableView" destination="vH7-72-ZoH" id="IrB-up-WRH"/>
                         <segue destination="8j6-8P-xY8" kind="show" identifier="toDetail" id="32h-dj-01h"/>
