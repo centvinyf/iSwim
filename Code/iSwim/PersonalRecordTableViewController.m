@@ -53,12 +53,41 @@
 @property (retain,nonatomic) NSString * m800EventId;
 @property (retain,nonatomic) NSString * m1000EventId;
 @property (retain,nonatomic) NSString * m1500EventId;
+
+@property (weak, nonatomic) IBOutlet UILabel *mLeft14;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft15;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft16;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft21;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft22;
+@property (weak, nonatomic) IBOutlet UILabel *mLeft23;
+
 @end
 
 @implementation PersonalRecordTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+        [self.mLeft14 setText:@"训练总距离"];
+        [self.mLeft15 setText:@"训练总时长"];
+        [self.mLeft16 setText:@"训练总消耗"];
+        [self.mLeft21 setText:@"单次训练最大距离"];
+        [self.mLeft22 setText:@"单次训练最长时间"];
+        [self.mLeft23 setText:@"单次训练最大消耗"];
+        
+    }
+    else
+    {
+        [self.mLeft14 setText:@"游泳总距离"];
+        [self.mLeft15 setText:@"游泳总时长"];
+        [self.mLeft16 setText:@"游泳总消耗"];
+        [self.mLeft21 setText:@"单次游泳最大距离"];
+        [self.mLeft22 setText:@"单次游泳最长时间"];
+        [self.mLeft23 setText:@"单次游泳最大消耗"];
+
+    }
     self.mInitData = [[NSDictionary alloc]init];
     [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/records/current.do"];
     

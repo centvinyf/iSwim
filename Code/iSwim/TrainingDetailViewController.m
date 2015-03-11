@@ -17,6 +17,7 @@
 @property (retain,nonatomic) NSArray * mXArray;
 @property (retain,nonatomic) NSArray * mYArray;
 @property (retain,nonatomic) NSArray * mZArray;
+@property (weak, nonatomic) IBOutlet UINavigationItem *mNaviTitle;
 
 
 @end
@@ -26,6 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+        self.mNaviTitle.title = @"训练详情";
+    }
+    else
+    {
+        self.mNaviTitle.title = @"游泳详情";
+    }
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
     self.navigationItem.backBarButtonItem = vReturnButtonItem;

@@ -2988,6 +2988,12 @@
                         <outlet property="mBigestCalDate" destination="K3D-qw-hzq" id="Jne-hl-wlg"/>
                         <outlet property="mBigestCalPlace" destination="qRC-WD-4T4" id="aWr-fi-l6H"/>
                         <outlet property="mCaluli" destination="rbz-G0-bGw" id="kG7-OW-rC9"/>
+                        <outlet property="mLeft14" destination="7cN-wZ-oN4" id="iaX-fx-pZj"/>
+                        <outlet property="mLeft15" destination="pgF-LE-cHh" id="8E4-T2-Asd"/>
+                        <outlet property="mLeft16" destination="Xhh-FI-5WD" id="wat-S2-kpH"/>
+                        <outlet property="mLeft21" destination="GrI-Hy-iPX" id="nOX-NA-BOG"/>
+                        <outlet property="mLeft22" destination="rhD-e1-cyU" id="nOw-gN-UMf"/>
+                        <outlet property="mLeft23" destination="fvI-fk-Yrg" id="x1Q-mc-SOh"/>
                         <outlet property="mLongestEventDate" destination="pHt-60-Z3n" id="xF4-qx-cJ3"/>
                         <outlet property="mLongestEventDis" destination="6TY-fy-OsN" id="m8E-eM-piP"/>
                         <outlet property="mLongestEventPlace" destination="hkS-Ct-qcW" id="eOS-dY-UfL"/>
@@ -7290,7 +7296,7 @@
             </objects>
             <point key="canvasLocation" x="2917.5" y="353.25"/>
         </scene>
-        <!--训练详情-->
+        <!--Training Detail View Controller-->
         <scene sceneID="bid-p4-PBs">
             <objects>
                 <viewController storyboardIdentifier="TrainingDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="8j6-8P-xY8" customClass="TrainingDetailViewController" sceneMemberID="viewController">
@@ -7949,9 +7955,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="训练详情" id="JVv-6A-oey"/>
+                    <navigationItem key="navigationItem" id="JVv-6A-oey"/>
                     <connections>
                         <outlet property="mGraphicView" destination="R8B-R9-Iyd" id="zmV-jW-vRZ"/>
+                        <outlet property="mNaviTitle" destination="JVv-6A-oey" id="iR5-98-yKS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6x-uf-fRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8593,7 +8600,7 @@
             </objects>
             <point key="canvasLocation" x="-2368.5" y="-1592.25"/>
         </scene>
-        <!--训练成绩-->
+        <!--Training Records View Controller-->
         <scene sceneID="5tO-ni-2qo">
             <objects>
                 <viewController storyboardIdentifier="TrainingRecordsViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pyL-9D-leb" customClass="TrainingRecordsViewController" sceneMemberID="viewController">
@@ -9621,7 +9628,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="训练成绩" id="qlI-lJ-daK">
+                    <navigationItem key="navigationItem" id="qlI-lJ-daK">
                         <barButtonItem key="rightBarButtonItem" image="magnifier" id="3RE-ic-pVj">
                             <connections>
                                 <action selector="mQBtnPressed:" destination="pyL-9D-leb" id="aXT-NB-oVf"/>
@@ -9640,6 +9647,7 @@
                         <outlet property="m800mBG" destination="sFI-Hp-odN" id="sMY-2d-22Z"/>
                         <outlet property="mCoverView" destination="0qr-J1-bkd" id="obE-ow-es0"/>
                         <outlet property="mEndBtn" destination="huI-Yz-m4W" id="r4t-Od-YK3"/>
+                        <outlet property="mNaviTitle" destination="qlI-lJ-daK" id="uEP-op-jth"/>
                         <outlet property="mStartBtn" destination="ieb-6U-3ko" id="CRQ-BW-dsY"/>
                         <outlet property="mTotalCaluliBG" destination="qeV-SG-3mm" id="Ar6-sN-rGx"/>
                         <outlet property="mTotalDistanceBG" destination="ba3-7D-Y48" id="qeh-Ek-gYg"/>

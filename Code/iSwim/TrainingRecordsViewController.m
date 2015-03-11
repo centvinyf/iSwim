@@ -26,6 +26,7 @@
     MBLineChart *m1500m;
 }
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *mNaviTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *mTotalDistanceBG;
 @property (weak, nonatomic) IBOutlet UIImageView *mTotalTimeBG;
 @property (weak, nonatomic) IBOutlet UIImageView *mTotalCaluliBG;
@@ -50,6 +51,16 @@
 
 - (void)viewDidLoad
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+        self.mNaviTitle.title = @"训练成绩";
+    }
+    else
+    {
+        self.mNaviTitle.title = @"游泳成绩";
+    }
+    
     [super viewDidLoad];
     [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/train.do" withDic:nil];
     

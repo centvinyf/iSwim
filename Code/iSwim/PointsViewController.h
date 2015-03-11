@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PointsViewController : UIViewController
+@interface PointsViewController : UIViewController <UIAlertViewDelegate>
 
 @end

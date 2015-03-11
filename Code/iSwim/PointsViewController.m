@@ -59,24 +59,54 @@
             _mXArray = [mInitData[@"chart"] valueForKey:@"X"];
             _mYArray = [mInitData[@"chart"] valueForKey:@"Y"];
             _mZArray = [mInitData[@"chart"] valueForKey:@"Z"];
+        if (_mXArray.count>100) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"警告" message:@"您所查看的数据过多，是否继续显示" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+            [alert show];
+        }else
+        {
             if (mGraphicView)
             {
                 [mGraphicView removeFromSuperview];
             }
             
             mGraphicView = [MBLineChart initGraph:[NSString stringWithFormat:@"总积分："]
-                           yValues:_mYArray
-                           xValues:_mXArray
-                           zValues:_mZArray
-                               avg:nil 
-                            inView:self.mGraphicViewBG];
+                                          yValues:_mYArray
+                                          xValues:_mXArray
+                                          zValues:_mZArray
+                                              avg:nil
+                                           inView:self.mGraphicViewBG];
+            [self.mPointsLabel setText:[NSString stringWithFormat:@"%@",mInitData[@"total"]]];
+            UILabel * vLabel = self.mPointsLabel;
+            [mGraphicView addSubview:vLabel];
+            UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
+            [mGraphicView addGestureRecognizer:pinch];
+        }
+        
+
+        }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 1)
+    {
+        if (mGraphicView)
+        {
+            [mGraphicView removeFromSuperview];
+        }
+        
+        mGraphicView = [MBLineChart initGraph:[NSString stringWithFormat:@"总积分："]
+                                      yValues:_mYArray
+                                      xValues:_mXArray
+                                      zValues:_mZArray
+                                          avg:nil
+                                       inView:self.mGraphicViewBG];
         [self.mPointsLabel setText:[NSString stringWithFormat:@"%@",mInitData[@"total"]]];
         UILabel * vLabel = self.mPointsLabel;
         [mGraphicView addSubview:vLabel];
-            UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
-            [mGraphicView addGestureRecognizer:pinch];
-
-        }];
+        UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
+        [mGraphicView addGestureRecognizer:pinch];
+    }
 }
 
 - (void)zoommGraphicView:(UIPinchGestureRecognizer *)sender
@@ -121,6 +151,8 @@
     NSDictionary * parameters = @{@"startTime":self.mStartBtn.titleLabel.text,
                                   @"endTime":self.mEndBtn.titleLabel.text};
     [self loadDataWithParameters:parameters];
+    
+    
     
 }
 
