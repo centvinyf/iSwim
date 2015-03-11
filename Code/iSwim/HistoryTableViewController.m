@@ -75,7 +75,17 @@
 
 -(void) initViews : (NSDictionary * )dic
 {
-    mTotalDistance = [MBLineChart initGraph:@"训练距离"
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * vTitleName = [[NSMutableArray alloc]init];
+    if ([defaults boolForKey:@"isPro"])
+    {
+        vTitleName = [NSMutableArray arrayWithArray: @[@"训练距离",@"训练时长",@"训练消耗"]];
+    }
+    else
+    {
+        vTitleName = [NSMutableArray arrayWithArray: @[@"游泳距离",@"游泳时长",@"游泳消耗"]];
+    }
+    mTotalDistance = [MBLineChart initGraph:vTitleName[0]
                                     yValues:[self.mInitData[@"LED"] valueForKey:@"Y"]
                                     xValues:[self.mInitData[@"LED"] valueForKey:@"X"]
                                     zValues:[self.mInitData[@"LED"] valueForKey:@"Z"]
@@ -86,7 +96,7 @@
   
 
     
-    mTotalTime = [MBLineChart initGraph:@"训练时长"
+    mTotalTime = [MBLineChart initGraph:vTitleName[1]
                                 yValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"Y"]
                                 xValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"X"]
                                 zValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"Z"]
@@ -95,7 +105,7 @@
     UIPinchGestureRecognizer *pinch_mTotalTime = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalTime:)];
     [mTotalTime addGestureRecognizer:pinch_mTotalTime];
     
-    mTotalCaluli = [MBLineChart initGraph:@"训练消耗"
+    mTotalCaluli = [MBLineChart initGraph:vTitleName[2]
                                   yValues:[self.mInitData[@"CALORIE"] valueForKey:@"Y"]
                                   xValues:[self.mInitData[@"CALORIE"] valueForKey:@"X"]
                                   zValues:[self.mInitData[@"CALORIE"] valueForKey:@"Z"]
