@@ -19,15 +19,34 @@
     MBLineChart *mGraphicView;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *mGraphicViewBG;
+@property (weak, nonatomic) IBOutlet UILabel *mUpRightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mDownMidLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mDownRightLabel;
 
 @end
 
 @implementation MainViewController
+-(void) viewDidAppear:(BOOL)animated
+{
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"]) {
+        [self.mUpRightLabel setText:@"训练成绩"];
+        [self.mDownMidLabel setText:@"训练事件"];
+        [self.mDownRightLabel setText:@"训练详情"];
+    }
+    else
+    {
+        [self.mUpRightLabel setText:@"游泳成绩"];
+        [self.mDownMidLabel setText:@"游泳事件"];
+        [self.mDownRightLabel setText:@"游泳详情"];
+    }
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+       // Do any additional setup after loading the view.
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mIsFirst=YES;

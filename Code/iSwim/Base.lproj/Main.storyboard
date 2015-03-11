@@ -1369,7 +1369,10 @@
                     <navigationItem key="navigationItem" title="游泳控" id="2qi-7R-QRa"/>
                     <connections>
                         <outlet property="mAdLabel" destination="Ke3-rz-GWE" id="CTM-hX-Ro3"/>
+                        <outlet property="mDownMidLabel" destination="77Q-Kx-k1T" id="nFY-Ae-66e"/>
+                        <outlet property="mDownRightLabel" destination="pS9-Lf-DHn" id="n2n-YA-4Mo"/>
                         <outlet property="mGraphicViewBG" destination="kyu-9G-mnQ" id="VYJ-cq-4eT"/>
+                        <outlet property="mUpRightLabel" destination="2FC-KI-oBZ" id="fxl-eZ-UkG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nj4-Ql-0O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
