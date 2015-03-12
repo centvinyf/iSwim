@@ -22,7 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *mUpRightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mDownMidLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mDownRightLabel;
-
+@property (weak, nonatomic) IBOutlet UIButton *mAdButton;
+@property (retain,nonatomic) NSDictionary * mAdInfo;
 @end
 
 @implementation MainViewController
@@ -70,9 +71,18 @@
          UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
          [mGraphicView addGestureRecognizer:pinch];
          
-         NSString * vAd = [vDic objectForKey:@"ad"];
-         [self.mAdLabel setText: vAd];
+         NSDictionary * vAd = [vDic objectForKey:@"ad"];
+         self.mAdInfo = vAd;
+         NSString *vAdLabel = [vAd objectForKey:@"ad"];
+         [self.mAdButton setTitle:vAdLabel forState:UIControlStateNormal];
+         [self.mAdButton setTitle:vAdLabel forState:UIControlStateSelected];
      }];
+}
+- (IBAction)mAdPressed:(id)sender
+{
+    NSString * vUrl = [self.mAdInfo objectForKey:@"url"];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@",vUrl]]];
 }
 
 - (void)zoommGraphicView:(UIPinchGestureRecognizer *)sender
