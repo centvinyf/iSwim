@@ -82,7 +82,7 @@
 {
     NSString * vUrl = [self.mAdInfo objectForKey:@"url"];
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@",vUrl]]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vUrl]];
 }
 
 - (void)zoommGraphicView:(UIPinchGestureRecognizer *)sender
