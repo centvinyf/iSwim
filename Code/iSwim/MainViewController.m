@@ -23,7 +23,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *mDownMidLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mDownRightLabel;
 @property (weak, nonatomic) IBOutlet UIButton *mAdButton;
+@property (weak, nonatomic) IBOutlet UIView *mMoreThan5;
 @property (retain,nonatomic) NSDictionary * mAdInfo;
+@property (weak, nonatomic) IBOutlet UIView *mLessThan5;
+@property (weak, nonatomic) IBOutlet UILabel *mLess5Time;
+@property (weak, nonatomic) IBOutlet UILabel *mLess5Cal;
+@property (weak, nonatomic) IBOutlet UILabel *mLess5Date;
+@property (weak, nonatomic) IBOutlet UILabel *mMore5Day;
+@property (weak, nonatomic) IBOutlet UILabel *mMore5Time;
+@property (weak, nonatomic) IBOutlet UILabel *mMore5Distance;
+@property (weak, nonatomic) IBOutlet UILabel *mMore5Cal;
+@property (weak, nonatomic) IBOutlet UILabel *mMore5Date;
+@property (nonatomic) BOOL isFirstFive;
+@property (retain,nonatomic) NSDictionary * mNoProInfo;
 @end
 
 @implementation MainViewController
@@ -46,6 +58,27 @@
 
 - (void)viewDidLoad
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults boolForKey:@"isPro"])//这里差个判断是否是前5天
+    {
+        if(self.isFirstFive)
+        {
+            self.mLessThan5.hidden = NO;
+            self.mMoreThan5.hidden = YES;
+        }
+        else
+        {
+            self.mLessThan5.hidden = YES;
+            self.mMoreThan5.hidden = NO;
+        }
+    }
+    else
+    {
+        self.mMoreThan5.hidden = YES;
+        self.mLessThan5.hidden = YES;
+    }
+    
+    
     [super viewDidLoad];
        // Do any additional setup after loading the view.
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
@@ -77,7 +110,14 @@
          [self.mAdButton setTitle:vAdLabel forState:UIControlStateNormal];
          [self.mAdButton setTitle:vAdLabel forState:UIControlStateSelected];
      }];
+    [HttpJsonManager getWithParameters:nil sender:self url:@"http://192.168.1.113:8080/swimming_app/app/client/profile/indexInfo.do" completionHandler:^(BOOL sucess, id content) {
+        if (sucess) {
+            self.mNoProInfo = content;
+            //这里赋值给两个界面就OK
+        }
+    }];
 }
+
 - (IBAction)mAdPressed:(id)sender
 {
     NSString * vUrl = [self.mAdInfo objectForKey:@"url"];
