@@ -55,10 +55,8 @@
 -(void)loadData:(NSObject*)obj
 {
     [HttpJsonManager getWithParameters:@{@"phoneNum":_mPhoneNumberTextField.text,@"password":[_mPasswordTextField.text MD5]}
-                                sender:self
                                    url:[NSString stringWithFormat:@"%@/swimming_app/app/client/authenticate.do",SERVERADDRESS]
                      completionHandler:^(BOOL sucess, id content) {
-        NSLog(@"%@",content);
         if ([[content objectForKey:@"id"]length]==0)
         {
             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"请输入正确的账号和密码" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
@@ -66,7 +64,6 @@
         }
         else
         {
-#warning 修改到了这里
             [HttpJsonManager setToken:[content objectForKey:@"id"]];
             NSMutableDictionary*vPersonInfoDic=[NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"personInfoDic"]];
             if (!vPersonInfoDic)
@@ -85,13 +82,10 @@
             {
 //                获得个人信息
                 [HttpJsonManager getWithParameters:nil
-                                            sender:self
                                                url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS]
                                  completionHandler:^(BOOL sucess, id content) {
                     [UserProfile manager].mPersonInfo = [[PersonInfoBaseClass alloc]initWithDictionary:content];
                     
-                    NSLog(@"%@",content);
-                    NSLog(@"%@",[UserProfile manager].mPersonInfo);
                     UIWindow*vWin=[[[UIApplication sharedApplication]delegate] window];
                     vWin.rootViewController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MainNav"];
 
@@ -130,11 +124,8 @@
     _mCoverView.hidden=YES;
     NSDictionary * Parameters = @{@"mobile":self.mPhoneNumberTextField.text};
     [HttpJsonManager getWithParameters:Parameters
-                                sender:self
                                    url:@"http://192.168.1.113:8081/swimming_app/app/client/profile/forget.do"
                      completionHandler:^(BOOL sucess, id content) {
-        NSLog(@"%@",content);
-    
     }];
 }
 

@@ -45,7 +45,7 @@
     NSDictionary *parameters = @{@"eventId": self.mCurrentEventId,
                                  @"page": @1};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
          if (sucess)
@@ -54,7 +54,6 @@
              self.mNumberOfDetail = self.mInitData.count;
             
              [self initViews:self.mInitData];
-             NSLog(@"%@",content);
              [self.mTableView reloadData];
          }
      }];

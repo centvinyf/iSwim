@@ -110,7 +110,6 @@
     {
         self.mTitleName=vTitleName;
     }
-    NSArray *vPicName = [[NSArray alloc] initWithObjects:@"训练日期",@"训练场次",@"训练距离",@"训练时长",@"热量消耗",@"单边数",@"入场时间",@"离场时间",@"入水时间",@"上岸时间",@"训练场馆", nil];
     NSArray *vPicName1 = [[NSArray alloc] initWithObjects:@"training_date",@"Training_changci",@"training_distance",@"training_time",@"energy",@"single",@"in",@"out",@"in",@"out",@"place", nil];
     static NSString *vIdentifiller = @"BasicInfoViewCell";
     BasicInfoViewCell *vCell = [tableView dequeueReusableCellWithIdentifier:vIdentifiller];
@@ -173,7 +172,6 @@
 {
     NSDictionary *parameters = @{@"eventId": self.mCurrentEventId};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self
                                    url:url
                      completionHandler:^(BOOL sucess, id content)
      {

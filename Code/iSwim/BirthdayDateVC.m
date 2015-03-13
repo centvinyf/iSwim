@@ -114,17 +114,12 @@
         {
             vPersonInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
         }
-        //NSDateFormatter*formatter=[[NSDateFormatter alloc]init];
-        //[formatter setDateFormat:@"yyyy-MM-dd"];
-        //NSString*str=[NSString stringWithFormat:@"%@-%@-%@",_mYearLab.text,_mMonthLab.text,_mDayLab.text];
-        //NSDate*date=[formatter dateFromString:str];
-        //double interval=[date timeIntervalSince1970];
-        //[vPersonInfoDic setObject:str forKey:@"birthday"];
         [[NSUserDefaults standardUserDefaults]setObject:vPersonInfoDic forKey:@"personInfoDic"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         
-        [HttpJsonManager getWithParameters:vPersonInfoDic sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
-            NSLog(@"%s---%@",__FUNCTION__,content);
+        [HttpJsonManager getWithParameters:vPersonInfoDic
+                                       url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS]
+                         completionHandler:^(BOOL sucess, id content) {
            [UserProfile manager].mPersonInfo = [[PersonInfoBaseClass alloc]initWithDictionary:content];
         }];
     }

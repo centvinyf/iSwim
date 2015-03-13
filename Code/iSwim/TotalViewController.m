@@ -54,9 +54,8 @@
 {
     NSDictionary *parameters = @{@"type": self.mType};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
-                     completionHandler:^(BOOL sucess, id content)
-     {
+                                   url:url
+                     completionHandler:^(BOOL sucess, id content) {
          if (sucess)
          {
              self.mInitData = content;

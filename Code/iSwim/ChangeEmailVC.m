@@ -32,11 +32,9 @@
 {
      _block(@{@"email":_mEmailTextField.text});
     [HttpJsonManager getWithParameters:@{@"email":_mEmailTextField.text}
-                                sender:self
                                    url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS]
                      completionHandler:^(BOOL sucess, id content)
     {
-        NSLog(@"%s---%@",__FUNCTION__,content);
         if (sucess)
         {
             ALERT(@"保存成功");

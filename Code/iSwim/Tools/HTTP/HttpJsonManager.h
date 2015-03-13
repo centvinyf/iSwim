@@ -25,17 +25,14 @@
 + (void)setToken:(NSString *)token;
 + (void)setDictionary:(NSMutableDictionary *)dictionary;
 +(void)postWithParameters:(NSDictionary *)params
-                     sender:(UIViewController *)viewController
                       url:(NSString *)url
         completionHandler:(void (^)(BOOL sucess, id content))completion;
 
 +(AFHTTPRequestOperation *)getWithParameters:(NSDictionary *)params
-                  sender:(UIViewController *)viewController
                       url:(NSString *)url
         completionHandler:(void (^)(BOOL sucess, id content))completion;
 
 +(void)postWithParameters:(NSDictionary *)params
-                   sender:(UIViewController *)viewController
                       url:(NSString *)url
 constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
         completionHandler:(void (^)(BOOL sucess, id content))completion;

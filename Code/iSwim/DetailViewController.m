@@ -43,7 +43,6 @@
 {
     NSDictionary *parameters = @{@"type": self.mType};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self
                                    url:url
                      completionHandler:^(BOOL sucess, id content)
      {
@@ -64,7 +63,6 @@
                                               inView:self.mImageView];
              UIPinchGestureRecognizer *pinch_mTotalCaluli = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommTotalCaluli:)];
              [self.mChart addGestureRecognizer:pinch_mTotalCaluli];
-             NSLog(@"%@",content);
              [self.mTableView reloadData];
              [self.mTitle setTitle:self.mInitData[@"title"]];
          

@@ -128,7 +128,6 @@
 {
     
     [HttpJsonManager getWithParameters:parameters
-                                sender:self
                                    url:url
                      completionHandler:^(BOOL sucess, id content)
      {

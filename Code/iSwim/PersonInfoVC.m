@@ -64,9 +64,10 @@
     _mHeaderImageView.backgroundColor=[UIColor cyanColor];
     _mHeaderImageView.layer.masksToBounds=YES;
     _mHeaderImageView.layer.cornerRadius=40;
-    [HttpJsonManager getWithParameters:nil sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:nil
+                                   url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS]
+                     completionHandler:^(BOOL sucess, id content) {
         _mPersonInfo=[[PersonInfoBaseClass alloc]initWithDictionary:content];
-        NSLog(@"%s---%@",__FUNCTION__,content);
         [_mTable reloadData];
     }];
 }
@@ -110,7 +111,6 @@
     }
     else if (section == 3)
     {
-#warning 屏蔽计划
         return 0;
     }
     else
@@ -289,27 +289,11 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
     NSData *data = UIImagePNGRepresentation(image);
-    NSString* encodeResult = [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
 
-//    [HttpJsonManager postWithParameters:@{@"imageFile":st} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS]
-//                      completionHandler:^(BOOL sucess, id content)
-//     {
-//         if (sucess)
-//         {
-//             dispatch_async(dispatch_get_main_queue(), ^{
-//                 _mHeaderImageView.image = image;
-//                 _mCoverView.hidden=YES;
-//                 [self dismissViewControllerAnimated:YES completion:nil];
-//             });
-//         }
-//     }];
-    
     [HttpJsonManager postWithParameters:@{@"id":@"123"}
-                                 sender:self
                                     url:[NSString stringWithFormat:@"%@/swimming_app/app/client/uploadImg.do",SERVERADDRESS]
               constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
     {
-//        [formData appendPartWithFormData:data name:@"imageFile"];
         [formData appendPartWithFileData:data name:@"imageFile" fileName:@"imageFile" mimeType:@"image/png"];
     } completionHandler:^(BOOL sucess, id content) {
         if (sucess)

@@ -192,7 +192,6 @@
      *  a particular points, a popover view is shown and will show the particular label on for that point, that is specified
      *  in this array.
      */
-    NSArray *arr = @[@"1", @"2", @"3", @"4", @"5", @"6" , @"7" , @"8", @"9", @"10", @"11", @"12"];
     _plot1.plottingPointsLabels = zValues;
     
     //set plot theme attributes

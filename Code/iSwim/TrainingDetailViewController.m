@@ -58,7 +58,6 @@
                                  @"eventId": self.mCurrentEventID,
                                  @"page": @1};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self
                                    url:url
                      completionHandler:^(BOOL sucess, id content)
      {
@@ -90,7 +89,6 @@
 {
     NSDictionary *parameters = @{};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self
                                    url:url
                      completionHandler:^(BOOL sucess, id content)
      {
@@ -101,7 +99,6 @@
                   self.mCurrentEventID = content[@"eventId"];
              }
             
-            NSLog(@"%@",content);
              [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/split/chart.do"];
              
          }

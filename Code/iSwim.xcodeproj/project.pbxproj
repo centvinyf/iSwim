@@ -80,7 +80,6 @@
 		7CAB6B531A75DF46000C6F99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B511A75DF46000C6F99 /* LaunchScreen.xib */; };
 		7CAB6B691A75DF5E000C6F99 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB6B681A75DF5E000C6F99 /* Records.storyboard */; };
 		7CC677781A763DE600FD3287 /* MBLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677771A763DE600FD3287 /* MBLineChart.m */; };
-		7CC6777D1A763E6400FD3287 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6777C1A763E6400FD3287 /* GraphViewController.m */; };
 		7CC677941A77515B00FD3287 /* BasicInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */; };
 		7CC677951A77515B00FD3287 /* BasicInfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677831A77515B00FD3287 /* BasicInfoViewCell.m */; };
 		7CC677971A77515B00FD3287 /* ScoreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC677871A77515B00FD3287 /* ScoreDetailViewController.m */; };
@@ -218,8 +217,6 @@
 		7CAB6B681A75DF5E000C6F99 /* Records.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = "<group>"; };
 		7CC677761A763DE600FD3287 /* MBLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBLineChart.h; path = iSwim/Tools/MBLineChart.h; sourceTree = "<group>"; };
 		7CC677771A763DE600FD3287 /* MBLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLineChart.m; path = iSwim/Tools/MBLineChart.m; sourceTree = "<group>"; };
-		7CC6777B1A763E6400FD3287 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
-		7CC6777C1A763E6400FD3287 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		7CC677801A77515B00FD3287 /* BasicInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfomationViewController.h; sourceTree = "<group>"; };
 		7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInfomationViewController.m; sourceTree = "<group>"; };
 		7CC677821A77515B00FD3287 /* BasicInfoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfoViewCell.h; sourceTree = "<group>"; };
@@ -549,8 +546,6 @@
 				7CED554F1A7F751900C7E01F /* Controllers */,
 				7CAB6B461A75DF46000C6F99 /* AppDelegate.h */,
 				7CAB6B471A75DF46000C6F99 /* AppDelegate.m */,
-				7CC6777B1A763E6400FD3287 /* GraphViewController.h */,
-				7CC6777C1A763E6400FD3287 /* GraphViewController.m */,
 				7CAB6B4C1A75DF46000C6F99 /* Main.storyboard */,
 				7CAB6B681A75DF5E000C6F99 /* Records.storyboard */,
 				7CAB6B511A75DF46000C6F99 /* LaunchScreen.xib */,
@@ -772,7 +767,6 @@
 				7CC6779C1A77515B00FD3287 /* TrainingPlanTableViewCell.m in Sources */,
 				2CAC1F4E1A78E1DA00DA4292 /* ChangePlanViewController.m in Sources */,
 				7CC677991A77515B00FD3287 /* ThisBestHeadTableViewCell.m in Sources */,
-				7CC6777D1A763E6400FD3287 /* GraphViewController.m in Sources */,
 				7C320A731A7795610023DD06 /* UIImage+KIAdditions.m in Sources */,
 				7C320A681A775C890023DD06 /* PasswordVC.m in Sources */,
 				2C4A60B61AA93E1200E4A534 /* DetailTableViewCell.m in Sources */,
@@ -868,8 +862,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Shawn Han (ESSVC6V43D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shawn Han (ESSVC6V43D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -889,7 +883,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "084b32c5-d72a-4185-a7d6-908771681a78";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -911,8 +905,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Shawn Han (ESSVC6V43D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shawn Han (ESSVC6V43D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -925,7 +919,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "084b32c5-d72a-4185-a7d6-908771681a78";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

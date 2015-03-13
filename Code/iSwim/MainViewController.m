@@ -10,12 +10,14 @@
 #import "MBLineChart.h"
 #import "Header.h"
 
+#define kExpiredDays 7
+
 @interface MainViewController ()
 {
     NSString            * _mType;
     NSArray      *_mXArray;
     NSArray      *_mYArray;
-    BOOL                _mIsFirst;
+    BOOL                _mIsexpired;
     MBLineChart *mGraphicView;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *mGraphicViewBG;
@@ -26,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mMoreThan5;
 @property (retain,nonatomic) NSDictionary * mAdInfo;
 @property (weak, nonatomic) IBOutlet UIView *mLessThan5;
+@property (weak, nonatomic) IBOutlet UILabel *mLess5Distance;
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Time;
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Cal;
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Date;
@@ -34,7 +37,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mMore5Distance;
 @property (weak, nonatomic) IBOutlet UILabel *mMore5Cal;
 @property (weak, nonatomic) IBOutlet UILabel *mMore5Date;
-@property (nonatomic) BOOL isFirstFive;
 @property (retain,nonatomic) NSDictionary * mNoProInfo;
 @end
 
@@ -58,35 +60,23 @@
 
 - (void)viewDidLoad
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:@"isPro"])//这里差个判断是否是前5天
-    {
-        if(self.isFirstFive)
-        {
-            self.mLessThan5.hidden = NO;
-            self.mMoreThan5.hidden = YES;
-        }
-        else
-        {
-            self.mLessThan5.hidden = YES;
-            self.mMoreThan5.hidden = NO;
-        }
-    }
-    else
-    {
-        self.mMoreThan5.hidden = YES;
-        self.mLessThan5.hidden = YES;
-    }
-    
-    
     [super viewDidLoad];
-       // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
+    [self loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self initViews];
+}
+
+- (void)loadData
+{
     _mXArray=[[NSMutableArray alloc]initWithCapacity:0];
     _mYArray=[[NSMutableArray alloc]initWithCapacity:0];
-    _mIsFirst=YES;
-    
+
+    //专业
     [HttpJsonManager getWithParameters:nil
-                                sender:self
                                    url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/break.do",SERVERADDRESS]
                      completionHandler:^(BOOL sucess, id content)
      {
@@ -103,19 +93,81 @@
                                         inView:self.mGraphicViewBG];
          UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoommGraphicView:)];
          [mGraphicView addGestureRecognizer:pinch];
-         
-         NSDictionary * vAd = [vDic objectForKey:@"ad"];
-         self.mAdInfo = vAd;
-         NSString *vAdLabel = [vAd objectForKey:@"ad"];
-         [self.mAdButton setTitle:vAdLabel forState:UIControlStateNormal];
-         [self.mAdButton setTitle:vAdLabel forState:UIControlStateSelected];
      }];
-    [HttpJsonManager getWithParameters:nil sender:self url:@"http://192.168.1.113:8080/swimming_app/app/client/profile/indexInfo.do" completionHandler:^(BOOL sucess, id content) {
-        if (sucess) {
-            self.mNoProInfo = content;
-            //这里赋值给两个界面就OK
+
+    //业余
+    [HttpJsonManager getWithParameters:nil
+                                   url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/indexInfo.do",SERVERADDRESS]
+                     completionHandler:^(BOOL sucess, id content) {
+                         if (sucess) {
+                             self.mNoProInfo = content;
+                             NSDictionary *vInfoDic = content[@"info"];
+                             //计算上一次训练举例今天的天数
+                             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                             formatter.dateFormat = @"yyyy-MM-dd";
+                             NSDate *lastDate = [formatter dateFromString:vInfoDic[@"endTime"]];
+                             NSTimeInterval timeInterval = [lastDate timeIntervalSinceNow];
+                             
+                             _mIsexpired = abs(timeInterval) >= kExpiredDays * 24 * 3600;
+                             
+                             NSDictionary * vAd = [content objectForKey:@"ad"];
+                             self.mAdInfo = vAd;
+                             NSString *vAdLabel = [vAd objectForKey:@"ad"];
+                             [self.mAdButton setTitle:vAdLabel forState:UIControlStateNormal];
+                             
+                             if(_mIsexpired)
+                             {
+                                 //大于规定的天数
+                                 self.mLessThan5.hidden = YES;
+                                 self.mMoreThan5.hidden = NO;
+                                 self.mMore5Cal.text = vInfoDic[@"totalCalorie"];
+                                 self.mMore5Date.text = vInfoDic[@"endTime"];
+                                 self.mMore5Day.text = [NSString stringWithFormat:@"%d天",(int)abs(timeInterval/24/3600)];
+                                 self.mMore5Distance.text = vInfoDic[@"totalDistance"];
+                                 self.mMore5Time.text = vInfoDic[@"totalTime"];
+                                 
+                             }
+                             else
+                             {
+                                 //小于规定的天数
+                                 self.mLessThan5.hidden = NO;
+                                 self.mMoreThan5.hidden = YES;
+                                 self.mLess5Time.text = vInfoDic[@"totalTime"];
+                                 self.mLess5Cal.text = vInfoDic[@"totalCalorie"];
+                                 self.mLess5Date.text = vInfoDic[@"endTime"];
+                                 self.mLess5Distance.text = vInfoDic[@"totalDistance"];
+                             }
+                         }
+                     }];
+
+}
+
+- (void)initViews
+{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"isPro"])
+    {
+        self.mMoreThan5.hidden = YES;
+        self.mLessThan5.hidden = YES;
+        
+    }
+    else
+    {
+        if(_mIsexpired)
+        {
+            //大于规定的天数
+            self.mLessThan5.hidden = YES;
+            self.mMoreThan5.hidden = NO;
         }
-    }];
+        else
+        {
+            //小于规定的天数
+            self.mLessThan5.hidden = NO;
+            self.mMoreThan5.hidden = YES;
+        }
+    }
+
 }
 
 - (IBAction)mAdPressed:(id)sender
@@ -129,7 +181,6 @@
 {
     [mGraphicView updateGraph:sender.scale];
     sender.scale = 1;
-    
 }
 
 

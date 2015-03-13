@@ -127,9 +127,8 @@
 {
     NSDictionary *parameters = @{};
     [HttpJsonManager getWithParameters:parameters
-                                 sender:self url:url
-                      completionHandler:^(BOOL sucess, id content)
-     {
+                                   url:url
+                      completionHandler:^(BOOL sucess, id content) {
          if (sucess) {
              self.mInitData = content;
              [self initViews:self.mInitData];

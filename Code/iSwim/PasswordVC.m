@@ -47,7 +47,9 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [HttpJsonManager getWithParameters:@{@"passwd":[_mPassword1.text MD5]} sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/passwd.do",SERVERADDRESS] completionHandler:^(BOOL sucess, id content) {
+    [HttpJsonManager getWithParameters:@{@"passwd":[_mPassword1.text MD5]}
+                                   url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/passwd.do",SERVERADDRESS]
+                     completionHandler:^(BOOL sucess, id content) {
         NSLog(@"%d-%@",sucess,content);
     }];
 }

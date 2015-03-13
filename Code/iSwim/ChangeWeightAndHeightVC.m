@@ -91,20 +91,17 @@
     [HttpJsonManager getWithParameters:@{@"gender":_mSex,
                                          @"height":[NSNumber numberWithInt:_mHeight],
                                          @"weight":[NSNumber numberWithInt:_mWeight]}
-                                sender:self url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS]
+                                   url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS]
                      completionHandler:^(BOOL sucess, id content)
     {
-        NSLog(@"%s---%@",__FUNCTION__,content);
         if (sucess)
         {
             ALERT(@"保存成功");
         }
         [HttpJsonManager getWithParameters:nil
-                                    sender:self
                                        url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile.do",SERVERADDRESS]
                          completionHandler:^(BOOL sucess, id content)
         {
-            NSLog(@"%@",content);
         }];
     }];
 }

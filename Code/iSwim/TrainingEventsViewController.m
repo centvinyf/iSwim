@@ -101,7 +101,7 @@
                                  @"endTime":endTime,
                                  @"page":[NSNumber numberWithInteger:pageIndex]};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
+                                   url:url
                      completionHandler:^(BOOL sucess, id content)
      {
          if (self.mCurrentPage == 1) {
@@ -131,9 +131,8 @@
 {
     NSDictionary *parameters = @{@"page":[NSNumber numberWithInteger:pageIndex]};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self url:url
-                     completionHandler:^(BOOL sucess, id content)
-     {
+                                   url:url
+                     completionHandler:^(BOOL sucess, id content) {
          if (self.mCurrentPage == 1)
          {
              if (sucess)

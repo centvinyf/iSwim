@@ -42,7 +42,6 @@
 {
     NSDictionary *parameters = @{@"eventId": self.mCurrentEventId};
     [HttpJsonManager getWithParameters:parameters
-                                sender:self
                                    url:url
                      completionHandler:^(BOOL sucess, id content)
      {
@@ -50,7 +49,6 @@
          {
              self.mInitData = content;
              [self initViews:self.mInitData];
-             NSLog(@"%@",content);
              [self.mTableView reloadData];
          }
      }];

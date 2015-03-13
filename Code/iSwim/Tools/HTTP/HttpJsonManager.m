@@ -28,7 +28,6 @@ static HttpJsonManager *sharedInstance;
 }
 
 +(void)postWithParameters:(NSDictionary *)params
-                   sender:(UIViewController *)viewController
                                  url:(NSString *)url
                     completionHandler:(void (^)(BOOL, id))completion
 {
@@ -44,8 +43,8 @@ static HttpJsonManager *sharedInstance;
     }
     NSLog(@"token:%@",manager.mToken);
     //Post
-    [manager POST:url parameters:vParams sender:viewController success:^(AFHTTPRequestOperation *operation, id responseObject){
-        [manager hideWaitView:viewController];
+    [manager POST:url parameters:vParams success:^(AFHTTPRequestOperation *operation, id responseObject){
+        [manager hideWaitView];
         //判断是否成功
         BOOL sucess = [responseObject[@"Status"] integerValue] != -1 ? YES : NO;
         
@@ -59,7 +58,7 @@ static HttpJsonManager *sharedInstance;
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [manager hideWaitView:viewController];
+        [manager hideWaitView];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"网络错误" message:error.localizedDescription delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil];
         [alert show];
         completion(NO, @"网络请求失败");
@@ -68,7 +67,6 @@ static HttpJsonManager *sharedInstance;
 }
 
 +(void)postWithParameters:(NSDictionary *)params
-                   sender:(UIViewController *)viewController
                       url:(NSString *)url
 constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
         completionHandler:(void (^)(BOOL sucess, id content))completion
@@ -84,8 +82,8 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
         [vParams setObject:manager.mToken forKey:@"id"];
     }
     //Post
-    [manager POST:url parameters:vParams sender:viewController constructingBodyWithBlock:block success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [manager hideWaitView:viewController];
+    [manager POST:url parameters:vParams constructingBodyWithBlock:block success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager hideWaitView];
         //判断是否成功
         BOOL sucess = [responseObject[@"Status"] integerValue] != -1 ? YES : NO;
         
@@ -99,7 +97,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [manager hideWaitView:viewController];
+        [manager hideWaitView];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"网络错误" message:error.localizedDescription delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil];
         [alert show];
         completion(NO, @"网络请求失败");
@@ -107,7 +105,6 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 }
 
 +(AFHTTPRequestOperation *)getWithParameters:(NSDictionary *)params
-                  sender:(UIViewController *)viewController
                      url:(NSString *)url
        completionHandler:(void (^)(BOOL sucess, id content))completion
 {
@@ -122,8 +119,8 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
         [vParams setObject:manager.mToken forKey:@"id"];
     }
     //Get
-    AFHTTPRequestOperation *operation = [manager GET:url parameters:vParams sender:viewController success:^(AFHTTPRequestOperation *operation, id responseObject){
-        [manager hideWaitView:viewController];
+    AFHTTPRequestOperation *operation = [manager GET:url parameters:vParams success:^(AFHTTPRequestOperation *operation, id responseObject){
+        [manager hideWaitView];
         //判断是否成功
         //BOOL sucess = [responseObject[@"rs"] integerValue] == 1 ? YES : NO;
         
@@ -140,7 +137,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if(!operation.isCancelled)
         {
-            [manager hideWaitView:viewController];
+            [manager hideWaitView];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"网络错误" message:error.localizedDescription delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil];
             [alert show];
            // completion(NO, @"网络请求失败");
@@ -152,17 +149,11 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
                      parameters:(id)parameters
-                         sender:(UIViewController *)viewController
                         success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        [self showWaitView:((UINavigationController *)viewController).topViewController.view withUrl:URLString];
-    }
-    else
-    {
-        [self showWaitView:viewController.view withUrl:URLString];
-    }
+    [self showWaitView:URLString];
+    
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     
@@ -177,13 +168,8 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
                          success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        [self showWaitView:((UINavigationController *)viewController).topViewController.view withUrl:URLString];
-    }
-    else
-    {
-        [self showWaitView:viewController.view withUrl:URLString];
-    }
+    [self showWaitView:URLString];
+    
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self.operationQueue addOperation:operation];
@@ -193,18 +179,12 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
                       parameters:(id)parameters
-                            sender:(UIViewController *)viewController
        constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
                          success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        [self showWaitView:((UINavigationController *)viewController).topViewController.view withUrl:URLString];
-    }
-    else
-    {
-        [self showWaitView:viewController.view withUrl:URLString];
-    }
+        [self showWaitView:URLString];
+    
     NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters constructingBodyWithBlock:block error:nil];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self.operationQueue addOperation:operation];
@@ -212,24 +192,18 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     return operation;
 }
 
-- (void)showWaitView:(UIView *)view withUrl:(NSString *)url
+- (void)showWaitView:(NSString *)url
 {
     if (!hud)
     {
-        hud = [XMProgressHUD showHUDAddedTo:view animated:NO];
+        hud = [XMProgressHUD showHUDAddedTo:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject] animated:NO];
         hud.dimBackground = YES;
     }
 }
 
-- (void)hideWaitView:(UIViewController *)viewController
+- (void)hideWaitView
 {
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        [MBProgressHUD hideAllHUDsForView:((UINavigationController *)viewController).topViewController.view animated:NO];
-    }
-    else
-    {
-        [MBProgressHUD hideAllHUDsForView:viewController.view animated:NO];
-    }
+    [MBProgressHUD hideAllHUDsForView:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject] animated:NO];
     hud = nil;
 }
 

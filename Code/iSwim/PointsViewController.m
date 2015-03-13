@@ -49,7 +49,6 @@
 -(void)loadDataWithParameters: (NSDictionary *)parameters
 {
         [HttpJsonManager getWithParameters:parameters
-                                    sender:self
                                        url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/points.do",SERVERADDRESS]
                          completionHandler:^(BOOL sucess, id content)
     {
