@@ -324,6 +324,10 @@
 		2CAC1F3B1A78B92800DA4292 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2C4A60B01AA93E1200E4A534 /* TotalTableViewCell.h */,
+				2C4A60B11AA93E1200E4A534 /* TotalTableViewCell.m */,
+				2C4A60B21AA93E1200E4A534 /* DetailTableViewCell.h */,
+				2C4A60B31AA93E1200E4A534 /* DetailTableViewCell.m */,
 				2CAC1F381A78AFEA00DA4292 /* TwoLabelTableViewCell.h */,
 				2CAC1F391A78AFEA00DA4292 /* TwoLabelTableViewCell.m */,
 				2CAC1F3D1A78C0D200DA4292 /* PaimingTableViewCell.h */,
@@ -385,10 +389,6 @@
 				2C4A60B81AA93E3500E4A534 /* TotalViewController.m */,
 				2C4A60AE1AA93E1200E4A534 /* DetailViewController.h */,
 				2C4A60AF1AA93E1200E4A534 /* DetailViewController.m */,
-				2C4A60B01AA93E1200E4A534 /* TotalTableViewCell.h */,
-				2C4A60B11AA93E1200E4A534 /* TotalTableViewCell.m */,
-				2C4A60B21AA93E1200E4A534 /* DetailTableViewCell.h */,
-				2C4A60B31AA93E1200E4A534 /* DetailTableViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

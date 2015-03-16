@@ -20,14 +20,15 @@
     BOOL                _mIsexpired;
     MBLineChart *mGraphicView;
 }
+
 @property (weak, nonatomic) IBOutlet UIImageView *mGraphicViewBG;
 @property (weak, nonatomic) IBOutlet UILabel *mUpRightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mDownMidLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mDownRightLabel;
 @property (weak, nonatomic) IBOutlet UIButton *mAdButton;
-@property (weak, nonatomic) IBOutlet UIView *mMoreThan5;
+@property (weak, nonatomic) IBOutlet UIScrollView *mMoreThan5;
 @property (retain,nonatomic) NSDictionary * mAdInfo;
-@property (weak, nonatomic) IBOutlet UIView *mLessThan5;
+@property (weak, nonatomic) IBOutlet UIScrollView *mLessThan5;
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Distance;
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Time;
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Cal;
@@ -38,6 +39,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *mMore5Cal;
 @property (weak, nonatomic) IBOutlet UILabel *mMore5Date;
 @property (retain,nonatomic) NSDictionary * mNoProInfo;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mTopLabelCon;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mCircleCon;
+
 @end
 
 @implementation MainViewController
@@ -61,9 +66,18 @@
 
 - (void)viewDidLoad
 {
+    if ([UIScreen mainScreen].bounds.size.height>600) {
+        
+        self.mCircleCon.constant+=30;
+        self.mTopLabelCon.constant+=30;
+    }
     [super viewDidLoad];
+    
+//    [defaults setBool:nil forKey:@"isPro"];
     // Do any additional setup after loading the view.
+    
     [self loadData];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -117,12 +131,40 @@
                              self.mAdInfo = vAd;
                              NSString *vAdLabel = [vAd objectForKey:@"ad"];
                              [self.mAdButton setTitle:vAdLabel forState:UIControlStateNormal];
-                             
+                             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                             if ([defaults boolForKey:@"isPro"])
+                             {
+                                 self.mMoreThan5.hidden = YES;
+                                 self.mLessThan5.hidden = YES;
+                                 self.mGraphicViewBG.hidden = NO;
+                             }
+                             else
+                             {
+                                 
+                                 
+                                 if(_mIsexpired)
+                                 {
+                                     //大于规定的天数
+                                     self.mGraphicViewBG.hidden = YES;
+                                     self.mLessThan5.hidden = YES;
+                                     self.mMoreThan5.hidden = NO;
+                                     
+                                 }
+                                 else
+                                 {
+                                     //小于规定的天数
+                                     self.mGraphicViewBG.hidden = YES;
+                                     self.mLessThan5.hidden = NO;
+                                     self.mMoreThan5.hidden = YES;
+                                     
+                                 }
+                             }
+
                              if(_mIsexpired)
                              {
                                  //大于规定的天数
-                                 self.mLessThan5.hidden = YES;
-                                 self.mMoreThan5.hidden = NO;
+//                                 self.mLessThan5.hidden = YES;
+//                                 self.mMoreThan5.hidden = NO;
                                  self.mMore5Cal.text = vInfoDic[@"totalCalorie"];
                                  self.mMore5Date.text = vInfoDic[@"endTime"];
                                  self.mMore5Day.text = [NSString stringWithFormat:@"%d天",(int)abs(timeInterval/24/3600)];
@@ -133,8 +175,8 @@
                              else
                              {
                                  //小于规定的天数
-                                 self.mLessThan5.hidden = NO;
-                                 self.mMoreThan5.hidden = YES;
+//                                 self.mLessThan5.hidden = NO;
+//                                 self.mMoreThan5.hidden = YES;
                                  self.mLess5Time.text = vInfoDic[@"totalTime"];
                                  self.mLess5Cal.text = vInfoDic[@"totalCalorie"];
                                  self.mLess5Date.text = vInfoDic[@"endTime"];
@@ -147,27 +189,33 @@
 
 - (void)initViews
 {
-    
+ 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults boolForKey:@"isPro"])
     {
         self.mMoreThan5.hidden = YES;
         self.mLessThan5.hidden = YES;
-        
+        self.mGraphicViewBG.hidden = NO;
     }
     else
     {
+        
+        
         if(_mIsexpired)
         {
             //大于规定的天数
+            self.mGraphicViewBG.hidden = YES;
             self.mLessThan5.hidden = YES;
             self.mMoreThan5.hidden = NO;
+            
         }
         else
         {
             //小于规定的天数
+            self.mGraphicViewBG.hidden = YES;
             self.mLessThan5.hidden = NO;
             self.mMoreThan5.hidden = YES;
+            
         }
     }
 
@@ -187,7 +235,8 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
