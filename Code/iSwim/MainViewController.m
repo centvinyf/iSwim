@@ -10,7 +10,7 @@
 #import "MBLineChart.h"
 #import "Header.h"
 
-#define kExpiredDays 7
+#define kExpiredDays 100
 
 @interface MainViewController ()
 {
@@ -42,6 +42,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mTopLabelCon;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mCircleCon;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mLessTopLabelCon;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mLessCircleCon;
 
 @end
 
@@ -70,6 +72,8 @@
         
         self.mCircleCon.constant+=30;
         self.mTopLabelCon.constant+=30;
+        self.mLessCircleCon.constant +=30;
+        self.mLessTopLabelCon.constant +=30;
     }
     [super viewDidLoad];
     
