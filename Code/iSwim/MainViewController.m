@@ -70,10 +70,10 @@
 {
     if ([UIScreen mainScreen].bounds.size.height>600) {
         
-        self.mCircleCon.constant+=30;
-        self.mTopLabelCon.constant+=30;
-        self.mLessCircleCon.constant +=30;
-        self.mLessTopLabelCon.constant +=30;
+        self.mCircleCon.constant+=60;
+        self.mTopLabelCon.constant+=60;
+        self.mLessCircleCon.constant +=60;
+        self.mLessTopLabelCon.constant +=60;
     }
     [super viewDidLoad];
     
