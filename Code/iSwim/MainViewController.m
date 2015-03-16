@@ -44,7 +44,8 @@
 -(void) viewDidAppear:(BOOL)animated
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults boolForKey:@"isPro"]) {
+    if ([defaults boolForKey:@"isPro"])
+    {
         [self.mUpRightLabel setText:@"训练成绩"];
         [self.mDownMidLabel setText:@"训练事件"];
         [self.mDownRightLabel setText:@"训练详情"];
@@ -98,8 +99,10 @@
     //业余
     [HttpJsonManager getWithParameters:nil
                                    url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/indexInfo.do",SERVERADDRESS]
-                     completionHandler:^(BOOL sucess, id content) {
-                         if (sucess) {
+                     completionHandler:^(BOOL sucess, id content)
+    {
+                         if (sucess)
+                         {
                              self.mNoProInfo = content;
                              NSDictionary *vInfoDic = content[@"info"];
                              //计算上一次训练举例今天的天数
@@ -138,7 +141,7 @@
                                  self.mLess5Distance.text = vInfoDic[@"totalDistance"];
                              }
                          }
-                     }];
+    }];
 
 }
 
