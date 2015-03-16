@@ -10,7 +10,7 @@
 #import "MBLineChart.h"
 #import "Header.h"
 
-#define kExpiredDays 100
+#define kExpiredDays 7
 
 @interface MainViewController ()
 {
