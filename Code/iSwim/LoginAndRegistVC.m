@@ -18,6 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIButton           *mCoverCancelBtn;
 @property (weak, nonatomic) IBOutlet UITextField        *mPhoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField        *mPasswordTextField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mLoginRectTopCon;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mLogoCon;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mUserLogoCon;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mTeleCon;
 
 @end
 
@@ -40,10 +44,17 @@
     _mCoverSureBtn.layer.borderColor=[[UIColor colorWithRed:0x1a/255.0 green:0x65/255.0 blue:0x94/255.0 alpha:1] CGColor];
     
     [_mPasswordTextField addTarget:self action:@selector(touchesBegan:withEvent:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    if ([UIScreen mainScreen].bounds.size.height>700) {
+        self.mLoginRectTopCon.constant+=80;
+        self.mUserLogoCon.constant+=80;
+        self.mTeleCon.constant +=80;
+        self.mLogoCon.constant +=10;
+    }
      self.navigationController.navigationBarHidden=YES;
 }
 
