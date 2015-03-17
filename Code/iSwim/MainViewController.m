@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import "MBLineChart.h"
 #import "Header.h"
-
+//定义临界天数
 #define kExpiredDays 7
 
 @interface MainViewController ()
@@ -26,9 +26,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *mDownMidLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mDownRightLabel;
 @property (weak, nonatomic) IBOutlet UIButton *mAdButton;
-@property (weak, nonatomic) IBOutlet UIScrollView *mMoreThan5;
+@property (weak, nonatomic) IBOutlet UIScrollView *mMoreThan5; //业余N天后主页图形
 @property (retain,nonatomic) NSDictionary * mAdInfo;
-@property (weak, nonatomic) IBOutlet UIScrollView *mLessThan5;
+@property (weak, nonatomic) IBOutlet UIScrollView *mLessThan5;//业余N天内主页图形
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Distance;
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Time;
 @property (weak, nonatomic) IBOutlet UILabel *mLess5Cal;
@@ -68,7 +68,8 @@
 
 - (void)viewDidLoad
 {
-    if ([UIScreen mainScreen].bounds.size.height>600) {
+    if ([UIScreen mainScreen].bounds.size.height>600)//适配iphone 6和 6s的业余主界面图形位置
+    {
         
         self.mCircleCon.constant+=60;
         self.mTopLabelCon.constant+=60;
@@ -136,6 +137,7 @@
                              self.mAdInfo = vAd;
                              NSString *vAdLabel = [vAd objectForKey:@"ad"];
                              [self.mAdButton setTitle:vAdLabel forState:UIControlStateNormal];
+                             //加载完成数据后根据专业与否与用户时间加载不同主页
                              NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                              if ([defaults boolForKey:@"isPro"])
                              {

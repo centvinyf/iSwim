@@ -49,13 +49,15 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    if ([UIScreen mainScreen].bounds.size.height>700) {
+    if ([UIScreen mainScreen].bounds.size.height>700)//适配iphone 6 Plus的登陆界面
+    {
         self.mLoginRectTopCon.constant+=80;
         self.mUserLogoCon.constant+=80;
         self.mTeleCon.constant +=80;
         self.mLogoCon.constant +=10;
     }
-    else if([UIScreen mainScreen].bounds.size.height<500){
+    else if([UIScreen mainScreen].bounds.size.height<500)//适配iphone4 和 4s的登录界面
+    {
         self.mLoginRectTopCon.constant -=30;
         self.mUserLogoCon.constant-= 30;
         self.mTeleCon.constant -=30;
@@ -72,7 +74,8 @@
 {
     [HttpJsonManager getWithParameters:@{@"phoneNum":_mPhoneNumberTextField.text,@"password":[_mPasswordTextField.text MD5]}
                                    url:[NSString stringWithFormat:@"%@/swimming_app/app/client/authenticate.do",SERVERADDRESS]
-                     completionHandler:^(BOOL sucess, id content) {
+                     completionHandler:^(BOOL sucess, id content)
+    {
         if ([[content objectForKey:@"id"]length]==0)
         {
             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"请输入正确的账号和密码" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
