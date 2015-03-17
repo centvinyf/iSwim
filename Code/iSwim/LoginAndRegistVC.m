@@ -55,6 +55,11 @@
         self.mTeleCon.constant +=80;
         self.mLogoCon.constant +=10;
     }
+    else if([UIScreen mainScreen].bounds.size.height<500){
+        self.mLoginRectTopCon.constant -=30;
+        self.mUserLogoCon.constant-= 30;
+        self.mTeleCon.constant -=30;
+    }
      self.navigationController.navigationBarHidden=YES;
 }
 

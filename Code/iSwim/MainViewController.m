@@ -75,6 +75,7 @@
         self.mLessCircleCon.constant +=60;
         self.mLessTopLabelCon.constant +=60;
     }
+    
     [super viewDidLoad];
     
 //    [defaults setBool:nil forKey:@"isPro"];
