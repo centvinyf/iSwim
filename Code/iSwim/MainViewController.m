@@ -63,18 +63,20 @@
         [self.mDownMidLabel setText:@"游泳事件"];
         [self.mDownRightLabel setText:@"游泳详情"];
     }
-
+   
 }
 
 - (void)viewDidLoad
 {
-    if ([UIScreen mainScreen].bounds.size.height>600)//适配iphone 6和 6s的业余主界面图形位置
+    if ([UIScreen mainScreen].bounds.size.height>600)//适配iphone 6和 6+的业余主界面图形位置
     {
         
         self.mCircleCon.constant+=60;
         self.mTopLabelCon.constant+=60;
         self.mLessCircleCon.constant +=60;
         self.mLessTopLabelCon.constant +=60;
+       
+        
     }
     
     [super viewDidLoad];
@@ -85,6 +87,7 @@
     [self loadData];
     
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
