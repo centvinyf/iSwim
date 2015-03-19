@@ -68,6 +68,8 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     if ([UIScreen mainScreen].bounds.size.height>600)//适配iphone 6和 6+的业余主界面图形位置
     {
         
@@ -75,19 +77,11 @@
         self.mTopLabelCon.constant+=60;
         self.mLessCircleCon.constant +=60;
         self.mLessTopLabelCon.constant +=60;
-       
-        
     }
-    
-    [super viewDidLoad];
-    
-//    [defaults setBool:nil forKey:@"isPro"];
-    // Do any additional setup after loading the view.
     
     [self loadData];
     
 }
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -173,11 +167,17 @@
                              if(_mIsexpired)
                              {
                                  //大于规定的天数
-//                                 self.mLessThan5.hidden = YES;
-//                                 self.mMoreThan5.hidden = NO;
                                  self.mMore5Cal.text = vInfoDic[@"totalCalorie"];
                                  self.mMore5Date.text = vInfoDic[@"endTime"];
-                                 self.mMore5Day.text = [NSString stringWithFormat:@"%d天",(int)abs(timeInterval/24/3600)];
+                                 int dayValue = abs(timeInterval/24/3600);
+                                 self.mMore5Day.text = [NSString stringWithFormat:@"%d天",dayValue];
+                                 float redValue = dayValue/21.0;
+                                 //控制redValue不超过rgb值的最大范围
+                                 if (dayValue > 1)
+                                 {
+                                     redValue = 1;
+                                 }
+                                 self.mMore5Day.textColor = [UIColor colorWithRed:dayValue green:0 blue:0 alpha:1];
                                  self.mMore5Distance.text = vInfoDic[@"totalDistance"];
                                  self.mMore5Time.text = vInfoDic[@"totalTime"];
                                  
@@ -185,8 +185,6 @@
                              else
                              {
                                  //小于规定的天数
-//                                 self.mLessThan5.hidden = NO;
-//                                 self.mMoreThan5.hidden = YES;
                                  self.mLess5Time.text = vInfoDic[@"totalTime"];
                                  self.mLess5Cal.text = vInfoDic[@"totalCalorie"];
                                  self.mLess5Date.text = vInfoDic[@"endTime"];

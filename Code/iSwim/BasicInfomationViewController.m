@@ -77,38 +77,50 @@
 
 - (void)shareWithUserIcon
 {
-    NSString *shareUrl = [NSString stringWithFormat:@"http://192.168.1.113:8080/swimming_app/app/client/shareShow.do?id=%@",[HttpJsonManager getToken]];
-    //构造分享内容
-    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
-                                       defaultContent:@""
-                                                image:[ShareSDK imageWithUrl:[UserProfile manager].mPersonInfo.path]
-                                                title:@"游泳去"
-                                                  url:shareUrl
-                                          description:@""
-                                            mediaType:SSPublishContentMediaTypeNews];
-    //创建弹出菜单容器
-    id<ISSContainer> container = [ShareSDK container];
-    [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
+    NSUserDefaults  *defaults =  [NSUserDefaults standardUserDefaults];
+    BOOL isPro = [defaults boolForKey:@"isPro"];
     
-    //弹出分享菜单
-    [ShareSDK showShareActionSheet:container
-                         shareList:nil
-                           content:publishContent
-                     statusBarTips:YES
-                       authOptions:nil
-                      shareOptions:nil
-                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                
-                                if (state == SSResponseStateSuccess)
-                                {
-                                    NSLog(NSLocalizedString(@"TEXT_ShARE_SUC", @"分享成功"));
-                                }
-                                else if (state == SSResponseStateFail)
-                                {
-                                    NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
-                                }
-                            }];
+    [HttpJsonManager postWithParameters:@{@"eventId":self.mCurrentEventId,
+                                          @"isProfession":[NSNumber numberWithBool:isPro]}
+                                    url:@"http://192.168.1.113:8080/swimming_app/app/client/uploadShow.do"
+              constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
+                  [formData appendPartWithFileData:nil name:@"imageFile" fileName:@"imageFile" mimeType:@"image/png"];
+              }
+     
+                      completionHandler:^(BOOL sucess, id content)
+     {
+         
+         //构造分享内容
+         id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                            defaultContent:@""
+                                                     image:[ShareSDK imageWithUrl:[UserProfile manager].mPersonInfo.path]
+                                                     title:@"游泳去"
+                                                       url:content[@"path"]
+                                               description:@""
+                                                 mediaType:SSPublishContentMediaTypeNews];
+         
+         //弹出分享菜单
+         [ShareSDK showShareActionSheet:nil
+                              shareList:nil
+                                content:publishContent
+                          statusBarTips:YES
+                            authOptions:nil
+                           shareOptions:nil
+                                 result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                     
+                                     if (state == SSResponseStateSuccess)
+                                     {
+                                         NSLog(NSLocalizedString(@"TEXT_ShARE_SUC", @"分享成功"));
+                                     }
+                                     else if (state == SSResponseStateFail)
+                                     {
+                                         NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
+                                     }
+                                 }];
+         
+     }];
 }
+
 
 - (void)shareWithPhoto
 {
@@ -124,39 +136,50 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
-    NSData *data = UIImagePNGRepresentation(image);
-    
-    NSString *shareUrl = [NSString stringWithFormat:@"http://192.168.1.113:8080/swimming_app/app/client/shareShow.do?id=%@",[HttpJsonManager getToken]];
-    //构造分享内容
-    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
-                                       defaultContent:@""
-                                                image:[ShareSDK imageWithData:data fileName:@"pic.png" mimeType:@"image/png"]
-                                                title:@"游泳去"
-                                                  url:shareUrl
-                                          description:@""
-                                            mediaType:SSPublishContentMediaTypeNews];
-    //创建弹出菜单容器
-    id<ISSContainer> container = [ShareSDK container];
-    [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
-    
-    //弹出分享菜单
-    [ShareSDK showShareActionSheet:container
-                         shareList:nil
-                           content:publishContent
-                     statusBarTips:YES
-                       authOptions:nil
-                      shareOptions:nil
-                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                
-                                if (state == SSResponseStateSuccess)
-                                {
-                                    NSLog(NSLocalizedString(@"TEXT_ShARE_SUC", @"分享成功"));
-                                }
-                                else if (state == SSResponseStateFail)
-                                {
-                                    NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
-                                }
-                            }];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        NSData *data = UIImagePNGRepresentation(image);
+
+        NSUserDefaults  *defaults =  [NSUserDefaults standardUserDefaults];
+        BOOL isPro = [defaults boolForKey:@"isPro"];
+
+        [HttpJsonManager postWithParameters:@{@"eventId":self.mCurrentEventId,
+                                              @"isProfession":[NSNumber numberWithBool:isPro]}
+                                        url:@"http://192.168.1.113:8080/swimming_app/app/client/uploadShow.do"
+                  constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
+            [formData appendPartWithFileData:data name:@"imageFile" fileName:@"imageFile" mimeType:@"image/png"];
+        }
+                          completionHandler:^(BOOL sucess, id content)
+        {
+            //构造分享内容
+            id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                               defaultContent:@""
+                                                        image:[ShareSDK imageWithData:data fileName:@"pic.png" mimeType:@"image/png"]
+                                                        title:@"游泳去"
+                                                          url:content[@"path"]
+                                                  description:@""
+                                                    mediaType:SSPublishContentMediaTypeNews];
+            
+            //弹出分享菜单
+            [ShareSDK showShareActionSheet:nil
+                                 shareList:nil
+                                   content:publishContent
+                             statusBarTips:YES
+                               authOptions:nil
+                              shareOptions:nil
+                                    result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                        
+                                        if (state == SSResponseStateSuccess)
+                                        {
+                                            NSLog(NSLocalizedString(@"TEXT_ShARE_SUC", @"分享成功"));
+                                        }
+                                        else if (state == SSResponseStateFail)
+                                        {
+                                            NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
+                                        }
+                                    }];
+        }];
+
+    }];
 }
 #pragma mark - Table view data source
 

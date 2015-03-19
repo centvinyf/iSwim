@@ -21,10 +21,12 @@
 {
     // Override point for customization after application launch.
     [ShareSDK registerApp:@"60492c9b88ea"];
+    //微博
     [ShareSDK  connectSinaWeiboWithAppKey:@"3831550611"
                                 appSecret:@"f6971d4c833009d1a1503880ad222c5e"
                               redirectUri:@"http://www.sharesdk.cn"
                               weiboSDKCls:[WeiboSDK class]];
+    //微信
     [ShareSDK connectWeChatWithAppId:@"wx25aa1416459c93ff"
                            wechatCls:[WXApi class]];
     
