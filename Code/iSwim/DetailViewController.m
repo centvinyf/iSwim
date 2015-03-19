@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/showDetail.do"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/showDetail.do"];
     
     // Do any additional setup after loading the view.
 }

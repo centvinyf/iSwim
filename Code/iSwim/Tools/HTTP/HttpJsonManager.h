@@ -23,6 +23,8 @@
  */
 
 + (void)setToken:(NSString *)token;
++ (NSString *)getToken;
+
 + (void)setDictionary:(NSMutableDictionary *)dictionary;
 +(void)postWithParameters:(NSDictionary *)params
                       url:(NSString *)url
@@ -40,3 +42,4 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 @property (retain, nonatomic) NSString *mToken;
 @property (strong, nonatomic) NSMutableDictionary *mDictionary; 
 @end
+

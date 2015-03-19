@@ -9,7 +9,6 @@
 #import "HttpJsonManager.h"
 #import "XMProgressHUD.h"
 
-static HttpJsonManager *sharedInstance;
 @implementation HttpJsonManager
 /**
  *  类方法Json Post
@@ -18,6 +17,7 @@ static HttpJsonManager *sharedInstance;
  *  @param porn       接口后缀
  *  @param completion 网络请求完成后执行的block
  */
+static HttpJsonManager *sharedInstance;
 
 + (void)load
 {
@@ -210,6 +210,11 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 + (void)setToken:(NSString *)token
 {
     sharedInstance.mToken = token;
+}
+
++ (NSString *)getToken
+{
+    return sharedInstance.mToken;
 }
 
 + (void)setDictionary:(NSMutableDictionary *)dictionary

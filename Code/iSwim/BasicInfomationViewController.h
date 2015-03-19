@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BasicInfomationViewController : UIViewController
+@interface BasicInfomationViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate,UIAlertViewDelegate>
 @end

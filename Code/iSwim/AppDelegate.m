@@ -20,14 +20,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    NSLog(@"%@",[@"000" MD5]);
     [ShareSDK registerApp:@"60492c9b88ea"];
-    [ShareSDK  connectSinaWeiboWithAppKey:@"568898243"
-                                appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
+    [ShareSDK  connectSinaWeiboWithAppKey:@"3831550611"
+                                appSecret:@"f6971d4c833009d1a1503880ad222c5e"
                               redirectUri:@"http://www.sharesdk.cn"
                               weiboSDKCls:[WeiboSDK class]];
-    [ShareSDK connectWeChatWithAppId:@"wx4868b35061f87885"
+    [ShareSDK connectWeChatWithAppId:@"wx25aa1416459c93ff"
                            wechatCls:[WXApi class]];
+    
     //添加QQ空间应用  注册网址  http://connect.qq.com/intro/login/
     [ShareSDK connectQZoneWithAppKey:@"100371282"
                            appSecret:@"aed9b0303e3ed1e27bae87c33761161d"

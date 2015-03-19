@@ -88,8 +88,7 @@
 - (IBAction)saveBtnClick:(id)sender
 {
     _block(@{@"height":[NSNumber numberWithDouble:_mHeight],@"weight":[NSNumber numberWithDouble:_mWeight]});
-    [HttpJsonManager getWithParameters:@{@"gender":_mSex,
-                                         @"height":[NSNumber numberWithInt:_mHeight],
+    [HttpJsonManager getWithParameters:@{@"height":[NSNumber numberWithInt:_mHeight],
                                          @"weight":[NSNumber numberWithInt:_mWeight]}
                                    url:[NSString stringWithFormat:@"%@/swimming_app/app/client/profile/info.do",SERVERADDRESS]
                      completionHandler:^(BOOL sucess, id content)

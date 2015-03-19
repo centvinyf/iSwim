@@ -10,6 +10,8 @@
 #import "BasicInfoViewCell.h"
 #import "HttpJsonManager.h"
 #import <ShareSDK/ShareSDK.h>
+#import "UserProfile.h"
+
 @interface BasicInfomationViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (weak,nonatomic) NSArray * mPicName;
@@ -28,7 +30,7 @@
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
     [self initStructure];
-    [self loadData:@"http://192.168.1.113:8081/swimming_app/app/client/events/info.do"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/info.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -55,21 +57,38 @@
     
     
 }
+
 - (IBAction)mShareBtnPressed:(id)sender
 {
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK" ofType:@"png"];
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"您需要拍一张自拍照吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"拍照分享",@"直接分享", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self shareWithPhoto];
+    }
+    else if (buttonIndex == 2)
+    {
+        [self shareWithUserIcon];
+    }
+}
+
+- (void)shareWithUserIcon
+{
+    NSString *shareUrl = [NSString stringWithFormat:@"http://192.168.1.113:8080/swimming_app/app/client/shareShow.do?id=%@",[HttpJsonManager getToken]];
     //构造分享内容
     id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
-                                       defaultContent:@"测试一下"
-                                                image:[ShareSDK imageWithPath:imagePath]
-                                                title:@"ShareSDK"
-                                                  url:@"http://www.mob.com"
-                                          description:@"这是一条测试信息"
+                                       defaultContent:@""
+                                                image:[ShareSDK imageWithUrl:[UserProfile manager].mPersonInfo.path]
+                                                title:@"游泳去"
+                                                  url:shareUrl
+                                          description:@""
                                             mediaType:SSPublishContentMediaTypeNews];
     //创建弹出菜单容器
     id<ISSContainer> container = [ShareSDK container];
-    [container setIPadContainerWithView:sender arrowDirect:UIPopoverArrowDirectionUp];
+    [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
     
     //弹出分享菜单
     [ShareSDK showShareActionSheet:container
@@ -78,8 +97,7 @@
                      statusBarTips:YES
                        authOptions:nil
                       shareOptions:nil
-                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
-    {
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
                                 
                                 if (state == SSResponseStateSuccess)
                                 {
@@ -92,6 +110,54 @@
                             }];
 }
 
+- (void)shareWithPhoto
+{
+    UIImagePickerController *vPicker = [[UIImagePickerController alloc] init];
+    vPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    vPicker.videoQuality = UIImagePickerControllerQualityType640x480;
+    vPicker.allowsEditing = YES;
+    vPicker.delegate = self;
+    
+    [self presentViewController:vPicker animated:YES completion:nil];
+
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    NSData *data = UIImagePNGRepresentation(image);
+    
+    NSString *shareUrl = [NSString stringWithFormat:@"http://192.168.1.113:8080/swimming_app/app/client/shareShow.do?id=%@",[HttpJsonManager getToken]];
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                       defaultContent:@""
+                                                image:[ShareSDK imageWithData:data fileName:@"pic.png" mimeType:@"image/png"]
+                                                title:@"游泳去"
+                                                  url:shareUrl
+                                          description:@""
+                                            mediaType:SSPublishContentMediaTypeNews];
+    //创建弹出菜单容器
+    id<ISSContainer> container = [ShareSDK container];
+    [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
+    
+    //弹出分享菜单
+    [ShareSDK showShareActionSheet:container
+                         shareList:nil
+                           content:publishContent
+                     statusBarTips:YES
+                       authOptions:nil
+                      shareOptions:nil
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                
+                                if (state == SSResponseStateSuccess)
+                                {
+                                    NSLog(NSLocalizedString(@"TEXT_ShARE_SUC", @"分享成功"));
+                                }
+                                else if (state == SSResponseStateFail)
+                                {
+                                    NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
+                                }
+                            }];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
