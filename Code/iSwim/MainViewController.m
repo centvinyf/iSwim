@@ -170,14 +170,15 @@
                                  self.mMore5Cal.text = vInfoDic[@"totalCalorie"];
                                  self.mMore5Date.text = vInfoDic[@"endTime"];
                                  int dayValue = abs(timeInterval/24/3600);
+                                 dayValue = 7;
                                  self.mMore5Day.text = [NSString stringWithFormat:@"%d天",dayValue];
                                  float redValue = dayValue/21.0;
                                  //控制redValue不超过rgb值的最大范围
-                                 if (dayValue > 1)
+                                 if (redValue > 1)
                                  {
                                      redValue = 1;
                                  }
-                                 self.mMore5Day.textColor = [UIColor colorWithRed:dayValue green:0 blue:0 alpha:1];
+                                 self.mMore5Day.textColor = [UIColor colorWithRed:redValue green:0 blue:0 alpha:1];
                                  self.mMore5Distance.text = vInfoDic[@"totalDistance"];
                                  self.mMore5Time.text = vInfoDic[@"totalTime"];
                                  

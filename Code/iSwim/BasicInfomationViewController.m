@@ -82,11 +82,7 @@
     
     [HttpJsonManager postWithParameters:@{@"eventId":self.mCurrentEventId,
                                           @"isProfession":[NSNumber numberWithBool:isPro]}
-                                    url:@"http://192.168.1.113:8080/swimming_app/app/client/uploadShow.do"
-              constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
-                  [formData appendPartWithFileData:nil name:@"imageFile" fileName:@"imageFile" mimeType:@"image/png"];
-              }
-     
+                                    url:@"http://192.168.1.113:8080/swimming_app/app/client/uploadShowPhone.do"
                       completionHandler:^(BOOL sucess, id content)
      {
          
@@ -98,7 +94,9 @@
                                                        url:content[@"path"]
                                                description:@""
                                                  mediaType:SSPublishContentMediaTypeNews];
-         
+         id<ISSContainer> container = [ShareSDK container];
+         [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
+
          //弹出分享菜单
          [ShareSDK showShareActionSheet:nil
                               shareList:nil
