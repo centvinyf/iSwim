@@ -64,7 +64,7 @@
     [alert show];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
         [self shareWithPhoto];
@@ -86,17 +86,16 @@
                       completionHandler:^(BOOL sucess, id content)
      {
          
+         NSString *userIconUrl = [NSString stringWithString:[UserProfile manager].mPersonInfo.path];
          //构造分享内容
          id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
                                             defaultContent:@""
-                                                     image:[ShareSDK imageWithUrl:[UserProfile manager].mPersonInfo.path]
+                                                     image:[ShareSDK imageWithUrl:userIconUrl]
                                                      title:@"游泳去"
                                                        url:content[@"path"]
                                                description:@""
                                                  mediaType:SSPublishContentMediaTypeNews];
-         id<ISSContainer> container = [ShareSDK container];
-         [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
-
+         
          //弹出分享菜单
          [ShareSDK showShareActionSheet:nil
                               shareList:nil
