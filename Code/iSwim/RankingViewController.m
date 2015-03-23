@@ -26,7 +26,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/ranking.do"];
+    [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/events/ranking.do"];
     // Do any additional setup after loading the view.
 }
 

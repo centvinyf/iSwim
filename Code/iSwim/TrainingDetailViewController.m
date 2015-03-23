@@ -39,7 +39,7 @@
     UIBarButtonItem *vReturnButtonItem = [[UIBarButtonItem alloc] init];
     vReturnButtonItem.title = @" ";//改改改
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
-    [self loadEventIdData:@"http://192.168.1.113:8080/swimming_app/app/client/events/info/enevtId.do"];
+    [self loadEventIdData:@"http://120.25.204.75:8080//swimming_app/app/client/events/info/enevtId.do"];
     
     // Do any additional setup after loading the view.
 }
@@ -99,7 +99,7 @@
                   self.mCurrentEventID = content[@"eventId"];
              }
             
-             [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/split/chart.do"];
+             [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/events/split/chart.do"];
              
          }
      }];
