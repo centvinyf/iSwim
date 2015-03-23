@@ -86,11 +86,10 @@
                       completionHandler:^(BOOL sucess, id content)
      {
          
-         NSString *userIconUrl = [NSString stringWithString:[UserProfile manager].mPersonInfo.path];
          //构造分享内容
          id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
                                             defaultContent:@""
-                                                     image:[ShareSDK imageWithUrl:userIconUrl]
+                                                     image:[ShareSDK imageWithUrl:@"http://120.25.204.75:8080/swimming_app/TP/swim-icon.jpg"]
                                                      title:@"游泳去"
                                                        url:content[@"path"]
                                                description:@""
