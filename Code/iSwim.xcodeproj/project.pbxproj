@@ -25,7 +25,6 @@
 		2C4A60B51AA93E1200E4A534 /* TotalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A60B11AA93E1200E4A534 /* TotalTableViewCell.m */; };
 		2C4A60B61AA93E1200E4A534 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A60B31AA93E1200E4A534 /* DetailTableViewCell.m */; };
 		2C4A60B91AA93E3500E4A534 /* TotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A60B81AA93E3500E4A534 /* TotalViewController.m */; };
-		2C55F07F1A77A9BB0077189D /* JifenDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */; };
 		2C55F0821A77AC1C0077189D /* JifenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */; };
 		2C55F0851A77ADAC0077189D /* TrainingEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0841A77ADAC0077189D /* TrainingEventsViewController.m */; };
 		2C55F0881A77B1530077189D /* TrainingEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55F0871A77B1530077189D /* TrainingEventsTableViewCell.m */; };
@@ -135,8 +134,6 @@
 		2C4A60B31AA93E1200E4A534 /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
 		2C4A60B71AA93E3500E4A534 /* TotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalViewController.h; sourceTree = "<group>"; };
 		2C4A60B81AA93E3500E4A534 /* TotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalViewController.m; sourceTree = "<group>"; };
-		2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JifenDetailViewController.h; sourceTree = "<group>"; };
-		2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JifenDetailViewController.m; sourceTree = "<group>"; };
 		2C55F0801A77AC1C0077189D /* JifenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JifenTableViewCell.h; sourceTree = "<group>"; };
 		2C55F0811A77AC1C0077189D /* JifenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JifenTableViewCell.m; sourceTree = "<group>"; };
 		2C55F0831A77ADAC0077189D /* TrainingEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingEventsViewController.h; sourceTree = "<group>"; };
@@ -365,8 +362,6 @@
 				7CC677811A77515B00FD3287 /* BasicInfomationViewController.m */,
 				7CC677861A77515B00FD3287 /* ScoreDetailViewController.h */,
 				7CC677871A77515B00FD3287 /* ScoreDetailViewController.m */,
-				2C55F07D1A77A9BB0077189D /* JifenDetailViewController.h */,
-				2C55F07E1A77A9BB0077189D /* JifenDetailViewController.m */,
 				7CC6778C1A77515B00FD3287 /* ThisBestRecordViewController.h */,
 				7CC6778D1A77515B00FD3287 /* ThisBestRecordViewController.m */,
 				7CC6778E1A77515B00FD3287 /* TrainingDetailViewController.h */,
@@ -774,7 +769,6 @@
 				7C320A661A775C890023DD06 /* LoginAndRegistVC.m in Sources */,
 				7CC677981A77515B00FD3287 /* ThisBestDetailTableViewCell.m in Sources */,
 				2C55F0851A77ADAC0077189D /* TrainingEventsViewController.m in Sources */,
-				2C55F07F1A77A9BB0077189D /* JifenDetailViewController.m in Sources */,
 				2CAC1F521A78E41F00DA4292 /* MBPickerView.m in Sources */,
 				7CDEF59B1A7B0DBB006FF48D /* MainViewController.m in Sources */,
 				0C9021481A7B550400740536 /* ChangeWeightAndHeightVC.m in Sources */,
