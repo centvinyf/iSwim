@@ -82,7 +82,7 @@
     
     [HttpJsonManager postWithParameters:@{@"eventId":self.mCurrentEventId,
                                           @"isProfession":[NSNumber numberWithBool:isPro]}
-                                    url:@"http://120.25.204.75:8080//swimming_app/app/client/uploadShowPhone.do"
+                                    url:@"http://120.25.204.75:8080/swimming_app/app/client/uploadShowPhone.do"
                       completionHandler:^(BOOL sucess, id content)
      {
          
