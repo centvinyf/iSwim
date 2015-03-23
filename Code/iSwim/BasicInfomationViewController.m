@@ -140,7 +140,7 @@
 
         [HttpJsonManager postWithParameters:@{@"eventId":self.mCurrentEventId,
                                               @"isProfession":[NSNumber numberWithBool:isPro]}
-                                        url:@"http://120.25.204.75:8080//swimming_app/app/client/uploadShow.do"
+                                        url:@"http://120.25.204.75:8080/swimming_app/app/client/uploadShow.do"
                   constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
             [formData appendPartWithFileData:data name:@"imageFile" fileName:@"imageFile" mimeType:@"image/png"];
         }
