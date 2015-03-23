@@ -110,6 +110,8 @@
                                      }
                                      else if (state == SSResponseStateFail)
                                      {
+                                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"您并未安装相应应用" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                                         [alert show];
                                          NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
                                      }
                                  }];
@@ -170,7 +172,11 @@
                                         }
                                         else if (state == SSResponseStateFail)
                                         {
+                                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"您并未安装相应应用" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                                            [alert show];
+
                                             NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
+                                            
                                         }
                                     }];
         }];
