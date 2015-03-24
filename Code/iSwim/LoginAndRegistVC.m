@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mLogoCon;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mUserLogoCon;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mTeleCon;
-
+@property (retain,nonatomic) NSDictionary * mForgetSt;
 @end
 
 @implementation LoginAndRegistVC
@@ -143,8 +143,20 @@
     _mCoverView.hidden=YES;
     NSDictionary * Parameters = @{@"mobile":self.mPhoneNumberTextField.text};
     [HttpJsonManager getWithParameters:Parameters
-                                   url:@"http://120.25.204.75:8080//swimming_app/app/client/profile/forget.do"
+                                   url:@"http://192.168.1.113:8080/swimming_app/app/client/profile/forget.do"
                      completionHandler:^(BOOL sucess, id content) {
+                         self.mForgetSt = content;
+                         if ([content[@"rs"] isEqualToString:@"01"]) {
+                             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"新密码已发送至您的邮箱" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                             [alert show];
+                         }else if([content[@"rs"] isEqualToString:@"02"]){
+                             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"服务器错误，请稍后再试" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                             [alert show];
+                         }else if([content[@"rs"] isEqualToString:@"03"]){
+                             UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"请输入正确的手机号" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                             [alert show];
+                         }
+                         
     }];
 }
 

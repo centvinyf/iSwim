@@ -30,7 +30,7 @@
     vReturnButtonItem.title = @" ";
     self.navigationItem.backBarButtonItem = vReturnButtonItem;
     [self initStructure];
-    [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/events/info.do"];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/info.do"];
     // Do any additional setup after loading the view.
 }
 
@@ -82,14 +82,14 @@
     
     [HttpJsonManager postWithParameters:@{@"eventId":self.mCurrentEventId,
                                           @"isProfession":[NSNumber numberWithBool:isPro]}
-                                    url:@"http://120.25.204.75:8080/swimming_app/app/client/uploadShowPhone.do"
+                                    url:@"http://192.168.1.113:8080/swimming_app/app/client/uploadShowPhone.do"
                       completionHandler:^(BOOL sucess, id content)
      {
          
          //构造分享内容
          id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
                                             defaultContent:@""
-                                                     image:[ShareSDK imageWithUrl:@"http://120.25.204.75:8080/swimming_app/TP/swim-icon.jpg"]
+                                                     image:[ShareSDK imageWithUrl:@"http://192.168.1.113:8080/swimming_app/TP/swim-icon.jpg"]
                                                      title:@"游泳去"
                                                        url:content[@"path"]
                                                description:@""
@@ -142,7 +142,7 @@
 
         [HttpJsonManager postWithParameters:@{@"eventId":self.mCurrentEventId,
                                               @"isProfession":[NSNumber numberWithBool:isPro]}
-                                        url:@"http://120.25.204.75:8080/swimming_app/app/client/uploadShow.do"
+                                        url:@"http://192.168.1.113:8080/swimming_app/app/client/uploadShow.do"
                   constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
             [formData appendPartWithFileData:data name:@"imageFile" fileName:@"imageFile" mimeType:@"image/png"];
         }

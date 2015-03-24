@@ -170,7 +170,6 @@
                                  self.mMore5Cal.text = vInfoDic[@"totalCalorie"];
                                  self.mMore5Date.text = vInfoDic[@"endTime"];
                                  int dayValue = abs(timeInterval/24/3600);
-                                 dayValue = 7;
                                  self.mMore5Day.text = [NSString stringWithFormat:@"%d天",dayValue];
                                  float redValue = dayValue/21.0;
                                  //控制redValue不超过rgb值的最大范围

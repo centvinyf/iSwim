@@ -161,7 +161,7 @@
     
     //    [self.mTableView addTopRefreshControlUsingBlock:^{
     self.mCurrentPage = 1;
-    [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/pbts.do"
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do"
          startTime:startTime
            endTime:endTime
          pageIndex:self.mCurrentPage];
@@ -170,7 +170,7 @@
     [self.mTableView addBottomRefreshControlUsingBlock:^
     {
         self.mCurrentPage ++;
-        [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/pbts.do"
+        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do"
              startTime:startTime
                endTime:endTime
              pageIndex:self.mCurrentPage];
@@ -198,14 +198,14 @@
     
 //    [self.mTableView addTopRefreshControlUsingBlock:^{
         self.mCurrentPage = 1;
-        [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/pbts.do" PageIndex:1];
+        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" PageIndex:1];
 //    } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
     
     [self.mTableView addBottomRefreshControlUsingBlock:^
     {
         
         self.mCurrentPage ++;
-        [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/pbts.do" PageIndex: self.mCurrentPage];
+        [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/pbts.do" PageIndex: self.mCurrentPage];
     } refreshControlPullType:RefreshControlPullTypeInsensitive refreshControlStatusType:RefreshControlStatusTypeArrow];
 
     self.mCurrentPage = 1;

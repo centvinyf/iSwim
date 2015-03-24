@@ -62,7 +62,7 @@
     }
     
     [super viewDidLoad];
-    [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/events/train.do" withDic:nil];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/train.do" withDic:nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -75,7 +75,7 @@
 {
     NSDictionary * parameters = @{@"startTime": self.mStartBtn.titleLabel.text,
                                   @"endTime":self.mEndBtn.titleLabel.text};
-    [self loadData:@"http://120.25.204.75:8080//swimming_app/app/client/events/train.do" withDic:parameters];
+    [self loadData:@"http://192.168.1.113:8080/swimming_app/app/client/events/train.do" withDic:parameters];
     self.mCoverView.hidden = YES;
 }
 
@@ -307,7 +307,7 @@
     [m800m cleanChart];
     [m1000m cleanChart];
     [m1500m cleanChart];
-    mTotalDistance = [MBLineChart initGraph:@"总距离"
+    mTotalDistance = [MBLineChart initGraph:@"游泳距离"
                                     yValues:[self.mInitData[@"LED"] valueForKey:@"Y"]
                                     xValues:[self.mInitData[@"LED"] valueForKey:@"X"]
                                     zValues:[self.mInitData[@"LED"] valueForKey:@"Z"]
@@ -318,7 +318,7 @@
     UITapGestureRecognizer * vToLED = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(toLED)];
     [mTotalDistance addGestureRecognizer:vToLED];
     
-    mTotalTime = [MBLineChart initGraph:@"总时间"
+    mTotalTime = [MBLineChart initGraph:@"游泳时间"
                                 yValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"Y"]
                                 xValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"X"]
                                 zValues:[self.mInitData[@"SWIMMINGTIME"] valueForKey:@"Z"]
@@ -329,7 +329,7 @@
     UITapGestureRecognizer * vToLST = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(toLST)];
     [mTotalTime addGestureRecognizer:vToLST];
     
-    mTotalCaluli = [MBLineChart initGraph:@"总消耗"
+    mTotalCaluli = [MBLineChart initGraph:@"游泳消耗"
                                   yValues:[self.mInitData[@"CALORIE"] valueForKey:@"Y"]
                                   xValues:[self.mInitData[@"CALORIE"] valueForKey:@"X"]
                                    zValues:[self.mInitData[@"CALORIE"] valueForKey:@"Z"]
@@ -341,7 +341,7 @@
     [mTotalCaluli addGestureRecognizer:vToLBC];
 
     
-    m25m = [MBLineChart initGraph:@"25m"
+    m25m = [MBLineChart initGraph:@"平均25m成绩"
                           yValues:[self.mInitData[@"M25"] valueForKey:@"Y"]
                           xValues:[self.mInitData[@"M25"] valueForKey:@"X"]
                           zValues:[self.mInitData[@"M25"] valueForKey:@"Z"]
@@ -353,7 +353,7 @@
     [m25m addGestureRecognizer:vTo25];
 
     
-    m50m = [MBLineChart initGraph:@"50m"
+    m50m = [MBLineChart initGraph:@"平均50m成绩"
                           yValues:[self.mInitData[@"M50"] valueForKey:@"Y"]
                           xValues:[self.mInitData[@"M50"] valueForKey:@"X"]
                           zValues:[self.mInitData[@"M50"] valueForKey:@"Z"]
@@ -366,7 +366,7 @@
     UITapGestureRecognizer * vTo50 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to50)];
     [m50m addGestureRecognizer:vTo50];
     
-    m100m = [MBLineChart initGraph:@"100m"
+    m100m = [MBLineChart initGraph:@"平均100m成绩"
                            yValues:[self.mInitData[@"M100"] valueForKey:@"Y"]
                            xValues:[self.mInitData[@"M100"] valueForKey:@"X"]
                            zValues:[self.mInitData[@"M100"] valueForKey:@"Z"]
@@ -377,7 +377,7 @@
     UITapGestureRecognizer * vTo100 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to100)];
     [m100m addGestureRecognizer:vTo100];
     
-    m200m = [MBLineChart initGraph:@"200m"
+    m200m = [MBLineChart initGraph:@"平均200m成绩"
                            yValues:[self.mInitData[@"M200"] valueForKey:@"Y"]
                            xValues:[self.mInitData[@"M200"] valueForKey:@"X"]
                            zValues:[self.mInitData[@"M200"] valueForKey:@"Z"]
@@ -388,7 +388,7 @@
     UITapGestureRecognizer * vTo200 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to200)];
     [m200m addGestureRecognizer:vTo200];
     
-    m400m = [MBLineChart initGraph:@"400m"
+    m400m = [MBLineChart initGraph:@"平均400m成绩"
                            yValues:[self.mInitData[@"M400"] valueForKey:@"Y"]
                            xValues:[self.mInitData[@"M400"] valueForKey:@"X"]
                            zValues:[self.mInitData[@"M400"] valueForKey:@"Z"]
@@ -399,7 +399,7 @@
     UITapGestureRecognizer * vTo400 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to400)];
     [m400m addGestureRecognizer:vTo400];
     
-    m800m = [MBLineChart initGraph:@"800m"
+    m800m = [MBLineChart initGraph:@"平均800m成绩"
                            yValues:[self.mInitData[@"M800"] valueForKey:@"Y"]
                            xValues:[self.mInitData[@"M800"] valueForKey:@"X"]
                            zValues:[self.mInitData[@"M800"] valueForKey:@"Z"]
@@ -410,7 +410,7 @@
     UITapGestureRecognizer * vTo800 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to800)];
     [m800m addGestureRecognizer:vTo800];
     
-    m1000m = [MBLineChart initGraph:@"1000m"
+    m1000m = [MBLineChart initGraph:@"平均1000m成绩"
                             yValues:[self.mInitData[@"M1000"] valueForKey:@"Y"]
                             xValues:[self.mInitData[@"M1000"] valueForKey:@"X"]
                             zValues:[self.mInitData[@"M1000"] valueForKey:@"Z"]
@@ -421,7 +421,7 @@
     UITapGestureRecognizer * vTo1000 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(to1000)];
     [m1000m addGestureRecognizer:vTo1000];
     
-    m1500m = [MBLineChart initGraph:@"1500m"
+    m1500m = [MBLineChart initGraph:@"平均1500m成绩"
                             yValues:[self.mInitData[@"M1500"] valueForKey:@"Y"]
                             xValues:[self.mInitData[@"M1500"] valueForKey:@"X"]
                             zValues:[self.mInitData[@"M1500"] valueForKey:@"Z"]

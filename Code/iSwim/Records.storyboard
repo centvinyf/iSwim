@@ -10416,7 +10416,7 @@
         <!--总距离详情-->
         <scene sceneID="ZEg-CA-aQO">
             <objects>
-                <viewController id="rYc-be-zkf" customClass="TotalViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rYc-be-zkf" customClass="TotalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vQ8-Xy-U6I"/>
                         <viewControllerLayoutGuide type="bottom" id="gub-kx-5J9"/>
@@ -11549,6 +11549,6 @@
         <image name="日期" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="32h-dj-01h"/>
+        <segue reference="6dk-cp-Zau"/>
     </inferredMetricsTieBreakers>
 </document>
